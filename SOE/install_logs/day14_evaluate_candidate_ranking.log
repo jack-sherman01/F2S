@@ -1,0 +1,42 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'object', 'robot0_joint_vel', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_eef_quat', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+World model: val_mse=0.000151 (properly episode-split, see prior commits)
+46 failure segments available across 3 rounds; using 20.
+[state 1/20] episode_000040 t_f=99: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.1361
+[state 2/20] episode_000030 t_f=85: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.1146
+[state 3/20] episode_000046 t_f=0: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.6121
+[state 4/20] episode_000016 t_f=92: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.1457
+[state 5/20] episode_000047 t_f=256: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.4496
+[state 6/20] episode_000003 t_f=51: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.3567
+[state 7/20] episode_000047 t_f=54: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.4055
+[state 8/20] episode_000048 t_f=121: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.1415
+[state 9/20] episode_000028 t_f=63: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.5276
+[state 10/20] episode_000010 t_f=56: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.5084
+[state 11/20] episode_000000 t_f=99: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.2021
+[state 12/20] episode_000026 t_f=77: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.4304
+[state 13/20] episode_000033 t_f=53: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.6210
+[state 14/20] episode_000007 t_f=55: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.3833
+[state 15/20] episode_000043 t_f=57: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.7056
+[state 16/20] episode_000024 t_f=165: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.3577
+[state 17/20] episode_000010 t_f=43: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.4649
+[state 18/20] episode_000044 t_f=70: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.3423
+[state 19/20] episode_000013 t_f=90: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.1704
+[state 20/20] episode_000032 t_f=207: 16 valid candidates, 0 actually succeeded, mean actual_final_error=0.5995
+
+Spearman(predicted_final_error, actual_final_error) over 320 candidates: rho=0.9727, p=8.718e-204
+Spearman(predicted_score, -actual_final_error): rho=-0.1974, p=0.0003822
+
+Mean actual final error of world-model top-2 selection: 0.3858
+Mean actual final error of random top-2 selection (averaged over 200 draws/state): 0.3837
+World-model selection DOES NOT beat random selection (higher error than random).
+
+Saved: results/can/candidate_ranking_eval/summary.json, results/can/candidate_ranking_eval/records.json

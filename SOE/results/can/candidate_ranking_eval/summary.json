@@ -1,0 +1,180 @@
+{
+  "n_states": 20,
+  "n_candidates_total": 320,
+  "spearman_predicted_vs_actual_error": {
+    "rho": 0.9726945828040152,
+    "pval": 8.717854671631513e-204
+  },
+  "spearman_predicted_score_vs_neg_actual_error": {
+    "rho": -0.19738079816296322,
+    "pval": 0.0003822499344319436
+  },
+  "world_model_top_b_mean_actual_error": 0.3857851921660588,
+  "random_top_b_mean_actual_error": 0.3836875008538065,
+  "world_model_beats_random": false,
+  "top_b": 2,
+  "per_state_summaries": [
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000040",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000030",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000046",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000016",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000047",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000003",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000047",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000048",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000028",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000010",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000000",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000026",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000033",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000007",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000043",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000024",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000010",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000044",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000013",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000032",
+      "n_candidates": 16,
+      "n_actual_success": 0
+    }
+  ],
+  "decomposition": {
+    "within_state_mean_rho": 0.13927781520978608,
+    "within_state_median_rho": 0.15241658747790238,
+    "n_states_with_valid_within_state_rho": 20,
+    "between_state_rho": {
+      "rho": 0.9804511278195487,
+      "pval": 3.6893592442965844e-14
+    },
+    "n_states_near_zero_outcome_variance": 17,
+    "mean_within_state_actual_error_std": 0.004262283632247516,
+    "median_within_state_actual_error_std": 9.472458764024173e-13,
+    "per_state_actual_error_std": [
+      7.615100171731142e-16,
+      2.1051796762162067e-15,
+      1.8200548080610225e-16,
+      1.6393421376875386e-15,
+      0.014610362526045964,
+      4.0125770192081414e-16,
+      3.3349453133218557e-15,
+      1.4301193322384062e-15,
+      0.00010289149296950123,
+      0.000987855291596949,
+      1.8911568074915126e-12,
+      6.684427777288335e-16,
+      0.00409191746408877,
+      2.9110293291727306e-16,
+      0.0026648182091456815,
+      3.6203458661578044e-12,
+      0.030339656655546055,
+      2.8726447267465114e-10,
+      1.6748483405968461e-15,
+      0.03244817071276893
+    ],
+    "continuous_error_ranking_top2_vs_random": {
+      "continuous_ranked_mean_error": 0.3832,
+      "random_mean_error": 0.3837,
+      "beats_random_states_out_of_20": 11
+    },
+    "action_chunk_diversity_check": {
+      "note": "Confirmed on episode_000040 (round_1, a genuine failure): decoded action chunks differ substantially across the 16 candidates (per-timestep std ~0.18-0.23, max pairwise diff ~1.8-1.9, near the full action range) despite near-zero real outcome variance for most states -- rules out policy/decoder conditioning collapse as the explanation."
+    }
+  }
+}

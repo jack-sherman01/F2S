@@ -617,6 +617,89 @@ one deliberately rather than continuing to probe cheaper variations of
 the same "better single-shot prediction" idea, which this session's three
 results suggest has been reasonably exhausted at this data/model scale.
 
+## Went back to the proposal before choosing between those two: Day 14's own acceptance test (ranking vs. random), and a new root cause
+
+At this point three fixes had been tried and ruled out at the candidate/
+scoring level, and the natural next moves (closed-loop replanning, or a
+classifier-style success model) were both bigger investments. Checking
+`private/proposal.tex` directly first (Global Project Rule 7: "do not add
+a new research component until the current component passes its
+acceptance test"; Rule 1: Can is the primary task for all development)
+showed that both of those would be new components outside the proposal's
+defined method -- not the disciplined next move. Instead, went back to a
+concrete acceptance test that had never actually been run as specified:
+Day 14.3 / Final Acceptance Criteria item 6, "world-model candidate
+ranking is better than random ranking," measured with continuous final
+object-to-goal error (not binary success, which has near-zero variance
+given everything found so far), on Can, the primary task.
+
+`scripts/evaluate_candidate_ranking.py`: 20 real Can failure states, 16
+plain-perturbation candidates each (Day 14.1's exact M=16, not CEM -- this
+test is about ranking quality in isolation from search strategy), all
+320 executed for real. Results (`results/can/candidate_ranking_eval/`):
+
+- **Pooled Spearman(predicted, actual final error) = 0.973** (p~0) --
+  looks excellent at first glance.
+- **But the proposal's literal scorer** (J(k) = predicted_success -
+  risk) **does not beat random top-2 selection** (mean actual error
+  0.386 vs. 0.384 for random) -- because with Can this hard,
+  predicted_success is essentially always 0, so the score is dominated
+  by the risk term, which is orthogonal to task quality. (This also
+  explains, after the fact, why `f2s/candidates/cem.py` -- which was
+  designed independently, before this test existed -- already used
+  continuous predicted distance-to-goal as its fitness rather than the
+  literal scorer: that design choice turns out to have been necessary,
+  not just reasonable.)
+- **Decomposing the pooled 0.973 by within- vs. between-state
+  correlation reveals why it's misleading as "the ranking works":**
+  between-state rho = 0.980 (the model is excellent at knowing *which
+  states are hard*), but **mean within-state rho = 0.139** (median
+  0.152) -- barely above zero at discriminating *which of the 16
+  candidates from the same state is relatively better*, which is the
+  operationally relevant question. Switching the scorer to the
+  continuous predicted error (rather than the binary-dominated one)
+  only improves top-2 selection by 0.1% over random and beats the
+  state's own average in just 11/20 states -- not meaningfully better
+  than chance.
+- **Root cause, confirmed directly rather than assumed: 17/20 states
+  (85%) have essentially zero variance in *real* outcome across all 16
+  candidates** (median within-state std = 0.0000m -- literally
+  identical final object position for every candidate in most states).
+  Checked whether this is because the decoded actions themselves don't
+  vary (policy/decoder conditioning collapse) -- **they do vary
+  substantially** (per-timestep action std ~0.18-0.23, max pairwise
+  difference ~1.8-1.9, close to the full action range, confirmed
+  directly on a real failure episode). So the bottleneck isn't the
+  generator collapsing; it's that **most of these automatically-detected
+  failure states appear to already be locked in by the time correction
+  is attempted** -- every candidate is a small latent perturbation of
+  the *same base policy's own trajectory* at that point, and if the
+  policy's own continuation had already failed to make further progress
+  there (which is exactly what `find_stall_time` selects for -- the
+  *last* point of measurable improvement), nearby perturbations of that
+  same failing trajectory family may simply share its fate regardless of
+  the specific action sequence.
+
+This reframes the whole diagnostic arc from this session. Search
+strategy, world-model horizon, contact-dynamics accuracy, and the
+scoring formula are all real, now-fixed-or-documented issues -- but this
+result suggests a more upstream one sits above all of them: **the
+failure-time selection policy may be picking intervention points that
+are already too late to recover from**, independent of how good the
+candidate generator, world model, or scorer are downstream. A concrete,
+proposal-consistent next step (a refinement of an existing component's
+policy, not a new architecture, so consistent with Rule 7): try
+intervening at an *earlier* point than the last-improvement stall time
+-- e.g. a fixed offset before it, or the point where task-progress
+*velocity* (not just position) first turns negative -- and re-run this
+same ranking test to check whether within-state variance and ranking
+quality improve when correction is attempted before the trajectory is
+fully committed to failure. This is now the recommended next step over
+either closed-loop replanning or a classifier-style success model --
+both remain reasonable, but neither addresses this newer, more upstream
+finding, and Rule 7 favors exhausting refinements of existing components
+first.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -640,6 +723,13 @@ crashes at both dev and final episode scale.
   evaluated until at least one skill exists to test. The Lift result
   narrows this to a specific, addressable generalization gap rather than
   "the mechanism doesn't work at all."
+- On Can specifically, the Day-14 ranking test (above) found that 17/20
+  automatically-selected failure states have essentially zero real
+  outcome variance across 16 genuinely-diverse candidates -- suggesting
+  many detected "failure states" may already be unrecoverable by
+  construction (correction is attempted at the *last* point of
+  measurable progress, which may already be too late). Trying an earlier
+  intervention point is the recommended next experiment; not yet done.
 - Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
   is not implemented; the skill archive is used only at evaluation time.
   `success_only`/`failure_replay` baselines are consequently refused
