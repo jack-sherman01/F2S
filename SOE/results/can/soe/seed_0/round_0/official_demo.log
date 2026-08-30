@@ -1,0 +1,30 @@
+  0%|          | 0/65 [00:00<?, ?it/s]  2%|▏         | 1/65 [00:01<01:50,  1.72s/it]  6%|▌         | 4/65 [00:01<00:22,  2.73it/s] 11%|█         | 7/65 [00:01<00:10,  5.31it/s] 14%|█▍        | 9/65 [00:02<00:07,  7.06it/s] 18%|█▊        | 12/65 [00:02<00:05,  9.99it/s] 23%|██▎       | 15/65 [00:02<00:03, 12.73it/s] 28%|██▊       | 18/65 [00:02<00:03, 15.09it/s] 32%|███▏      | 21/65 [00:02<00:02, 16.93it/s] 37%|███▋      | 24/65 [00:02<00:02, 18.47it/s] 42%|████▏     | 27/65 [00:02<00:01, 19.88it/s] 46%|████▌     | 30/65 [00:02<00:01, 20.64it/s] 51%|█████     | 33/65 [00:03<00:01, 21.70it/s] 55%|█████▌    | 36/65 [00:03<00:01, 22.39it/s] 60%|██████    | 39/65 [00:03<00:01, 23.53it/s] 65%|██████▍   | 42/65 [00:03<00:00, 23.64it/s] 69%|██████▉   | 45/65 [00:03<00:00, 23.21it/s] 74%|███████▍  | 48/65 [00:03<00:00, 23.62it/s] 78%|███████▊  | 51/65 [00:03<00:00, 24.27it/s] 83%|████████▎ | 54/65 [00:03<00:00, 23.82it/s] 88%|████████▊ | 57/65 [00:04<00:00, 23.87it/s] 92%|█████████▏| 60/65 [00:04<00:00, 24.56it/s] 97%|█████████▋| 63/65 [00:04<00:00, 25.04it/s]100%|██████████| 65/65 [00:04<00:00, 14.51it/s]
+  0%|          | 0/65 [00:00<?, ?it/s]  2%|▏         | 1/65 [00:00<00:23,  2.70it/s]  6%|▌         | 4/65 [00:00<00:06,  9.91it/s] 11%|█         | 7/65 [00:00<00:03, 14.85it/s] 15%|█▌        | 10/65 [00:00<00:03, 18.29it/s] 20%|██        | 13/65 [00:00<00:02, 20.42it/s] 25%|██▍       | 16/65 [00:00<00:02, 22.05it/s] 29%|██▉       | 19/65 [00:01<00:01, 23.18it/s] 34%|███▍      | 22/65 [00:01<00:01, 24.28it/s] 38%|███▊      | 25/65 [00:01<00:01, 24.97it/s] 43%|████▎     | 28/65 [00:01<00:01, 25.53it/s] 48%|████▊     | 31/65 [00:01<00:01, 25.88it/s] 52%|█████▏    | 34/65 [00:01<00:01, 26.16it/s] 57%|█████▋    | 37/65 [00:01<00:01, 26.18it/s] 62%|██████▏   | 40/65 [00:01<00:00, 26.31it/s] 66%|██████▌   | 43/65 [00:01<00:00, 26.25it/s] 71%|███████   | 46/65 [00:02<00:00, 26.40it/s] 75%|███████▌  | 49/65 [00:02<00:00, 26.65it/s] 80%|████████  | 52/65 [00:02<00:00, 26.49it/s] 85%|████████▍ | 55/65 [00:02<00:00, 26.50it/s] 89%|████████▉ | 58/65 [00:02<00:00, 25.84it/s] 94%|█████████▍| 61/65 [00:02<00:00, 26.11it/s] 98%|█████████▊| 64/65 [00:02<00:00, 26.29it/s]100%|██████████| 65/65 [00:02<00:00, 22.26it/s]
+{'seed': 0, 'log_dir': '/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev', 'dataset': {'name': 'robomimic', 'params': {'path': '/data/heng/F2S/SOE/simulation/datasets/can/ph/low_dim_v141.hdf5', 'train_filter_key': '20_percent_train', 'num_obs': 1, 'num_action': 20, 'success_only': False, 'output_keys': ['actions'], 'normalize_actions': False, 'predict_delta_pos': False}}, 'batch_size': 64, 'num_workers': 4, 'num_iters_per_epoch': None, 'policy': {'name': 'DP', 'params': {'num_action': 20, 'action_dim': 7, 'obs_shape_meta': {'object': {'shape': [14], 'type': 'low_dim'}, 'robot0_eef_pos': {'shape': [3], 'type': 'low_dim'}, 'robot0_eef_quat': {'shape': [4], 'type': 'low_dim'}, 'robot0_eef_vel_ang': {'shape': [3], 'type': 'low_dim'}, 'robot0_eef_vel_lin': {'shape': [3], 'type': 'low_dim'}, 'robot0_gripper_qpos': {'shape': [2], 'type': 'low_dim'}, 'robot0_gripper_qvel': {'shape': [2], 'type': 'low_dim'}, 'robot0_joint_pos': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_pos_cos': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_pos_sin': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_vel': {'shape': [7], 'type': 'low_dim'}}, 'resize_shape': None, 'crop_shape': None, 'random_crop': False, 'use_group_norm': True, 'resnet_out_features': 64, 'num_inference_steps': 20, 'diffusion_step_embed_dim': 128, 'down_dims': [128, 256], 'kernel_size': 5, 'n_groups': 8, 'cond_predict_scale': True, 'noise_scheduler_type': 'ddim'}}, 'resume_ckpt': None, 'resume_epoch': -1, 'optimizer': {'name': 'AdamW', 'params': {'lr': 0.0001, 'weight_decay': 1e-06}}, 'lr_scheduler': {'name': 'cosine_with_warmup'}, 'num_epochs': 2, 'save_epochs': 1}
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'object', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_gripper_qvel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Rollout 0
+Success_Rate 0.0
+Rollout 1
+Success_Rate 0.0
+Exploration attempt 0 for demo 0
+Success_Rate 0.0
+Exploration attempt 0 for demo 1
+Success_Rate 0.0
+Average Rollout Stats
+{
+    "Return": 0.0,
+    "Horizon": 400.0,
+    "Success_Rate": 0.0,
+    "Num_Success": 0.0
+}
+Wrote dataset trajectories to /data/heng/F2S/SOE/results/can/soe/seed_0/round_0/eval_smoke/rollouts.hdf5

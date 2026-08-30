@@ -56,7 +56,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -220,4 +219,43 @@ __marimo__/
 
 # folder
 private/
+
+# ============================================================
+# F2S / SOE project-specific ignores
+# ============================================================
+
+# Conda / venv environments (installed under /data, never inside the repo,
+# but ignore defensively in case one is ever created here)
+SOE/.venv/
+SOE/venv/
+
+# Large raw datasets (RoboMimic hdf5, etc.)
+SOE/data/
+SOE/datasets/
+*.hdf5
+*.h5
+
+# Per-episode raw rollout arrays and rendered videos are large and
+# regenerable from configs+seeds; keep metrics/configs/plots/skills only.
+results/**/episodes/
+results/**/videos/
+results/**/checkpoints/
+results/**/*.npz
+results/**/*.npy
+results/**/*.pt
+results/**/*.pth
+results/**/*.mp4
+results/**/*.gif
+
+# World-model / policy checkpoints anywhere in the repo
+*.ckpt
+
+# Experiment tracking caches
+wandb/
+mlruns/
+outputs/
+multirun/
+
+# Reproduction test scratch directory (Day 28)
+reproduction_test/
 

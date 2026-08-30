@@ -1,0 +1,21 @@
+__pycache__
+.vscode
+
+# dependencies
+dependencies
+realworld/flexiv_rdk*
+realworld/sigma_sdk*
+
+# datasets and outputs
+simulation/datasets
+simulation/out
+simulation/Multiround-*.pdf
+simulation/*.png
+realworld/datasets
+src/logs
+realworld/calib/out
+
+# configs
+simulation/config_template
+src/config
+realworld/config

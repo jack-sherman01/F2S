@@ -1,0 +1,109 @@
+Obtaining file:///data/heng/F2S/SOE/dependencies/robomimic
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: numpy>=1.13.3 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (1.24.4)
+Collecting h5py (from robomimic==0.3.0)
+  Downloading h5py-3.11.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+Collecting psutil (from robomimic==0.3.0)
+  Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Requirement already satisfied: tqdm in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (4.66.2)
+Requirement already satisfied: termcolor in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (2.4.0)
+Collecting tensorboard (from robomimic==0.3.0)
+  Downloading tensorboard-2.14.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting tensorboardX (from robomimic==0.3.0)
+  Downloading tensorboardX-2.6.2.2-py2.py3-none-any.whl.metadata (5.8 kB)
+Collecting imageio (from robomimic==0.3.0)
+  Downloading imageio-2.35.1-py3-none-any.whl.metadata (4.9 kB)
+Collecting imageio-ffmpeg (from robomimic==0.3.0)
+  Downloading imageio_ffmpeg-0.5.1-py3-none-manylinux2010_x86_64.whl.metadata (1.6 kB)
+Requirement already satisfied: matplotlib in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (3.7.5)
+Collecting egl_probe>=1.0.1 (from robomimic==0.3.0)
+  Downloading egl_probe-1.0.2.tar.gz (217 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: torch in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (1.13.0+cu117)
+Requirement already satisfied: torchvision in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from robomimic==0.3.0) (0.14.0+cu117)
+Requirement already satisfied: pillow>=8.3.2 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from imageio->robomimic==0.3.0) (10.4.0)
+Requirement already satisfied: setuptools in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from imageio-ffmpeg->robomimic==0.3.0) (75.3.0)
+Requirement already satisfied: contourpy>=1.0.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (1.4.7)
+Requirement already satisfied: packaging>=20.0 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (26.2)
+Requirement already satisfied: pyparsing>=2.3.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (2.9.0.post0)
+Requirement already satisfied: importlib-resources>=3.2.0 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from matplotlib->robomimic==0.3.0) (6.4.5)
+Requirement already satisfied: absl-py>=0.4 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from tensorboard->robomimic==0.3.0) (2.3.1)
+Collecting grpcio>=1.48.2 (from tensorboard->robomimic==0.3.0)
+  Downloading grpcio-1.70.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.9 kB)
+Collecting google-auth<3,>=1.6.3 (from tensorboard->robomimic==0.3.0)
+  Downloading google_auth-2.50.0-py3-none-any.whl.metadata (6.2 kB)
+Collecting google-auth-oauthlib<1.1,>=0.5 (from tensorboard->robomimic==0.3.0)
+  Downloading google_auth_oauthlib-1.0.0-py2.py3-none-any.whl.metadata (2.7 kB)
+Collecting markdown>=2.6.8 (from tensorboard->robomimic==0.3.0)
+  Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+Collecting protobuf>=3.19.6 (from tensorboard->robomimic==0.3.0)
+  Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+Requirement already satisfied: requests<3,>=2.21.0 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from tensorboard->robomimic==0.3.0) (2.32.4)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard->robomimic==0.3.0)
+  Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl.metadata (1.1 kB)
+Requirement already satisfied: werkzeug>=1.0.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from tensorboard->robomimic==0.3.0) (3.0.6)
+Requirement already satisfied: wheel>=0.26 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from tensorboard->robomimic==0.3.0) (0.45.1)
+Requirement already satisfied: typing-extensions in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from torch->robomimic==0.3.0) (4.13.2)
+Collecting pyasn1-modules>=0.2.1 (from google-auth<3,>=1.6.3->tensorboard->robomimic==0.3.0)
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting cryptography>=38.0.3 (from google-auth<3,>=1.6.3->tensorboard->robomimic==0.3.0)
+  Using cached cryptography-47.0.0-cp38-abi3-manylinux_2_28_x86_64.whl.metadata (4.5 kB)
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<1.1,>=0.5->tensorboard->robomimic==0.3.0)
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: zipp>=3.1.0 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from importlib-resources>=3.2.0->matplotlib->robomimic==0.3.0) (3.20.2)
+Requirement already satisfied: importlib-metadata>=4.4 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from markdown>=2.6.8->tensorboard->robomimic==0.3.0) (8.5.0)
+Requirement already satisfied: six>=1.5 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->robomimic==0.3.0) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from requests<3,>=2.21.0->tensorboard->robomimic==0.3.0) (3.5.1)
+Requirement already satisfied: idna<4,>=2.5 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from requests<3,>=2.21.0->tensorboard->robomimic==0.3.0) (3.15)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from requests<3,>=2.21.0->tensorboard->robomimic==0.3.0) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from requests<3,>=2.21.0->tensorboard->robomimic==0.3.0) (2026.7.22)
+Requirement already satisfied: MarkupSafe>=2.1.1 in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from werkzeug>=1.0.1->tensorboard->robomimic==0.3.0) (2.1.5)
+Collecting cffi>=1.14 (from cryptography>=38.0.3->google-auth<3,>=1.6.3->tensorboard->robomimic==0.3.0)
+  Downloading cffi-1.17.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard->robomimic==0.3.0)
+  Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<1.1,>=0.5->tensorboard->robomimic==0.3.0)
+  Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
+Collecting pycparser (from cffi>=1.14->cryptography>=38.0.3->google-auth<3,>=1.6.3->tensorboard->robomimic==0.3.0)
+  Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Downloading h5py-3.11.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 25.2 MB/s eta 0:00:00
+Downloading imageio-2.35.1-py3-none-any.whl (315 kB)
+Downloading imageio_ffmpeg-0.5.1-py3-none-manylinux2010_x86_64.whl (26.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.9/26.9 MB 45.6 MB/s eta 0:00:00
+Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading tensorboard-2.14.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 34.4 MB/s eta 0:00:00
+Downloading tensorboardX-2.6.2.2-py2.py3-none-any.whl (101 kB)
+Downloading google_auth-2.50.0-py3-none-any.whl (246 kB)
+Downloading google_auth_oauthlib-1.0.0-py2.py3-none-any.whl (18 kB)
+Downloading grpcio-1.70.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 30.5 MB/s eta 0:00:00
+Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl (320 kB)
+Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 26.3 MB/s eta 0:00:00
+Downloading cryptography-47.0.0-cp38-abi3-manylinux_2_28_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 26.7 MB/s eta 0:00:00
+Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Downloading cffi-1.17.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (446 kB)
+Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+Building wheels for collected packages: egl_probe
+  Building wheel for egl_probe (setup.py): started
+  Building wheel for egl_probe (setup.py): finished with status 'done'
+  Created wheel for egl_probe: filename=egl_probe-1.0.2-cp38-cp38-linux_x86_64.whl size=469916 sha256=5401e5f21d458358b8935215b00752a8667ec36e412d2ac9b019da2de432a001
+  Stored in directory: /data/heng/.cache/pip/wheels/79/e0/b9/05298448be51740a5f3c59b73065bffea2fb2c2df3697e0a3a
+Successfully built egl_probe
+Installing collected packages: egl_probe, tensorboard-data-server, pycparser, pyasn1, psutil, protobuf, oauthlib, imageio-ffmpeg, imageio, h5py, grpcio, tensorboardX, requests-oauthlib, pyasn1-modules, markdown, cffi, cryptography, google-auth, google-auth-oauthlib, tensorboard, robomimic
+  DEPRECATION: Legacy editable install of robomimic==0.3.0 from file:///data/heng/F2S/SOE/dependencies/robomimic (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for robomimic
+Successfully installed cffi-1.17.1 cryptography-47.0.0 egl_probe-1.0.2 google-auth-2.50.0 google-auth-oauthlib-1.0.0 grpcio-1.70.0 h5py-3.11.0 imageio-2.35.1 imageio-ffmpeg-0.5.1 markdown-3.7 oauthlib-3.3.1 protobuf-5.29.6 psutil-7.2.2 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-2.23 requests-oauthlib-2.0.0 robomimic tensorboard-2.14.0 tensorboard-data-server-0.7.2 tensorboardX-2.6.2.2

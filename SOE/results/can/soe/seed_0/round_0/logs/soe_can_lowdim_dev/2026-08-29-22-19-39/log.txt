@@ -1,0 +1,14 @@
+Loading dataset ...
+hdf5 file loaded
+num_demos: 36
+used demos: 36
+dataset size: 4141
+Loading policy ...
+resnet out features dim: 64
+obs_feature_dim: 59
+Number of parameters: 4.30M
+Loading optimizer and scheduler ...
+Epoch 0
+Train loss: 1.070093 loss: 1.070093 
+Epoch 1
+Train loss: 1.000065 loss: 1.000065 

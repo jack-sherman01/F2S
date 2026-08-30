@@ -1,0 +1,191 @@
+# F2S Execution Log (README_F2S.md)
+
+This file records the exact commands run to set up and reproduce SOE, and the
+concrete environment/version information, as required by the F2S proposal
+(`private/proposal.tex`, Days 1-3). It is updated incrementally as the
+project proceeds; nothing here is invented — every value is filled in only
+after the corresponding command has actually been run.
+
+## Machine / hardware notes (deviation from proposal defaults)
+
+- Proposal assumes a single NVIDIA RTX 3090. This machine instead has
+  **2x NVIDIA RTX A5000 (24GB each)**. We use a single GPU
+  (`cuda:0`, device index 0) throughout, matching the proposal's
+  "single GPU process at a time" rule. A5000 and 3090 are both
+  Ampere, 24GB, so this is treated as a compatible substitution.
+- The root filesystem (`/`) on this machine has only ~6GB free. All
+  conda environments, pip/HF/torch caches, the SOE clone, datasets,
+  checkpoints, and results therefore live under `/data/heng/F2S`
+  (172GB free at project start), which is symlinked to
+  `/home/heng/work/F2S` for convenience. The git repository itself
+  (`.git`) also lives on `/data`.
+- Every shell command for this project should start with:
+  `source /data/heng/F2S/SOE/env.sh`
+  which activates the `f2s` conda env and points pip/conda/HF/torch
+  caches at `/data/heng/.cache` and `/data/heng/miniconda3/pkgs`
+  instead of the default (root-fs) locations.
+
+## Day 1: Environment setup
+
+### Day 1.1: Conda environment
+
+The proposal's generic default (`python=3.10`) was overridden in favor of
+the SOE README's own explicit recommendation ("We recommend using Python
+3.8 for better compatibility with the dependencies"), since the proposal's
+Day-1 rule is to follow the official README exactly rather than guessing.
+
+```bash
+conda create -n f2s python=3.8 -y
+```
+
+### Day 1.2: SOE installation (commands copied verbatim from SOE README.md)
+
+```bash
+conda activate f2s
+conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia -y
+pip install -r requirements.txt
+
+mkdir dependencies && cd dependencies
+git clone https://github.com/facebookresearch/pytorch3d.git
+cd pytorch3d
+pip install -e .
+cd ../..
+
+cd dependencies
+git clone https://github.com/ARISE-Initiative/robomimic.git
+cd robomimic
+git checkout 9273f9cce85809b4f49cb02c6b4d4eeb2fe95abb
+pip install -e .
+cd ../..
+```
+
+Note: `requirements.txt` pins `torch==1.13.0` / `torchvision==0.14.0`,
+older than a plain `conda install pytorch ... pytorch-cuda=12.1` build.
+In practice `conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch
+-c nvidia` on this machine resolved to a **CPU-only** build twice in a row
+(this machine's conda is configured with `conda-forge` as the default
+channel, and the solver kept substituting a `cpu_generic` pytorch build
+even with `-c pytorch -c nvidia` given on the command line; forcing
+`--override-channels -c pytorch -c nvidia` instead made the solver
+unsatisfiable, because base libs like `jpeg`/`libpng` are only available
+via conda-forge/defaults on this box). Since `requirements.txt` pins the
+exact version we need anyway (`torch==1.13.0`), the actually-executed
+sequence was:
+
+```bash
+python -m pip install torch==1.13.0 torchvision==0.14.0 \
+    --extra-index-url https://download.pytorch.org/whl/cu117
+python -m pip install -r requirements.txt   # torch/torchvision already
+                                             # satisfied at the pinned
+                                             # version, left untouched
+```
+
+This installs the exact pinned torch/torchvision versions with real CUDA
+11.7 GPU wheels (verified: `torch.cuda.is_available() == True`, a real
+matmul was run on `cuda:0`), which is a more reliable path to the authors'
+actual pinned dependency than the generic conda command, given this
+machine's channel configuration.
+
+pytorch3d's source build additionally required a matching **CUDA 11.7
+nvcc + dev headers** (the system-wide CUDA toolkit here is 12.2, which
+`torch.utils.cpp_extension` refuses to build against for a torch 11.7
+binary). Installed narrowly into the `f2s` env only, not system-wide:
+
+```bash
+conda install -n f2s -c "nvidia/label/cuda-11.7.0" \
+    cuda-nvcc cuda-cudart-dev cuda-cccl \
+    libcusparse-dev libcublas-dev libcurand-dev libcusolver-dev \
+    libcufft-dev libnvjitlink -y
+```
+
+With `CUDA_HOME=/data/heng/miniconda3/envs/f2s`, `TORCH_CUDA_ARCH_LIST=8.6`
+(Ampere, matching the RTX A5000) and `FORCE_CUDA=1`, `pip install -e .`
+in `dependencies/pytorch3d` then built cleanly.
+
+<!-- FILLED_VERSIONS_START -->
+Recorded versions (filled in automatically as install steps complete):
+
+- Python version: 3.8.20
+- PyTorch version: 1.13.0+cu117
+- torch.cuda.is_available(): True
+- CUDA version (torch.version.cuda): 11.7 (torch wheel); nvcc in env: 11.7 (system-wide nvcc is 12.2, driver 535.230.02 / CUDA 12.2, not used for the build)
+- GPU: NVIDIA RTX A5000 (device 0)
+- robosuite version: 1.4.1
+- robomimic version / commit: 0.3.1 @ 9273f9cce85809b4f49cb02c6b4d4eeb2fe95abb (pinned, per README)
+- mujoco version: 3.2.3
+- pytorch3d version: 0.7.9
+- SOE git commit (vendored): 4d4f069e322f12f6f62bcef68d87d73f6d86fcb1
+- Full pinned dependency snapshot: see `environment_f2s.yml` and `requirements_f2s.txt`
+<!-- FILLED_VERSIONS_END -->
+
+### Day 1.3: Official minimal example — blocked, then worked around
+
+**Blocker found:** SOE's own `.gitignore` (in the vendored `SOE/.gitignore`)
+excludes `simulation/config_template/`, `src/config/`, and
+`realworld/config/` from their public GitHub repo. The README's documented
+pipeline command,
+
+```bash
+python run_full_multi_round.py --dataset datasets/can/ph/image_v141.hdf5 \
+    --output_dir out/can_soe_multi_round/ --used_demo core_20 \
+    --config can_soe --seeds 233 2333 23333 233333 --cuda_device 0 1 2 3 \
+    --noise_scale 2.0
+```
+
+reads `simulation/config_template/can_soe.json`, which **does not exist**
+anywhere in the released code (`git ls-remote` shows only a single
+`master` branch, no tags, no GitHub releases, no issues on the repo as of
+this writing). This is a gap in the authors' public release, not a
+mistake on our side — the code that *consumes* a config (`train_single_gpu.py`,
+`src/policy/dp.py`, `src/dataset/robomimic_v2.py`, `run.py`) is fully
+present, only the pre-made JSON config instances are missing.
+
+**Resolution:** rather than guess at the multi-round *orchestration*
+command, a config JSON was hand-authored by reading the config schema out
+of the consuming code directly (`configs/soe_can_lowdim_dev.json`) —
+this is the smallest faithful entry point into the real, unmodified SOE
+training code (`train_single_gpu.py`), using the **low-dim** RoboMimic
+`Can` observations already downloaded (`simulation/datasets/can/ph/low_dim_v141.hdf5`,
+200 demos; using the `20_percent_train` filter key, 36 demos, as the
+smallest official demo-count split shipped in the dataset's own `mask/`
+group — chosen as a fast Day-1 smoke test, matching the spirit of
+`core_20` in the README's own example without inventing a new mask).
+`MultiImageObsEncoder` (used inside `DP`) natively supports
+`type: "low_dim"` observation keys, so no image rendering / pixel
+world-model work is introduced here, consistent with the proposal's scope.
+The dataset's low-dim obs keys/shapes (`object` (14,), `robot0_eef_*`,
+`robot0_gripper_*`, `robot0_joint_*`) and action shape (7,) were read
+directly out of the hdf5 file rather than assumed.
+
+See `results/can/soe/seed_0/round_0/official_demo.log` for the actual run
+output.
+
+**Result:** `python train_single_gpu.py --config configs/soe_can_lowdim_dev.json`
+(cwd `SOE/src`) ran 2 epochs on 36 demos (`20_percent_train`, 4141
+training windows), loss 1.070 -> 1.000, and saved
+`policy_epoch_1_seed_0.ckpt`, `policy_epoch_2_seed_0.ckpt`,
+`policy_last.ckpt`, a loss curve plot, and `config.json` under
+`results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/<timestamp>/`.
+`python run.py --agent <ckpt> --config <same config> --n_rollouts 2
+--try_times 1 --seed 0 --dataset_path .../rollouts.hdf5 --dataset_obs`
+(cwd `SOE/simulation`) then launched the real RoboSuite/MuJoCo
+`PickPlaceCan` environment, ran the trained policy (diffusion-policy
+action-chunk inference, `action_dim=7`, `horizon=20`), executed both the
+plain-rollout and SOE exploration-rollout code paths, ran every episode to
+completion (`horizon=400`), and wrote a 4-episode rollout HDF5 (`actions`
+shape `(400,7)`, `states` shape `(400,71)`). Success rate was 0/4, which
+is expected and fine for a 2-epoch smoke test — this run's purpose is
+solely to prove every pipeline stage (data -> policy -> optimizer ->
+checkpoint -> simulator -> action execution -> episode termination ->
+output file) is wired correctly on real, unmodified SOE code before Day 3's
+full baseline training run.
+
+**Day 1 acceptance test: PASSED**
+1. Official demo (adapted per the missing-config finding above) completed
+   without exception. ✅
+2. PyTorch accesses the GPU (`NVIDIA RTX A5000`, substituting for the
+   proposal's RTX 3090). ✅
+3. Episodes terminate (4/4 rollouts ran to `horizon=400` and produced
+   `dones`/`rewards`/`states`). ✅
+4. Repository commit and full environment are recorded (`soe_commit.txt`,
+   `environment_f2s.yml`, `requirements_f2s.txt`, this file). ✅

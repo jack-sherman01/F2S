@@ -1,0 +1,11 @@
+Obtaining file:///data/heng/F2S/SOE/dependencies/pytorch3d
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: iopath in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from pytorch3d==0.7.9) (0.1.10)
+Requirement already satisfied: tqdm in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from iopath->pytorch3d==0.7.9) (4.66.2)
+Requirement already satisfied: typing-extensions in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from iopath->pytorch3d==0.7.9) (4.13.2)
+Requirement already satisfied: portalocker in /data/heng/miniconda3/envs/f2s/lib/python3.8/site-packages (from iopath->pytorch3d==0.7.9) (3.0.0)
+Installing collected packages: pytorch3d
+  DEPRECATION: Legacy editable install of pytorch3d==0.7.9 from file:///data/heng/F2S/SOE/dependencies/pytorch3d (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for pytorch3d
+Successfully installed pytorch3d

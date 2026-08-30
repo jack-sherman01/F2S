@@ -1,0 +1,37 @@
+Channels:
+ - pytorch
+ - nvidia
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | done
+Solving environment: - \ WARNING conda.conda_libmamba_solver.solver:_prepare_problems_message(854): Failed to explain problems
+Traceback (most recent call last):
+  File "/data/heng/miniconda3/lib/python3.14/site-packages/conda_libmamba_solver/solver.py", line 851, in _prepare_problems_message
+    explained_errors = unsolvable.explain_problems(db, problems_format_auto)
+ValueError: Name of new element (libpng) does not match name of list (jpeg)
+| WARNING conda.conda_libmamba_solver.solver:_prepare_problems_message(854): Failed to explain problems
+Traceback (most recent call last):
+  File "/data/heng/miniconda3/lib/python3.14/site-packages/conda_libmamba_solver/solver.py", line 851, in _prepare_problems_message
+    explained_errors = unsolvable.explain_problems(db, problems_format_auto)
+ValueError: Name of new element (libpng) does not match name of list (jpeg)
+WARNING conda.conda_libmamba_solver.solver:_prepare_problems_message(854): Failed to explain problems
+Traceback (most recent call last):
+  File "/data/heng/miniconda3/lib/python3.14/site-packages/conda_libmamba_solver/solver.py", line 851, in _prepare_problems_message
+    explained_errors = unsolvable.explain_problems(db, problems_format_auto)
+ValueError: Name of new element (libpng) does not match name of list (jpeg)
+/ WARNING conda.conda_libmamba_solver.solver:_prepare_problems_message(854): Failed to explain problems
+Traceback (most recent call last):
+  File "/data/heng/miniconda3/lib/python3.14/site-packages/conda_libmamba_solver/solver.py", line 851, in _prepare_problems_message
+    explained_errors = unsolvable.explain_problems(db, problems_format_auto)
+ValueError: Name of new element (libpng) does not match name of list (jpeg)
+WARNING conda.conda_libmamba_solver.solver:_prepare_problems_message(854): Failed to explain problems
+Traceback (most recent call last):
+  File "/data/heng/miniconda3/lib/python3.14/site-packages/conda_libmamba_solver/solver.py", line 851, in _prepare_problems_message
+    explained_errors = unsolvable.explain_problems(db, problems_format_auto)
+ValueError: Name of new element (libpng) does not match name of list (jpeg)
+failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - nothing provides jpeg <=9b needed by torchvision-0.10.0-py36_cpu
+  - nothing provides blas * mkl needed by pytorch-1.10.0-py3.6_cpu_0
+
+
