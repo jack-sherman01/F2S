@@ -66,14 +66,22 @@ def compute_step_features(obs: Dict[str, np.ndarray], goal_pos: np.ndarray = DEF
     object_obs = np.asarray(obs["object"], dtype=np.float64)
     obj_pos = object_obs[0:3]
     obj_to_eef_pos = object_obs[7:10]
-    obj_to_eef_quat = object_obs[10:14]
 
     eef_vel_lin = np.asarray(obs["robot0_eef_vel_lin"], dtype=np.float64)
     gripper_qpos = np.asarray(obs["robot0_gripper_qpos"], dtype=np.float64)
 
     delta_p_obj = float(np.linalg.norm(obj_pos - goal_pos))
     delta_p_ee = float(np.linalg.norm(obj_to_eef_pos))
-    delta_theta_ee = float(_quat_to_angle(obj_to_eef_quat))
+    # Not every single-object robosuite task's `object` obs carries a
+    # relative-orientation component at [10:14] (e.g. Can's 14-dim layout
+    # does, RoboMimic Lift's 10-dim layout does not -- see
+    # SOE/README_F2S.md's Lift diagnostic). Degrade to 0.0 (no orientation
+    # signal) rather than crash when it's absent, instead of hardcoding
+    # one task's obs layout into a function every task's diagnostics use.
+    if object_obs.shape[0] >= 14:
+        delta_theta_ee = float(_quat_to_angle(object_obs[10:14]))
+    else:
+        delta_theta_ee = 0.0
     v_ee = float(np.linalg.norm(eef_vel_lin))
     gripper_state = float(np.mean(gripper_qpos))
 

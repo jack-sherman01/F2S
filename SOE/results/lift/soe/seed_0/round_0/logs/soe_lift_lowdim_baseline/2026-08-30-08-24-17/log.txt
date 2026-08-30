@@ -1,0 +1,610 @@
+Loading dataset ...
+hdf5 file loaded
+num_demos: 36
+used demos: 36
+dataset size: 1733
+Loading policy ...
+resnet out features dim: 64
+obs_feature_dim: 55
+Number of parameters: 16.76M
+Loading optimizer and scheduler ...
+Epoch 0
+Train loss: 1.129327 loss: 1.129327 
+Epoch 1
+Train loss: 1.015453 loss: 1.015453 
+Epoch 2
+Train loss: 0.982224 loss: 0.982224 
+Epoch 3
+Train loss: 0.948065 loss: 0.948065 
+Epoch 4
+Train loss: 0.844605 loss: 0.844605 
+Epoch 5
+Train loss: 0.665483 loss: 0.665483 
+Epoch 6
+Train loss: 0.507925 loss: 0.507925 
+Epoch 7
+Train loss: 0.393691 loss: 0.393691 
+Epoch 8
+Train loss: 0.323481 loss: 0.323481 
+Epoch 9
+Train loss: 0.278225 loss: 0.278225 
+Epoch 10
+Train loss: 0.234509 loss: 0.234509 
+Epoch 11
+Train loss: 0.214546 loss: 0.214546 
+Epoch 12
+Train loss: 0.205332 loss: 0.205332 
+Epoch 13
+Train loss: 0.179316 loss: 0.179316 
+Epoch 14
+Train loss: 0.160152 loss: 0.160152 
+Epoch 15
+Train loss: 0.150615 loss: 0.150615 
+Epoch 16
+Train loss: 0.146355 loss: 0.146355 
+Epoch 17
+Train loss: 0.129259 loss: 0.129259 
+Epoch 18
+Train loss: 0.137320 loss: 0.137320 
+Epoch 19
+Train loss: 0.127479 loss: 0.127479 
+Epoch 20
+Train loss: 0.113323 loss: 0.113323 
+Epoch 21
+Train loss: 0.122897 loss: 0.122897 
+Epoch 22
+Train loss: 0.102581 loss: 0.102581 
+Epoch 23
+Train loss: 0.095126 loss: 0.095126 
+Epoch 24
+Train loss: 0.092075 loss: 0.092075 
+Epoch 25
+Train loss: 0.095227 loss: 0.095227 
+Epoch 26
+Train loss: 0.085538 loss: 0.085538 
+Epoch 27
+Train loss: 0.091756 loss: 0.091756 
+Epoch 28
+Train loss: 0.101412 loss: 0.101412 
+Epoch 29
+Train loss: 0.082575 loss: 0.082575 
+Epoch 30
+Train loss: 0.088638 loss: 0.088638 
+Epoch 31
+Train loss: 0.092610 loss: 0.092610 
+Epoch 32
+Train loss: 0.090419 loss: 0.090419 
+Epoch 33
+Train loss: 0.086480 loss: 0.086480 
+Epoch 34
+Train loss: 0.094835 loss: 0.094835 
+Epoch 35
+Train loss: 0.079659 loss: 0.079659 
+Epoch 36
+Train loss: 0.070729 loss: 0.070729 
+Epoch 37
+Train loss: 0.073306 loss: 0.073306 
+Epoch 38
+Train loss: 0.091098 loss: 0.091098 
+Epoch 39
+Train loss: 0.073027 loss: 0.073027 
+Epoch 40
+Train loss: 0.064915 loss: 0.064915 
+Epoch 41
+Train loss: 0.066859 loss: 0.066859 
+Epoch 42
+Train loss: 0.078063 loss: 0.078063 
+Epoch 43
+Train loss: 0.064786 loss: 0.064786 
+Epoch 44
+Train loss: 0.062082 loss: 0.062082 
+Epoch 45
+Train loss: 0.061659 loss: 0.061659 
+Epoch 46
+Train loss: 0.060446 loss: 0.060446 
+Epoch 47
+Train loss: 0.057423 loss: 0.057423 
+Epoch 48
+Train loss: 0.063254 loss: 0.063254 
+Epoch 49
+Train loss: 0.062611 loss: 0.062611 
+Epoch 50
+Train loss: 0.063024 loss: 0.063024 
+Epoch 51
+Train loss: 0.065128 loss: 0.065128 
+Epoch 52
+Train loss: 0.059449 loss: 0.059449 
+Epoch 53
+Train loss: 0.066393 loss: 0.066393 
+Epoch 54
+Train loss: 0.055983 loss: 0.055983 
+Epoch 55
+Train loss: 0.057942 loss: 0.057942 
+Epoch 56
+Train loss: 0.057896 loss: 0.057896 
+Epoch 57
+Train loss: 0.054608 loss: 0.054608 
+Epoch 58
+Train loss: 0.059461 loss: 0.059461 
+Epoch 59
+Train loss: 0.060420 loss: 0.060420 
+Epoch 60
+Train loss: 0.054047 loss: 0.054047 
+Epoch 61
+Train loss: 0.057012 loss: 0.057012 
+Epoch 62
+Train loss: 0.054987 loss: 0.054987 
+Epoch 63
+Train loss: 0.054109 loss: 0.054109 
+Epoch 64
+Train loss: 0.054022 loss: 0.054022 
+Epoch 65
+Train loss: 0.053196 loss: 0.053196 
+Epoch 66
+Train loss: 0.053087 loss: 0.053087 
+Epoch 67
+Train loss: 0.049674 loss: 0.049674 
+Epoch 68
+Train loss: 0.052271 loss: 0.052271 
+Epoch 69
+Train loss: 0.050349 loss: 0.050349 
+Epoch 70
+Train loss: 0.053561 loss: 0.053561 
+Epoch 71
+Train loss: 0.054942 loss: 0.054942 
+Epoch 72
+Train loss: 0.050445 loss: 0.050445 
+Epoch 73
+Train loss: 0.050297 loss: 0.050297 
+Epoch 74
+Train loss: 0.049767 loss: 0.049767 
+Epoch 75
+Train loss: 0.049720 loss: 0.049720 
+Epoch 76
+Train loss: 0.050933 loss: 0.050933 
+Epoch 77
+Train loss: 0.055599 loss: 0.055599 
+Epoch 78
+Train loss: 0.049233 loss: 0.049233 
+Epoch 79
+Train loss: 0.045519 loss: 0.045519 
+Epoch 80
+Train loss: 0.044198 loss: 0.044198 
+Epoch 81
+Train loss: 0.049581 loss: 0.049581 
+Epoch 82
+Train loss: 0.053067 loss: 0.053067 
+Epoch 83
+Train loss: 0.059056 loss: 0.059056 
+Epoch 84
+Train loss: 0.047756 loss: 0.047756 
+Epoch 85
+Train loss: 0.048440 loss: 0.048440 
+Epoch 86
+Train loss: 0.049540 loss: 0.049540 
+Epoch 87
+Train loss: 0.045141 loss: 0.045141 
+Epoch 88
+Train loss: 0.047849 loss: 0.047849 
+Epoch 89
+Train loss: 0.046875 loss: 0.046875 
+Epoch 90
+Train loss: 0.045921 loss: 0.045921 
+Epoch 91
+Train loss: 0.042007 loss: 0.042007 
+Epoch 92
+Train loss: 0.049868 loss: 0.049868 
+Epoch 93
+Train loss: 0.055209 loss: 0.055209 
+Epoch 94
+Train loss: 0.043461 loss: 0.043461 
+Epoch 95
+Train loss: 0.047414 loss: 0.047414 
+Epoch 96
+Train loss: 0.044220 loss: 0.044220 
+Epoch 97
+Train loss: 0.039934 loss: 0.039934 
+Epoch 98
+Train loss: 0.044471 loss: 0.044471 
+Epoch 99
+Train loss: 0.050232 loss: 0.050232 
+Epoch 100
+Train loss: 0.044798 loss: 0.044798 
+Epoch 101
+Train loss: 0.043368 loss: 0.043368 
+Epoch 102
+Train loss: 0.041244 loss: 0.041244 
+Epoch 103
+Train loss: 0.043260 loss: 0.043260 
+Epoch 104
+Train loss: 0.040765 loss: 0.040765 
+Epoch 105
+Train loss: 0.041458 loss: 0.041458 
+Epoch 106
+Train loss: 0.046227 loss: 0.046227 
+Epoch 107
+Train loss: 0.043192 loss: 0.043192 
+Epoch 108
+Train loss: 0.042166 loss: 0.042166 
+Epoch 109
+Train loss: 0.043543 loss: 0.043543 
+Epoch 110
+Train loss: 0.040190 loss: 0.040190 
+Epoch 111
+Train loss: 0.043217 loss: 0.043217 
+Epoch 112
+Train loss: 0.038660 loss: 0.038660 
+Epoch 113
+Train loss: 0.039097 loss: 0.039097 
+Epoch 114
+Train loss: 0.041491 loss: 0.041491 
+Epoch 115
+Train loss: 0.041998 loss: 0.041998 
+Epoch 116
+Train loss: 0.039590 loss: 0.039590 
+Epoch 117
+Train loss: 0.037585 loss: 0.037585 
+Epoch 118
+Train loss: 0.036715 loss: 0.036715 
+Epoch 119
+Train loss: 0.040277 loss: 0.040277 
+Epoch 120
+Train loss: 0.046173 loss: 0.046173 
+Epoch 121
+Train loss: 0.040010 loss: 0.040010 
+Epoch 122
+Train loss: 0.039442 loss: 0.039442 
+Epoch 123
+Train loss: 0.041662 loss: 0.041662 
+Epoch 124
+Train loss: 0.045423 loss: 0.045423 
+Epoch 125
+Train loss: 0.039590 loss: 0.039590 
+Epoch 126
+Train loss: 0.039491 loss: 0.039491 
+Epoch 127
+Train loss: 0.040046 loss: 0.040046 
+Epoch 128
+Train loss: 0.039182 loss: 0.039182 
+Epoch 129
+Train loss: 0.043033 loss: 0.043033 
+Epoch 130
+Train loss: 0.041616 loss: 0.041616 
+Epoch 131
+Train loss: 0.053217 loss: 0.053217 
+Epoch 132
+Train loss: 0.045272 loss: 0.045272 
+Epoch 133
+Train loss: 0.040142 loss: 0.040142 
+Epoch 134
+Train loss: 0.039776 loss: 0.039776 
+Epoch 135
+Train loss: 0.047649 loss: 0.047649 
+Epoch 136
+Train loss: 0.041694 loss: 0.041694 
+Epoch 137
+Train loss: 0.040758 loss: 0.040758 
+Epoch 138
+Train loss: 0.039864 loss: 0.039864 
+Epoch 139
+Train loss: 0.042443 loss: 0.042443 
+Epoch 140
+Train loss: 0.036633 loss: 0.036633 
+Epoch 141
+Train loss: 0.038532 loss: 0.038532 
+Epoch 142
+Train loss: 0.033884 loss: 0.033884 
+Epoch 143
+Train loss: 0.036057 loss: 0.036057 
+Epoch 144
+Train loss: 0.038700 loss: 0.038700 
+Epoch 145
+Train loss: 0.034747 loss: 0.034747 
+Epoch 146
+Train loss: 0.037600 loss: 0.037600 
+Epoch 147
+Train loss: 0.037022 loss: 0.037022 
+Epoch 148
+Train loss: 0.036341 loss: 0.036341 
+Epoch 149
+Train loss: 0.037487 loss: 0.037487 
+Epoch 150
+Train loss: 0.040889 loss: 0.040889 
+Epoch 151
+Train loss: 0.037969 loss: 0.037969 
+Epoch 152
+Train loss: 0.034078 loss: 0.034078 
+Epoch 153
+Train loss: 0.035523 loss: 0.035523 
+Epoch 154
+Train loss: 0.037061 loss: 0.037061 
+Epoch 155
+Train loss: 0.034935 loss: 0.034935 
+Epoch 156
+Train loss: 0.037331 loss: 0.037331 
+Epoch 157
+Train loss: 0.035829 loss: 0.035829 
+Epoch 158
+Train loss: 0.036971 loss: 0.036971 
+Epoch 159
+Train loss: 0.036848 loss: 0.036848 
+Epoch 160
+Train loss: 0.040027 loss: 0.040027 
+Epoch 161
+Train loss: 0.038963 loss: 0.038963 
+Epoch 162
+Train loss: 0.033448 loss: 0.033448 
+Epoch 163
+Train loss: 0.037278 loss: 0.037278 
+Epoch 164
+Train loss: 0.035496 loss: 0.035496 
+Epoch 165
+Train loss: 0.037432 loss: 0.037432 
+Epoch 166
+Train loss: 0.034188 loss: 0.034188 
+Epoch 167
+Train loss: 0.036937 loss: 0.036937 
+Epoch 168
+Train loss: 0.036560 loss: 0.036560 
+Epoch 169
+Train loss: 0.041566 loss: 0.041566 
+Epoch 170
+Train loss: 0.034720 loss: 0.034720 
+Epoch 171
+Train loss: 0.034174 loss: 0.034174 
+Epoch 172
+Train loss: 0.033776 loss: 0.033776 
+Epoch 173
+Train loss: 0.035178 loss: 0.035178 
+Epoch 174
+Train loss: 0.036207 loss: 0.036207 
+Epoch 175
+Train loss: 0.036254 loss: 0.036254 
+Epoch 176
+Train loss: 0.035284 loss: 0.035284 
+Epoch 177
+Train loss: 0.038373 loss: 0.038373 
+Epoch 178
+Train loss: 0.034241 loss: 0.034241 
+Epoch 179
+Train loss: 0.035838 loss: 0.035838 
+Epoch 180
+Train loss: 0.032054 loss: 0.032054 
+Epoch 181
+Train loss: 0.033171 loss: 0.033171 
+Epoch 182
+Train loss: 0.035099 loss: 0.035099 
+Epoch 183
+Train loss: 0.033950 loss: 0.033950 
+Epoch 184
+Train loss: 0.037509 loss: 0.037509 
+Epoch 185
+Train loss: 0.033848 loss: 0.033848 
+Epoch 186
+Train loss: 0.033500 loss: 0.033500 
+Epoch 187
+Train loss: 0.031790 loss: 0.031790 
+Epoch 188
+Train loss: 0.033057 loss: 0.033057 
+Epoch 189
+Train loss: 0.033743 loss: 0.033743 
+Epoch 190
+Train loss: 0.033171 loss: 0.033171 
+Epoch 191
+Train loss: 0.037585 loss: 0.037585 
+Epoch 192
+Train loss: 0.031176 loss: 0.031176 
+Epoch 193
+Train loss: 0.030668 loss: 0.030668 
+Epoch 194
+Train loss: 0.031393 loss: 0.031393 
+Epoch 195
+Train loss: 0.031914 loss: 0.031914 
+Epoch 196
+Train loss: 0.032996 loss: 0.032996 
+Epoch 197
+Train loss: 0.034487 loss: 0.034487 
+Epoch 198
+Train loss: 0.033086 loss: 0.033086 
+Epoch 199
+Train loss: 0.032482 loss: 0.032482 
+Epoch 200
+Train loss: 0.031387 loss: 0.031387 
+Epoch 201
+Train loss: 0.032632 loss: 0.032632 
+Epoch 202
+Train loss: 0.032290 loss: 0.032290 
+Epoch 203
+Train loss: 0.036011 loss: 0.036011 
+Epoch 204
+Train loss: 0.032047 loss: 0.032047 
+Epoch 205
+Train loss: 0.031474 loss: 0.031474 
+Epoch 206
+Train loss: 0.033128 loss: 0.033128 
+Epoch 207
+Train loss: 0.033842 loss: 0.033842 
+Epoch 208
+Train loss: 0.031488 loss: 0.031488 
+Epoch 209
+Train loss: 0.033929 loss: 0.033929 
+Epoch 210
+Train loss: 0.032480 loss: 0.032480 
+Epoch 211
+Train loss: 0.030718 loss: 0.030718 
+Epoch 212
+Train loss: 0.032113 loss: 0.032113 
+Epoch 213
+Train loss: 0.032329 loss: 0.032329 
+Epoch 214
+Train loss: 0.030838 loss: 0.030838 
+Epoch 215
+Train loss: 0.032429 loss: 0.032429 
+Epoch 216
+Train loss: 0.030857 loss: 0.030857 
+Epoch 217
+Train loss: 0.034215 loss: 0.034215 
+Epoch 218
+Train loss: 0.031779 loss: 0.031779 
+Epoch 219
+Train loss: 0.030105 loss: 0.030105 
+Epoch 220
+Train loss: 0.030366 loss: 0.030366 
+Epoch 221
+Train loss: 0.030501 loss: 0.030501 
+Epoch 222
+Train loss: 0.033808 loss: 0.033808 
+Epoch 223
+Train loss: 0.032899 loss: 0.032899 
+Epoch 224
+Train loss: 0.032311 loss: 0.032311 
+Epoch 225
+Train loss: 0.031668 loss: 0.031668 
+Epoch 226
+Train loss: 0.032260 loss: 0.032260 
+Epoch 227
+Train loss: 0.032424 loss: 0.032424 
+Epoch 228
+Train loss: 0.032234 loss: 0.032234 
+Epoch 229
+Train loss: 0.032310 loss: 0.032310 
+Epoch 230
+Train loss: 0.034946 loss: 0.034946 
+Epoch 231
+Train loss: 0.033233 loss: 0.033233 
+Epoch 232
+Train loss: 0.029370 loss: 0.029370 
+Epoch 233
+Train loss: 0.031389 loss: 0.031389 
+Epoch 234
+Train loss: 0.029826 loss: 0.029826 
+Epoch 235
+Train loss: 0.028326 loss: 0.028326 
+Epoch 236
+Train loss: 0.028515 loss: 0.028515 
+Epoch 237
+Train loss: 0.029727 loss: 0.029727 
+Epoch 238
+Train loss: 0.029716 loss: 0.029716 
+Epoch 239
+Train loss: 0.030821 loss: 0.030821 
+Epoch 240
+Train loss: 0.030163 loss: 0.030163 
+Epoch 241
+Train loss: 0.027870 loss: 0.027870 
+Epoch 242
+Train loss: 0.032322 loss: 0.032322 
+Epoch 243
+Train loss: 0.030564 loss: 0.030564 
+Epoch 244
+Train loss: 0.030870 loss: 0.030870 
+Epoch 245
+Train loss: 0.031581 loss: 0.031581 
+Epoch 246
+Train loss: 0.028367 loss: 0.028367 
+Epoch 247
+Train loss: 0.030314 loss: 0.030314 
+Epoch 248
+Train loss: 0.030482 loss: 0.030482 
+Epoch 249
+Train loss: 0.030349 loss: 0.030349 
+Epoch 250
+Train loss: 0.032849 loss: 0.032849 
+Epoch 251
+Train loss: 0.030617 loss: 0.030617 
+Epoch 252
+Train loss: 0.035469 loss: 0.035469 
+Epoch 253
+Train loss: 0.031917 loss: 0.031917 
+Epoch 254
+Train loss: 0.029713 loss: 0.029713 
+Epoch 255
+Train loss: 0.029819 loss: 0.029819 
+Epoch 256
+Train loss: 0.027337 loss: 0.027337 
+Epoch 257
+Train loss: 0.027375 loss: 0.027375 
+Epoch 258
+Train loss: 0.029520 loss: 0.029520 
+Epoch 259
+Train loss: 0.029708 loss: 0.029708 
+Epoch 260
+Train loss: 0.028461 loss: 0.028461 
+Epoch 261
+Train loss: 0.029735 loss: 0.029735 
+Epoch 262
+Train loss: 0.028443 loss: 0.028443 
+Epoch 263
+Train loss: 0.027875 loss: 0.027875 
+Epoch 264
+Train loss: 0.028910 loss: 0.028910 
+Epoch 265
+Train loss: 0.026972 loss: 0.026972 
+Epoch 266
+Train loss: 0.030484 loss: 0.030484 
+Epoch 267
+Train loss: 0.028327 loss: 0.028327 
+Epoch 268
+Train loss: 0.029065 loss: 0.029065 
+Epoch 269
+Train loss: 0.029281 loss: 0.029281 
+Epoch 270
+Train loss: 0.027655 loss: 0.027655 
+Epoch 271
+Train loss: 0.027910 loss: 0.027910 
+Epoch 272
+Train loss: 0.026233 loss: 0.026233 
+Epoch 273
+Train loss: 0.029852 loss: 0.029852 
+Epoch 274
+Train loss: 0.028335 loss: 0.028335 
+Epoch 275
+Train loss: 0.028790 loss: 0.028790 
+Epoch 276
+Train loss: 0.030258 loss: 0.030258 
+Epoch 277
+Train loss: 0.028020 loss: 0.028020 
+Epoch 278
+Train loss: 0.028020 loss: 0.028020 
+Epoch 279
+Train loss: 0.028505 loss: 0.028505 
+Epoch 280
+Train loss: 0.028837 loss: 0.028837 
+Epoch 281
+Train loss: 0.026397 loss: 0.026397 
+Epoch 282
+Train loss: 0.027868 loss: 0.027868 
+Epoch 283
+Train loss: 0.027457 loss: 0.027457 
+Epoch 284
+Train loss: 0.030387 loss: 0.030387 
+Epoch 285
+Train loss: 0.026504 loss: 0.026504 
+Epoch 286
+Train loss: 0.027136 loss: 0.027136 
+Epoch 287
+Train loss: 0.028234 loss: 0.028234 
+Epoch 288
+Train loss: 0.028307 loss: 0.028307 
+Epoch 289
+Train loss: 0.029622 loss: 0.029622 
+Epoch 290
+Train loss: 0.026278 loss: 0.026278 
+Epoch 291
+Train loss: 0.027298 loss: 0.027298 
+Epoch 292
+Train loss: 0.027936 loss: 0.027936 
+Epoch 293
+Train loss: 0.027102 loss: 0.027102 
+Epoch 294
+Train loss: 0.030730 loss: 0.030730 
+Epoch 295
+Train loss: 0.029319 loss: 0.029319 
+Epoch 296
+Train loss: 0.029366 loss: 0.029366 
+Epoch 297
+Train loss: 0.031495 loss: 0.031495 
+Epoch 298
+Train loss: 0.026483 loss: 0.026483 
+Epoch 299
+Train loss: 0.028369 loss: 0.028369 

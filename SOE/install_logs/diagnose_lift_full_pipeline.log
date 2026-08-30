@@ -1,0 +1,107 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'object']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+[eval 1/30] success=True len=38
+[eval 2/30] success=True len=43
+[eval 3/30] success=True len=34
+[eval 4/30] success=True len=119
+[eval 5/30] success=True len=98
+[eval 6/30] success=False len=400
+[eval 7/30] success=True len=47
+[eval 8/30] success=True len=55
+[eval 9/30] success=True len=40
+[eval 10/30] success=True len=36
+[eval 11/30] success=False len=400
+[eval 12/30] success=False len=400
+[eval 13/30] success=True len=37
+[eval 14/30] success=False len=400
+[eval 15/30] success=True len=112
+[eval 16/30] success=True len=354
+[eval 17/30] success=True len=43
+[eval 18/30] success=True len=50
+[eval 19/30] success=True len=39
+[eval 20/30] success=True len=36
+[eval 21/30] success=True len=59
+[eval 22/30] success=True len=49
+[eval 23/30] success=True len=194
+[eval 24/30] success=True len=157
+[eval 25/30] success=True len=118
+[eval 26/30] success=True len=133
+[eval 27/30] success=True len=41
+[eval 28/30] success=True len=44
+[eval 29/30] success=True len=50
+[eval 30/30] success=True len=131
+
+Baseline Lift policy: 26/30 = 86.7% success
+epoch 0: train_mse=0.002028 val_mse=0.000917
+epoch 1: train_mse=0.000898 val_mse=0.000737
+epoch 2: train_mse=0.000774 val_mse=0.000662
+epoch 3: train_mse=0.000711 val_mse=0.000609
+epoch 4: train_mse=0.000649 val_mse=0.000554
+epoch 5: train_mse=0.000587 val_mse=0.000501
+epoch 6: train_mse=0.000534 val_mse=0.000435
+epoch 7: train_mse=0.000454 val_mse=0.000390
+epoch 8: train_mse=0.000382 val_mse=0.000318
+epoch 9: train_mse=0.000319 val_mse=0.000276
+epoch 10: train_mse=0.000268 val_mse=0.000245
+epoch 11: train_mse=0.000237 val_mse=0.000228
+epoch 12: train_mse=0.000204 val_mse=0.000206
+epoch 13: train_mse=0.000191 val_mse=0.000196
+epoch 14: train_mse=0.000178 val_mse=0.000187
+epoch 15: train_mse=0.000170 val_mse=0.000180
+epoch 16: train_mse=0.000165 val_mse=0.000172
+epoch 17: train_mse=0.000159 val_mse=0.000172
+epoch 18: train_mse=0.000155 val_mse=0.000167
+epoch 19: train_mse=0.000152 val_mse=0.000170
+epoch 20: train_mse=0.000152 val_mse=0.000160
+epoch 21: train_mse=0.000148 val_mse=0.000161
+epoch 22: train_mse=0.000145 val_mse=0.000157
+epoch 23: train_mse=0.000143 val_mse=0.000155
+epoch 24: train_mse=0.000136 val_mse=0.000150
+epoch 25: train_mse=0.000135 val_mse=0.000152
+epoch 26: train_mse=0.000131 val_mse=0.000151
+epoch 27: train_mse=0.000129 val_mse=0.000147
+epoch 28: train_mse=0.000129 val_mse=0.000141
+epoch 29: train_mse=0.000127 val_mse=0.000143
+epoch 30: train_mse=0.000124 val_mse=0.000147
+epoch 31: train_mse=0.000123 val_mse=0.000139
+epoch 32: train_mse=0.000122 val_mse=0.000135
+epoch 33: train_mse=0.000118 val_mse=0.000133
+epoch 34: train_mse=0.000116 val_mse=0.000132
+epoch 35: train_mse=0.000114 val_mse=0.000129
+epoch 36: train_mse=0.000112 val_mse=0.000129
+epoch 37: train_mse=0.000112 val_mse=0.000126
+epoch 38: train_mse=0.000109 val_mse=0.000124
+epoch 39: train_mse=0.000105 val_mse=0.000123
+epoch 40: train_mse=0.000104 val_mse=0.000126
+epoch 41: train_mse=0.000103 val_mse=0.000120
+epoch 42: train_mse=0.000105 val_mse=0.000118
+epoch 43: train_mse=0.000101 val_mse=0.000121
+epoch 44: train_mse=0.000098 val_mse=0.000119
+epoch 45: train_mse=0.000100 val_mse=0.000122
+epoch 46: train_mse=0.000099 val_mse=0.000119
+epoch 47: train_mse=0.000097 val_mse=0.000114
+epoch 48: train_mse=0.000096 val_mse=0.000114
+epoch 49: train_mse=0.000096 val_mse=0.000113
+
+World model: val_mse=0.000113, constant_baseline=0.020341, beats_constant=True
+
+4 failure episodes available; testing 4 with CEM (population=64, iters=5, executing top 8 each).
+  episode=episode_000005 t_f=112 cube_z_at_tf=0.8306 (success needs > 0.8400): best predicted_height=0.9192
+    -> 7/8 executed CEM candidates succeeded
+  episode=episode_000010 t_f=49 cube_z_at_tf=0.8322 (success needs > 0.8400): best predicted_height=0.8959
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000011 t_f=0 cube_z_at_tf=0.8318 (success needs > 0.8400): best predicted_height=0.8904
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000013 t_f=0 cube_z_at_tf=0.8309 (success needs > 0.8400): best predicted_height=0.8966
+    -> 0/8 executed CEM candidates succeeded
+
+TOTAL: 7/32 CEM candidates succeeded (21.9%) across 4 Lift failure states.

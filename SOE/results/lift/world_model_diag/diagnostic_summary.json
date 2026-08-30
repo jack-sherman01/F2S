@@ -1,0 +1,17 @@
+{
+  "baseline_success_rate": 0.8666666666666667,
+  "world_model_result": {
+    "state_dim": 26,
+    "action_dim": 7,
+    "hidden_dim": 256,
+    "ensemble_size": 1,
+    "epochs": 50,
+    "best_val_mse": 0.00011318448378005996,
+    "constant_state_val_mse": 0.020340511575341225,
+    "beats_constant_baseline": true,
+    "training_time_seconds": 2.6468160152435303
+  },
+  "n_failure_states_tested": 4,
+  "total_candidates_executed": 32,
+  "total_candidates_succeeded": 7
+}
