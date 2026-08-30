@@ -741,6 +741,69 @@ principled one (task-progress velocity turning unfavorable, as originally
 proposed above), then re-run this same ranking test to find the actual
 best intervention policy rather than guessing between two values.
 
+## Landmark result: first validated skill archived on Can
+
+Finer offset sweep (`scripts/evaluate_candidate_ranking_early_intervention.py`,
+`F2S_EARLY_OFFSETS=15,25,30`, same 20 states,
+`results/can/candidate_ranking_eval_early_sweep2/`) filled out the curve
+from the previous entry:
+
+| offset | states with ~zero outcome variance | within-state mean rho | real successes (of 320) |
+|---|---|---|---|
+| 0  | 17/20 | 0.139 | 0 |
+| 10 | 6/20  | 0.107 | 0 |
+| 15 | 5/20  | 0.169 | 2 |
+| 20 | 6/20  | 0.186 | 1 |
+| 25 | 9/20  | 0.231 | 0 |
+| 30 | 10/20 | 0.269 | 0 |
+
+Two things worth noting: within-state ranking quality (rho) rises
+roughly monotonically with offset, but the near-zero-variance count is
+**U-shaped** -- it drops sharply from offset 0 to a minimum around
+15-20, then rises again by 25-30. Read together with rho continuing to
+rise past that minimum, the most likely explanation is that offsets
+25-30 land *before* the trajectory has genuinely diverged yet (so
+perturbations there don't matter either, for the opposite reason: too
+early rather than too late), while the real successes (2 at offset 15, 1
+at offset 20, 0 everywhere else) cluster in between -- consistent with a
+genuine recoverable window rather than "further back is always better."
+
+**Then took the 3 successful candidates found across the whole sweep and
+ran them through the actual Day-19 validation protocol**
+(`scripts/validate_can_successful_candidates.py`,
+`results/can/skill_validation_early_intervention/`):
+
+- `episode_000040`, offset 15: **10/10 (100%) on Day-19 validation.
+  ACCEPTED into the SkillArchive.**
+- `episode_000048`, offset 15: **10/10 (100%) on Day-19 validation.
+  ACCEPTED into the SkillArchive.**
+- `episode_000040`, offset 20: did not reconfirm as successful on
+  re-execution (candidate re-identification matched by predicted-error
+  value within 1e-3 tolerance, from a freshly-regenerated candidate pool
+  -- possibly picked a near-neighbor rather than the exact original
+  candidate, or a genuine determinism gap somewhere in the pipeline; not
+  chased further since it doesn't affect the two confirmed results).
+
+**This is the first validated, archived skill on Can in this entire
+project** -- Final Acceptance Criteria item 8 ("at least one candidate
+becomes a validated skill") is now satisfied on the primary task, not
+only on Lift. Notably, both archived skills passed Day-19 at a full
+100%, not a bare pass over the 70% threshold -- qualitatively different
+from the Lift result (where the one candidate tested was brittle,
+2/10). The first skill's latent perturbation is a clean single-dimension
+type (`+/- eta * e_d` along one specific latent axis, all other
+dimensions unperturbed), which may partly explain the robustness: a
+one-axis, interpretable correction plausibly generalizes better than an
+arbitrary multi-dimensional random offset.
+
+**What this confirms about the method, concretely:** the F2S mechanism
+-- latent-space candidate generation, world-model-based prediction,
+execution, and cross-configuration validation -- works end to end on
+Can, the proposal's primary task, once candidates are generated from a
+well-chosen intervention point rather than the last-possible moment. The
+earlier `find_stall_time`-based results were not a fundamental failure of
+the method; they were a consequence of *when* correction was attempted.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -753,29 +816,30 @@ decoder; world-model-based candidate ranking; a safety filter with a
 5/5-correct unit test that also does real rejection work in real runs;
 a skill archive/retrieval implementation with its own passing acceptance
 test; an evolution loop that runs 3 real rounds end to end with no
-crashes at both dev and final episode scale.
+crashes at both dev and final episode scale; **two skills validated and
+archived on Can at 100% cross-configuration success** (Final Acceptance
+Criteria item 8), once candidates are generated from a well-chosen
+intervention point.
 
 **Genuinely open (not fabricated, not silently skipped):**
-- No skill has yet been successfully archived on either task -- Can
-  (never found a single successful candidate) or Lift (found several,
-  but the one tested against Day 19's validation protocol failed it --
-  brittle to even 1cm position offsets, see the Lift pressure-test
-  finding above). H3 (skill archive improves generalization) cannot be
-  evaluated until at least one skill exists to test. The Lift result
-  narrows this to a specific, addressable generalization gap rather than
-  "the mechanism doesn't work at all."
-- On Can specifically, the Day-14 ranking test found that 17/20
-  automatically-selected failure states have essentially zero real
-  outcome variance across 16 genuinely-diverse candidates. Tested and
-  **confirmed** (see "Tested the earlier-intervention hypothesis
-  directly" below): intervening 20 steps earlier than `find_stall_time`'s
-  pick restores real diversity in most of those states (17/20 -> 6/20
-  near-zero-variance), improves ranking quality, and produced the first
-  real successful candidate found on Can in this entire project (1/320).
-  Still sparse -- not yet at the point of archiving a validated skill on
-  Can -- but no longer an open question of *whether* timing matters, only
-  of exactly how much and at what offset; a proper offset sweep is the
-  concrete next step.
+- **Update:** two skills are now validated and archived on Can (see
+  "Landmark result" above) -- Final Acceptance Criteria item 8 is
+  satisfied on the primary task. What's still open: this used a
+  hand-picked, swept intervention offset (15 steps before
+  `find_stall_time`'s pick) found by testing a handful of discrete values
+  (0/10/15/20/25/30) on 20 states -- not yet integrated as the default in
+  `f2s/failure/extractor.py` or `f2s/evolution/loop.py`'s actual
+  pipeline, and not yet re-validated at proposal scale (more states, all
+  3 seeds) to know how reliably this offset choice generalizes versus
+  having gotten lucky on these particular 2 states out of 20 tested.
+  H3 (skill archive improves generalization) can now, for the first
+  time, actually be tested once this is wired into the real evolution
+  loop and evaluated via skill retrieval during rollouts.
+- The Lift skill tested against Day 19's protocol was brittle (2/10,
+  broke at >=1cm position offsets) -- a genuine contrast with the Can
+  skills above, which passed at a full 100%. Not yet understood why the
+  two tasks differ this much on robustness; worth investigating if
+  continuing (task difference, or just these 3 particular candidates).
 - Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
   is not implemented; the skill archive is used only at evaluation time.
   `success_only`/`failure_replay` baselines are consequently refused

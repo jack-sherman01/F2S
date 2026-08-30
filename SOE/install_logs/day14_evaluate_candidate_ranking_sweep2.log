@@ -1,0 +1,90 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_joint_vel', 'robot0_eef_vel_lin', 'object', 'robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_gripper_qvel', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+
+===== offset = 15 steps before stall time =====
+[state 1/20] episode_000040 orig_t_f=99 used_t_f=84: std=0.0690
+[state 2/20] episode_000030 orig_t_f=85 used_t_f=70: std=0.0652
+[state 3/20] episode_000046 orig_t_f=0 used_t_f=0: std=0.0000
+[state 4/20] episode_000016 orig_t_f=92 used_t_f=77: std=0.0031
+[state 5/20] episode_000047 orig_t_f=256 used_t_f=241: std=0.0180
+[state 6/20] episode_000003 orig_t_f=51 used_t_f=36: std=0.0454
+[state 7/20] episode_000047 orig_t_f=54 used_t_f=39: std=0.0409
+[state 8/20] episode_000048 orig_t_f=121 used_t_f=106: std=0.0276
+[state 9/20] episode_000028 orig_t_f=63 used_t_f=48: std=0.0047
+[state 10/20] episode_000010 orig_t_f=56 used_t_f=41: std=0.0143
+[state 11/20] episode_000000 orig_t_f=99 used_t_f=84: std=0.0620
+[state 12/20] episode_000026 orig_t_f=77 used_t_f=62: std=0.0283
+[state 13/20] episode_000033 orig_t_f=53 used_t_f=38: std=0.0109
+[state 14/20] episode_000007 orig_t_f=55 used_t_f=40: std=0.0032
+[state 15/20] episode_000043 orig_t_f=57 used_t_f=42: std=0.0012
+[state 16/20] episode_000024 orig_t_f=165 used_t_f=150: std=0.0416
+[state 17/20] episode_000010 orig_t_f=43 used_t_f=28: std=0.0107
+[state 18/20] episode_000044 orig_t_f=70 used_t_f=55: std=0.0301
+[state 19/20] episode_000013 orig_t_f=90 used_t_f=75: std=0.0868
+[state 20/20] episode_000032 orig_t_f=207 used_t_f=192: std=0.0211
+
+offset=15: pooled_rho=0.9478, within_state_mean_rho=0.16937823440351407, near_zero_variance_states=5/20, mean_std=0.0292
+
+===== offset = 25 steps before stall time =====
+[state 1/20] episode_000040 orig_t_f=99 used_t_f=74: std=0.0557
+[state 2/20] episode_000030 orig_t_f=85 used_t_f=60: std=0.0549
+[state 3/20] episode_000046 orig_t_f=0 used_t_f=0: std=0.0000
+[state 4/20] episode_000016 orig_t_f=92 used_t_f=67: std=0.0026
+[state 5/20] episode_000047 orig_t_f=256 used_t_f=231: std=0.0136
+[state 6/20] episode_000003 orig_t_f=51 used_t_f=26: std=0.0282
+[state 7/20] episode_000047 orig_t_f=54 used_t_f=29: std=0.0078
+[state 8/20] episode_000048 orig_t_f=121 used_t_f=96: std=0.0563
+[state 9/20] episode_000028 orig_t_f=63 used_t_f=38: std=0.0249
+[state 10/20] episode_000010 orig_t_f=56 used_t_f=31: std=0.0009
+[state 11/20] episode_000000 orig_t_f=99 used_t_f=74: std=0.0244
+[state 12/20] episode_000026 orig_t_f=77 used_t_f=52: std=0.0258
+[state 13/20] episode_000033 orig_t_f=53 used_t_f=28: std=0.0029
+[state 14/20] episode_000007 orig_t_f=55 used_t_f=30: std=0.0008
+[state 15/20] episode_000043 orig_t_f=57 used_t_f=32: std=0.0035
+[state 16/20] episode_000024 orig_t_f=165 used_t_f=140: std=0.0150
+[state 17/20] episode_000010 orig_t_f=43 used_t_f=18: std=0.0028
+[state 18/20] episode_000044 orig_t_f=70 used_t_f=45: std=0.0258
+[state 19/20] episode_000013 orig_t_f=90 used_t_f=65: std=0.0601
+[state 20/20] episode_000032 orig_t_f=207 used_t_f=182: std=0.0018
+
+offset=25: pooled_rho=0.9287, within_state_mean_rho=0.2306078728522031, near_zero_variance_states=9/20, mean_std=0.0204
+
+===== offset = 30 steps before stall time =====
+[state 1/20] episode_000040 orig_t_f=99 used_t_f=69: std=0.0460
+[state 2/20] episode_000030 orig_t_f=85 used_t_f=55: std=0.0405
+[state 3/20] episode_000046 orig_t_f=0 used_t_f=0: std=0.0000
+[state 4/20] episode_000016 orig_t_f=92 used_t_f=62: std=0.0057
+[state 5/20] episode_000047 orig_t_f=256 used_t_f=226: std=0.0183
+[state 6/20] episode_000003 orig_t_f=51 used_t_f=21: std=0.0025
+[state 7/20] episode_000047 orig_t_f=54 used_t_f=24: std=0.0081
+[state 8/20] episode_000048 orig_t_f=121 used_t_f=91: std=0.0780
+[state 9/20] episode_000028 orig_t_f=63 used_t_f=33: std=0.0118
+[state 10/20] episode_000010 orig_t_f=56 used_t_f=26: std=0.0003
+[state 11/20] episode_000000 orig_t_f=99 used_t_f=69: std=0.0182
+[state 12/20] episode_000026 orig_t_f=77 used_t_f=47: std=0.0228
+[state 13/20] episode_000033 orig_t_f=53 used_t_f=23: std=0.0020
+[state 14/20] episode_000007 orig_t_f=55 used_t_f=25: std=0.0002
+[state 15/20] episode_000043 orig_t_f=57 used_t_f=27: std=0.0034
+[state 16/20] episode_000024 orig_t_f=165 used_t_f=135: std=0.0148
+[state 17/20] episode_000010 orig_t_f=43 used_t_f=13: std=0.0010
+[state 18/20] episode_000044 orig_t_f=70 used_t_f=40: std=0.0395
+[state 19/20] episode_000013 orig_t_f=90 used_t_f=60: std=0.0583
+[state 20/20] episode_000032 orig_t_f=207 used_t_f=177: std=0.0007
+
+offset=30: pooled_rho=0.8923, within_state_mean_rho=0.268944608971036, near_zero_variance_states=10/20, mean_std=0.0186
+
+===== SUMMARY: does intervening earlier help? =====
+  offset   within_state_rho   near_zero_states   mean_std
+       0             0.1393              17/20     0.0043
+      15             0.1694               5/20     0.0292
+      25             0.2306               9/20     0.0204
+      30             0.2689              10/20     0.0186

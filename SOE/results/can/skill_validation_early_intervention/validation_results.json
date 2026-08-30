@@ -1,0 +1,116 @@
+[
+  {
+    "episode_id": "episode_000040",
+    "offset": 15,
+    "expected_predicted_error": 0.2322,
+    "seed": 0,
+    "matched": true,
+    "reconfirmed_success": true,
+    "per_config_results": [
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "friction",
+        "success": true
+      },
+      {
+        "config": "mass",
+        "success": true
+      }
+    ],
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000048",
+    "offset": 15,
+    "expected_predicted_error": 0.2304,
+    "seed": 7,
+    "matched": true,
+    "reconfirmed_success": true,
+    "per_config_results": [
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "friction",
+        "success": true
+      },
+      {
+        "config": "mass",
+        "success": true
+      }
+    ],
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000040",
+    "offset": 20,
+    "expected_predicted_error": 0.2624,
+    "seed": 0,
+    "matched": true,
+    "reconfirmed_success": false
+  }
+]

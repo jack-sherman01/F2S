@@ -57,7 +57,7 @@ def main():
     world_model_horizon = int(os.environ.get("F2S_RANK_HORIZON", "5"))
     offsets = [int(x) for x in os.environ.get("F2S_EARLY_OFFSETS", "10,20").split(",")]
 
-    output_dir = "results/can/candidate_ranking_eval_early"
+    output_dir = os.environ.get("F2S_EARLY_OUTPUT_DIR", "results/can/candidate_ranking_eval_early")
     ensure_fresh_dir(output_dir)
 
     from rollout_utils import dp_load

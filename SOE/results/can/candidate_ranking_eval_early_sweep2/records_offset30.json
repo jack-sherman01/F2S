@@ -1,0 +1,2882 @@
+[
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3022470388282592,
+    "actual_success": false,
+    "actual_final_error": 0.20823086669551089
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3113082920468569,
+    "actual_success": false,
+    "actual_final_error": 0.23989701440754474
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3035809762646125,
+    "actual_success": false,
+    "actual_final_error": 0.12283904566845953
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.33028252408347186,
+    "actual_success": false,
+    "actual_final_error": 0.27415386083746074
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3287704848764977,
+    "actual_success": false,
+    "actual_final_error": 0.285060646841117
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.306695248559473,
+    "actual_success": false,
+    "actual_final_error": 0.2749384399864681
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.31287378868588295,
+    "actual_success": false,
+    "actual_final_error": 0.35449765550376355
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3170298287747166,
+    "actual_success": false,
+    "actual_final_error": 0.27775743278343734
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.30263161361256413,
+    "actual_success": false,
+    "actual_final_error": 0.21617908148319787
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3049162217499815,
+    "actual_success": false,
+    "actual_final_error": 0.24117977103484464
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.30200670396634083,
+    "actual_success": false,
+    "actual_final_error": 0.23171533284551946
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.29702759923161054,
+    "actual_success": false,
+    "actual_final_error": 0.242131232564138
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3066353116622923,
+    "actual_success": false,
+    "actual_final_error": 0.23769989920749632
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.301581859512092,
+    "actual_success": false,
+    "actual_final_error": 0.24390091299265254
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3135341621178516,
+    "actual_success": false,
+    "actual_final_error": 0.2507150364782132
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000040",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.301180149985852,
+    "actual_success": false,
+    "actual_final_error": 0.23545376608195734
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.40435940354864136,
+    "actual_success": false,
+    "actual_final_error": 0.35639537683575995
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.39408515987619636,
+    "actual_success": false,
+    "actual_final_error": 0.3481692374201962
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.40587873603414576,
+    "actual_success": false,
+    "actual_final_error": 0.27749290329410864
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.3890949815406342,
+    "actual_success": false,
+    "actual_final_error": 0.23835673353190404
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.4297948901922678,
+    "actual_success": false,
+    "actual_final_error": 0.348090122913752
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.45739033024820086,
+    "actual_success": false,
+    "actual_final_error": 0.3819380412874249
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.43536697975177124,
+    "actual_success": false,
+    "actual_final_error": 0.3562536009234265
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.445950691959508,
+    "actual_success": false,
+    "actual_final_error": 0.3877591133661472
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.39880067697715244,
+    "actual_success": false,
+    "actual_final_error": 0.28724334828098896
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.3936952020193043,
+    "actual_success": false,
+    "actual_final_error": 0.2993637976801306
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.391280744304696,
+    "actual_success": false,
+    "actual_final_error": 0.29042527879736785
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.4054778797908453,
+    "actual_success": false,
+    "actual_final_error": 0.3090376139585136
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.3953566094703171,
+    "actual_success": false,
+    "actual_final_error": 0.28054320840089797
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.4056752653225396,
+    "actual_success": false,
+    "actual_final_error": 0.3123312411766137
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.39795076983393146,
+    "actual_success": false,
+    "actual_final_error": 0.3001523977821202
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000030",
+    "original_t_f": 85,
+    "used_t_f": 55,
+    "predicted_final_error": 0.40096246897701415,
+    "actual_success": false,
+    "actual_final_error": 0.29130383328471093
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6428848481526835,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191302
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6222836514319309,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191297
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6472470792994311,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191301
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.5655629168181925,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191301
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6301361025037908,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191299
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.5772838311168192,
+    "actual_success": false,
+    "actual_final_error": 0.61212417551913
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6179821760590248,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191301
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.5850023821406815,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191302
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6083589898218368,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191299
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6381809146385192,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191302
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6256773080669796,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191297
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6258512699564212,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191299
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6316112952414422,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191299
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6287228047712845,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191302
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6281876237692797,
+    "actual_success": false,
+    "actual_final_error": 0.6121241755191302
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000046",
+    "original_t_f": 0,
+    "used_t_f": 0,
+    "predicted_final_error": 0.6320121616252322,
+    "actual_success": false,
+    "actual_final_error": 0.61212417551913
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.4492541861062663,
+    "actual_success": false,
+    "actual_final_error": 0.3458152547069952
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.4006874559223027,
+    "actual_success": false,
+    "actual_final_error": 0.3509933215949859
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.3493571607319969,
+    "actual_success": false,
+    "actual_final_error": 0.343009152847637
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.36675968601779463,
+    "actual_success": false,
+    "actual_final_error": 0.33335358457794784
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.34738797490851053,
+    "actual_success": false,
+    "actual_final_error": 0.33544963574029
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.3429401533523274,
+    "actual_success": false,
+    "actual_final_error": 0.32634904722242936
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.4131286536332929,
+    "actual_success": false,
+    "actual_final_error": 0.3415223801619305
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.35169189748246715,
+    "actual_success": false,
+    "actual_final_error": 0.33452208638809555
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.34835986349704,
+    "actual_success": false,
+    "actual_final_error": 0.3366360363317034
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.35197240292622556,
+    "actual_success": false,
+    "actual_final_error": 0.3351441622530573
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.34746940040806096,
+    "actual_success": false,
+    "actual_final_error": 0.34288090945944266
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.3521862889371919,
+    "actual_success": false,
+    "actual_final_error": 0.33258981506932567
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.35194184942214624,
+    "actual_success": false,
+    "actual_final_error": 0.3365178539831304
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.35173845052418257,
+    "actual_success": false,
+    "actual_final_error": 0.3361001010937837
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.351916343938304,
+    "actual_success": false,
+    "actual_final_error": 0.335609217545449
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000016",
+    "original_t_f": 92,
+    "used_t_f": 62,
+    "predicted_final_error": 0.35185898698804857,
+    "actual_success": false,
+    "actual_final_error": 0.33544241605278835
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.514942931203485,
+    "actual_success": false,
+    "actual_final_error": 0.4558902879410208
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.46237224384212294,
+    "actual_success": false,
+    "actual_final_error": 0.45589028794102066
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4776213002788333,
+    "actual_success": false,
+    "actual_final_error": 0.45589028794102054
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4544792303679371,
+    "actual_success": false,
+    "actual_final_error": 0.4558902879410204
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.453307267614423,
+    "actual_success": false,
+    "actual_final_error": 0.39973574208707807
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.434015246434405,
+    "actual_success": false,
+    "actual_final_error": 0.45589028794102016
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.46431452898871706,
+    "actual_success": false,
+    "actual_final_error": 0.4131770352903618
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4686858900082272,
+    "actual_success": false,
+    "actual_final_error": 0.4558902879410201
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4516964170286931,
+    "actual_success": false,
+    "actual_final_error": 0.45643433769457414
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4797658640932478,
+    "actual_success": false,
+    "actual_final_error": 0.41549844043665013
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.4598055404378793,
+    "actual_success": false,
+    "actual_final_error": 0.44538268253083896
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.45999658374656954,
+    "actual_success": false,
+    "actual_final_error": 0.4560989773752907
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.48187751949012403,
+    "actual_success": false,
+    "actual_final_error": 0.4559570411250772
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.46123703880831984,
+    "actual_success": false,
+    "actual_final_error": 0.4559801201451581
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.46355449095151063,
+    "actual_success": false,
+    "actual_final_error": 0.4558902879410205
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000047",
+    "original_t_f": 256,
+    "used_t_f": 226,
+    "predicted_final_error": 0.45852570132688397,
+    "actual_success": false,
+    "actual_final_error": 0.4577743930113994
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.4147342136859367,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172507
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.3803969561014089,
+    "actual_success": false,
+    "actual_final_error": 0.3999923359817251
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.4219743417224688,
+    "actual_success": false,
+    "actual_final_error": 0.399992335981725
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.39919371502245427,
+    "actual_success": false,
+    "actual_final_error": 0.399992335981725
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.3618371574471819,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172484
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.35081828555682665,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172496
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.3702803063189443,
+    "actual_success": false,
+    "actual_final_error": 0.3999923359817251
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.415705970265385,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172507
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.3935102370917788,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172496
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.412273326391248,
+    "actual_success": false,
+    "actual_final_error": 0.3953828267943672
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.41192295583444166,
+    "actual_success": false,
+    "actual_final_error": 0.3957559589044015
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.4087424949307685,
+    "actual_success": false,
+    "actual_final_error": 0.40274744235876186
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.41065144935578657,
+    "actual_success": false,
+    "actual_final_error": 0.3988862963336822
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.405327538408904,
+    "actual_success": false,
+    "actual_final_error": 0.4057670503167847
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.4120713810033839,
+    "actual_success": false,
+    "actual_final_error": 0.4043627425922254
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000003",
+    "original_t_f": 51,
+    "used_t_f": 21,
+    "predicted_final_error": 0.40863542365684863,
+    "actual_success": false,
+    "actual_final_error": 0.39999233598172507
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4366598667673709,
+    "actual_success": false,
+    "actual_final_error": 0.44231554909060505
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4084240450965951,
+    "actual_success": false,
+    "actual_final_error": 0.4287993443937798
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.44101112527126635,
+    "actual_success": false,
+    "actual_final_error": 0.45719614051347096
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4330261848997664,
+    "actual_success": false,
+    "actual_final_error": 0.43280840083972727
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.42219150127151567,
+    "actual_success": false,
+    "actual_final_error": 0.41932913989320586
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.41606038743800267,
+    "actual_success": false,
+    "actual_final_error": 0.4284348108301477
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4314502973084132,
+    "actual_success": false,
+    "actual_final_error": 0.42907193730286974
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4221492571939479,
+    "actual_success": false,
+    "actual_final_error": 0.42879934439377965
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.41693496538520275,
+    "actual_success": false,
+    "actual_final_error": 0.4287993443937796
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.43914058022103053,
+    "actual_success": false,
+    "actual_final_error": 0.42879934439378
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4351582515142923,
+    "actual_success": false,
+    "actual_final_error": 0.42420961290935516
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4371831355165539,
+    "actual_success": false,
+    "actual_final_error": 0.4291054540463043
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4331608938770624,
+    "actual_success": false,
+    "actual_final_error": 0.42818917873279666
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4370194088020733,
+    "actual_success": false,
+    "actual_final_error": 0.4316824136156068
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.4372667372066826,
+    "actual_success": false,
+    "actual_final_error": 0.4300791851610245
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000047",
+    "original_t_f": 54,
+    "used_t_f": 24,
+    "predicted_final_error": 0.43637900419811126,
+    "actual_success": false,
+    "actual_final_error": 0.4287993443937796
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3438277952037691,
+    "actual_success": false,
+    "actual_final_error": 0.19004363544674818
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3215341432233722,
+    "actual_success": false,
+    "actual_final_error": 0.22879675552029274
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.33125783583246254,
+    "actual_success": false,
+    "actual_final_error": 0.4232565569166837
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.31414824385430506,
+    "actual_success": false,
+    "actual_final_error": 0.24888356327355826
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.32074924527024046,
+    "actual_success": false,
+    "actual_final_error": 0.19304469250414052
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.33096744388804783,
+    "actual_success": false,
+    "actual_final_error": 0.3305973502672662
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.33517473606984705,
+    "actual_success": false,
+    "actual_final_error": 0.28377107087287734
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3191767050642119,
+    "actual_success": false,
+    "actual_final_error": 0.29036836027772517
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3020692484077457,
+    "actual_success": false,
+    "actual_final_error": 0.14096732453310332
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.32369483493318374,
+    "actual_success": false,
+    "actual_final_error": 0.1750653589547112
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3097964076562144,
+    "actual_success": false,
+    "actual_final_error": 0.12176269093267629
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.31066516892637835,
+    "actual_success": false,
+    "actual_final_error": 0.21253299585606422
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3094856238389658,
+    "actual_success": false,
+    "actual_final_error": 0.13799021818037327
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.31110211288637024,
+    "actual_success": false,
+    "actual_final_error": 0.2117205914001848
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.3197970209825256,
+    "actual_success": false,
+    "actual_final_error": 0.13465813683697306
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000048",
+    "original_t_f": 121,
+    "used_t_f": 91,
+    "predicted_final_error": 0.312995825030948,
+    "actual_success": false,
+    "actual_final_error": 0.20411481467540854
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5053153692705545,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.4972511306888387,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.4991420973374423,
+    "actual_success": false,
+    "actual_final_error": 0.5285474187255671
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5267043413965314,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5033819807989224,
+    "actual_success": false,
+    "actual_final_error": 0.528212895431101
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5223342072517699,
+    "actual_success": false,
+    "actual_final_error": 0.5694218941297917
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.4869192627645053,
+    "actual_success": false,
+    "actual_final_error": 0.528212895431101
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5120201326128765,
+    "actual_success": false,
+    "actual_final_error": 0.5271098391114792
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5202398988464043,
+    "actual_success": false,
+    "actual_final_error": 0.5564518926360625
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5176089085810337,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311011
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5177486925382755,
+    "actual_success": false,
+    "actual_final_error": 0.528212895431101
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5170409601212921,
+    "actual_success": false,
+    "actual_final_error": 0.5281679407516392
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.519283716018577,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5177792081839662,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5179879401364883,
+    "actual_success": false,
+    "actual_final_error": 0.5282128954311008
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000028",
+    "original_t_f": 63,
+    "used_t_f": 33,
+    "predicted_final_error": 0.5180652565058095,
+    "actual_success": false,
+    "actual_final_error": 0.5397759831537424
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4969930337677777,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720861
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5023397568517778,
+    "actual_success": false,
+    "actual_final_error": 0.5076000586974002
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4599361074063811,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720862
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4731676634759359,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720861
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.460359280345321,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720861
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.48914379477762887,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865584555
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4628318356233089,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865586498
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5010059268634468,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720861
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4837810556191772,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720861
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5079221901544942,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720862
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.496081803196956,
+    "actual_success": false,
+    "actual_final_error": 0.50652645357985
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5043495264015668,
+    "actual_success": false,
+    "actual_final_error": 0.5076018260915657
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4969832304535756,
+    "actual_success": false,
+    "actual_final_error": 0.5063503876822449
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5062996113349673,
+    "actual_success": false,
+    "actual_final_error": 0.506849886572086
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.5049992467982147,
+    "actual_success": false,
+    "actual_final_error": 0.5072075808185819
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000010",
+    "original_t_f": 56,
+    "used_t_f": 26,
+    "predicted_final_error": 0.4975899902034471,
+    "actual_success": false,
+    "actual_final_error": 0.5068498865720862
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.4545072396779795,
+    "actual_success": false,
+    "actual_final_error": 0.37470144118917237
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.40205737573470773,
+    "actual_success": false,
+    "actual_final_error": 0.3630393063122165
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.406987558261791,
+    "actual_success": false,
+    "actual_final_error": 0.3902520207010723
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3958499505544135,
+    "actual_success": false,
+    "actual_final_error": 0.3382876830133352
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.4255760109125401,
+    "actual_success": false,
+    "actual_final_error": 0.3736021344103826
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.4038477674255515,
+    "actual_success": false,
+    "actual_final_error": 0.33857871913144744
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.40878348582748464,
+    "actual_success": false,
+    "actual_final_error": 0.36633255040897134
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.39264139480463967,
+    "actual_success": false,
+    "actual_final_error": 0.33847761897480194
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.39452255807157544,
+    "actual_success": false,
+    "actual_final_error": 0.3675385322743416
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.4003821358847298,
+    "actual_success": false,
+    "actual_final_error": 0.3671999151981342
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3932617526996451,
+    "actual_success": false,
+    "actual_final_error": 0.3387711978985997
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3996320050506945,
+    "actual_success": false,
+    "actual_final_error": 0.37622675841257064
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.39582182898817936,
+    "actual_success": false,
+    "actual_final_error": 0.33217264371246236
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3976178914034155,
+    "actual_success": false,
+    "actual_final_error": 0.37387084299466194
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3974652486604597,
+    "actual_success": false,
+    "actual_final_error": 0.375238277117388
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000000",
+    "original_t_f": 99,
+    "used_t_f": 69,
+    "predicted_final_error": 0.3978250272954577,
+    "actual_success": false,
+    "actual_final_error": 0.33772146257878916
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.4573823080481819,
+    "actual_success": false,
+    "actual_final_error": 0.4690846269619237
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.47203044807602496,
+    "actual_success": false,
+    "actual_final_error": 0.40546283851445103
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.43357819947946075,
+    "actual_success": false,
+    "actual_final_error": 0.46909226290978717
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.5057268747977611,
+    "actual_success": false,
+    "actual_final_error": 0.48435859435543555
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.44456968963223725,
+    "actual_success": false,
+    "actual_final_error": 0.46938925185725927
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.49841516400819674,
+    "actual_success": false,
+    "actual_final_error": 0.4072127146198205
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.4482850822605436,
+    "actual_success": false,
+    "actual_final_error": 0.4693559636696279
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.447749171275392,
+    "actual_success": false,
+    "actual_final_error": 0.42635924235562034
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.4620957274112547,
+    "actual_success": false,
+    "actual_final_error": 0.4480844686756599
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.46784072712443514,
+    "actual_success": false,
+    "actual_final_error": 0.46938073172716654
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.46204583043469905,
+    "actual_success": false,
+    "actual_final_error": 0.45330255010274406
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.45926262629974846,
+    "actual_success": false,
+    "actual_final_error": 0.46925700317785957
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.4592353968696311,
+    "actual_success": false,
+    "actual_final_error": 0.43196157577692607
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.46052104773550934,
+    "actual_success": false,
+    "actual_final_error": 0.46274604391545576
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.46249700729965054,
+    "actual_success": false,
+    "actual_final_error": 0.4516668506998084
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000026",
+    "original_t_f": 77,
+    "used_t_f": 47,
+    "predicted_final_error": 0.457496089375232,
+    "actual_success": false,
+    "actual_final_error": 0.44128402025281466
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6042843775589494,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851839726
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.5837679920149139,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841387
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6261324364866441,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841387
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6142214069382232,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841388
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.616871635291711,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841388
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6437636995670277,
+    "actual_success": false,
+    "actual_final_error": 0.6283599631429475
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6194885555870729,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841386
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6261857215655287,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841388
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6072227260631317,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841388
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6290775547877033,
+    "actual_success": false,
+    "actual_final_error": 0.6210124113739722
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6174396762484705,
+    "actual_success": false,
+    "actual_final_error": 0.6206179851841386
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6206357878217086,
+    "actual_success": false,
+    "actual_final_error": 0.6209416203153544
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6185640730351704,
+    "actual_success": false,
+    "actual_final_error": 0.6209666918117441
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6236276857825113,
+    "actual_success": false,
+    "actual_final_error": 0.6208379571682693
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6257732115468025,
+    "actual_success": false,
+    "actual_final_error": 0.624262614251869
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000033",
+    "original_t_f": 53,
+    "used_t_f": 23,
+    "predicted_final_error": 0.6162562130980356,
+    "actual_success": false,
+    "actual_final_error": 0.6209354017349454
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.34783835036215244,
+    "actual_success": false,
+    "actual_final_error": 0.383671142904845
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.374434866150345,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484516
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.38044489636242834,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3732158109623164,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484494
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3589418537907396,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484494
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.38548201488861333,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.375105261981545,
+    "actual_success": false,
+    "actual_final_error": 0.3829338891663546
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3476012267424823,
+    "actual_success": false,
+    "actual_final_error": 0.3836711429048451
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.385061580556665,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3803607882791069,
+    "actual_success": false,
+    "actual_final_error": 0.383671142904845
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3836631959344359,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.38525823308080165,
+    "actual_success": false,
+    "actual_final_error": 0.383671142904845
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.38677359555785124,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484516
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.38256844579705124,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3811303536408477,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000007",
+    "original_t_f": 55,
+    "used_t_f": 25,
+    "predicted_final_error": 0.3881091756611565,
+    "actual_success": false,
+    "actual_final_error": 0.38367114290484505
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.6546784241815351,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761917
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.6827640076050268,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761917
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7283402981931593,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761917
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.6944728402941744,
+    "actual_success": false,
+    "actual_final_error": 0.7163706744749333
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.672735111768433,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761915
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.6919153339779475,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942707272
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.705698198530991,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761917
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.679119376993445,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761917
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.690269761830096,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761916
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7141852737818848,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761921
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7042579706684315,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761915
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7084827718131266,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761915
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7017453690380241,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761915
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7111136966614245,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761916
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7116811853546954,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761915
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000043",
+    "original_t_f": 57,
+    "used_t_f": 27,
+    "predicted_final_error": 0.7041937178831567,
+    "actual_success": false,
+    "actual_final_error": 0.7023045942761916
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.37496929514578387,
+    "actual_success": false,
+    "actual_final_error": 0.3683358296063421
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.38040713516907726,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672028
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.40040783836223265,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672028
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.39912364881776796,
+    "actual_success": false,
+    "actual_final_error": 0.42787279989235577
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.41662692556859293,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672028
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.4428322529853946,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672029
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.4054548435989948,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672028
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.40674164563580756,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672028
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42133258552767044,
+    "actual_success": false,
+    "actual_final_error": 0.42902082989722107
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.426426215134244,
+    "actual_success": false,
+    "actual_final_error": 0.42997260966720274
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42147623893915676,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672029
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.424951487850798,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672026
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42066588996274856,
+    "actual_success": false,
+    "actual_final_error": 0.42997260966720274
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42512540905901447,
+    "actual_success": false,
+    "actual_final_error": 0.42732730511836553
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42491094291699244,
+    "actual_success": false,
+    "actual_final_error": 0.4299726096672029
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000024",
+    "original_t_f": 165,
+    "used_t_f": 135,
+    "predicted_final_error": 0.42356596946932734,
+    "actual_success": false,
+    "actual_final_error": 0.4246422680336672
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.5277621107917322,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732159
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.48619342085925643,
+    "actual_success": false,
+    "actual_final_error": 0.48577294597321574
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.508228499335851,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732158
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.46636341381985547,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732158
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.532477259893158,
+    "actual_success": false,
+    "actual_final_error": 0.48577294597321574
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4970730191251271,
+    "actual_success": false,
+    "actual_final_error": 0.485772945973216
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.5356311366129571,
+    "actual_success": false,
+    "actual_final_error": 0.4817065497273687
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.49677607837303644,
+    "actual_success": false,
+    "actual_final_error": 0.48577294597321574
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.48186677421972995,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732159
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4974015194374349,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732159
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.47886912346186633,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732158
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4997584320688673,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732159
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4805069466428613,
+    "actual_success": false,
+    "actual_final_error": 0.48577294597321596
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4978695027443026,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732158
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4991572330046753,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732159
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000010",
+    "original_t_f": 43,
+    "used_t_f": 13,
+    "predicted_final_error": 0.4836961894745511,
+    "actual_success": false,
+    "actual_final_error": 0.4857729459732158
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.36446389256242145,
+    "actual_success": false,
+    "actual_final_error": 0.34224970082284806
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.3139116119528638,
+    "actual_success": false,
+    "actual_final_error": 0.3441931249759317
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.3783368045218437,
+    "actual_success": false,
+    "actual_final_error": 0.4006211422091321
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.39522649924739073,
+    "actual_success": false,
+    "actual_final_error": 0.4015948103369142
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.3471116580533349,
+    "actual_success": false,
+    "actual_final_error": 0.3441531122397487
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.37456853091752274,
+    "actual_success": false,
+    "actual_final_error": 0.34407711527371654
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.4067416238739083,
+    "actual_success": false,
+    "actual_final_error": 0.505423792486661
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.38180596322844984,
+    "actual_success": false,
+    "actual_final_error": 0.343663272117409
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.376633194144551,
+    "actual_success": false,
+    "actual_final_error": 0.3797294740653601
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.38358782005772935,
+    "actual_success": false,
+    "actual_final_error": 0.3943419525703984
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.3781336239451679,
+    "actual_success": false,
+    "actual_final_error": 0.40129935052002036
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.38174452184434515,
+    "actual_success": false,
+    "actual_final_error": 0.3812453269550792
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.3769466691468712,
+    "actual_success": false,
+    "actual_final_error": 0.3772628311550272
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.38286701852488203,
+    "actual_success": false,
+    "actual_final_error": 0.3833276918237141
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.38255552669278453,
+    "actual_success": false,
+    "actual_final_error": 0.3466224758027724
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000044",
+    "original_t_f": 70,
+    "used_t_f": 40,
+    "predicted_final_error": 0.377672402899298,
+    "actual_success": false,
+    "actual_final_error": 0.3759201350991449
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.5288700696512185,
+    "actual_success": false,
+    "actual_final_error": 0.4338007354308238
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.5158272718351795,
+    "actual_success": false,
+    "actual_final_error": 0.42640279141816956
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.4974081298887768,
+    "actual_success": false,
+    "actual_final_error": 0.345443111738816
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.533994702651514,
+    "actual_success": false,
+    "actual_final_error": 0.4626148329100789
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.5323162734326745,
+    "actual_success": false,
+    "actual_final_error": 0.4201414352276225
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.5529966572345439,
+    "actual_success": false,
+    "actual_final_error": 0.45788206259410186
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.45801275428439436,
+    "actual_success": false,
+    "actual_final_error": 0.3882289403136926
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.48444083575821134,
+    "actual_success": false,
+    "actual_final_error": 0.26081148974470675
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.4713797150075868,
+    "actual_success": false,
+    "actual_final_error": 0.3337995250499322
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.4840311290685791,
+    "actual_success": false,
+    "actual_final_error": 0.3220920713115317
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.47483772972738997,
+    "actual_success": false,
+    "actual_final_error": 0.30643476284341353
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.4827438719262312,
+    "actual_success": false,
+    "actual_final_error": 0.34072858519948923
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.47494754644102544,
+    "actual_success": false,
+    "actual_final_error": 0.3288849106314108
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.4832440872984875,
+    "actual_success": false,
+    "actual_final_error": 0.3369687505169228
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.47986942697334944,
+    "actual_success": false,
+    "actual_final_error": 0.3165982499870862
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000013",
+    "original_t_f": 90,
+    "used_t_f": 60,
+    "predicted_final_error": 0.47905852679547367,
+    "actual_success": false,
+    "actual_final_error": 0.32238487326340726
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6695087397667042,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486818
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6161772616794695,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486822
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6513562479232028,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486817
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6519050636447368,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486817
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6101158298137025,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486819
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.5951688526792245,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486818
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6511979067224006,
+    "actual_success": false,
+    "actual_final_error": 0.6378922819573849
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.5823374659940387,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486817
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6347185304376871,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486819
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6639722455915655,
+    "actual_success": false,
+    "actual_final_error": 0.6383354504438078
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6531181596057847,
+    "actual_success": false,
+    "actual_final_error": 0.6361683507001561
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6568400653478571,
+    "actual_success": false,
+    "actual_final_error": 0.6383710427794947
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6535867691861906,
+    "actual_success": false,
+    "actual_final_error": 0.6373306307038089
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.658060955231162,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486817
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6585182991987919,
+    "actual_success": false,
+    "actual_final_error": 0.6386498879486819
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000032",
+    "original_t_f": 207,
+    "used_t_f": 177,
+    "predicted_final_error": 0.6525564211886546,
+    "actual_success": false,
+    "actual_final_error": 0.6375200455000011
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "baseline_offset0": {
+    "offset": 0,
+    "within_state_mean_rho": 0.13927781520978608,
+    "n_states_near_zero_variance": 17,
+    "mean_within_state_actual_error_std": 0.004262283632247516
+  },
+  "offsets": {
+    "15": {
+      "offset": 15,
+      "n_candidates_total": 320,
+      "pooled_rho": 0.9477753886237966,
+      "pooled_pval": 7.118140273661518e-160,
+      "within_state_mean_rho": 0.16937823440351407,
+      "within_state_median_rho": 0.1618776612070744,
+      "n_states_near_zero_variance": 5,
+      "mean_within_state_actual_error_std": 0.029211494660722037,
+      "median_within_state_actual_error_std": 0.02438844220485463
+    },
+    "25": {
+      "offset": 25,
+      "n_candidates_total": 320,
+      "pooled_rho": 0.9287382377982893,
+      "pooled_pval": 4.414907620209896e-139,
+      "within_state_mean_rho": 0.2306078728522031,
+      "within_state_median_rho": 0.18460694525444718,
+      "n_states_near_zero_variance": 9,
+      "mean_within_state_actual_error_std": 0.02039086835970704,
+      "median_within_state_actual_error_std": 0.014264534635189344
+    },
+    "30": {
+      "offset": 30,
+      "n_candidates_total": 320,
+      "pooled_rho": 0.8922594805686128,
+      "pooled_pval": 7.722324765916497e-112,
+      "within_state_mean_rho": 0.268944608971036,
+      "within_state_median_rho": 0.2756908184674322,
+      "n_states_near_zero_variance": 10,
+      "mean_within_state_actual_error_std": 0.01860995400599058,
+      "median_within_state_actual_error_std": 0.00994611805765818
+    }
+  },
+  "n_states": 20
+}

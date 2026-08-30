@@ -1,0 +1,47 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_joint_pos_cos', 'object', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_joint_vel', 'robot0_eef_quat', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+
+episode_000040 offset=15: re-identified candidate, direct re-execution success=True
+Running Day-19 validation (10 configs)...
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  friction: SUCCESS
+  mass: SUCCESS
+Validation: 10/10 = 100.0%
+Archive decision: ACCEPTED
+
+episode_000048 offset=15: re-identified candidate, direct re-execution success=True
+Running Day-19 validation (10 configs)...
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  object_position: SUCCESS
+  friction: SUCCESS
+  mass: SUCCESS
+Validation: 10/10 = 100.0%
+Archive decision: ACCEPTED
+
+episode_000040 offset=20: re-identified candidate, direct re-execution success=False
+
+============================================================
+Final archive size: 2 / 3 tested
+============================================================
