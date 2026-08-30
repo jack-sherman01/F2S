@@ -1,0 +1,77 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'object', 'robot0_eef_quat', 'robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=101
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=True len=91
+[19/30] episode=episode_000018 success=True len=84
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=108
+[22/30] episode=episode_000021 success=True len=100
+[23/30] episode=episode_000022 success=True len=108
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=103
+[29/30] episode=episode_000028 success=True len=116
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 127.30944180488586,
+  "checkpoint": "results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 127.30944180488586,
+  "checkpoint": "results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}

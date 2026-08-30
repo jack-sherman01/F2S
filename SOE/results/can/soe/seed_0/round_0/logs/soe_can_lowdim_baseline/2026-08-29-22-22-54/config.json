@@ -1,0 +1,119 @@
+{
+    "seed": 0,
+    "log_dir": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline",
+    "dataset": {
+        "name": "robomimic",
+        "params": {
+            "path": "/data/heng/F2S/SOE/simulation/datasets/can/ph/low_dim_v141.hdf5",
+            "train_filter_key": "20_percent_train",
+            "num_obs": 1,
+            "num_action": 20,
+            "success_only": false,
+            "output_keys": [
+                "actions"
+            ],
+            "normalize_actions": false,
+            "predict_delta_pos": false
+        }
+    },
+    "batch_size": 64,
+    "num_workers": 4,
+    "num_iters_per_epoch": null,
+    "policy": {
+        "name": "DP",
+        "params": {
+            "num_action": 20,
+            "action_dim": 7,
+            "obs_shape_meta": {
+                "object": {
+                    "shape": [
+                        14
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_eef_pos": {
+                    "shape": [
+                        3
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_eef_quat": {
+                    "shape": [
+                        4
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_eef_vel_ang": {
+                    "shape": [
+                        3
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_eef_vel_lin": {
+                    "shape": [
+                        3
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_gripper_qpos": {
+                    "shape": [
+                        2
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_gripper_qvel": {
+                    "shape": [
+                        2
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_joint_pos": {
+                    "shape": [
+                        7
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_joint_pos_cos": {
+                    "shape": [
+                        7
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_joint_pos_sin": {
+                    "shape": [
+                        7
+                    ],
+                    "type": "low_dim"
+                },
+                "robot0_joint_vel": {
+                    "shape": [
+                        7
+                    ],
+                    "type": "low_dim"
+                }
+            },
+            "resize_shape": null,
+            "crop_shape": null,
+            "random_crop": false,
+            "use_group_norm": true,
+            "resnet_out_features": 64,
+            "num_inference_steps": 20,
+            "cond_predict_scale": true,
+            "noise_scheduler_type": "ddim"
+        }
+    },
+    "resume_ckpt": null,
+    "resume_epoch": -1,
+    "optimizer": {
+        "name": "AdamW",
+        "params": {
+            "lr": 0.0001,
+            "weight_decay": 1e-06
+        }
+    },
+    "lr_scheduler": {
+        "name": "cosine_with_warmup"
+    },
+    "num_epochs": 500,
+    "save_epochs": 100
+}

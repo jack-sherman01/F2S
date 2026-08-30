@@ -237,15 +237,18 @@ SOE/datasets/
 
 # Per-episode raw rollout arrays and rendered videos are large and
 # regenerable from configs+seeds; keep metrics/configs/plots/skills only.
-results/**/episodes/
-results/**/videos/
-results/**/checkpoints/
-results/**/*.npz
-results/**/*.npy
-results/**/*.pt
-results/**/*.pth
-results/**/*.mp4
-results/**/*.gif
+# (Prefixed with **/ since actual results live under SOE/results/, not
+# at repo root -- an unprefixed "results/**/x" pattern is anchored to the
+# repo root and would silently fail to match SOE/results/**/x.)
+**/results/**/episodes/
+**/results/**/videos/
+**/results/**/checkpoints/
+**/results/**/*.npz
+**/results/**/*.npy
+**/results/**/*.pt
+**/results/**/*.pth
+**/results/**/*.mp4
+**/results/**/*.gif
 
 # World-model / policy checkpoints anywhere in the repo
 *.ckpt
