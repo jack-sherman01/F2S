@@ -1,0 +1,11 @@
+{
+  "state_dim": 26,
+  "action_dim": 7,
+  "hidden_dim": 256,
+  "ensemble_size": 1,
+  "epochs": 50,
+  "best_val_mse": 0.002033612923696637,
+  "constant_state_val_mse": 0.09919359534978867,
+  "beats_constant_baseline": true,
+  "training_time_seconds": 2.8657729625701904
+}
