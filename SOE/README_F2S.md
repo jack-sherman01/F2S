@@ -573,6 +573,50 @@ but not yet used for this) and check whether ensemble *disagreement*
 if it does, that uncertainty signal could be used to reject brittle
 candidates without needing full closed-loop replanning.
 
+## Checked the cheaper alternative (ensemble disagreement) before committing to replanning
+
+Before taking on closed-loop replanning (a real architectural change),
+checked the cheaper option raised above: does an E=3 ensemble world
+model's *disagreement between members* spike near the same 0.5-1cm
+boundary where real success collapses? If so, that uncertainty signal
+could reject brittle candidates without replanning.
+`scripts/diagnose_lift_ensemble_uncertainty.py` trains a fresh E=3
+ensemble (same data/split/seed as the earlier single-model diagnostics)
+and probes ensemble variance at the exact failure state and at
+0.5/1/2/3cm jittered offsets, using the policy's own recorded action
+chunk from that state as a fixed, realistic probe.
+
+**Result: variance ratio (1cm vs. exact state) = 1.00x -- completely
+flat.** The ensemble's disagreement doesn't track the boundary at all;
+it's statistically indistinguishable from noise at every offset tested
+(0.0038 +/- ~0.00001 throughout). Mechanistically: three instances of the
+same small MLP architecture, trained on the same ~50-episode dataset,
+converged to nearly-identical functions -- a well-known failure mode of
+deep ensembles on easy, low-noise regression problems (there isn't enough
+genuine model-form or data disagreement between members for the ensemble
+to disagree about anything). Simple same-architecture ensembling is
+therefore ruled out as a cheap fix here.
+
+**Where this leaves things, concretely, for anyone continuing:** three
+independent fixes have now been tried at the candidate/scoring level
+(random -> guided CEM search, single-point -> neighborhood-averaged
+fitness, single model -> ensemble disagreement) and none closed the gap,
+each for a documented, specific reason rather than "it just didn't work."
+The common thread across all three: every one of them tries to get a
+*better estimate before acting*, and the model's smoothness bias limits
+all of them equally. The two directions left are qualitatively different
+from what's been tried: (1) **closed-loop replanning** -- stop trying to
+predict correctly in advance and instead react to the real observed state
+as execution proceeds, which sidesteps the model-accuracy problem rather
+than trying to out-predict it; or (2) **change what the model is trained
+to represent** -- e.g. a classifier trained directly on binary real
+outcomes near contact/grasp boundaries (sharper by construction, unlike
+an MSE-regression MLP) instead of a continuous dynamics model. Both are
+bigger investments than anything tried this session; recommend picking
+one deliberately rather than continuing to probe cheaper variations of
+the same "better single-shot prediction" idea, which this session's three
+results suggest has been reasonably exhausted at this data/model scale.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE

@@ -1,0 +1,62 @@
+epoch 0: train_mse=0.001736 val_mse=0.000769
+epoch 1: train_mse=0.000890 val_mse=0.000680
+epoch 2: train_mse=0.000774 val_mse=0.000622
+epoch 3: train_mse=0.000686 val_mse=0.000574
+epoch 4: train_mse=0.000633 val_mse=0.000523
+epoch 5: train_mse=0.000572 val_mse=0.000469
+epoch 6: train_mse=0.000513 val_mse=0.000408
+epoch 7: train_mse=0.000443 val_mse=0.000351
+epoch 8: train_mse=0.000369 val_mse=0.000293
+epoch 9: train_mse=0.000312 val_mse=0.000257
+epoch 10: train_mse=0.000266 val_mse=0.000232
+epoch 11: train_mse=0.000237 val_mse=0.000214
+epoch 12: train_mse=0.000214 val_mse=0.000212
+epoch 13: train_mse=0.000198 val_mse=0.000195
+epoch 14: train_mse=0.000188 val_mse=0.000187
+epoch 15: train_mse=0.000179 val_mse=0.000180
+epoch 16: train_mse=0.000179 val_mse=0.000176
+epoch 17: train_mse=0.000172 val_mse=0.000172
+epoch 18: train_mse=0.000164 val_mse=0.000169
+epoch 19: train_mse=0.000158 val_mse=0.000159
+epoch 20: train_mse=0.000157 val_mse=0.000161
+epoch 21: train_mse=0.000151 val_mse=0.000159
+epoch 22: train_mse=0.000148 val_mse=0.000150
+epoch 23: train_mse=0.000145 val_mse=0.000149
+epoch 24: train_mse=0.000141 val_mse=0.000147
+epoch 25: train_mse=0.000140 val_mse=0.000145
+epoch 26: train_mse=0.000136 val_mse=0.000144
+epoch 27: train_mse=0.000134 val_mse=0.000139
+epoch 28: train_mse=0.000132 val_mse=0.000137
+epoch 29: train_mse=0.000132 val_mse=0.000138
+epoch 30: train_mse=0.000127 val_mse=0.000134
+epoch 31: train_mse=0.000126 val_mse=0.000133
+epoch 32: train_mse=0.000123 val_mse=0.000131
+epoch 33: train_mse=0.000122 val_mse=0.000127
+epoch 34: train_mse=0.000120 val_mse=0.000125
+epoch 35: train_mse=0.000118 val_mse=0.000128
+epoch 36: train_mse=0.000116 val_mse=0.000125
+epoch 37: train_mse=0.000112 val_mse=0.000124
+epoch 38: train_mse=0.000113 val_mse=0.000121
+epoch 39: train_mse=0.000110 val_mse=0.000124
+epoch 40: train_mse=0.000109 val_mse=0.000117
+epoch 41: train_mse=0.000105 val_mse=0.000121
+epoch 42: train_mse=0.000105 val_mse=0.000115
+epoch 43: train_mse=0.000105 val_mse=0.000113
+epoch 44: train_mse=0.000103 val_mse=0.000116
+epoch 45: train_mse=0.000107 val_mse=0.000112
+epoch 46: train_mse=0.000104 val_mse=0.000110
+epoch 47: train_mse=0.000101 val_mse=0.000112
+epoch 48: train_mse=0.000097 val_mse=0.000108
+epoch 49: train_mse=0.000097 val_mse=0.000110
+Ensemble (E=3) world model: val_mse=0.000108, beats_constant=True
+
+Target: episode_000005 t_f=112, probing with the policy's own 5-step action chunk from that state.
+offset(cm)  mean_final_height  ensemble_var(x)  known_real_success_rate
+       0.0             0.8340       0.00377181                     None
+       0.5             0.8340       0.00377278                     2/10
+       1.0             0.8340       0.00377614                     0/10
+       2.0             0.8340       0.00377200                     0/10
+       3.0             0.8340       0.00377667                     0/10
+
+Ensemble variance ratio (1cm vs exact state): 1.00x
+Ensemble disagreement does NOT grow substantially near the boundary -- three instances of the same small-MLP architecture share the same smoothness bias, so this signal would not have caught the brittleness found earlier.
