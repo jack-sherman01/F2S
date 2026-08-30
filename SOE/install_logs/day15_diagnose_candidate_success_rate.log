@@ -1,0 +1,20 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_joint_vel', 'robot0_eef_vel_lin', 'robot0_gripper_qvel', 'object', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+13 failure segments available; testing 5 of them with M=32 candidates each.
+  episode=episode_000000 t_f=89: 0/32 candidates succeeded
+  episode=episode_000003 t_f=223: 0/32 candidates succeeded
+  episode=episode_000007 t_f=55: 0/32 candidates succeeded
+  episode=episode_000011 t_f=59: 0/32 candidates succeeded
+  episode=episode_000016 t_f=92: 0/32 candidates succeeded
+
+TOTAL: 0/160 candidates succeeded (0.0%) across 5 failure states.
+Per-state success counts: [0, 0, 0, 0, 0]

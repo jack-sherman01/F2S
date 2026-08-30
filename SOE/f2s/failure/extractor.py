@@ -73,17 +73,42 @@ def detect_failure_time(meta: Dict[str, Any], arrays: Dict[str, np.ndarray]) -> 
                 return t, "object_drop"
 
     final_delta_p_obj = None
+    stall_time = ep_len - 1
     if obj is not None and len(obj) > 0:
         from f2s.failure.features import DEFAULT_GOAL_POS
 
-        final_delta_p_obj = float(np.linalg.norm(obj[-1, 0:3] - DEFAULT_GOAL_POS))
+        delta_p_obj_t = np.linalg.norm(obj[:, 0:3] - DEFAULT_GOAL_POS[None, :], axis=-1)
+        final_delta_p_obj = float(delta_p_obj_t[-1])
+        stall_time = find_stall_time(delta_p_obj_t)
 
     if meta.get("failure_type") == "timeout":
         if final_delta_p_obj is not None and final_delta_p_obj < POSE_ERROR_THRESHOLD:
-            return ep_len - 1, "pose_error"
-        return ep_len - 1, "timeout"
+            return stall_time, "pose_error"
+        return stall_time, "timeout"
 
-    return ep_len - 1, "unknown"
+    return stall_time, "unknown"
+
+
+def find_stall_time(delta_p_obj_t: np.ndarray, min_improvement: float = 1e-4) -> int:
+    """The last timestep at which the object got measurably closer to the
+    goal than at any earlier point in the episode -- i.e. where real task
+    progress last happened. Every step after this is "stalled": the
+    episode keeps running (e.g. to a `timeout`) without the object ever
+    getting closer to the goal again.
+
+    Using this (rather than the literal final timestep) as the failure
+    time is important: a timeout failure's *terminal* state is often a
+    dead end with no useful local structure to correct from (e.g. the arm
+    idling after having given up), whereas the stall point is exactly
+    where a corrective action chunk could plausibly still help."""
+    if len(delta_p_obj_t) == 0:
+        return 0
+    best_so_far = np.minimum.accumulate(delta_p_obj_t)
+    last_improvement_t = 0
+    for t in range(1, len(best_so_far)):
+        if best_so_far[t] < best_so_far[t - 1] - min_improvement:
+            last_improvement_t = t
+    return last_improvement_t
 
 
 def assign_failure_stage(meta: Dict[str, Any], arrays: Dict[str, np.ndarray], failure_time: Optional[int]) -> str:
