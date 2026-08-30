@@ -1,0 +1,15 @@
+task: Can
+development_seed: 0
+final_seeds: [0, 1, 2]
+evolution_rounds: 3
+episodes_per_round: 10          # small for fast dev iteration; f2s_final.yaml uses 50
+failure_window: 10
+num_failure_clusters: 4
+world_model_horizon: 5
+world_model_hidden_dim: 256
+world_model_ensemble_size: 1
+num_candidates_per_failure_mode: 16
+num_executed_candidates_per_failure_mode: 2
+skill_validation_episodes: 10
+skill_success_threshold: 0.7
+skill_risk_threshold: 0.1

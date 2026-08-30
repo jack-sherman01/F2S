@@ -1,0 +1,15 @@
+task: Can
+development_seed: 0
+final_seeds: [0, 1, 2]
+evolution_rounds: 1
+episodes_per_round: 4
+failure_window: 10
+num_failure_clusters: 2
+world_model_horizon: 5
+world_model_hidden_dim: 64
+world_model_ensemble_size: 1
+num_candidates_per_failure_mode: 8
+num_executed_candidates_per_failure_mode: 1
+skill_validation_episodes: 10
+skill_success_threshold: 0.7
+skill_risk_threshold: 0.1
