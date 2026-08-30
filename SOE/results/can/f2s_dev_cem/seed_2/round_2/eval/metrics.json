@@ -1,0 +1,14 @@
+{
+  "task": "Can",
+  "method": "F2S",
+  "seed": 2,
+  "round": 2,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 164.8,
+  "rollout_count": 10,
+  "training_time_seconds": null
+}
