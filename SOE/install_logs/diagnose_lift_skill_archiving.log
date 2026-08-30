@@ -1,0 +1,39 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_pos', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_gripper_qvel', 'robot0_eef_quat', 'object', 'robot0_joint_vel', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+Target failure state: episode_000005 t_f=112 cube_z=0.8306
+
+Executing top 8 candidates directly to find a successful one to validate...
+  candidate 0: predicted_height=0.9193 -> actual_success=True
+  candidate 1: predicted_height=0.9100 -> actual_success=True
+  candidate 2: predicted_height=0.9067 -> actual_success=True
+  candidate 3: predicted_height=0.9054 -> actual_success=True
+  candidate 4: predicted_height=0.9041 -> actual_success=True
+  candidate 5: predicted_height=0.9038 -> actual_success=False
+  candidate 6: predicted_height=0.9028 -> actual_success=True
+  candidate 7: predicted_height=0.9021 -> actual_success=False
+
+Running Day-19 validation (10 configs) on the successful candidate...
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  friction: SUCCESS
+  mass: SUCCESS
+
+Validation success rate: 2/10 = 20.0%
+
+Archive decision: REJECTED (validation_success_rate_below_threshold)
+Saved: results/lift/world_model_diag/skill_archive.json

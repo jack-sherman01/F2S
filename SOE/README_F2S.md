@@ -452,6 +452,82 @@ previous entry (give the model more capacity/data around contact
 transitions, or explicitly account for this stage-dependent uncertainty
 when scoring candidates) over further search-strategy tuning.
 
+## Pressure test: does the mechanism work at all on an easier task? (Lift)
+
+Rather than keep investing in Can-specific world-model fixes without
+knowing whether the correction *mechanism itself* is sound, ran the same
+real pipeline (real failure states, real CEM search, real freshly-trained
+world model, real execution) on RoboMimic **Lift** instead -- the
+proposal explicitly allows Lift, Push, or Transport as the primary task.
+Lift's success condition is materially simpler than Can's: `cube_height >
+table_height + 0.04` (robosuite `Lift._check_success`), no target
+position, no placement phase, no orientation requirement.
+
+Trained a baseline (`configs/soe_lift_lowdim_baseline.json`, 300 epochs,
+36 demos): **86.7% success** over 30 eval episodes, comparable quality to
+Can. `scripts/diagnose_lift_full_pipeline.py`:
+
+**Result: 7/32 (21.9%) executed CEM candidates succeeded, including 7/8
+(87.5%) for one specific failure state.** This is the first time, across
+every experiment run in this project (random search up to M=64 on Can,
+CEM at multiple horizons on Can, ~400 total real executions), that *any*
+generated candidate has succeeded. It confirms the core mechanism --
+generate a latent-space correction, rank it with a world model, execute
+it -- is fundamentally sound. Can's specific difficulty (contact-rich
+grasp + precise target-position placement) was the bottleneck all along,
+not a flaw in the approach.
+
+Found and fixed two more real compatibility bugs surfaced by testing on
+a second task (both now generalized, not just patched for Lift):
+`f2s.failure.features.compute_step_features` hardcoded Can's 14-dim
+`object` obs layout for a relative-orientation feature (Lift's is
+10-dim, no such component -- degrades to 0.0 instead of crashing now);
+`f2s.candidates.validator`'s object/geom lookups hardcoded PickPlace's
+`self.objects`/`self.obj_body_id` attribute names (Lift uses
+`self.cube`/`self.cube_body_id` -- `_active_object_and_body_id()` now
+tries both known patterns).
+
+### But: is it a reusable *skill*, or a one-off local recovery?
+
+Ran the successful candidate through Day 19's actual validation protocol
+(`scripts/diagnose_lift_skill_archiving.py`): it tolerated friction and
+mass perturbation, but **failed all 8 small object-position
+perturbations** (max offset 3cm) -- 2/10 overall, well under the Day 20.1
+archive threshold (>70%), correctly **rejected** by the real, unmodified
+`SkillArchive`. Swept the offset finer to characterize exactly where
+tolerance breaks down:
+
+| max offset | successes (of 10 trials) |
+|---|---|
+| 0.5cm | 2/10 |
+| 1.0cm | 0/10 |
+| 2.0cm | 0/10 |
+| 3.0cm | 0/10 |
+
+Tolerance collapses between 0.5cm and 1cm. This is a precise, quantified
+instance of exactly what the proposal's own Day 27 interpretation rule
+anticipates: *"If skills work only at one exact state, describe them as
+local recovery behaviors rather than reusable skills."* The open-loop,
+diffusion-decoded action chunk is essentially a memorized motion for one
+specific gripper-cube relative geometry, not a generalizing corrective
+policy -- consistent with it having no closed-loop replanning within the
+chunk (the whole 20-step sequence is committed to before execution).
+
+**Taken together, the two findings this session set up a coherent story**:
+the mechanism can find real, working corrections (Lift proves this), the
+world model's own accuracy is measurably worse specifically in
+contact-rich regions (the stratified-by-stage result above), and even
+where a correction is found, it does not yet generalize past near-exact
+state matches (this result). Each of these is independently useful for
+the paper -- a positive existence proof, a diagnosed accuracy limitation,
+and a precisely characterized generalization gap -- and together they
+point at the same next step: either (a) closed-loop re-planning instead
+of committing to a full open-loop chunk, or (b) generating/selecting
+candidates that are robust across a small neighborhood of states (e.g.
+score candidates by predicted success *averaged* over several nearby
+perturbed states, not just the exact failure state) rather than a single
+point estimate.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -467,9 +543,14 @@ test; an evolution loop that runs 3 real rounds end to end with no
 crashes at both dev and final episode scale.
 
 **Genuinely open (not fabricated, not silently skipped):**
-- No skill has yet been successfully archived (see finding above) --
-  H3 (skill archive improves generalization) cannot be evaluated until
-  at least one skill exists to test.
+- No skill has yet been successfully archived on either task -- Can
+  (never found a single successful candidate) or Lift (found several,
+  but the one tested against Day 19's validation protocol failed it --
+  brittle to even 1cm position offsets, see the Lift pressure-test
+  finding above). H3 (skill archive improves generalization) cannot be
+  evaluated until at least one skill exists to test. The Lift result
+  narrows this to a specific, addressable generalization gap rather than
+  "the mechanism doesn't work at all."
 - Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
   is not implemented; the skill archive is used only at evaluation time.
   `success_only`/`failure_replay` baselines are consequently refused

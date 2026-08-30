@@ -63,6 +63,26 @@ def _raw_env(env):
     return env.env
 
 
+def _active_object_and_body_id(raw_env):
+    """The attribute names for "the one manipulable object" are not
+    consistent across robosuite manipulation envs: PickPlace (used by
+    RoboMimic Can) exposes a list `self.objects` + dict `self.obj_body_id`,
+    while Lift exposes a single `self.cube` + scalar `self.cube_body_id`
+    (confirmed by reading both installed robosuite sources -- see
+    SOE/README_F2S.md's Lift diagnostic for why this came up). Try both
+    known patterns rather than assuming PickPlace's."""
+    if hasattr(raw_env, "objects") and hasattr(raw_env, "obj_body_id"):
+        obj = raw_env.objects[0]
+        body_id = raw_env.obj_body_id[obj.name]
+        return obj, body_id
+    if hasattr(raw_env, "cube") and hasattr(raw_env, "cube_body_id"):
+        return raw_env.cube, raw_env.cube_body_id
+    raise AttributeError(
+        f"{type(raw_env).__name__}: don't know how to locate the active "
+        "manipulable object (checked objects/obj_body_id and cube/cube_body_id)"
+    )
+
+
 def perturb_object_pose(env) -> Dict[str, Any]:
     """A fresh env.reset() samples a brand new random object placement
     from robosuite's own placement initializer -- the *entire* task
@@ -90,7 +110,7 @@ def perturb_object_position_near(env, initial_state_dict: Dict[str, Any], max_of
     env.reset()
     env.reset_to(initial_state_dict)
     raw = _raw_env(env)
-    obj = raw.objects[0]
+    obj, _ = _active_object_and_body_id(raw)
     joint_name = obj.joints[0]
     qpos = np.array(raw.sim.data.get_joint_qpos(joint_name))
     qpos[0:2] += np.random.uniform(-max_offset, max_offset, size=2)
@@ -106,8 +126,7 @@ def perturb_friction(env, scale: float = 1.5) -> bool:
     validation config rather than crash the pipeline)."""
     try:
         raw = _raw_env(env)
-        obj_name = list(raw.obj_body_id.keys())[0]
-        body_id = raw.obj_body_id[obj_name]
+        _, body_id = _active_object_and_body_id(raw)
         geom_ids = [i for i in range(raw.sim.model.ngeom) if raw.sim.model.geom_bodyid[i] == body_id]
         for gid in geom_ids:
             raw.sim.model.geom_friction[gid] *= scale
@@ -121,8 +140,7 @@ def perturb_friction(env, scale: float = 1.5) -> bool:
 def perturb_mass(env, scale: float = 1.5) -> bool:
     try:
         raw = _raw_env(env)
-        obj_name = list(raw.obj_body_id.keys())[0]
-        body_id = raw.obj_body_id[obj_name]
+        _, body_id = _active_object_and_body_id(raw)
         raw.sim.model.body_mass[body_id] *= scale
         raw.sim.forward()
         return True

@@ -1,0 +1,9 @@
+{
+  "skills": [],
+  "rejected": [
+    {
+      "candidate_id": "episode_000005_lift_skill",
+      "reason": "validation_success_rate_below_threshold"
+    }
+  ]
+}

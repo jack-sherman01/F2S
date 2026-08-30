@@ -1,0 +1,49 @@
+{
+  "target_episode_id": "episode_000005",
+  "t_f": 112,
+  "per_config_results": [
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "object_position",
+      "success": false
+    },
+    {
+      "config": "friction",
+      "success": true
+    },
+    {
+      "config": "mass",
+      "success": true
+    }
+  ],
+  "skill_success_rate": 0.2,
+  "archived": false,
+  "rejection_reason": "validation_success_rate_below_threshold"
+}
