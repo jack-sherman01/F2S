@@ -1,0 +1,337 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_eef_pos', 'object', 'robot0_gripper_qpos', 'robot0_joint_vel', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_gripper_qvel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+
+===== F2S evolution round 0 =====
+[F2S eval 1/50] success=False len=400 skills_used=[]
+[F2S eval 2/50] success=True len=107 skills_used=[]
+[F2S eval 3/50] success=True len=94 skills_used=[]
+[F2S eval 4/50] success=False len=400 skills_used=[]
+[F2S eval 5/50] success=True len=102 skills_used=[]
+[F2S eval 6/50] success=True len=127 skills_used=[]
+[F2S eval 7/50] success=True len=119 skills_used=[]
+[F2S eval 8/50] success=False len=400 skills_used=[]
+[F2S eval 9/50] success=True len=132 skills_used=[]
+[F2S eval 10/50] success=True len=105 skills_used=[]
+[F2S eval 11/50] success=True len=97 skills_used=[]
+[F2S eval 12/50] success=False len=400 skills_used=[]
+[F2S eval 13/50] success=True len=101 skills_used=[]
+[F2S eval 14/50] success=True len=111 skills_used=[]
+[F2S eval 15/50] success=True len=98 skills_used=[]
+[F2S eval 16/50] success=True len=100 skills_used=[]
+[F2S eval 17/50] success=False len=400 skills_used=[]
+[F2S eval 18/50] success=True len=91 skills_used=[]
+[F2S eval 19/50] success=True len=84 skills_used=[]
+[F2S eval 20/50] success=True len=99 skills_used=[]
+[F2S eval 21/50] success=True len=108 skills_used=[]
+[F2S eval 22/50] success=True len=100 skills_used=[]
+[F2S eval 23/50] success=True len=108 skills_used=[]
+[F2S eval 24/50] success=False len=400 skills_used=[]
+[F2S eval 25/50] success=False len=400 skills_used=[]
+[F2S eval 26/50] success=True len=100 skills_used=[]
+[F2S eval 27/50] success=True len=101 skills_used=[]
+[F2S eval 28/50] success=True len=103 skills_used=[]
+[F2S eval 29/50] success=True len=116 skills_used=[]
+[F2S eval 30/50] success=False len=400 skills_used=[]
+[F2S eval 31/50] success=True len=92 skills_used=[]
+[F2S eval 32/50] success=True len=104 skills_used=[]
+[F2S eval 33/50] success=True len=107 skills_used=[]
+[F2S eval 34/50] success=False len=400 skills_used=[]
+[F2S eval 35/50] success=True len=128 skills_used=[]
+[F2S eval 36/50] success=True len=96 skills_used=[]
+[F2S eval 37/50] success=True len=115 skills_used=[]
+[F2S eval 38/50] success=True len=108 skills_used=[]
+[F2S eval 39/50] success=True len=107 skills_used=[]
+[F2S eval 40/50] success=True len=95 skills_used=[]
+[F2S eval 41/50] success=True len=109 skills_used=[]
+[F2S eval 42/50] success=True len=122 skills_used=[]
+[F2S eval 43/50] success=True len=106 skills_used=[]
+[F2S eval 44/50] success=False len=400 skills_used=[]
+[F2S eval 45/50] success=True len=92 skills_used=[]
+[F2S eval 46/50] success=True len=92 skills_used=[]
+[F2S eval 47/50] success=True len=101 skills_used=[]
+[F2S eval 48/50] success=False len=400 skills_used=[]
+[F2S eval 49/50] success=False len=400 skills_used=[]
+[F2S eval 50/50] success=False len=400 skills_used=[]
+skill discovery: {'status': 'ok', 'n_segments': 13, 'chosen_k': 2, 'n_candidates_generated': 96, 'n_safety_rejected': 16, 'n_executed': 10, 'n_skills_added': 0, 'cluster_model': KMeans(n_clusters=2, n_init=10, random_state=0), 'cluster_norm': (array([3.35389218e-01, 5.06021692e-01, 2.50770328e+00, 1.44705391e-01,
+       2.22186847e-01, 1.88444614e-04, 0.00000000e+00, 0.00000000e+00,
+       6.64610782e-01]), array([1.68197536e-01, 3.29196499e-01, 5.54349697e-01, 1.51466407e-01,
+       2.86554783e-01, 2.34810900e-04, 0.00000000e+00, 0.00000000e+00,
+       1.68197536e-01]))}
+epoch 0: train_mse=0.002425 val_mse=0.001730
+epoch 1: train_mse=0.001816 val_mse=0.001603
+epoch 2: train_mse=0.001707 val_mse=0.001505
+epoch 3: train_mse=0.001714 val_mse=0.001427
+epoch 4: train_mse=0.001594 val_mse=0.001341
+epoch 5: train_mse=0.001970 val_mse=0.001243
+epoch 6: train_mse=0.001322 val_mse=0.001219
+epoch 7: train_mse=0.001248 val_mse=0.001190
+epoch 8: train_mse=0.001193 val_mse=0.001137
+epoch 9: train_mse=0.001147 val_mse=0.001131
+epoch 10: train_mse=0.001140 val_mse=0.001133
+epoch 11: train_mse=0.001058 val_mse=0.001103
+epoch 12: train_mse=0.001056 val_mse=0.001095
+epoch 13: train_mse=0.001045 val_mse=0.001071
+epoch 14: train_mse=0.000966 val_mse=0.001145
+epoch 15: train_mse=0.000924 val_mse=0.001054
+epoch 16: train_mse=0.000874 val_mse=0.001071
+epoch 17: train_mse=0.000950 val_mse=0.001089
+epoch 18: train_mse=0.000873 val_mse=0.001067
+epoch 19: train_mse=0.000799 val_mse=0.000986
+epoch 20: train_mse=0.000804 val_mse=0.000995
+epoch 21: train_mse=0.000763 val_mse=0.001018
+epoch 22: train_mse=0.000727 val_mse=0.000996
+epoch 23: train_mse=0.000719 val_mse=0.001035
+epoch 24: train_mse=0.000726 val_mse=0.000977
+epoch 25: train_mse=0.000723 val_mse=0.001029
+epoch 26: train_mse=0.000711 val_mse=0.001031
+epoch 27: train_mse=0.000703 val_mse=0.001087
+epoch 28: train_mse=0.000603 val_mse=0.001043
+epoch 29: train_mse=0.000585 val_mse=0.000952
+epoch 30: train_mse=0.000598 val_mse=0.001037
+epoch 31: train_mse=0.000571 val_mse=0.000952
+epoch 32: train_mse=0.000608 val_mse=0.001023
+epoch 33: train_mse=0.000655 val_mse=0.001008
+epoch 34: train_mse=0.000522 val_mse=0.000940
+epoch 35: train_mse=0.000508 val_mse=0.000902
+epoch 36: train_mse=0.000480 val_mse=0.000971
+epoch 37: train_mse=0.000463 val_mse=0.000986
+epoch 38: train_mse=0.000466 val_mse=0.000958
+epoch 39: train_mse=0.000463 val_mse=0.000906
+epoch 40: train_mse=0.000437 val_mse=0.000926
+epoch 41: train_mse=0.000437 val_mse=0.001008
+epoch 42: train_mse=0.000398 val_mse=0.000892
+epoch 43: train_mse=0.000404 val_mse=0.000894
+epoch 44: train_mse=0.000395 val_mse=0.000908
+epoch 45: train_mse=0.000368 val_mse=0.000952
+epoch 46: train_mse=0.000368 val_mse=0.001050
+epoch 47: train_mse=0.000355 val_mse=0.000994
+epoch 48: train_mse=0.000350 val_mse=0.000989
+epoch 49: train_mse=0.000327 val_mse=0.000881
+world model: {'state_dim': 26, 'action_dim': 7, 'hidden_dim': 256, 'ensemble_size': 1, 'epochs': 50, 'best_val_mse': 0.0008813574095256627, 'constant_state_val_mse': 0.047030285000801086, 'beats_constant_baseline': True, 'training_time_seconds': 6.62377142906189}
+
+===== F2S evolution round 1 =====
+[F2S eval 1/50] success=True len=116 skills_used=[]
+[F2S eval 2/50] success=True len=90 skills_used=[]
+[F2S eval 3/50] success=True len=110 skills_used=[]
+[F2S eval 4/50] success=False len=400 skills_used=[]
+[F2S eval 5/50] success=True len=97 skills_used=[]
+[F2S eval 6/50] success=True len=104 skills_used=[]
+[F2S eval 7/50] success=True len=109 skills_used=[]
+[F2S eval 8/50] success=True len=98 skills_used=[]
+[F2S eval 9/50] success=False len=400 skills_used=[]
+[F2S eval 10/50] success=True len=107 skills_used=[]
+[F2S eval 11/50] success=False len=400 skills_used=[]
+[F2S eval 12/50] success=True len=102 skills_used=[]
+[F2S eval 13/50] success=True len=116 skills_used=[]
+[F2S eval 14/50] success=False len=400 skills_used=[]
+[F2S eval 15/50] success=True len=99 skills_used=[]
+[F2S eval 16/50] success=False len=400 skills_used=[]
+[F2S eval 17/50] success=True len=98 skills_used=[]
+[F2S eval 18/50] success=True len=131 skills_used=[]
+[F2S eval 19/50] success=True len=123 skills_used=[]
+[F2S eval 20/50] success=True len=118 skills_used=[]
+[F2S eval 21/50] success=True len=110 skills_used=[]
+[F2S eval 22/50] success=True len=98 skills_used=[]
+[F2S eval 23/50] success=True len=107 skills_used=[]
+[F2S eval 24/50] success=True len=100 skills_used=[]
+[F2S eval 25/50] success=False len=400 skills_used=[]
+[F2S eval 26/50] success=False len=400 skills_used=[]
+[F2S eval 27/50] success=True len=108 skills_used=[]
+[F2S eval 28/50] success=True len=107 skills_used=[]
+[F2S eval 29/50] success=False len=400 skills_used=[]
+[F2S eval 30/50] success=False len=400 skills_used=[]
+[F2S eval 31/50] success=False len=400 skills_used=[]
+[F2S eval 32/50] success=True len=106 skills_used=[]
+[F2S eval 33/50] success=True len=114 skills_used=[]
+[F2S eval 34/50] success=True len=114 skills_used=[]
+[F2S eval 35/50] success=True len=105 skills_used=[]
+[F2S eval 36/50] success=True len=121 skills_used=[]
+[F2S eval 37/50] success=True len=93 skills_used=[]
+[F2S eval 38/50] success=False len=400 skills_used=[]
+[F2S eval 39/50] success=True len=107 skills_used=[]
+[F2S eval 40/50] success=False len=400 skills_used=[]
+[F2S eval 41/50] success=False len=400 skills_used=[]
+[F2S eval 42/50] success=True len=101 skills_used=[]
+[F2S eval 43/50] success=False len=400 skills_used=[]
+[F2S eval 44/50] success=True len=98 skills_used=[]
+[F2S eval 45/50] success=False len=400 skills_used=[]
+[F2S eval 46/50] success=True len=124 skills_used=[]
+[F2S eval 47/50] success=False len=400 skills_used=[]
+[F2S eval 48/50] success=False len=400 skills_used=[]
+[F2S eval 49/50] success=True len=101 skills_used=[]
+[F2S eval 50/50] success=True len=120 skills_used=[]
+skill discovery: {'status': 'ok', 'n_segments': 17, 'chosen_k': 2, 'n_candidates_generated': 160, 'n_safety_rejected': 2, 'n_executed': 20, 'n_skills_added': 0, 'cluster_model': KMeans(n_clusters=2, n_init=10, random_state=0), 'cluster_norm': (array([3.88394932e-01, 4.82533191e-01, 2.46622259e+00, 1.23843462e-01,
+       1.72209431e-01, 3.32819585e-04, 0.00000000e+00, 0.00000000e+00,
+       6.11605068e-01]), array([1.77152991e-01, 3.33042455e-01, 5.68517781e-01, 7.74037211e-02,
+       9.52224208e-02, 3.13768863e-04, 0.00000000e+00, 0.00000000e+00,
+       1.77152991e-01]))}
+epoch 0: train_mse=0.003945 val_mse=0.003360
+epoch 1: train_mse=0.003310 val_mse=0.003166
+epoch 2: train_mse=0.003019 val_mse=0.002913
+epoch 3: train_mse=0.002804 val_mse=0.002878
+epoch 4: train_mse=0.002612 val_mse=0.002811
+epoch 5: train_mse=0.002459 val_mse=0.002776
+epoch 6: train_mse=0.002360 val_mse=0.002667
+epoch 7: train_mse=0.002216 val_mse=0.002569
+epoch 8: train_mse=0.002167 val_mse=0.002443
+epoch 9: train_mse=0.002047 val_mse=0.002462
+epoch 10: train_mse=0.001907 val_mse=0.002385
+epoch 11: train_mse=0.001849 val_mse=0.002360
+epoch 12: train_mse=0.001782 val_mse=0.002441
+epoch 13: train_mse=0.001744 val_mse=0.002359
+epoch 14: train_mse=0.001647 val_mse=0.002383
+epoch 15: train_mse=0.001621 val_mse=0.002458
+epoch 16: train_mse=0.001568 val_mse=0.002297
+epoch 17: train_mse=0.001568 val_mse=0.002354
+epoch 18: train_mse=0.001516 val_mse=0.002259
+epoch 19: train_mse=0.001474 val_mse=0.002369
+epoch 20: train_mse=0.001421 val_mse=0.002335
+epoch 21: train_mse=0.001372 val_mse=0.002388
+epoch 22: train_mse=0.001326 val_mse=0.002277
+epoch 23: train_mse=0.001293 val_mse=0.002188
+epoch 24: train_mse=0.001225 val_mse=0.002210
+epoch 25: train_mse=0.001275 val_mse=0.002409
+epoch 26: train_mse=0.001263 val_mse=0.002214
+epoch 27: train_mse=0.001168 val_mse=0.002232
+epoch 28: train_mse=0.001182 val_mse=0.002322
+epoch 29: train_mse=0.001178 val_mse=0.002206
+epoch 30: train_mse=0.001099 val_mse=0.002183
+epoch 31: train_mse=0.001093 val_mse=0.002159
+epoch 32: train_mse=0.001037 val_mse=0.002115
+epoch 33: train_mse=0.001042 val_mse=0.002192
+epoch 34: train_mse=0.001040 val_mse=0.002206
+epoch 35: train_mse=0.000993 val_mse=0.002260
+epoch 36: train_mse=0.000976 val_mse=0.002366
+epoch 37: train_mse=0.000965 val_mse=0.002283
+epoch 38: train_mse=0.000924 val_mse=0.002214
+epoch 39: train_mse=0.000890 val_mse=0.002256
+epoch 40: train_mse=0.000872 val_mse=0.002220
+epoch 41: train_mse=0.000853 val_mse=0.002222
+epoch 42: train_mse=0.000846 val_mse=0.002170
+epoch 43: train_mse=0.000846 val_mse=0.002282
+epoch 44: train_mse=0.000802 val_mse=0.002264
+epoch 45: train_mse=0.000799 val_mse=0.002315
+epoch 46: train_mse=0.000770 val_mse=0.002475
+epoch 47: train_mse=0.000784 val_mse=0.002278
+epoch 48: train_mse=0.000719 val_mse=0.002303
+epoch 49: train_mse=0.000710 val_mse=0.002275
+world model: {'state_dim': 26, 'action_dim': 7, 'hidden_dim': 256, 'ensemble_size': 1, 'epochs': 50, 'best_val_mse': 0.0021154223941266537, 'constant_state_val_mse': 0.09271474182605743, 'beats_constant_baseline': True, 'training_time_seconds': 14.166976928710938}
+
+===== F2S evolution round 2 =====
+[F2S eval 1/50] success=False len=400 skills_used=[]
+[F2S eval 2/50] success=True len=109 skills_used=[]
+[F2S eval 3/50] success=True len=114 skills_used=[]
+[F2S eval 4/50] success=False len=400 skills_used=[]
+[F2S eval 5/50] success=True len=116 skills_used=[]
+[F2S eval 6/50] success=True len=97 skills_used=[]
+[F2S eval 7/50] success=True len=95 skills_used=[]
+[F2S eval 8/50] success=True len=115 skills_used=[]
+[F2S eval 9/50] success=True len=109 skills_used=[]
+[F2S eval 10/50] success=True len=84 skills_used=[]
+[F2S eval 11/50] success=False len=400 skills_used=[]
+[F2S eval 12/50] success=True len=114 skills_used=[]
+[F2S eval 13/50] success=True len=105 skills_used=[]
+[F2S eval 14/50] success=False len=400 skills_used=[]
+[F2S eval 15/50] success=True len=98 skills_used=[]
+[F2S eval 16/50] success=True len=94 skills_used=[]
+[F2S eval 17/50] success=True len=101 skills_used=[]
+[F2S eval 18/50] success=True len=112 skills_used=[]
+[F2S eval 19/50] success=False len=400 skills_used=[]
+[F2S eval 20/50] success=True len=120 skills_used=[]
+[F2S eval 21/50] success=True len=107 skills_used=[]
+[F2S eval 22/50] success=False len=400 skills_used=[]
+[F2S eval 23/50] success=True len=125 skills_used=[]
+[F2S eval 24/50] success=False len=400 skills_used=[]
+[F2S eval 25/50] success=True len=107 skills_used=[]
+[F2S eval 26/50] success=False len=400 skills_used=[]
+[F2S eval 27/50] success=False len=400 skills_used=[]
+[F2S eval 28/50] success=True len=99 skills_used=[]
+[F2S eval 29/50] success=True len=109 skills_used=[]
+[F2S eval 30/50] success=True len=111 skills_used=[]
+[F2S eval 31/50] success=False len=400 skills_used=[]
+[F2S eval 32/50] success=False len=400 skills_used=[]
+[F2S eval 33/50] success=False len=400 skills_used=[]
+[F2S eval 34/50] success=False len=400 skills_used=[]
+[F2S eval 35/50] success=True len=103 skills_used=[]
+[F2S eval 36/50] success=True len=117 skills_used=[]
+[F2S eval 37/50] success=True len=104 skills_used=[]
+[F2S eval 38/50] success=True len=111 skills_used=[]
+[F2S eval 39/50] success=True len=91 skills_used=[]
+[F2S eval 40/50] success=False len=400 skills_used=[]
+[F2S eval 41/50] success=True len=117 skills_used=[]
+[F2S eval 42/50] success=False len=400 skills_used=[]
+[F2S eval 43/50] success=True len=100 skills_used=[]
+[F2S eval 44/50] success=False len=400 skills_used=[]
+[F2S eval 45/50] success=True len=104 skills_used=[]
+[F2S eval 46/50] success=True len=99 skills_used=[]
+[F2S eval 47/50] success=True len=105 skills_used=[]
+[F2S eval 48/50] success=True len=97 skills_used=[]
+[F2S eval 49/50] success=True len=99 skills_used=[]
+[F2S eval 50/50] success=True len=99 skills_used=[]
+skill discovery: {'status': 'ok', 'n_segments': 16, 'chosen_k': 2, 'n_candidates_generated': 128, 'n_safety_rejected': 1, 'n_executed': 16, 'n_skills_added': 0, 'cluster_model': KMeans(n_clusters=2, n_init=10, random_state=0), 'cluster_norm': (array([5.33442497e-01, 4.19271311e-01, 2.62728599e+00, 1.16337874e-01,
+       1.59644151e-01, 2.09503473e-04, 0.00000000e+00, 0.00000000e+00,
+       4.66557503e-01]), array([1.56435466e-01, 3.37388468e-01, 5.02584547e-01, 8.82652800e-02,
+       1.57245111e-01, 1.11467739e-04, 0.00000000e+00, 0.00000000e+00,
+       1.56435466e-01]))}
+epoch 0: train_mse=0.002974 val_mse=0.002682
+epoch 1: train_mse=0.002468 val_mse=0.002487
+epoch 2: train_mse=0.002198 val_mse=0.002340
+epoch 3: train_mse=0.002016 val_mse=0.002274
+epoch 4: train_mse=0.001895 val_mse=0.002225
+epoch 5: train_mse=0.001744 val_mse=0.002225
+epoch 6: train_mse=0.001622 val_mse=0.002099
+epoch 7: train_mse=0.001569 val_mse=0.002192
+epoch 8: train_mse=0.001449 val_mse=0.002118
+epoch 9: train_mse=0.001378 val_mse=0.001990
+epoch 10: train_mse=0.001344 val_mse=0.002008
+epoch 11: train_mse=0.001298 val_mse=0.001992
+epoch 12: train_mse=0.001270 val_mse=0.001990
+epoch 13: train_mse=0.001213 val_mse=0.001969
+epoch 14: train_mse=0.001147 val_mse=0.001973
+epoch 15: train_mse=0.001112 val_mse=0.001952
+epoch 16: train_mse=0.001053 val_mse=0.001993
+epoch 17: train_mse=0.001043 val_mse=0.001937
+epoch 18: train_mse=0.000998 val_mse=0.001874
+epoch 19: train_mse=0.000977 val_mse=0.001913
+epoch 20: train_mse=0.000923 val_mse=0.001863
+epoch 21: train_mse=0.000918 val_mse=0.001856
+epoch 22: train_mse=0.000894 val_mse=0.001947
+epoch 23: train_mse=0.000850 val_mse=0.001958
+epoch 24: train_mse=0.000839 val_mse=0.001846
+epoch 25: train_mse=0.000828 val_mse=0.001832
+epoch 26: train_mse=0.000792 val_mse=0.001895
+epoch 27: train_mse=0.000770 val_mse=0.001846
+epoch 28: train_mse=0.000750 val_mse=0.001863
+epoch 29: train_mse=0.000728 val_mse=0.001842
+epoch 30: train_mse=0.000717 val_mse=0.001840
+epoch 31: train_mse=0.000690 val_mse=0.001847
+epoch 32: train_mse=0.000676 val_mse=0.001823
+epoch 33: train_mse=0.000648 val_mse=0.001747
+epoch 34: train_mse=0.000643 val_mse=0.001845
+epoch 35: train_mse=0.000634 val_mse=0.001808
+epoch 36: train_mse=0.000601 val_mse=0.001843
+epoch 37: train_mse=0.000588 val_mse=0.001786
+epoch 38: train_mse=0.000583 val_mse=0.001822
+epoch 39: train_mse=0.000601 val_mse=0.001761
+epoch 40: train_mse=0.000573 val_mse=0.001818
+epoch 41: train_mse=0.000570 val_mse=0.001836
+epoch 42: train_mse=0.000557 val_mse=0.001830
+epoch 43: train_mse=0.000529 val_mse=0.001794
+epoch 44: train_mse=0.000527 val_mse=0.001786
+epoch 45: train_mse=0.000517 val_mse=0.001754
+epoch 46: train_mse=0.000498 val_mse=0.001716
+epoch 47: train_mse=0.000487 val_mse=0.001855
+epoch 48: train_mse=0.000472 val_mse=0.001776
+epoch 49: train_mse=0.000463 val_mse=0.001779
+world model: {'state_dim': 26, 'action_dim': 7, 'hidden_dim': 256, 'ensemble_size': 1, 'epochs': 50, 'best_val_mse': 0.0017160744173452258, 'constant_state_val_mse': 0.07761454582214355, 'beats_constant_baseline': True, 'training_time_seconds': 21.274564504623413}
+
+F2S evolution complete: 3 rounds, final archive size 0.
