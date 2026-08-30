@@ -1,0 +1,60 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_joint_pos_cos', 'object', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_eef_vel_lin', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_joint_vel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 71 real failure segments across 10 episode directories.
+
+===== offset = 0 steps before stall time, 71 states =====
+  [10/71] processed, 0 successes so far
+  [20/71] processed, 0 successes so far
+  [30/71] processed, 0 successes so far
+  [40/71] processed, 0 successes so far
+  [50/71] processed, 0 successes so far
+  [60/71] processed, 0 successes so far
+  [70/71] processed, 0 successes so far
+  [71/71] processed, 0 successes so far
+offset=0: n_states=71, near_zero_variance=57/71, within_state_median_rho=0.03337473264550013, total_successes=0/1136
+
+===== offset = 15 steps before stall time, 71 states =====
+  [10/71] processed, 0 successes so far
+  [20/71] processed, 2 successes so far
+  [30/71] processed, 3 successes so far
+  [40/71] processed, 3 successes so far
+  [50/71] processed, 3 successes so far
+  [60/71] processed, 3 successes so far
+  [70/71] processed, 3 successes so far
+  [71/71] processed, 3 successes so far
+offset=15: n_states=71, near_zero_variance=22/71, within_state_median_rho=0.26489972428504605, total_successes=3/1136
+
+======================================================================
+SUMMARY: offset=0 (baseline) vs. offset=15 at full scale (n=71 states)
+======================================================================
+offset=  0: near_zero_variance= 57/71  within_state_median_rho=0.0334  successes=0/1136 (0.00%)
+offset= 15: near_zero_variance= 22/71  within_state_median_rho=0.2649  successes=3/1136 (0.26%)
+
+======================================================================
+Validating every real success found against Day-19 protocol
+======================================================================
+
+Validating: episode_000048 offset=15 used_t_f=106
+  Day-19 validation: 10/10 = 100.0%
+  Archive decision: ACCEPTED
+
+Validating: episode_000048 offset=15 used_t_f=106
+  Day-19 validation: 10/10 = 100.0%
+  Archive decision: ACCEPTED
+
+Validating: episode_000040 offset=15 used_t_f=84
+  Day-19 validation: 10/10 = 100.0%
+  Archive decision: ACCEPTED
+
+======================================================================
+FINAL: 2 skills archived out of 3 candidates tested
+======================================================================
