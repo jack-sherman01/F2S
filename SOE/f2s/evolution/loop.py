@@ -47,7 +47,7 @@ from f2s.skills.archive import SkillArchive
 from f2s.skills.retrieve import retrieve
 from f2s.skills.skill import Skill
 from f2s.world_model.dataset import build_transitions, compute_normalization_stats, split_episodes_by_id
-from f2s.world_model.state import build_world_model_state, build_world_model_states_for_episode
+from f2s.world_model.state import STATE_DIM, build_world_model_state, build_world_model_states_for_episode
 from f2s.world_model.train import train_world_model
 
 STALL_WINDOW = 20  # steps with no task-progress improvement -> "stalled"
@@ -389,32 +389,57 @@ def retrain_world_model_from_episodes(episode_dirs: List[str], output_dir: str, 
     """Aggregate transitions from every episode directory listed in
     `episode_dirs` (so the world model keeps improving across rounds) and
     retrain from scratch (Section 9.2: "updated once per evolution
-    round")."""
+    round").
+
+    Split by *episode*, not by transition: an 80/20 split over
+    concatenated transitions (what an earlier version of this function
+    did) leaks adjacent, highly-correlated timesteps from the same
+    trajectory across the train/val boundary, which would silently
+    inflate the reported val_mse's apparent quality. Matches the
+    episode-level split f2s.world_model.dataset.split_episodes_by_id
+    already does for the standalone (single-directory) Day-11 CLI path;
+    reimplemented here because this function pools transitions across
+    multiple episode directories (one per round)."""
     ensure_fresh_dir(output_dir)
-    all_states, all_actions, all_next_states = [], [], []
+    import glob as _glob
+
+    ep_ids_by_dir = []
     for ep_dir in episode_dirs:
         ids = [
             os.path.splitext(os.path.basename(p))[0]
-            for p in __import__("glob").glob(os.path.join(ep_dir, "episode_*.json"))
+            for p in _glob.glob(os.path.join(ep_dir, "episode_*.json"))
         ]
-        s, a, ns = build_transitions(ep_dir, ids)
-        if s.shape[0] > 0:
-            all_states.append(s)
-            all_actions.append(a)
-            all_next_states.append(ns)
-    states = np.concatenate(all_states)
-    actions = np.concatenate(all_actions)
-    next_states = np.concatenate(all_next_states)
+        ep_ids_by_dir.extend((ep_dir, eid) for eid in ids)
 
-    n = states.shape[0]
     rng = np.random.RandomState(seed)
-    perm = rng.permutation(n)
-    n_train = int(round(0.8 * n))
-    train_idx, val_idx = perm[:n_train], perm[n_train:]
+    perm = rng.permutation(len(ep_ids_by_dir))
+    n_train_eps = int(round(0.8 * len(ep_ids_by_dir)))
+    train_pairs = [ep_ids_by_dir[i] for i in perm[:n_train_eps]]
+    val_pairs = [ep_ids_by_dir[i] for i in perm[n_train_eps:]]
+
+    def _build(pairs):
+        by_dir: Dict[str, List[str]] = {}
+        for ep_dir, eid in pairs:
+            by_dir.setdefault(ep_dir, []).append(eid)
+        states_l, actions_l, next_states_l = [], [], []
+        for ep_dir, ids in by_dir.items():
+            s, a, ns = build_transitions(ep_dir, ids)
+            if s.shape[0] > 0:
+                states_l.append(s)
+                actions_l.append(a)
+                next_states_l.append(ns)
+        if not states_l:
+            return (np.zeros((0, STATE_DIM), dtype=np.float32), np.zeros((0, 0), dtype=np.float32),
+                    np.zeros((0, STATE_DIM), dtype=np.float32))
+        return np.concatenate(states_l), np.concatenate(actions_l), np.concatenate(next_states_l)
+
+    train_states, train_actions, train_next_states = _build(train_pairs)
+    val_states, val_actions, val_next_states = _build(val_pairs)
+    assert set(train_pairs).isdisjoint(val_pairs), "train/val episode split must be disjoint"
 
     model, result = train_world_model(
-        states[train_idx], actions[train_idx], next_states[train_idx],
-        states[val_idx], actions[val_idx], next_states[val_idx],
+        train_states, train_actions, train_next_states,
+        val_states, val_actions, val_next_states,
         output_dir=output_dir, hidden_dim=hidden_dim, epochs=epochs, seed=seed,
     )
     save_json(os.path.join(output_dir, "result.json"), result)
