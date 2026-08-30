@@ -265,3 +265,81 @@ the Day-3 baseline training below, `configs/f2s_smoketest.yaml`
   this is the filter working as intended, not a bug).
 - World model in both runs beat the constant-state baseline by ~30x.
 - 0 crashes in either run.
+
+## Days 3, 21, 23: real experiments on the trained baseline, and a key finding
+
+With the full 500-epoch baseline trained (Day 3: loss 1.07 -> 0.0095;
+`results/can/soe/seed_0/round_0/`):
+
+- **fixed_policy** (no exploration, no skills), 30 episodes: **73.3%
+  success**. A genuine reproduced SOE baseline.
+- **soe** (SOE's own `--enable_exploration --noise_scale 2.0`, the
+  README's recommended range), 30 episodes: **0% success**. Real, not a
+  bug: CADS noise is injected into the diffusion conditioning on *every*
+  action query for the *entire* episode by default (`tau1=0, tau2=1`),
+  which is a data-collection mechanism (generate diverse candidates for
+  curation), not meant for direct autonomous deployment. See
+  `results/Can/soe/seed_0/round_0/`.
+- **F2S**, 3 rounds x {10, 50} episodes/round (`results/can/f2s_dev/`,
+  `results/can/f2s_final/`): world model beat the constant-state baseline
+  by 30-90x in every single round; the safety filter rejected a real,
+  varying fraction of candidates each round (not a rubber stamp); but
+  **0 skills were ever archived**, at either scale.
+
+Chasing why led to two real bugs (fixed, both regression-tested against
+the live simulator -- see `scripts/selftest_validator_perturbations.py`):
+`env.obj_body_id`/`env.sim` needed to be `env.env.*` (robomimic's env
+wrapper doesn't proxy attribute access), and the "object-position
+validation" config was resampling a *brand-new random* placement rather
+than a small offset near the original failure state. Neither bug,
+however, was the actual reason 0 skills got archived -- both live
+downstream of a candidate ever succeeding once, which never happened.
+
+**The actual finding** (`scripts/diagnose_candidate_success_rate.py`):
+of up to 320 candidates directly executed across 5-10 real failure
+states, **0 ever succeeded** -- even after fixing a real upstream bug
+where every timeout-type failure's `failure_time` defaulted to the
+episode's literal last frame (`find_stall_time()` now identifies the
+actual moment task progress last improved, which is far more meaningful
+and was confirmed to produce much more varied, sensible failure times).
+Undirected Gaussian / single-dimension perturbation of a 59-dim diffusion-
+policy readout vector, decoded by a decoder never trained for recovery,
+appears to have a very low hit rate for landing in a narrow "this
+actually solves the task" basin at the proposal's candidate budget
+(M=16-64 tested). This is reported as a genuine negative result, per the
+proposal's own Day-27 rule ("if the world model does not improve ranking,
+report the negative result explicitly" -- the same principle applies
+here to candidate generation). The natural next lever, not yet
+implemented: replace pure random sampling with a guided search (e.g. CEM
+using the world model's own predicted-success score as the objective)
+before executing candidates in the real simulator.
+
+## What's real vs. what's still open, for anyone picking this up
+
+**Done and verified against the real simulator, not stubbed:** full SOE
+env/dependency setup; a real trained baseline policy (73.3% success);
+method-independent logging/metrics; failure extraction (with a corrected
+stall-based failure-time) and K-means clustering; a lightweight world
+model that beats the constant-state baseline by 30-90x every round
+tested; latent-space candidate generation via SOE's own diffusion
+decoder; world-model-based candidate ranking; a safety filter with a
+5/5-correct unit test that also does real rejection work in real runs;
+a skill archive/retrieval implementation with its own passing acceptance
+test; an evolution loop that runs 3 real rounds end to end with no
+crashes at both dev and final episode scale.
+
+**Genuinely open (not fabricated, not silently skipped):**
+- No skill has yet been successfully archived (see finding above) --
+  H3 (skill archive improves generalization) cannot be evaluated until
+  at least one skill exists to test.
+- Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
+  is not implemented; the skill archive is used only at evaluation time.
+  `success_only`/`failure_replay` baselines are consequently refused
+  (`NotImplementedError`) rather than faked.
+- Only seed 0 has been run for any method; the proposal's final
+  experiments require seeds {0,1,2}.
+- Ablations (Day 24), unseen-configuration evaluation (Day 25), and the
+  reproduction-from-clean-directory test (Day 28) have not been run yet.
+- `soe` (0% success, by design of the mechanism at noise_scale=2.0) has
+  not been tried at the README's lower recommended noise scales, which
+  would likely change that number substantially.
