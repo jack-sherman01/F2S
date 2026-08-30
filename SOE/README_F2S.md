@@ -700,6 +700,47 @@ both remain reasonable, but neither addresses this newer, more upstream
 finding, and Rule 7 favors exhausting refinements of existing components
 first.
 
+## Tested the earlier-intervention hypothesis directly: confirmed, and the first real success on Can
+
+Same 20 Can failure states, same M=16 candidates, same world model,
+everything held fixed except the intervention point -- moved 10 and 20
+steps earlier than `find_stall_time`'s pick, via
+`scripts/evaluate_candidate_ranking_early_intervention.py`
+(`results/can/candidate_ranking_eval_early/`).
+
+| offset (steps before stall) | states with ~zero real outcome variance | within-state median rho | world-model top-2 vs. random | real successes (of 320) |
+|---|---|---|---|---|
+| 0 (baseline) | 17/20 | 0.152 | does not beat random | 0/320 |
+| 10 | 6/20 | 0.043 | (not separately computed) | 0/320 |
+| 20 | 6/20 | **0.322** | **beats random** (0.401 vs 0.410) | **1/320** |
+
+**Confirmed, not just plausible:** moving the intervention point earlier
+restores real behavioral diversity in most of the previously-"locked in"
+states (17/20 -> 6/20 near-zero-variance) -- direct evidence that a large
+fraction of `find_stall_time`'s selected states genuinely were already
+past the point of recovery. At offset=20 specifically, ranking quality
+also improves (median within-state rho 0.152 -> 0.322) and, for the
+first time in this entire project, **a real candidate actually succeeded
+on Can** (`episode_000040`, original stall time 99, intervened at 79 --
+predicted final error 0.26m, actual final error 0.13m, real task
+success). One success out of 320 executions is still sparse, but it is
+qualitatively different from the zero successes found across every prior
+Can experiment (random search up to M=64, CEM at multiple horizons,
+~1000+ total real executions before this test) -- it demonstrates the
+mechanism can work on Can given a better-chosen intervention point, not
+only on Lift.
+
+offset=10 is a more mixed result (variance also improves, but ranking
+quality does not) -- consistent with there being a genuine "recoverable
+window" that's neither exactly at the stall point nor arbitrarily far
+before it; the 20-state sample is too small to pin down its width
+precisely, and the two offsets tried were an initial coarse probe, not a
+tuned optimum. Next step, if continuing: sweep more offsets (e.g. every 5
+steps from 5 to 30) and/or replace the fixed-offset heuristic with a
+principled one (task-progress velocity turning unfavorable, as originally
+proposed above), then re-run this same ranking test to find the actual
+best intervention policy rather than guessing between two values.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -723,13 +764,18 @@ crashes at both dev and final episode scale.
   evaluated until at least one skill exists to test. The Lift result
   narrows this to a specific, addressable generalization gap rather than
   "the mechanism doesn't work at all."
-- On Can specifically, the Day-14 ranking test (above) found that 17/20
+- On Can specifically, the Day-14 ranking test found that 17/20
   automatically-selected failure states have essentially zero real
-  outcome variance across 16 genuinely-diverse candidates -- suggesting
-  many detected "failure states" may already be unrecoverable by
-  construction (correction is attempted at the *last* point of
-  measurable progress, which may already be too late). Trying an earlier
-  intervention point is the recommended next experiment; not yet done.
+  outcome variance across 16 genuinely-diverse candidates. Tested and
+  **confirmed** (see "Tested the earlier-intervention hypothesis
+  directly" below): intervening 20 steps earlier than `find_stall_time`'s
+  pick restores real diversity in most of those states (17/20 -> 6/20
+  near-zero-variance), improves ranking quality, and produced the first
+  real successful candidate found on Can in this entire project (1/320).
+  Still sparse -- not yet at the point of archiving a validated skill on
+  Can -- but no longer an open question of *whether* timing matters, only
+  of exactly how much and at what offset; a proper offset sweep is the
+  concrete next step.
 - Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
   is not implemented; the skill archive is used only at evaluation time.
   `success_only`/`failure_replay` baselines are consequently refused
