@@ -52,13 +52,50 @@ def execute_action_chunk(
     )
 
 
+def _raw_env(env):
+    """robomimic's EnvRobosuite wrapper does not proxy attribute access to
+    the underlying robosuite env (no __getattr__), so `env.sim`,
+    `env.obj_body_id`, `env.objects` etc. must go through `env.env`
+    explicitly. Centralized here so every perturbation helper below gets
+    it right, instead of each one silently AttributeError-ing the first
+    time it's actually reached (which is exactly what happened before
+    this was fixed -- see SOE/README_F2S.md)."""
+    return env.env
+
+
 def perturb_object_pose(env) -> Dict[str, Any]:
-    """A fresh env.reset() already samples a new random object placement
-    from robosuite's own placement initializer -- this *is* an object-
-    position perturbation, using the environment's own (real,
-    unmodified) domain-randomization rather than hand-editing simulator
-    state. Returns the resulting state_dict."""
+    """A fresh env.reset() samples a brand new random object placement
+    from robosuite's own placement initializer -- the *entire* task
+    distribution, not a small perturbation near the original failure
+    state. Useful as a hard generalization probe, but NOT what
+    Day 19.1's "object-position perturbation" validation configs should
+    use (an action chunk tuned to one specific relative gripper-object
+    geometry has essentially no chance of succeeding open-loop from an
+    unrelated random state -- seek perturb_object_position_near for
+    that). Returns the resulting state_dict."""
     env.reset()
+    return env.get_state()
+
+
+def perturb_object_position_near(env, initial_state_dict: Dict[str, Any], max_offset: float = 0.03) -> Dict[str, Any]:
+    """Day 19.1's actual intent: a *small* random offset to the object's
+    (x, y) position near the original failure state, testing whether a
+    candidate's corrective action chunk tolerates minor placement noise
+    -- not a resample from the whole task distribution. Restores
+    `initial_state_dict` first, then nudges the active object's free-joint
+    position in-place via the same sim.data.set_joint_qpos API robosuite's
+    own placement initializer uses internally (see
+    robosuite.environments.manipulation.pick_place.PickPlace._reset_internal).
+    Returns the resulting (perturbed) state_dict."""
+    env.reset()
+    env.reset_to(initial_state_dict)
+    raw = _raw_env(env)
+    obj = raw.objects[0]
+    joint_name = obj.joints[0]
+    qpos = np.array(raw.sim.data.get_joint_qpos(joint_name))
+    qpos[0:2] += np.random.uniform(-max_offset, max_offset, size=2)
+    raw.sim.data.set_joint_qpos(joint_name, qpos)
+    raw.sim.forward()
     return env.get_state()
 
 
@@ -68,12 +105,13 @@ def perturb_friction(env, scale: float = 1.5) -> bool:
     failed for any reason (in which case the caller should skip this
     validation config rather than crash the pipeline)."""
     try:
-        obj_name = list(env.obj_body_id.keys())[0]
-        body_id = env.obj_body_id[obj_name]
-        geom_ids = [i for i in range(env.sim.model.ngeom) if env.sim.model.geom_bodyid[i] == body_id]
+        raw = _raw_env(env)
+        obj_name = list(raw.obj_body_id.keys())[0]
+        body_id = raw.obj_body_id[obj_name]
+        geom_ids = [i for i in range(raw.sim.model.ngeom) if raw.sim.model.geom_bodyid[i] == body_id]
         for gid in geom_ids:
-            env.sim.model.geom_friction[gid] *= scale
-        env.sim.forward()
+            raw.sim.model.geom_friction[gid] *= scale
+        raw.sim.forward()
         return True
     except Exception as e:
         print(f"WARNING: perturb_friction failed ({e}); skipping this validation config")
@@ -82,10 +120,11 @@ def perturb_friction(env, scale: float = 1.5) -> bool:
 
 def perturb_mass(env, scale: float = 1.5) -> bool:
     try:
-        obj_name = list(env.obj_body_id.keys())[0]
-        body_id = env.obj_body_id[obj_name]
-        env.sim.model.body_mass[body_id] *= scale
-        env.sim.forward()
+        raw = _raw_env(env)
+        obj_name = list(raw.obj_body_id.keys())[0]
+        body_id = raw.obj_body_id[obj_name]
+        raw.sim.model.body_mass[body_id] *= scale
+        raw.sim.forward()
         return True
     except Exception as e:
         print(f"WARNING: perturb_mass failed ({e}); skipping this validation config")
@@ -97,10 +136,11 @@ def build_validation_configs(n_object_position: int = 5, n_goal_position: int = 
     + 1 mass = 10 validation configs. RoboMimic Can has a single fixed
     goal bin (no goal-position randomization available in this task), so
     the 3 "goal-position" slots are realized as additional independent
-    object-position resamples instead -- documented substitution, still
-    10 total configs probing generalization beyond the exact failure
-    state, just via object-placement + physical-parameter variation
-    rather than goal variation (which this task does not expose)."""
+    small object-position perturbations instead -- documented
+    substitution, still 10 total configs probing generalization beyond
+    the exact failure state, just via object-placement + physical-
+    parameter variation rather than goal variation (which this task does
+    not expose)."""
     configs = (
         ["object_position"] * (n_object_position + n_goal_position)
         + ["friction"] * n_friction

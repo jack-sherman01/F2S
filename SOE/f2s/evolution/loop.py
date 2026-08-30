@@ -33,6 +33,7 @@ from f2s.candidates.validator import (
     execute_action_chunk,
     perturb_friction,
     perturb_mass,
+    perturb_object_position_near,
 )
 from f2s.common.io import ensure_fresh_dir, load_all_episode_metadata, load_json, save_json
 from f2s.failure.clustering import choose_k
@@ -285,9 +286,12 @@ def discover_and_archive_skills(
                 n_valid_unsafe = 0
                 for cfg_kind in configs:
                     if cfg_kind == "object_position":
-                        # a fresh reset() already resamples object placement; run
-                        # the candidate open-loop from that new random state.
-                        ok = execute_action_chunk(env, cand["action_chunk"], initial_state_dict=None)["actual_success"]
+                        # small offset near the *original* failure state, not a
+                        # resample from the whole task distribution -- an action
+                        # chunk tuned to one specific relative gripper-object
+                        # geometry has ~0 chance against a wholly unrelated state.
+                        perturbed_state = perturb_object_position_near(env, initial_state_dict)
+                        ok = execute_action_chunk(env, cand["action_chunk"], initial_state_dict=perturbed_state)["actual_success"]
                     elif cfg_kind == "friction":
                         result = execute_action_chunk(
                             env, cand["action_chunk"], initial_state_dict=initial_state_dict,

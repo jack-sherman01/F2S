@@ -1,0 +1,17 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['object', 'robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_gripper_qvel', 'robot0_eef_pos', 'robot0_joint_vel', 'robot0_joint_pos', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+perturb_friction / perturb_mass: no AttributeError, both applied successfully.
+perturb_object_position_near: offset=0.0273m (bounded by max_offset*sqrt(2)=0.0424m) -- PASSED
+execute_action_chunk with post_reset_hook=perturb_friction: ran to completion.
+build_validation_configs(): ['object_position', 'object_position', 'object_position', 'object_position', 'object_position', 'object_position', 'object_position', 'object_position', 'friction', 'mass']
+
+ALL CHECKS PASSED
