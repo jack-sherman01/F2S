@@ -309,10 +309,50 @@ actually solves the task" basin at the proposal's candidate budget
 (M=16-64 tested). This is reported as a genuine negative result, per the
 proposal's own Day-27 rule ("if the world model does not improve ranking,
 report the negative result explicitly" -- the same principle applies
-here to candidate generation). The natural next lever, not yet
-implemented: replace pure random sampling with a guided search (e.g. CEM
-using the world model's own predicted-success score as the objective)
-before executing candidates in the real simulator.
+here to candidate generation).
+
+## Guided candidate search (CEM) -- tried the natural next lever, still open
+
+Implemented `f2s/candidates/cem.py`: Cross-Entropy Method search over the
+same latent perturbation, guided by the world model's *continuous*
+predicted final object-to-goal distance (a binary success indicator gives
+CEM nothing to climb when, as above, almost nothing in the population
+succeeds). Wired in as the pipeline's default candidate generator
+(`discover_and_archive_skills(..., use_cem=True)`); `generate_candidates`
+(pure random) is still reachable via `use_cem=False` for comparison.
+Acceptance-tested (`scripts/selftest_cem.py`): shapes, sort order, and a
+monotonic-improvement check (later CEM iterations must not be worse on
+average than the first, purely-random one) all pass.
+
+Diagnostic (`scripts/diagnose_cem_success_rate.py`, same 5 real failure
+states as the random-search diagnostic above):
+- CEM's predicted distance-to-goal **does** shrink measurably across
+  iterations -- it is finding real structure in the world model's
+  landscape, not just noise.
+- Scoring against the world model's validated horizon (H_WM=5, the only
+  horizon Day 12's acceptance test actually checked for accuracy) versus
+  the full 20-step executed action chunk matters: extending the scoring
+  horizon to match the full chunk brought predicted distances much closer
+  (e.g. one state: 0.123m at H=5 vs 0.051m at H=20 -- next to the 0.05m
+  success threshold). The pipeline still defaults to H_WM=5 for scoring,
+  since H=20 accuracy was never separately validated and using it by
+  default would be an unjustified silent scope creep -- but this is the
+  clearest lead for anyone continuing this work.
+- **Real transfer is still 0/40 at H=5 and 0/40 again at H=20.**
+
+Read together with the world model's own strong H=1 accuracy (30-90x the
+constant baseline every round), this now points more specifically at
+**world-model accuracy degrading over the actual execution horizon** (or
+possibly genuine task infeasibility -- closing a 0.1-0.4m gap in one
+20-step, ~1s open-loop correction may be beyond what the Panda's OSC
+controller can physically do from some of these states) as the likely
+bottleneck, rather than "random vs. guided search" as such. If continuing
+this thread: (1) run Day 13's multi-step MSE-vs-horizon eval out to
+h=20, not just h in {1,3,5}, to get a direct number on how much the
+model actually degrades; (2) check whether the 0.1-0.4m gaps observed
+are physically reachable at all within 20 steps given the controller's
+per-step output_max; (3) only then would tuning the search strategy
+further be a good use of time.
 
 ## What's real vs. what's still open, for anyone picking this up
 
