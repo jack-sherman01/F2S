@@ -1,0 +1,3 @@
+method,seed,success_rate,recovery_rate,rollout_count,source
+fixed_policy,0,0.7333333333333333,0.0,30,results/Can/fixed_policy/seed_0/round_0/metrics.json
+soe,0,0.0,0.0,30,results/Can/soe/seed_0/round_0/metrics.json
