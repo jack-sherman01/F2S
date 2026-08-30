@@ -77,11 +77,22 @@ def choose_k(
             return preferred_k, results
 
     # fall back to the largest candidate K whose smallest cluster is not
-    # degenerate; if none qualify, keep preferred_k anyway (documented,
-    # not silently substituted).
+    # degenerate.
     for k in sorted(results.keys(), reverse=True):
         sizes = [c["cluster_size"] for c in results[k]["summary"]]
         if min(sizes) >= min_cluster_size:
             return k, results
 
-    return preferred_k, results
+    # Nothing qualifies (every fitted K has a degenerate cluster, e.g. too
+    # few failure segments overall) -- fall back to the smallest K that was
+    # actually fitted, never to `preferred_k` itself if it was skipped for
+    # exceeding len(features) (that would return a K not present in
+    # `results`, which the caller cannot use).
+    if results:
+        smallest_fitted_k = min(results.keys())
+        return smallest_fitted_k, results
+
+    raise ValueError(
+        f"choose_k: none of k_candidates={k_candidates} could be fit "
+        f"(need at least min(k_candidates) failure segments, got {len(features)})"
+    )
