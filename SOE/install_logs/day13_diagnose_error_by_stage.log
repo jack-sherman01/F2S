@@ -1,0 +1,10 @@
+1707 windows total. Stage counts at window start: {'approach': 1288, 'transport': 419}
+h= 1  overall=   3.9mm   approach=3.9mm(n=1288)  transport=4.0mm(n=419)
+h= 3  overall=  11.3mm   approach=11.2mm(n=1288)  transport=11.9mm(n=419)
+h= 5  overall=  18.3mm   approach=17.8mm(n=1288)  transport=19.8mm(n=419)
+h= 8  overall=  27.9mm   approach=26.8mm(n=1288)  transport=31.2mm(n=419)
+h=12  overall=  39.4mm   approach=37.4mm(n=1288)  transport=45.7mm(n=419)
+h=16  overall=  50.1mm   approach=46.9mm(n=1288)  transport=59.9mm(n=419)
+h=20  overall=  60.4mm   approach=56.1mm(n=1288)  transport=73.6mm(n=419)
+
+At h=20: contact-adjacent stages mean RMSE = 73.6mm, approach (free-space) RMSE = 56.1mm (CONFIRMS the contact-dynamics hypothesis)

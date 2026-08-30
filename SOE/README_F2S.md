@@ -416,6 +416,42 @@ training transitions and that a generic residual MLP fits easily.
    now is the world model's own knowledge of contact dynamics, not the
    search.
 
+## Follow-up: error grouped by task stage (Day 13.2) confirms the contact-dynamics hypothesis
+
+Stratified the same h=1..20 rollout by the *task stage of the window's
+starting state* (approach / grasp / transport / placement, the same
+categories `f2s.failure.extractor.assign_failure_stage` already uses,
+applied here directly to the world-model state vector --
+`scripts/diagnose_world_model_error_by_stage.py`,
+`results/can/world_model_h20diag/multistep_eval/error_by_stage.json`).
+Only `approach` (1288 windows) and `transport` (419 windows) occurred
+often enough in this 50-episode dataset's val split to compare (`grasp`
+and `placement` are brief transitional states, rarely landing exactly on
+a window start):
+
+| horizon | approach (free-space) | transport (object grasped + lifted) | gap |
+|---|---|---|---|
+| 1  | 3.9mm  | 4.0mm  | ~0 |
+| 5  | 17.8mm | 19.8mm | 2.0mm |
+| 8  | 26.8mm | 31.2mm | 4.4mm |
+| 12 | 37.4mm | 45.7mm | 8.3mm |
+| 16 | 46.9mm | 59.9mm | 13.0mm |
+| 20 | 56.1mm | 73.6mm | 17.5mm |
+
+**Confirms the hypothesis directly**: the two stages start out predicted
+about equally well (h=1 gap is noise-level), then diverge steadily as
+horizon grows -- exactly the signature of compounding model error that is
+specifically worse once the gripper has closed around the object, not
+just generic accumulated noise that would affect both stages equally.
+This is exactly the "error grouped by task stage" figure Day 13.2 asks
+for, now with a concrete, quantified answer: **the world model is
+measurably less trustworthy during the manipulation-critical part of the
+task**, which is also precisely the part any useful corrective action
+needs to reason about correctly. Confirms next-step priority #1 from the
+previous entry (give the model more capacity/data around contact
+transitions, or explicitly account for this stage-dependent uncertainty
+when scoring candidates) over further search-strategy tuning.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
