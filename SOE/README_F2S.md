@@ -528,6 +528,51 @@ score candidates by predicted success *averaged* over several nearby
 perturbed states, not just the exact failure state) rather than a single
 point estimate.
 
+## Tried neighborhood-robust candidate scoring -- didn't help, and now we know precisely why
+
+Of the two next steps proposed above, tried the cheaper one first:
+`scripts/diagnose_lift_robust_cem.py` scores each CEM candidate by its
+*mean* predicted height across the exact failure state plus 4 random 1cm
+xy-jittered neighbors, instead of the exact state alone -- directly
+selecting for "generalizes past one point" rather than hoping it falls
+out incidentally. Same target failure state and same tolerance-sweep
+protocol as the brittleness diagnostic, for a controlled comparison.
+
+**Result: no improvement.** Day-19 validation: 2/10, identical to the
+single-point version. Tolerance sweep: 2/10 at 0.5cm, 0/10 at 1cm and
+beyond -- also identical.
+
+**Why, precisely**: for every one of the top 8 candidates, the world
+model's predicted height barely moved across the 1cm neighborhood --
+mean vs. min neighborhood height differed by ~0.1mm (e.g. candidate 0:
+mean 0.9192m, min 0.9191m) for a 10mm input perturbation. The world model
+itself predicts the outcome is almost insensitive to a 1cm position
+shift. But the *real* simulator's actual success rate collapses sharply
+between 0.5cm and 1cm (the brittleness finding above). **The world model
+under-represents the true sharpness of the success boundary** -- it's a
+smooth MLP regressor trained with MSE, which is structurally biased
+toward smooth output surfaces, while grasp/lift success near a contact
+boundary is closer to a step function in reality. Averaging fitness over
+a smooth-but-wrong landscape can't discover robustness that landscape
+doesn't represent, no matter how the search itself is set up -- this
+result isolates the problem to the world model's local smoothness
+assumption specifically, not to CEM, not to the fitness formula, and not
+to population size/iteration count (all already ruled out by the earlier
+diagnostics).
+
+This sharpens the choice between the two next steps rather than settling
+it: **closed-loop re-planning** (react to the actually-observed state
+instead of trusting a smoothed-over model's advance prediction) now looks
+more promising than **further scoring changes**, precisely because the
+open-loop approach requires the model to be accurate at commit-time about
+a boundary it structurally can't represent well. A cheaper follow-up
+before committing to the bigger replanning change: try an ensemble world
+model (E=3, already implemented in `f2s.world_model.model.WorldModelEnsemble`
+but not yet used for this) and check whether ensemble *disagreement*
+(not just the mean prediction) spikes near this same 0.5-1cm boundary --
+if it does, that uncertainty signal could be used to reject brittle
+candidates without needing full closed-loop replanning.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE

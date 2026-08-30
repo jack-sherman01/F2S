@@ -1,0 +1,35 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos', 'robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'robot0_gripper_qpos', 'object', 'robot0_eef_vel_ang', 'robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+Target failure state: episode_000005 t_f=112 cube_z=0.8306
+
+Running neighborhood-robust CEM (jitter=1cm, 4 neighbors + exact state)...
+
+Executing top 8 robust-CEM candidates directly (from the exact failure state)...
+  candidate 0: mean_nb_height=0.9192 min_nb_height=0.9191 -> actual_success=True
+  candidate 1: mean_nb_height=0.9099 min_nb_height=0.9098 -> actual_success=True
+  candidate 2: mean_nb_height=0.9066 min_nb_height=0.9065 -> actual_success=True
+  candidate 3: mean_nb_height=0.9053 min_nb_height=0.9052 -> actual_success=True
+  candidate 4: mean_nb_height=0.9040 min_nb_height=0.9039 -> actual_success=False
+  candidate 5: mean_nb_height=0.9037 min_nb_height=0.9036 -> actual_success=True
+  candidate 6: mean_nb_height=0.9028 min_nb_height=0.9027 -> actual_success=True
+  candidate 7: mean_nb_height=0.9020 min_nb_height=0.9019 -> actual_success=False
+Direct (exact-state) success: 6/8
+
+Tolerance sweep for the robust-CEM-selected candidate (same protocol as the single-point diagnostic):
+  offset<= 0.5cm: 2/10 succeeded
+  offset<= 1.0cm: 0/10 succeeded
+  offset<= 2.0cm: 0/10 succeeded
+  offset<= 3.0cm: 0/10 succeeded
+
+Full Day-19 validation (10 configs) for comparison with the single-point result (2/10)...
+Day-19 validation: 2/10 = 20.0%
+Archive decision: REJECTED (validation_success_rate_below_threshold)

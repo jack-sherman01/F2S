@@ -1,0 +1,26 @@
+{
+  "target_episode_id": "episode_000005",
+  "direct_success_count": 6,
+  "found_candidate": true,
+  "tolerance_sweep": {
+    "0.5": {
+      "succeeded": 2,
+      "trials": 10
+    },
+    "1.0": {
+      "succeeded": 0,
+      "trials": 10
+    },
+    "2.0": {
+      "succeeded": 0,
+      "trials": 10
+    },
+    "3.0": {
+      "succeeded": 0,
+      "trials": 10
+    }
+  },
+  "day19_validation_success_rate": 0.2,
+  "archived": false,
+  "rejection_reason": "validation_success_rate_below_threshold"
+}
