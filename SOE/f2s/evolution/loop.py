@@ -26,6 +26,7 @@ from typing import Any, Dict, List, Optional
 import numpy as np
 import torch
 
+from f2s.candidates.cem import cem_search
 from f2s.candidates.generator import generate_candidates
 from f2s.candidates.scorer import rank_candidate
 from f2s.candidates.validator import (
@@ -189,6 +190,9 @@ def discover_and_archive_skills(
     candidates_executed_per_mode: int = 2,
     skill_validation_episodes: int = 10,
     max_states_per_mode: int = 5,
+    use_cem: bool = True,
+    cem_population_size: int = 64,
+    cem_iters: int = 5,
 ) -> Dict[str, Any]:
     """Days 8-10 + 15-20 for one round's episodes: extract failures,
     cluster into modes, generate/rank/filter/validate/archive candidates."""
@@ -253,24 +257,54 @@ def discover_and_archive_skills(
             existing_skills = archive.skills_for_failure_mode(cluster_id)
             skill_deltas = [s.latent_delta for s in existing_skills]
 
-            candidates = generate_candidates(
-                dp_module, obs_tensors, source_episode_id=seg["episode_id"], failure_mode_id=cluster_id,
-                M=M, sigma_z=sigma_z, eta=eta, skill_deltas=skill_deltas,
-            )
-            n_candidates_generated += len(candidates)
-
             x0 = build_world_model_state(obs_t)
-            ranked = []
-            for cand in candidates:
-                if not cand["valid"]:
-                    continue
-                rank_result = rank_candidate(world_model, x0, cand["action_chunk"], world_model_horizon, device)
-                is_safe, reasons = safety_filter(rank_result["predicted_states"], cand["action_chunk"][:world_model_horizon])
-                if not is_safe:
-                    n_safety_rejected += 1
-                    continue
-                ranked.append(dict(**cand, **rank_result, safety_reasons=reasons))
-            ranked.sort(key=lambda c: c["score"], reverse=True)
+
+            if use_cem:
+                # Guided search (see f2s/candidates/cem.py): iteratively
+                # refines the perturbation distribution using the world
+                # model's *continuous* predicted distance-to-goal as
+                # fitness, rather than drawing M candidates once from a
+                # fixed-width distribution. Each CEM candidate already
+                # carries predicted_states/score from the search itself,
+                # so we only need to safety-filter, not re-rank.
+                cem_candidates = cem_search(
+                    dp_module, world_model, obs_tensors, x0,
+                    source_episode_id=seg["episode_id"], failure_mode_id=cluster_id, device=device,
+                    population_size=cem_population_size, n_iters=cem_iters,
+                    horizon_wm=world_model_horizon, seed=0,
+                )
+                n_candidates_generated += len(cem_candidates)
+                ranked = []
+                for cand in cem_candidates:
+                    if not cand["valid"]:
+                        continue
+                    is_safe, reasons = safety_filter(cand["predicted_states"], cand["action_chunk"][:world_model_horizon])
+                    if not is_safe:
+                        n_safety_rejected += 1
+                        continue
+                    ranked.append(dict(**cand, safety_reasons=reasons))
+                # lower predicted_dist_to_goal is better -> ascending sort
+                # puts the best (closest-to-goal) candidate first, same
+                # "best first" ordering the non-CEM path below produces.
+                ranked.sort(key=lambda c: c["predicted_dist_to_goal"])
+            else:
+                candidates = generate_candidates(
+                    dp_module, obs_tensors, source_episode_id=seg["episode_id"], failure_mode_id=cluster_id,
+                    M=M, sigma_z=sigma_z, eta=eta, skill_deltas=skill_deltas,
+                )
+                n_candidates_generated += len(candidates)
+
+                ranked = []
+                for cand in candidates:
+                    if not cand["valid"]:
+                        continue
+                    rank_result = rank_candidate(world_model, x0, cand["action_chunk"], world_model_horizon, device)
+                    is_safe, reasons = safety_filter(rank_result["predicted_states"], cand["action_chunk"][:world_model_horizon])
+                    if not is_safe:
+                        n_safety_rejected += 1
+                        continue
+                    ranked.append(dict(**cand, **rank_result, safety_reasons=reasons))
+                ranked.sort(key=lambda c: c["score"], reverse=True)
 
             for cand in ranked[:candidates_executed_per_mode]:
                 initial_state_dict = dict(states=arrays["states"][t_f])

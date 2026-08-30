@@ -1,0 +1,25 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_vel_ang', 'robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'object', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_gripper_qvel', 'robot0_gripper_qpos', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Loaded world model from results/can/f2s_final/seed_0/round_0/world_model (val MSE 0.000881, beats constant baseline: True)
+13 failure segments available; testing 5 with CEM (population=64, iters=5, executing top 8 each).
+  episode=episode_000000 t_f=89: best predicted_dist_to_goal=0.1231, worst-of-top-8=0.1261 (iter 4)
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000003 t_f=223: best predicted_dist_to_goal=0.4210, worst-of-top-8=0.4336 (iter 4)
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000007 t_f=55: best predicted_dist_to_goal=0.2689, worst-of-top-8=0.2831 (iter 4)
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000011 t_f=59: best predicted_dist_to_goal=0.3626, worst-of-top-8=0.3799 (iter 4)
+    -> 0/8 executed CEM candidates succeeded
+  episode=episode_000016 t_f=92: best predicted_dist_to_goal=0.0788, worst-of-top-8=0.0888 (iter 4)
+    -> 0/8 executed CEM candidates succeeded
+
+TOTAL: 0/40 CEM candidates succeeded (0.0%) across 5 failure states.

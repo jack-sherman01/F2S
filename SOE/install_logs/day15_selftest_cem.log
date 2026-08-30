@@ -1,0 +1,17 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_pos', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_joint_pos', 'robot0_eef_quat', 'robot0_gripper_qvel', 'object', 'robot0_joint_pos_sin', 'robot0_joint_vel', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Shape/contract checks passed for 128 candidates.
+Sort-order check passed.
+mean predicted_dist_to_goal: iter 0 = 0.1598, iter 3 = 0.1399
+Monotonic-improvement check passed.
+
+ALL CHECKS PASSED
