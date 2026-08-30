@@ -346,13 +346,75 @@ constant baseline every round), this now points more specifically at
 possibly genuine task infeasibility -- closing a 0.1-0.4m gap in one
 20-step, ~1s open-loop correction may be beyond what the Panda's OSC
 controller can physically do from some of these states) as the likely
-bottleneck, rather than "random vs. guided search" as such. If continuing
-this thread: (1) run Day 13's multi-step MSE-vs-horizon eval out to
-h=20, not just h in {1,3,5}, to get a direct number on how much the
-model actually degrades; (2) check whether the 0.1-0.4m gaps observed
-are physically reachable at all within 20 steps given the controller's
-per-step output_max; (3) only then would tuning the search strategy
-further be a good use of time.
+bottleneck, rather than "random vs. guided search" as such.
+
+## Follow-up: quantified the world model's accuracy vs. horizon out to h=20
+
+Also fixed a real bug found along the way: `retrain_world_model_from_episodes`
+(used every evolution round) was splitting train/val by *transition*, not
+*episode* -- adjacent, highly-correlated timesteps from the same
+trajectory could land on both sides of the split, silently inflating the
+reported val_mse's apparent quality. Fixed to split by episode like the
+standalone Day-11 CLI path always did, with the "disjoint" assertion the
+proposal calls for. The *relative* comparisons already reported (learned
+vs. constant baseline) likely still hold directionally since both were
+evaluated on the same leaky split, but this diagnostic (below) was run
+entirely on the corrected, properly-split path from the start.
+
+Trained a fresh world model on `results/can/f2s_final/seed_0/round_0/eval/episodes`
+(50 real episodes, real 80/20 *episode*-level split -- `results/can/world_model_h20diag/`,
+`results/can/world_model_dataset_h20diag/`) and ran the multi-step
+rollout out to h=20 (`results/can/world_model_h20diag/multistep_eval/`),
+reporting the object-position-specific RMSE (in meters -- the aggregate
+26-dim MSE isn't directly interpretable) rather than only the horizons
+{1,3,5} Day 13 asks for by default:
+
+| horizon | object-position RMSE (m) | vs. success threshold (0.05m) |
+|---|---|---|
+| 1  | 0.0039 | well under |
+| 5  | 0.0183 | well under |
+| 8  | 0.0279 | under |
+| 12 | 0.0394 | under |
+| 16 | 0.0501 | **at** the threshold |
+| 20 | 0.0604 | **exceeds** the threshold |
+
+This is the decisive number: at h=20 (the horizon CEM would need to
+optimize against to match the actual 20-step executed action chunk), the
+world model's *own* positional uncertainty (6.0cm) is larger than the
+5cm success threshold it's supposed to help distinguish. Re-ran the CEM
+diagnostic at h=12 (RMSE 3.9cm, safely under threshold, and more of the
+actual 20-step correction budget than h=5) as a reasoned middle ground:
+**still 0/40 real successes.** More tellingly, one candidate (episode_000016)
+had a confidently low predicted distance (2.9cm, well inside the model's
+own noise floor at that horizon) and *still failed in reality* -- which
+argues against pure horizon noise being the whole story. The more likely
+explanation: a small residual MLP trained on ~50 episodes' worth of
+transitions is unlikely to have learned an accurate model of the
+contact-rich dynamics around grasp/release events specifically (exactly
+the events a corrective action from a failure state usually needs to get
+right), as opposed to the smooth free-space motion that dominates most
+training transitions and that a generic residual MLP fits easily.
+
+**If continuing this thread**, in roughly the order I'd try them:
+1. Check whether contact/grasp-adjacent transitions are systematically
+   worse-predicted than free-space ones (stratify the multi-step eval by
+   whether the gripper is closed / near-contact) -- would directly
+   confirm or rule out the contact-dynamics hypothesis above.
+2. If confirmed: either give the world model more capacity/data
+   specifically around contact transitions, or fall back to a shorter,
+   more trustworthy horizon (h<=8-12) for scoring and accept a smaller
+   per-round correction budget (possibly chaining multiple shorter
+   corrective segments instead of one long one).
+3. Physical reachability of the observed 0.1-0.4m gaps within 20 steps
+   given the OSC controller's per-step output_max was not directly
+   checked against real successful-demo displacement statistics -- worth
+   a quick empirical check (how far does the object typically move in 20
+   steps during a *successful* demo?) before ruling it out entirely.
+4. Only after 1-3, would further tuning the search strategy itself
+   (CEM hyperparameters, population size, a different optimizer) be a
+   good use of time -- the diagnostics above suggest the ceiling right
+   now is the world model's own knowledge of contact dynamics, not the
+   search.
 
 ## What's real vs. what's still open, for anyone picking this up
 

@@ -1,0 +1,46 @@
+{
+  "num_windows": 1707,
+  "success_threshold_eps_p": 0.05,
+  "by_horizon": {
+    "1": {
+      "object_position_rmse_m": 0.003948461264371872,
+      "full_state_mse": 0.0036359301302582026,
+      "exceeds_success_threshold": false
+    },
+    "2": {
+      "object_position_rmse_m": 0.007689752150326967,
+      "full_state_mse": 0.007755300961434841,
+      "exceeds_success_threshold": false
+    },
+    "3": {
+      "object_position_rmse_m": 0.011336596682667732,
+      "full_state_mse": 0.01278063002973795,
+      "exceeds_success_threshold": false
+    },
+    "5": {
+      "object_position_rmse_m": 0.01829318143427372,
+      "full_state_mse": 0.023115476593375206,
+      "exceeds_success_threshold": false
+    },
+    "8": {
+      "object_position_rmse_m": 0.027903538197278976,
+      "full_state_mse": 0.04006863385438919,
+      "exceeds_success_threshold": false
+    },
+    "12": {
+      "object_position_rmse_m": 0.03941767290234566,
+      "full_state_mse": 0.06789833307266235,
+      "exceeds_success_threshold": false
+    },
+    "16": {
+      "object_position_rmse_m": 0.050078846514225006,
+      "full_state_mse": 0.10380057245492935,
+      "exceeds_success_threshold": true
+    },
+    "20": {
+      "object_position_rmse_m": 0.060412995517253876,
+      "full_state_mse": 0.14668123424053192,
+      "exceeds_success_threshold": true
+    }
+  }
+}

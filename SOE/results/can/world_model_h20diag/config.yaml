@@ -1,0 +1,19 @@
+{
+  "train_states": "results/can/world_model_dataset_h20diag/train_states.npy",
+  "train_actions": "results/can/world_model_dataset_h20diag/train_actions.npy",
+  "train_next_states": "results/can/world_model_dataset_h20diag/train_next_states.npy",
+  "val_states": "results/can/world_model_dataset_h20diag/val_states.npy",
+  "val_actions": "results/can/world_model_dataset_h20diag/val_actions.npy",
+  "val_next_states": "results/can/world_model_dataset_h20diag/val_next_states.npy",
+  "hidden_dim": 256,
+  "horizon": 1,
+  "ensemble_size": 1,
+  "epochs": 50,
+  "batch_size": 256,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "gradient_clip_norm": 1.0,
+  "seed": 0,
+  "output_dir": "results/can/world_model_h20diag",
+  "git_commit": "8b4b2dda77b47b59378d87d1a9f7d2510e1c728f"
+}
