@@ -192,6 +192,7 @@ def main():
     method_dirs = [
         ("fixed_policy", os.path.join(args.results_root, "Can/fixed_policy/seed_*/round_0/metrics.json")),
         ("soe", os.path.join(args.results_root, "Can/soe/seed_*/round_0/metrics.json")),
+        ("failure_replay", os.path.join(args.results_root, "Can/failure_replay/seed_*/round_0/metrics.json")),
     ]
     table_main_comparison(method_dirs, args.output_dir)
 

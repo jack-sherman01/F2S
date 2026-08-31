@@ -20,12 +20,23 @@ simulation code):
                  stall-detector + skill-retrieval rollout
                  (f2s.evolution.loop.rollout_with_skills).
 
-Two methods named in the proposal's baseline list -- Success-only and
-Failure Replay -- require a full data-aggregation + policy-retraining
-loop that is not implemented in this codebase (f2s.evolution.loop
-deliberately does not retrain policy weights; see SOE/README_F2S.md for
-why). Rather than fabricate numbers for an unimplemented method, --method
-success_only/failure_replay are refused with an explicit NotImplementedError.
+  failure_replay Evaluate a checkpoint that was fine-tuned (via SOE's own
+                 unmodified train_single_gpu.py, resume_ckpt=the fixed_policy
+                 baseline) on the original demos plus raw failed episode
+                 trajectories replayed as-is -- see
+                 scripts/build_failure_replay_dataset.py for exactly what
+                 "Failure Replay" means here (the proposal names it as a
+                 baseline but never defines its mechanism) and why. This
+                 script only *evaluates* the resulting --checkpoint the
+                 same way as fixed_policy/soe; the fine-tuning itself is a
+                 separate, one-time step (train_single_gpu.py with
+                 configs/soe_can_lowdim_failure_replay.json).
+
+Success-only (retrain on new *successful* rollouts only) is not
+implemented -- it needs the same policy-retraining loop as Failure
+Replay, but there was no specific reason to build it before Failure
+Replay was actually requested; --method success_only is refused with an
+explicit NotImplementedError rather than a fabricated number.
 """
 import argparse
 import json
@@ -45,8 +56,6 @@ from f2s.skills.archive import SkillArchive
 UNIMPLEMENTED_METHODS = {
     "success_only": "requires the policy-retraining loop (collect successful trajectories, "
                      "retrain DP weights), not implemented in this codebase.",
-    "failure_replay": "requires the policy-retraining loop (replay failure trajectories into "
-                       "training data, retrain DP weights), not implemented in this codebase.",
 }
 
 
@@ -79,7 +88,7 @@ def main():
     with open(os.path.join(args.output_dir, "git_commit.txt"), "w") as f:
         f.write(git_commit_hash(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))) + "\n")
 
-    if args.method in ("fixed_policy", "soe"):
+    if args.method in ("fixed_policy", "soe", "failure_replay"):
         from evaluate_policy import evaluate_policy  # noqa: E402  (sys.path set above)
         metrics = evaluate_policy(
             agent_ckpt=args.checkpoint,
