@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naive Replay, Measured</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .fr-root {
+    color-scheme: light;
+    --surface-0:   #f2efe9;
+    --surface-1:   #fbfaf7;
+    --surface-2:   #ffffff;
+    --hairline:    #dcd6ca;
+    --text-primary:   #16181a;
+    --text-secondary: #56585a;
+    --text-muted:     #8b8d8a;
+    --accent-ref:     #a8712f;
+    --series-fixed:   #2a78d6;
+    --series-soe:     #e34948;
+    --series-replay:  #1baf7a;
+    --series-fixed-fill:  color-mix(in oklab, var(--series-fixed) 14%, var(--surface-1));
+    --series-soe-fill:    color-mix(in oklab, var(--series-soe) 14%, var(--surface-1));
+    --series-replay-fill: color-mix(in oklab, var(--series-replay) 14%, var(--surface-1));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .fr-root {
+      color-scheme: dark;
+      --surface-0:   #101214;
+      --surface-1:   #17191c;
+      --surface-2:   #1e2124;
+      --hairline:    #33363a;
+      --text-primary:   #f3f1ea;
+      --text-secondary: #b7bcc2;
+      --text-muted:     #7d8186;
+      --accent-ref:     #d99a52;
+      --series-fixed:   #3987e5;
+      --series-soe:     #e66767;
+      --series-replay:  #199e70;
+      --series-fixed-fill:  color-mix(in oklab, var(--series-fixed) 20%, var(--surface-1));
+      --series-soe-fill:    color-mix(in oklab, var(--series-soe) 20%, var(--surface-1));
+      --series-replay-fill: color-mix(in oklab, var(--series-replay) 20%, var(--surface-1));
+    }
+  }
+  :root[data-theme="dark"] .fr-root {
+    color-scheme: dark;
+    --surface-0:   #101214;
+    --surface-1:   #17191c;
+    --surface-2:   #1e2124;
+    --hairline:    #33363a;
+    --text-primary:   #f3f1ea;
+    --text-secondary: #b7bcc2;
+    --text-muted:     #7d8186;
+    --accent-ref:     #d99a52;
+    --series-fixed:   #3987e5;
+    --series-soe:     #e66767;
+    --series-replay:  #199e70;
+    --series-fixed-fill:  color-mix(in oklab, var(--series-fixed) 20%, var(--surface-1));
+    --series-soe-fill:    color-mix(in oklab, var(--series-soe) 20%, var(--surface-1));
+    --series-replay-fill: color-mix(in oklab, var(--series-replay) 20%, var(--surface-1));
+  }
+
+  .fr-root {
+    background: var(--surface-0);
+    color: var(--text-primary);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 56px 24px 72px;
+    box-sizing: border-box;
+  }
+  .fr-root * { box-sizing: border-box; }
+  .fr-wrap { max-width: 860px; margin: 0 auto; }
+
+  .fr-eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+  .fr-eyebrow span { color: var(--accent-ref); }
+
+  h1 {
+    font-family: "IBM Plex Sans Condensed", ui-sans-serif, sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+
+  .fr-dek {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 62ch;
+    margin: 0 0 44px;
+  }
+  .fr-dek b { color: var(--text-primary); font-weight: 600; }
+  .fr-dek code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.92em;
+    background: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 0.05em 0.4em;
+  }
+
+  /* ---- chart card ---- */
+  .fr-card {
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 34px 34px 26px;
+    margin-bottom: 28px;
+  }
+  .fr-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .fr-card-title {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+  }
+  .fr-card-meta {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  .fr-chart { position: relative; }
+  .fr-axis-line {
+    position: absolute;
+    left: 0; right: 0; bottom: 34px;
+    height: 1px;
+    background: var(--hairline);
+  }
+  .fr-axis-ticks {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0; right: 0; bottom: 10px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 0 1px;
+  }
+
+  .fr-rows { display: flex; flex-direction: column; gap: 26px; padding-bottom: 56px; }
+  .fr-row { display: grid; grid-template-columns: 148px 1fr; align-items: center; gap: 18px; }
+  .fr-row-label {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 14.5px;
+    text-align: right;
+    line-height: 1.25;
+  }
+  .fr-row-label small {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .fr-track {
+    position: relative;
+    height: 34px;
+  }
+  .fr-track-line {
+    position: absolute;
+    top: 50%; left: 0;
+    height: 3px;
+    border-radius: 3px;
+    transform: translateY(-50%);
+    background: var(--track-fill, var(--hairline));
+    opacity: 0.55;
+  }
+  .fr-ref-line {
+    position: absolute;
+    top: -8px; bottom: -8px;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, var(--accent-ref) 0 4px, transparent 4px 8px);
+    opacity: 0.85;
+  }
+  .fr-dot {
+    position: absolute;
+    top: 50%;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--surface-1);
+    box-shadow: 0 0 0 1.5px var(--dot-ring, transparent);
+  }
+  .fr-value {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -34px);
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .fr-delta {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 16px);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--text-muted);
+  }
+  .fr-delta.down { color: var(--series-soe); }
+  .fr-delta.down.mild { color: var(--series-replay); }
+
+  .fr-row-note {
+    grid-column: 2 / 3;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    max-width: 46ch;
+  }
+
+  .fr-legend {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    padding-top: 18px;
+    border-top: 1px solid var(--hairline);
+    margin-top: 4px;
+  }
+  .fr-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .fr-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+  /* ---- takeaway strip ---- */
+  .fr-takeaway {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+  .fr-take {
+    background: var(--surface-1);
+    padding: 22px 24px;
+  }
+  .fr-take-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .fr-take-body {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+  .fr-take-body b { color: var(--text-primary); font-weight: 600; }
+
+  /* ---- data table (accessibility / relief rule) ---- */
+  details.fr-table-toggle {
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    background: var(--surface-1);
+    padding: 0;
+  }
+  details.fr-table-toggle summary {
+    cursor: pointer;
+    padding: 14px 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  details.fr-table-toggle summary::-webkit-details-marker { display: none; }
+  details.fr-table-toggle summary::before {
+    content: "▸";
+    font-size: 10px;
+    color: var(--text-muted);
+    transition: transform 0.15s ease;
+  }
+  details.fr-table-toggle[open] summary::before { transform: rotate(90deg); }
+  table.fr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  table.fr-table th, table.fr-table td {
+    text-align: left;
+    padding: 9px 20px;
+    border-top: 1px solid var(--hairline);
+    color: var(--text-secondary);
+  }
+  table.fr-table th {
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  table.fr-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.fr-table tr td:first-child { color: var(--text-primary); font-weight: 600; }
+
+  .fr-foot {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 28px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 620px) {
+    .fr-row { grid-template-columns: 1fr; gap: 6px; }
+    .fr-row-label { text-align: left; }
+    .fr-row-note { grid-column: 1 / 2; }
+    .fr-takeaway { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="fr-root">
+  <div class="fr-wrap">
+
+    <p class="fr-eyebrow">F2S <span>/</span> Can, seed 0, 30-episode eval</p>
+    <h1>Replaying failures verbatim doesn&rsquo;t teach recovery</h1>
+    <p class="fr-dek">
+      The same fine-tuned checkpoint format, evaluated identically to every other method.
+      <b>Fixed Policy</b> is the frozen, unmodified baseline. Both alternatives make some
+      use of the policy&rsquo;s own failed rollouts &mdash; <b>SOE</b> by exploring near
+      the action manifold at evaluation time, <b>Failure Replay</b> by fine-tuning on raw
+      failed trajectories with plain behavior cloning. Neither beats doing nothing.
+    </p>
+
+    <div class="fr-card">
+      <div class="fr-card-head">
+        <div class="fr-card-title">Success rate vs. the frozen baseline</div>
+        <div class="fr-card-meta">n&thinsp;=&thinsp;30 episodes / method &middot; RoboMimic Can</div>
+      </div>
+
+      <div class="fr-chart">
+        <div class="fr-rows" id="fr-rows"></div>
+        <div class="fr-axis-line"></div>
+        <div class="fr-axis-ticks">
+          <span>0%</span><span>20%</span><span>40%</span><span>60%</span><span>80%</span><span>100%</span>
+        </div>
+      </div>
+
+      <div class="fr-legend">
+        <span><i style="background:var(--accent-ref)"></i>dashed = baseline reference (73.3%)</span>
+        <span><i style="background:var(--series-fixed)"></i>Fixed Policy</span>
+        <span><i style="background:var(--series-soe)"></i>SOE (exploration)</span>
+        <span><i style="background:var(--series-replay)"></i>Failure Replay</span>
+      </div>
+    </div>
+
+    <div class="fr-takeaway">
+      <div class="fr-take">
+        <div class="fr-take-label">Why SOE collapses</div>
+        <div class="fr-take-body">
+          CADS-style noise is injected into the diffusion conditioning on
+          <b>every</b> action query, for the full episode, unfiltered. It's built
+          for generating diverse candidates during data collection &mdash; not for
+          autonomous deployment as-is.
+        </div>
+      </div>
+      <div class="fr-take">
+        <div class="fr-take-label">Why Failure Replay hurts</div>
+        <div class="fr-take-body">
+          Plain behavior cloning has no reward signal, so it can't tell
+          <em>this action led to failure</em> from <em>this action led to success</em>.
+          Replaying raw failures teaches the policy to imitate them a little more.
+        </div>
+      </div>
+    </div>
+
+    <details class="fr-table-toggle">
+      <summary>View as data table</summary>
+      <table class="fr-table">
+        <thead>
+          <tr><th>Method</th><th class="num">Success rate</th><th class="num">Δ vs. baseline</th><th class="num">Mean episode length</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fixed Policy</td><td class="num">73.3%</td><td class="num">&mdash;</td><td class="num">183.4 steps</td></tr>
+          <tr><td>SOE (exploration)</td><td class="num">0.0%</td><td class="num">&minus;73.3 pts</td><td class="num">400.0 steps</td></tr>
+          <tr><td>Failure Replay</td><td class="num">63.3%</td><td class="num">&minus;10.0 pts</td><td class="num">211.1 steps</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <p class="fr-foot">
+      SOE/results/Can/{fixed_policy,soe,failure_replay}/seed_0/round_0/metrics.json &middot;
+      configs/soe_can_lowdim_failure_replay.json &middot; scripts/build_failure_replay_dataset.py
+    </p>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var rows = [
+    { key: "fixed",  label: "Fixed\nPolicy",     sub: "frozen baseline",        value: 73.3, note: "No exploration, no fine-tuning &mdash; the checkpoint as trained." },
+    { key: "soe",    label: "SOE",                sub: "exploration enabled",    value: 0.0,  note: "noise_scale = 2.0, the README's own recommended range." },
+    { key: "replay", label: "Failure\nReplay",    sub: "fine-tuned on failures", value: 63.3, note: "150 epochs, resumed from the baseline checkpoint." }
+  ];
+  var ref = 73.3;
+  var root = document.getElementById("fr-rows");
+
+  rows.forEach(function (r) {
+    var row = document.createElement("div");
+    row.className = "fr-row";
+
+    var label = document.createElement("div");
+    label.className = "fr-row-label";
+    label.innerHTML = r.label.split("\n").join("<br>") + "<small>" + r.sub + "</small>";
+    row.appendChild(label);
+
+    var track = document.createElement("div");
+    track.className = "fr-track";
+    track.style.setProperty("--track-fill", "var(--series-" + r.key + ")");
+
+    var line = document.createElement("div");
+    line.className = "fr-track-line";
+    line.style.width = Math.max(r.value, ref) + "%";
+    track.appendChild(line);
+
+    var refLine = document.createElement("div");
+    refLine.className = "fr-ref-line";
+    refLine.style.left = ref + "%";
+    track.appendChild(refLine);
+
+    var dot = document.createElement("div");
+    dot.className = "fr-dot";
+    dot.style.left = r.value + "%";
+    dot.style.background = "var(--series-" + r.key + ")";
+    dot.style.setProperty("--dot-ring", "var(--series-" + r.key + ")");
+    track.appendChild(dot);
+
+    var val = document.createElement("div");
+    val.className = "fr-value";
+    val.style.left = r.value + "%";
+    val.style.color = "var(--series-" + r.key + ")";
+    val.textContent = r.value.toFixed(1) + "%";
+    track.appendChild(val);
+
+    if (r.key !== "fixed") {
+      var delta = document.createElement("div");
+      var d = r.value - ref;
+      var mild = Math.abs(d) < 30;
+      delta.className = "fr-delta down" + (mild ? " mild" : "");
+      delta.style.left = r.value + "%";
+      delta.textContent = (d > 0 ? "+" : "−") + Math.abs(d).toFixed(1) + " pts";
+      track.appendChild(delta);
+    }
+
+    row.appendChild(track);
+
+    var note = document.createElement("div");
+    note.className = "fr-row-note";
+    note.innerHTML = r.note;
+    row.appendChild(note);
+
+    root.appendChild(row);
+  });
+})();
+</script>
+</body>
+</html>
