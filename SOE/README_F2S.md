@@ -743,6 +743,13 @@ best intervention policy rather than guessing between two values.
 
 ## Landmark result: first validated skill archived on Can
 
+> **Correction (see "Critical bug found while building Day 25" below):**
+> the Day-19 validation numbers in this section (10/10, 100%, ACCEPTED)
+> were produced by a validator bug that perturbed the wrong object.
+> Re-run with the fix: both candidates score below the 70% archive
+> threshold and are **not** archived. Kept here as the original record;
+> do not cite the 100% numbers.
+
 Finer offset sweep (`scripts/evaluate_candidate_ranking_early_intervention.py`,
 `F2S_EARLY_OFFSETS=15,25,30`, same 20 states,
 `results/can/candidate_ranking_eval_early_sweep2/`) filled out the curve
@@ -805,6 +812,14 @@ earlier `find_stall_time`-based results were not a fundamental failure of
 the method; they were a consequence of *when* correction was attempted.
 
 ## Scale-up confirmation: the finding holds at 3.5x sample size, not sample luck
+
+> **Correction (see "Critical bug found while building Day 25" below):**
+> the "re-validated at Day-19 with another 100%, both archived" claim
+> below is invalid for the same reason as the previous section -- the
+> validator bug affected this re-run too. The offset=0 vs. offset=15
+> *candidate-discovery* numbers in the table (0/1136 vs. 3/1136) are
+> unaffected and still hold; only the downstream Day-19 validation/archive
+> outcome for the 3 successes is wrong as written here.
 
 The 20-state result above was compelling but small. Pooled *every* real
 Can failure segment available across all episode directories collected
@@ -892,6 +907,79 @@ failures need structured processing to be useful, not naive replay.
 (previously refused with `NotImplementedError` alongside `success_only`,
 which remains refused -- same missing retraining-loop dependency, but
 wasn't specifically requested).
+
+## Critical bug found while building Day 25: Day-19 validation was perturbing the wrong object
+
+While implementing the unseen-object-position perturbation needed for
+Day 25 (`f2s/candidates/validator.py`), checked how the existing
+`_active_object_and_body_id` picks "the currently active manipulable
+object" -- it used `raw_env.objects[0]`. Live-inspected a real
+`PickPlaceCan` env:
+
+```
+raw.objects           = ['Milk', 'Bread', 'Cereal', 'Can']   # constant order
+raw.object_id          = 3                                    # "Can" -- the one actually on the table
+raw.objects[0]          = 'Milk'                                # constant, parked off-screen at [10, 10]
+```
+
+RoboMimic Can uses `single_object_mode=2`: `self.objects` is *always* the
+full 4-object list; `_reset_internal` just moves the other three
+off-screen and leaves `self.objects[self.object_id]` on the table.
+`object_id` is fixed at 3 for `object_type="can"` -- never 0.
+
+**Impact**: `perturb_object_position_near`, `perturb_friction`, and
+`perturb_mass` all go through `_active_object_and_body_id`, so 9 of the
+10 Day-19 validation configs (5 object-position + 3 substituted
+goal-position + 1 friction + 1 mass) were perturbing Milk -- a
+constant, off-screen, physically irrelevant object -- instead of the
+Can. Only the 10th config (exact-state re-execution) was doing anything
+real. That means the "10/10 (100%)" results reported in the two
+sections above were, in effect, the same known-successful deterministic
+trajectory replayed 10 times -- which explains why both scores were
+exactly 100%, not merely a comfortable pass.
+
+**Fix**: `_active_object_and_body_id` now uses
+`raw_env.objects[getattr(raw_env, "object_id", 0)]` (falls back to `[0]`
+for any env without an `object_id` attribute -- none currently in this
+codebase, so this doesn't change behavior anywhere else). Lift is
+unaffected: it uses the single-object `raw_env.cube`/`cube_body_id`
+branch, no index ambiguity.
+
+**Re-ran Day-19 validation on all 3 previously-"validated" candidates
+with the fix** (`scripts/validate_can_successful_candidates.py`,
+`scripts/evaluate_candidate_ranking_full_scale.py`, both against the
+original buggy results preserved at
+`results/can/skill_validation_early_intervention_BUGGY_wrong_object_index/`
+and `results/can/candidate_ranking_full_scale_BUGGY_wrong_object_index/`
+for comparison):
+
+| candidate | old (buggy) score | corrected score | archived? |
+|---|---|---|---|
+| episode_000040, offset 15 (20-state pool) | 10/10 (100%) | **7/10 (70.0%)** | No -- at, not over, the >0.7 threshold |
+| episode_000048, offset 15 (20-state pool) | 10/10 (100%) | **5/10 (50.0%)** | No |
+| episode_000048, offset 15 (71-state pool, independent re-run) | 10/10 (100%) | **6/10 (60.0%)** | No |
+| episode_000048, offset 15 (71-state pool, 2nd candidate) | 10/10 (100%) | **5/10 (50.0%)** | No |
+| episode_000040, offset 15 (71-state pool) | 10/10 (100%) | **7/10 (70.0%)** | No |
+
+**Current honest status**: archived, validated Can skills = **0**, not
+2. Final Acceptance Criteria item 8 ("at least one candidate becomes a
+validated skill") is no longer met on Can with real evidence (it remains
+met on Lift, whose validation is unaffected by this bug -- see the Lift
+pressure-test section above). The more basic finding underneath this --
+that intervening earlier (offset=15) finds more real successful
+candidates than offset=0 (0/1136 vs. 3/1136) -- is untouched by this bug,
+since candidate generation and real-execution success are independent of
+`_active_object_and_body_id`; only the downstream "is this candidate a
+generalizable skill" judgment was wrong. The corrected scores (70%, 50%,
+60%) aren't zero either -- these candidates aren't proven robust, but
+they're not proven brittle in every direction either.
+
+This is a correctness bug, the same category as the earlier world-model
+train/val data-leakage fix, not a performance regression: the mechanism
+wasn't measuring what it claimed to measure. Next step before any new
+skill-archiving claim: re-run the offset/coverage search (or try
+CEM-guided search) against the now-correct validator and see whether any
+candidate actually clears 70% for real.
 
 ## What's real vs. what's still open, for anyone picking this up
 

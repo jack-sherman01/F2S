@@ -1,0 +1,26 @@
+[
+  {
+    "episode_id": "episode_000048",
+    "offset": 15,
+    "used_t_f": 106,
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000048",
+    "offset": 15,
+    "used_t_f": 106,
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000040",
+    "offset": 15,
+    "used_t_f": 84,
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  }
+]

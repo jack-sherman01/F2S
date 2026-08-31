@@ -5,12 +5,12 @@
       "offset": 0,
       "n_states": 71,
       "n_candidates_total": 1136,
-      "pooled_rho": 0.9797278049545421,
+      "pooled_rho": 0.9783156474113446,
       "pooled_pval": 0.0,
-      "within_state_mean_rho": 0.07993382243930722,
-      "within_state_median_rho": 0.03337473264550013,
-      "n_states_near_zero_variance": 57,
-      "mean_within_state_actual_error_std": 0.005027381936152955,
+      "within_state_mean_rho": 0.09916481891263934,
+      "within_state_median_rho": 0.08823529411764705,
+      "n_states_near_zero_variance": 56,
+      "mean_within_state_actual_error_std": 0.007533711321712511,
       "n_total_success": 0,
       "success_rate": 0.0
     },
@@ -18,15 +18,15 @@
       "offset": 15,
       "n_states": 71,
       "n_candidates_total": 1136,
-      "pooled_rho": 0.9487458742526117,
+      "pooled_rho": 0.9466540620303687,
       "pooled_pval": 0.0,
-      "within_state_mean_rho": 0.22947067325725767,
-      "within_state_median_rho": 0.26489972428504605,
+      "within_state_mean_rho": 0.2568127270867976,
+      "within_state_median_rho": 0.29586316770696935,
       "n_states_near_zero_variance": 22,
-      "mean_within_state_actual_error_std": 0.02546919681983576,
+      "mean_within_state_actual_error_std": 0.02657465478548474,
       "n_total_success": 3,
       "success_rate": 0.002640845070422535
     }
   },
-  "n_validated_and_archived": 2
+  "n_validated_and_archived": 0
 }

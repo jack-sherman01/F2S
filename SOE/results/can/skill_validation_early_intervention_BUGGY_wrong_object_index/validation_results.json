@@ -13,11 +13,11 @@
       },
       {
         "config": "object_position",
-        "success": false
+        "success": true
       },
       {
         "config": "object_position",
-        "success": false
+        "success": true
       },
       {
         "config": "object_position",
@@ -29,7 +29,7 @@
       },
       {
         "config": "object_position",
-        "success": false
+        "success": true
       },
       {
         "config": "object_position",
@@ -48,9 +48,9 @@
         "success": true
       }
     ],
-    "validation_success_rate": 0.7,
-    "archived": false,
-    "rejection_reason": "validation_success_rate_below_threshold"
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
   },
   {
     "episode_id": "episode_000048",
@@ -62,19 +62,7 @@
     "per_config_results": [
       {
         "config": "object_position",
-        "success": false
-      },
-      {
-        "config": "object_position",
-        "success": false
-      },
-      {
-        "config": "object_position",
-        "success": false
-      },
-      {
-        "config": "object_position",
-        "success": false
+        "success": true
       },
       {
         "config": "object_position",
@@ -82,7 +70,19 @@
       },
       {
         "config": "object_position",
-        "success": false
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
+      },
+      {
+        "config": "object_position",
+        "success": true
       },
       {
         "config": "object_position",
@@ -101,9 +101,9 @@
         "success": true
       }
     ],
-    "validation_success_rate": 0.5,
-    "archived": false,
-    "rejection_reason": "validation_success_rate_below_threshold"
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
   },
   {
     "episode_id": "episode_000040",
