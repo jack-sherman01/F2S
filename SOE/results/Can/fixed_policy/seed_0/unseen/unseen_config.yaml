@@ -1,0 +1,59 @@
+# Day 25: unseen-configuration test set for RoboMimic Can.
+#
+# "Unseen" is defined empirically, not via robosuite's abstract placement-
+# sampler bounds (which are wider than what any policy/world-model here was
+# actually trained on): `seen_object_bbox` below is the (x, y) footprint of
+# the object's *initial* position across all 200 demos in
+# simulation/datasets/can/ph/low_dim_v141.hdf5 (obs["object"][0][0:2] at
+# t=0 for every demo_*), i.e. the real training-time support. See
+# f2s/candidates/validator.py's sample_object_position_unseen /
+# perturb_object_position_unseen for how this is used: every "position" or
+# "combined" episode below forces the object to spawn outside this box
+# (expanded by `position_margin`), never inside it -- so success there
+# cannot be explained by the policy having ever seen anything like that
+# exact placement.
+#
+# Friction/mass "unseen" is defined relative to BOTH training (always the
+# unperturbed default, scale=1.0, policy/world-model never saw anything
+# else) AND the Day-19 skill-validation protocol (which already probes
+# scale=1.5x for skill *archiving* decisions -- see
+# f2s/candidates/validator.py's build_validation_configs). The scales below
+# are deliberately outside that already-tested 1.5x point, in both
+# directions, so this is a genuinely new regime for every method, not a
+# repeat of Day-19.
+
+task: Can
+seen_object_bbox:
+  x_min: -0.01972169846452969
+  x_max: 0.21883528876139563
+  y_min: -0.4185725202709859
+  y_max: -0.08220044495792903
+full_object_bbox:  # robosuite's actual valid placement region (bin1, +/- 0.05m wall tolerance)
+  x_min: -0.145
+  x_max: 0.145
+  y_min: -0.195
+  y_max: 0.195
+position_margin: 0.02       # expand seen_object_bbox by this much before rejecting (meters)
+friction_scale_unseen: 0.55  # below training (1.0) and below Day-19's validation probe (1.5)
+mass_scale_unseen: 2.5       # above training (1.0) and above Day-19's validation probe (1.5)
+
+# Per-episode unseen-config category schedule (cycled to fill num_episodes):
+#   position  - object spawns outside seen_object_bbox, default friction/mass
+#   friction  - default (in-distribution-footprint) spawn, friction_scale_unseen
+#   mass      - default (in-distribution-footprint) spawn, mass_scale_unseen
+#   combined  - all three at once ("unseen combinations", per proposal Day 25)
+category_schedule: [position, friction, mass, combined]
+
+# RoboMimic Can has a single fixed goal/target bin (no goal-position
+# randomization exposed by the task) -- same documented limitation as
+# Day-19 (f2s/candidates/validator.py's build_validation_configs). The
+# proposal's "unseen goal positions" bullet has no realizable axis in this
+# task and is therefore folded into the position/combined categories above
+# (more object-placement variation) rather than fabricated.
+goal_position_note: >
+  Can's goal bin position is fixed by the task and not randomized at
+  train or eval time; "unseen goal positions" is not a realizable axis
+  here and is documented as such rather than simulated.
+
+do_not_retrain: true
+num_episodes: 100

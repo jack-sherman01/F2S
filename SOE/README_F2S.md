@@ -1083,6 +1083,81 @@ Data: `results/can/candidate_ranking_per_state_offset_sweep/` (records,
 skill_archive, validation_results, summary),
 `install_logs/day25_per_state_offset_sweep.log`.
 
+## Day 25: unseen-configuration evaluation -- and a real, honest F2S regression
+
+Ran all 4 methods (`scripts/evaluate_unseen.py`) against
+`configs/can_unseen_test.yaml`: 100 episodes each, no retraining, object
+position forced outside the training-demo footprint and/or friction/mass
+pushed to scales never seen in training or in the Day-19 validation
+protocol (see that config file for exact definitions). `f2s` used the
+real 2-skill archive from the per-state offset sweep above, retrieved
+via the real, unmodified `f2s.skills.retrieve.retrieve` --
+`--cluster_model_path` for this run is a trivial k=1 "cluster model"
+(always predicts cluster 0), since the 2 skills were discovered by the
+offset-sweep scripts with a single implicit failure mode
+(`failure_mode_id=0` for both, no multi-mode clustering step) -- see the
+caveat below for what this does to the interpretation of `f2s`'s result.
+
+| method | success rate (unseen) | mean ep. length | safety-violation rate | skill-transfer rate | failure-mode coverage |
+|---|---|---|---|---|---|
+| Fixed Policy | 45.0% | 267.8 | 7% | n/a | 100% |
+| SOE | 0.0% | 400.0 | 61% | n/a | 100% |
+| Failure Replay | 36.0% | 293.9 | 6% | n/a | 100% |
+| **F2S** | **1.0%** | 396.1 | **93%** | **0.0%** (0/99 skill-invoked episodes) | n/a (no in-distribution reference episodes yet) |
+
+Every method's in-distribution success rate drops under unseen configs
+(Fixed Policy 73.3% -> 45.0%, Failure Replay 63.3% -> 36.0%), which is
+expected and not itself notable. **What is notable: F2S collapses far
+more than the others (1.0%, worse than doing nothing), and its
+safety-violation rate is dramatically higher (93% vs. 6-7% for the
+non-exploring methods).**
+
+Root cause, visible directly in the per-episode log
+(`install_logs/day25_unseen_eval_all.log`): the stall detector fires and
+retrieves `episode_000040_offset10_perstate_skill` in 99 of 100 episodes
+-- often *dozens of times within a single episode* -- because retrieval
+has no real gating here. `retrieve()`'s match score is
+`1.0 (cluster match) + lambda * precondition_similarity`; with the k=1
+cluster model every stall scores a match of 1.0 before precondition
+similarity is even added, which already clears `MIN_MATCH_SCORE=0.5` on
+its own -- so the one archived skill plays back unconditionally on every
+stall, regardless of whether the current state resembles anything the
+skill was actually validated on. Repeatedly injecting an action chunk
+tuned to one specific state's local geometry into an unrelated, often
+very different unseen state is exactly the kind of thing the safety
+filter (Section 10.1) is supposed to catch at *candidate-generation*
+time -- but that filter runs when a skill is created, not when it's
+*replayed* later during a rollout, so nothing currently checks a skill's
+applicability before playback.
+
+**This is a real, honestly-measured negative result, but it is
+specifically a result about the current retrieval/gating implementation,
+not a fundamental refutation of skill archiving as an idea** -- two
+important caveats for interpreting it: (1) the trivial k=1 cluster model
+was a necessary placeholder given the offset-sweep discovery scripts
+never ran multi-mode clustering (both skills carry `failure_mode_id=0`
+and a degenerate `object_error_range=(0.0, 0.0)` precondition), so
+precondition-based gating had nothing real to work with here -- this is
+not a limitation of `retrieve()` itself, which does support
+precondition-similarity gating, just of the placeholder inputs available
+today; (2) `f2s`'s `failure_mode_coverage` is `null` because
+`results/Can/f2s/seed_0/round_0/episodes` (the expected in-distribution
+reference dir) doesn't exist yet -- `f2s` has never been run as a
+100-episode in-distribution baseline the way the other 3 methods have,
+only via the 3-round evolution loop smoke tests.
+
+**Concrete next step this points to, if continuing**: gate skill
+playback on a real applicability check before replay (e.g. re-run the
+safety filter, or a precondition-similarity threshold, against the
+*current* state immediately before each playback, not just once at
+discovery time) -- currently the one thing standing between "skill
+archiving helps" and "skill archiving actively hurts" is exactly this
+missing check.
+
+Data: `results/Can/{fixed_policy,soe,failure_replay,f2s}/seed_0/unseen/`
+(metrics.json, categories_used.json, skills_used_by_episode.json, full
+episode logs), `install_logs/day25_unseen_eval_all.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
