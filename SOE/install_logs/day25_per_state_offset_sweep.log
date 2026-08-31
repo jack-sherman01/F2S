@@ -1,0 +1,85 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'robot0_eef_vel_ang', 'robot0_joint_pos', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_eef_pos', 'object', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 71 real failure segments (must be 71, matching candidate_ranking_full_scale).
+Sweeping offsets [10, 20, 25, 30] per state (4544 candidate executions budgeted).
+
+[state 6/71, offset=10] real success: episode_000023; running Day-19 validation...
+  Day-19 validation: 6/10 = 60.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+  [10/71] processed, 1 real successes so far, 0 archived
+  [20/71] processed, 1 real successes so far, 0 archived
+
+[state 26/71, offset=10] real success: episode_000040; running Day-19 validation...
+  Day-19 validation: 10/10 = 100.0%
+  Archive decision: ACCEPTED
+
+[state 26/71, offset=20] real success: episode_000040; running Day-19 validation...
+  Day-19 validation: 4/10 = 40.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+  [30/71] processed, 3 real successes so far, 1 archived
+  [40/71] processed, 3 real successes so far, 1 archived
+  [50/71] processed, 3 real successes so far, 1 archived
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 5/10 = 50.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 3/10 = 30.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 7/10 = 70.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 7/10 = 70.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 6/10 = 60.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 6/10 = 60.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=20] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 3/10 = 30.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=25] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 5/10 = 50.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 56/71, offset=25] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 8/10 = 80.0%
+  Archive decision: ACCEPTED
+
+[state 56/71, offset=25] real success: episode_000008; running Day-19 validation...
+  Day-19 validation: 5/10 = 50.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+  [60/71] processed, 13 real successes so far, 2 archived
+
+[state 62/71, offset=20] real success: episode_000001; running Day-19 validation...
+  Day-19 validation: 7/10 = 70.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 62/71, offset=25] real success: episode_000001; running Day-19 validation...
+  Day-19 validation: 7/10 = 70.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+  [70/71] processed, 15 real successes so far, 2 archived
+  [71/71] processed, 15 real successes so far, 2 archived
+
+======================================================================
+FINAL: 15 real successes out of 4544 candidates executed across offsets [10, 20, 25, 30]; 2 skills archived (>70% Day-19 threshold)
+======================================================================

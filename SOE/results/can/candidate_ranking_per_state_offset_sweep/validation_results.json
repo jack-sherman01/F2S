@@ -1,0 +1,107 @@
+[
+  {
+    "episode_id": "episode_000023",
+    "offset": 10,
+    "validation_success_rate": 0.6,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000040",
+    "offset": 10,
+    "validation_success_rate": 1.0,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000040",
+    "offset": 20,
+    "validation_success_rate": 0.4,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.5,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.3,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.7,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.7,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.6,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.6,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 20,
+    "validation_success_rate": 0.3,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 25,
+    "validation_success_rate": 0.5,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 25,
+    "validation_success_rate": 0.8,
+    "archived": true,
+    "rejection_reason": null
+  },
+  {
+    "episode_id": "episode_000008",
+    "offset": 25,
+    "validation_success_rate": 0.5,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000001",
+    "offset": 20,
+    "validation_success_rate": 0.7,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000001",
+    "offset": 25,
+    "validation_success_rate": 0.7,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  }
+]

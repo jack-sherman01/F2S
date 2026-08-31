@@ -1,0 +1,13 @@
+{
+  "n_states": 71,
+  "offsets_swept": [
+    10,
+    20,
+    25,
+    30
+  ],
+  "M": 16,
+  "n_candidates_executed": 4544,
+  "n_real_success": 15,
+  "n_validated_and_archived": 2
+}

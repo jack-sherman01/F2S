@@ -1031,6 +1031,58 @@ per-state rather than using one fixed value for every state (section
 Data: `results/can/candidate_ranking_cem_offset15/` (records, skill_archive,
 validation_results, summary), `install_logs/day25_cem_offset15_search.log`.
 
+## The remaining lever worked: per-state offset sweep finds 2 genuine validated Can skills
+
+Tried the one lever identified above as untested: instead of one fixed
+offset for every state, swept offset in `{10, 20, 25, 30}` *per state*
+(pure random `generate_candidates`, same M=16 as every earlier test --
+CEM was just shown not to help). Offsets `{0, 15}` were not re-run: real
+execution outcomes at those two offsets are unaffected by the Day-19
+validator bug (only the downstream validation step was wrong), so the
+existing `results/can/candidate_ranking_full_scale/` data for those two
+is still valid and was reused as-is.
+(`scripts/evaluate_candidate_ranking_per_state_offset_sweep.py`,
+`results/can/candidate_ranking_per_state_offset_sweep/`.)
+
+4,544 real executions (71 states x 4 offsets x M=16), **15 real
+successes**, every one immediately run through the real, fixed Day-19
+protocol:
+
+| episode | offset | Day-19 score | archived? |
+|---|---|---|---|
+| episode_000023 | 10 | 60.0% | No |
+| **episode_000040** | **10** | **100.0%** | **Yes** |
+| episode_000040 | 20 | 40.0% | No |
+| episode_000008 | 20 | 50.0% / 30.0% / 70.0% / 70.0% / 60.0% / 60.0% / 30.0% (7 distinct candidates) | No |
+| **episode_000008** | **25** | 50.0% / **80.0%** / 50.0% (3 distinct candidates) | **Yes (the 80.0% one)** |
+| episode_000001 | 20 | 70.0% | No |
+| episode_000001 | 25 | 70.0% | No |
+
+**2 skills archived, both genuine this time** (validated by the fixed
+protocol, not the buggy one):
+- `episode_000040_offset10_perstate_skill` -- 10/10 (100%) at offset=10
+  (a different, better offset than the frozen default of 15 for this
+  same state -- confirming section 11's own observation that the best
+  offset is not the same for every trajectory).
+- `episode_000008_offset25_perstate_skill` -- 8/10 (80%) at offset=25 --
+  a *new* correctable state, not one of the two originally reported
+  (`episode_000040`, `episode_000048`).
+
+**This restores Final Acceptance Criteria item 8 ("at least one
+candidate becomes a validated skill") on Can with real, correctly-
+measured evidence** -- current archived-skill count: **2**, both
+confirmed under the fixed `_active_object_and_body_id`. Also notable:
+`episode_000008` alone produced 10 of the 15 real successes across
+offsets 20 and 25 (most other states that succeeded at all did so with
+1-2 candidates) -- some states appear to have a much wider "recoverable
+cone" than others once the right offset is found, which is itself a
+useful signal for anyone extending this to a real per-state offset
+selection policy rather than sweeping blindly.
+
+Data: `results/can/candidate_ranking_per_state_offset_sweep/` (records,
+skill_archive, validation_results, summary),
+`install_logs/day25_per_state_offset_sweep.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -1044,30 +1096,34 @@ decoder; world-model-based candidate ranking; a safety filter with a
 a skill archive/retrieval implementation with its own passing acceptance
 test; an evolution loop that runs 3 real rounds end to end with no
 crashes at both dev and final episode scale; **two skills validated and
-archived on Can at 100% cross-configuration success** (Final Acceptance
-Criteria item 8), once candidates are generated from a well-chosen
-intervention point.
+archived on Can under the corrected Day-19 validator** (Final Acceptance
+Criteria item 8), found by sweeping the intervention offset per state
+(see "The remaining lever worked" above) -- `episode_000040` at offset=10
+(100%) and `episode_000008` at offset=25 (80%).
 
-**Genuinely open (not fabricated, not silently skipped):**
-- **Update:** two skills are now validated and archived on Can (see
-  "Landmark result" above), and **confirmed not to be a fluke** by
-  re-running at 3.5x scale (71 pooled states instead of 20 -- see
-  "Scale-up confirmation" above): the same two states reproduced
-  identically (100% Day-19 validation again), and offset=0's success
-  count stayed at a confident 0/1136. Final Acceptance Criteria item 8 is
-  satisfied on the primary task, with real statistical backing now, not
-  just a single small-sample result. What's still open: (1) this used a
-  single fixed intervention offset (15 steps before `find_stall_time`'s
-  pick) applied uniformly to every state -- not yet integrated as the
-  default in `f2s/failure/extractor.py` or `f2s/evolution/loop.py`'s
-  actual pipeline; (2) coverage is still narrow -- only ~2-3% of the 71
-  pooled failure states were correctable at this one fixed offset, so
-  growing coverage (e.g. sweeping the offset per-state, since the best
-  offset is not obviously uniform across trajectories) is the natural
-  next lever, separate from "does the mechanism work" (now answered:
-  yes); (3) H3 (skill archive improves generalization) can now, for the
-  first time, actually be tested once this is wired into the real
-  evolution loop and evaluated via skill retrieval during rollouts.
+**Update, in order (see the corresponding sections above for full
+detail):** the original "two skills at 100%" result (found at a single
+fixed offset=15, `f2s/failure/extractor.py`'s frozen default) turned out
+to rest on a validator bug (`_active_object_and_body_id` perturbing the
+wrong object -- see "Critical bug found while building Day 25"); fixed,
+re-validated, and the archive count genuinely dropped to 0; CEM-guided
+search at offset=15 was tried as the natural next lever and also found
+nothing (0/213 real successes, and diagnosed why -- see "Re-opened the
+search after the fix"); a per-state offset sweep (offsets {10,20,25,30})
+then found 2 new, genuinely-validated skills, restoring Final Acceptance
+Criteria item 8 with correct evidence this time. **Still genuinely
+open:** (1) the offset that works differs per state (10 vs. 25 for the
+two archived skills, neither is the frozen default of 15) -- the fixed
+`DEFAULT_INTERVENTION_OFFSET=15` in `f2s/evolution/loop.py`'s production
+path would not have found either of these two on its own; a real
+per-state offset-selection policy (not the current fixed default, and
+not exhaustively sweeping every state) is not implemented; (2) coverage
+is still narrow -- 5 of 71 pooled states (~7%) produced at least one real
+success across every offset tried so far (0/10/15/20/25/30), and only 2
+of those 5 clear the 70% archive threshold; (3) H3 (skill archive
+improves generalization) can now, for the first time, actually be tested
+with a real (correctly-validated) archive, once wired into the real
+evolution loop and evaluated via skill retrieval during rollouts.
 - The Lift skill tested against Day 19's protocol was brittle (2/10,
   broke at >=1cm position offsets) -- a genuine contrast with the Can
   skills above, which passed at a full 100%. Not yet understood why the
