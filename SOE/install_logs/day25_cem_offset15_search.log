@@ -1,0 +1,25 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'object', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos', 'robot0_eef_pos', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_eef_quat', 'robot0_gripper_qvel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 71 real failure segments across 10 episode directories.
+CEM search at offset=15, top-3 candidates executed per state (213 real executions budgeted).
+  [10/71] processed, 0 real successes so far, 0 archived
+  [20/71] processed, 0 real successes so far, 0 archived
+  [30/71] processed, 0 real successes so far, 0 archived
+  [40/71] processed, 0 real successes so far, 0 archived
+  [50/71] processed, 0 real successes so far, 0 archived
+  [60/71] processed, 0 real successes so far, 0 archived
+  [70/71] processed, 0 real successes so far, 0 archived
+  [71/71] processed, 0 real successes so far, 0 archived
+
+======================================================================
+FINAL: 0 real successes out of 213 CEM candidates executed; 0 skills archived (>70% Day-19 threshold)
+======================================================================

@@ -1,0 +1,1919 @@
+[
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 74,
+    "predicted_dist_to_goal": 0.33784109354019165,
+    "actual_success": false
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 74,
+    "predicted_dist_to_goal": 0.33916810154914856,
+    "actual_success": false
+  },
+  {
+    "state_idx": 0,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 74,
+    "predicted_dist_to_goal": 0.34085753560066223,
+    "actual_success": false
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 208,
+    "predicted_dist_to_goal": 0.41223156452178955,
+    "actual_success": false
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 208,
+    "predicted_dist_to_goal": 0.4161863327026367,
+    "actual_success": false
+  },
+  {
+    "state_idx": 1,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 208,
+    "predicted_dist_to_goal": 0.4196169078350067,
+    "actual_success": false
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.2837129831314087,
+    "actual_success": false
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.28563812375068665,
+    "actual_success": false
+  },
+  {
+    "state_idx": 2,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.28648093342781067,
+    "actual_success": false
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.3838074207305908,
+    "actual_success": false
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.3842436969280243,
+    "actual_success": false
+  },
+  {
+    "state_idx": 3,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.3866826295852661,
+    "actual_success": false
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 77,
+    "predicted_dist_to_goal": 0.23309986293315887,
+    "actual_success": false
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 77,
+    "predicted_dist_to_goal": 0.23340003192424774,
+    "actual_success": false
+  },
+  {
+    "state_idx": 4,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 77,
+    "predicted_dist_to_goal": 0.23391035199165344,
+    "actual_success": false
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.23078268766403198,
+    "actual_success": false
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.23118330538272858,
+    "actual_success": false
+  },
+  {
+    "state_idx": 5,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.23190297186374664,
+    "actual_success": false
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.4660708010196686,
+    "actual_success": false
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.47008955478668213,
+    "actual_success": false
+  },
+  {
+    "state_idx": 6,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.47420698404312134,
+    "actual_success": false
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.2513645887374878,
+    "actual_success": false
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.2559735178947449,
+    "actual_success": false
+  },
+  {
+    "state_idx": 7,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.2559768855571747,
+    "actual_success": false
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.31029999256134033,
+    "actual_success": false
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.31040793657302856,
+    "actual_success": false
+  },
+  {
+    "state_idx": 8,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.31393197178840637,
+    "actual_success": false
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.3788781762123108,
+    "actual_success": false
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.3930954337120056,
+    "actual_success": false
+  },
+  {
+    "state_idx": 9,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.39514270424842834,
+    "actual_success": false
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 241,
+    "predicted_dist_to_goal": 0.32528558373451233,
+    "actual_success": false
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 241,
+    "predicted_dist_to_goal": 0.33089450001716614,
+    "actual_success": false
+  },
+  {
+    "state_idx": 10,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 241,
+    "predicted_dist_to_goal": 0.33580008149147034,
+    "actual_success": false
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000048",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 106,
+    "predicted_dist_to_goal": 0.1274711936712265,
+    "actual_success": false
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000048",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 106,
+    "predicted_dist_to_goal": 0.13180384039878845,
+    "actual_success": false
+  },
+  {
+    "state_idx": 11,
+    "episode_id": "episode_000048",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 106,
+    "predicted_dist_to_goal": 0.13348349928855896,
+    "actual_success": false
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000049",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.11273184418678284,
+    "actual_success": false
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000049",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.11496251821517944,
+    "actual_success": false
+  },
+  {
+    "state_idx": 12,
+    "episode_id": "episode_000049",
+    "ep_dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 76,
+    "predicted_dist_to_goal": 0.11589739471673965,
+    "actual_success": false
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.06451141834259033,
+    "actual_success": false
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.0666547492146492,
+    "actual_success": false
+  },
+  {
+    "state_idx": 13,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.06972898542881012,
+    "actual_success": false
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 177,
+    "predicted_dist_to_goal": 0.5821303129196167,
+    "actual_success": false
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 177,
+    "predicted_dist_to_goal": 0.5866087675094604,
+    "actual_success": false
+  },
+  {
+    "state_idx": 14,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 177,
+    "predicted_dist_to_goal": 0.5889558792114258,
+    "actual_success": false
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.35039302706718445,
+    "actual_success": false
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.3564855456352234,
+    "actual_success": false
+  },
+  {
+    "state_idx": 15,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.356686532497406,
+    "actual_success": false
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.2799716293811798,
+    "actual_success": false
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.2800023555755615,
+    "actual_success": false
+  },
+  {
+    "state_idx": 16,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.2860053479671478,
+    "actual_success": false
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000015",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 60,
+    "predicted_dist_to_goal": 0.4107573330402374,
+    "actual_success": false
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000015",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 60,
+    "predicted_dist_to_goal": 0.41366150975227356,
+    "actual_success": false
+  },
+  {
+    "state_idx": 17,
+    "episode_id": "episode_000015",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 60,
+    "predicted_dist_to_goal": 0.41502025723457336,
+    "actual_success": false
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 150,
+    "predicted_dist_to_goal": 0.31403034925460815,
+    "actual_success": false
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 150,
+    "predicted_dist_to_goal": 0.3174471855163574,
+    "actual_success": false
+  },
+  {
+    "state_idx": 18,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 150,
+    "predicted_dist_to_goal": 0.31803247332572937,
+    "actual_success": false
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.559195876121521,
+    "actual_success": false
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.5597692131996155,
+    "actual_success": false
+  },
+  {
+    "state_idx": 19,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 28,
+    "predicted_dist_to_goal": 0.5604807734489441,
+    "actual_success": false
+  },
+  {
+    "state_idx": 20,
+    "episode_id": "episode_000028",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 48,
+    "predicted_dist_to_goal": 0.3983721137046814,
+    "actual_success": false
+  },
+  {
+    "state_idx": 20,
+    "episode_id": "episode_000028",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 48,
+    "predicted_dist_to_goal": 0.4005756378173828,
+    "actual_success": false
+  },
+  {
+    "state_idx": 20,
+    "episode_id": "episode_000028",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 48,
+    "predicted_dist_to_goal": 0.4035007059574127,
+    "actual_success": false
+  },
+  {
+    "state_idx": 21,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.33184632658958435,
+    "actual_success": false
+  },
+  {
+    "state_idx": 21,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.34266945719718933,
+    "actual_success": false
+  },
+  {
+    "state_idx": 21,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.3431463837623596,
+    "actual_success": false
+  },
+  {
+    "state_idx": 22,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.24470841884613037,
+    "actual_success": false
+  },
+  {
+    "state_idx": 22,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.2472502738237381,
+    "actual_success": false
+  },
+  {
+    "state_idx": 22,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.2474822998046875,
+    "actual_success": false
+  },
+  {
+    "state_idx": 23,
+    "episode_id": "episode_000037",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 47,
+    "predicted_dist_to_goal": 0.2700285315513611,
+    "actual_success": false
+  },
+  {
+    "state_idx": 23,
+    "episode_id": "episode_000037",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 47,
+    "predicted_dist_to_goal": 0.27376922965049744,
+    "actual_success": false
+  },
+  {
+    "state_idx": 23,
+    "episode_id": "episode_000037",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 47,
+    "predicted_dist_to_goal": 0.27557235956192017,
+    "actual_success": false
+  },
+  {
+    "state_idx": 24,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 43,
+    "predicted_dist_to_goal": 0.3225005567073822,
+    "actual_success": false
+  },
+  {
+    "state_idx": 24,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 43,
+    "predicted_dist_to_goal": 0.3255966603755951,
+    "actual_success": false
+  },
+  {
+    "state_idx": 24,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 43,
+    "predicted_dist_to_goal": 0.3262424170970917,
+    "actual_success": false
+  },
+  {
+    "state_idx": 25,
+    "episode_id": "episode_000040",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.15147356688976288,
+    "actual_success": false
+  },
+  {
+    "state_idx": 25,
+    "episode_id": "episode_000040",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.15468518435955048,
+    "actual_success": false
+  },
+  {
+    "state_idx": 25,
+    "episode_id": "episode_000040",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.15494732558727264,
+    "actual_success": false
+  },
+  {
+    "state_idx": 26,
+    "episode_id": "episode_000042",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 313,
+    "predicted_dist_to_goal": 0.12748289108276367,
+    "actual_success": false
+  },
+  {
+    "state_idx": 26,
+    "episode_id": "episode_000042",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 313,
+    "predicted_dist_to_goal": 0.12787364423274994,
+    "actual_success": false
+  },
+  {
+    "state_idx": 26,
+    "episode_id": "episode_000042",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 313,
+    "predicted_dist_to_goal": 0.13215284049510956,
+    "actual_success": false
+  },
+  {
+    "state_idx": 27,
+    "episode_id": "episode_000044",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 55,
+    "predicted_dist_to_goal": 0.28702467679977417,
+    "actual_success": false
+  },
+  {
+    "state_idx": 27,
+    "episode_id": "episode_000044",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 55,
+    "predicted_dist_to_goal": 0.29116949439048767,
+    "actual_success": false
+  },
+  {
+    "state_idx": 27,
+    "episode_id": "episode_000044",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 55,
+    "predicted_dist_to_goal": 0.293700248003006,
+    "actual_success": false
+  },
+  {
+    "state_idx": 28,
+    "episode_id": "episode_000046",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.47625303268432617,
+    "actual_success": false
+  },
+  {
+    "state_idx": 28,
+    "episode_id": "episode_000046",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.4792080819606781,
+    "actual_success": false
+  },
+  {
+    "state_idx": 28,
+    "episode_id": "episode_000046",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.48492804169654846,
+    "actual_success": false
+  },
+  {
+    "state_idx": 29,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 39,
+    "predicted_dist_to_goal": 0.2950977087020874,
+    "actual_success": false
+  },
+  {
+    "state_idx": 29,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 39,
+    "predicted_dist_to_goal": 0.29611849784851074,
+    "actual_success": false
+  },
+  {
+    "state_idx": 29,
+    "episode_id": "episode_000047",
+    "ep_dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 39,
+    "predicted_dist_to_goal": 0.30554908514022827,
+    "actual_success": false
+  },
+  {
+    "state_idx": 30,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.27726009488105774,
+    "actual_success": false
+  },
+  {
+    "state_idx": 30,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.27877330780029297,
+    "actual_success": false
+  },
+  {
+    "state_idx": 30,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 84,
+    "predicted_dist_to_goal": 0.2820036709308624,
+    "actual_success": false
+  },
+  {
+    "state_idx": 31,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.26871663331985474,
+    "actual_success": false
+  },
+  {
+    "state_idx": 31,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.271615594625473,
+    "actual_success": false
+  },
+  {
+    "state_idx": 31,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.28132379055023193,
+    "actual_success": false
+  },
+  {
+    "state_idx": 32,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.3893398642539978,
+    "actual_success": false
+  },
+  {
+    "state_idx": 32,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.3963141143321991,
+    "actual_success": false
+  },
+  {
+    "state_idx": 32,
+    "episode_id": "episode_000010",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.3971347212791443,
+    "actual_success": false
+  },
+  {
+    "state_idx": 33,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 51,
+    "predicted_dist_to_goal": 0.6012229919433594,
+    "actual_success": false
+  },
+  {
+    "state_idx": 33,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 51,
+    "predicted_dist_to_goal": 0.6080287098884583,
+    "actual_success": false
+  },
+  {
+    "state_idx": 33,
+    "episode_id": "episode_000013",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 51,
+    "predicted_dist_to_goal": 0.61004638671875,
+    "actual_success": false
+  },
+  {
+    "state_idx": 34,
+    "episode_id": "episode_000018",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 324,
+    "predicted_dist_to_goal": 0.5348877906799316,
+    "actual_success": false
+  },
+  {
+    "state_idx": 34,
+    "episode_id": "episode_000018",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 324,
+    "predicted_dist_to_goal": 0.5350989103317261,
+    "actual_success": false
+  },
+  {
+    "state_idx": 34,
+    "episode_id": "episode_000018",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 324,
+    "predicted_dist_to_goal": 0.5367447137832642,
+    "actual_success": false
+  },
+  {
+    "state_idx": 35,
+    "episode_id": "episode_000021",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.5650699138641357,
+    "actual_success": false
+  },
+  {
+    "state_idx": 35,
+    "episode_id": "episode_000021",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.5653456449508667,
+    "actual_success": false
+  },
+  {
+    "state_idx": 35,
+    "episode_id": "episode_000021",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 33,
+    "predicted_dist_to_goal": 0.5678464770317078,
+    "actual_success": false
+  },
+  {
+    "state_idx": 36,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.5779244899749756,
+    "actual_success": false
+  },
+  {
+    "state_idx": 36,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.5813820362091064,
+    "actual_success": false
+  },
+  {
+    "state_idx": 36,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.5834226012229919,
+    "actual_success": false
+  },
+  {
+    "state_idx": 37,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 256,
+    "predicted_dist_to_goal": 0.39156195521354675,
+    "actual_success": false
+  },
+  {
+    "state_idx": 37,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 256,
+    "predicted_dist_to_goal": 0.40044382214546204,
+    "actual_success": false
+  },
+  {
+    "state_idx": 37,
+    "episode_id": "episode_000025",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 256,
+    "predicted_dist_to_goal": 0.4012851119041443,
+    "actual_success": false
+  },
+  {
+    "state_idx": 38,
+    "episode_id": "episode_000026",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 62,
+    "predicted_dist_to_goal": 0.3496571481227875,
+    "actual_success": false
+  },
+  {
+    "state_idx": 38,
+    "episode_id": "episode_000026",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 62,
+    "predicted_dist_to_goal": 0.3514055013656616,
+    "actual_success": false
+  },
+  {
+    "state_idx": 38,
+    "episode_id": "episode_000026",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 62,
+    "predicted_dist_to_goal": 0.3517517149448395,
+    "actual_success": false
+  },
+  {
+    "state_idx": 39,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.27167418599128723,
+    "actual_success": false
+  },
+  {
+    "state_idx": 39,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.27832794189453125,
+    "actual_success": false
+  },
+  {
+    "state_idx": 39,
+    "episode_id": "episode_000030",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.280487060546875,
+    "actual_success": false
+  },
+  {
+    "state_idx": 40,
+    "episode_id": "episode_000031",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.2761659324169159,
+    "actual_success": false
+  },
+  {
+    "state_idx": 40,
+    "episode_id": "episode_000031",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.2866765856742859,
+    "actual_success": false
+  },
+  {
+    "state_idx": 40,
+    "episode_id": "episode_000031",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.29258033633232117,
+    "actual_success": false
+  },
+  {
+    "state_idx": 41,
+    "episode_id": "episode_000032",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.5111593008041382,
+    "actual_success": false
+  },
+  {
+    "state_idx": 41,
+    "episode_id": "episode_000032",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.5170608758926392,
+    "actual_success": false
+  },
+  {
+    "state_idx": 41,
+    "episode_id": "episode_000032",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.5200062990188599,
+    "actual_success": false
+  },
+  {
+    "state_idx": 42,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.4888626039028168,
+    "actual_success": false
+  },
+  {
+    "state_idx": 42,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.4893978536128998,
+    "actual_success": false
+  },
+  {
+    "state_idx": 42,
+    "episode_id": "episode_000033",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 38,
+    "predicted_dist_to_goal": 0.4894346594810486,
+    "actual_success": false
+  },
+  {
+    "state_idx": 43,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5017594695091248,
+    "actual_success": false
+  },
+  {
+    "state_idx": 43,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5031212568283081,
+    "actual_success": false
+  },
+  {
+    "state_idx": 43,
+    "episode_id": "episode_000039",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5045593976974487,
+    "actual_success": false
+  },
+  {
+    "state_idx": 44,
+    "episode_id": "episode_000041",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 205,
+    "predicted_dist_to_goal": 0.34023651480674744,
+    "actual_success": false
+  },
+  {
+    "state_idx": 44,
+    "episode_id": "episode_000041",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 205,
+    "predicted_dist_to_goal": 0.3451860547065735,
+    "actual_success": false
+  },
+  {
+    "state_idx": 44,
+    "episode_id": "episode_000041",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 205,
+    "predicted_dist_to_goal": 0.350564181804657,
+    "actual_success": false
+  },
+  {
+    "state_idx": 45,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 42,
+    "predicted_dist_to_goal": 0.5599344372749329,
+    "actual_success": false
+  },
+  {
+    "state_idx": 45,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 42,
+    "predicted_dist_to_goal": 0.5668763518333435,
+    "actual_success": false
+  },
+  {
+    "state_idx": 45,
+    "episode_id": "episode_000043",
+    "ep_dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 42,
+    "predicted_dist_to_goal": 0.5673656463623047,
+    "actual_success": false
+  },
+  {
+    "state_idx": 46,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.3465915322303772,
+    "actual_success": false
+  },
+  {
+    "state_idx": 46,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.34937965869903564,
+    "actual_success": false
+  },
+  {
+    "state_idx": 46,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.3509262204170227,
+    "actual_success": false
+  },
+  {
+    "state_idx": 47,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.4142517149448395,
+    "actual_success": false
+  },
+  {
+    "state_idx": 47,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.41575396060943604,
+    "actual_success": false
+  },
+  {
+    "state_idx": 47,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 192,
+    "predicted_dist_to_goal": 0.4176395833492279,
+    "actual_success": false
+  },
+  {
+    "state_idx": 48,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.2812153995037079,
+    "actual_success": false
+  },
+  {
+    "state_idx": 48,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.2863641083240509,
+    "actual_success": false
+  },
+  {
+    "state_idx": 48,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 40,
+    "predicted_dist_to_goal": 0.2868969440460205,
+    "actual_success": false
+  },
+  {
+    "state_idx": 49,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 52,
+    "predicted_dist_to_goal": 0.3906860053539276,
+    "actual_success": false
+  },
+  {
+    "state_idx": 49,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 52,
+    "predicted_dist_to_goal": 0.39153116941452026,
+    "actual_success": false
+  },
+  {
+    "state_idx": 49,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 52,
+    "predicted_dist_to_goal": 0.3916359841823578,
+    "actual_success": false
+  },
+  {
+    "state_idx": 50,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.1767853945493698,
+    "actual_success": false
+  },
+  {
+    "state_idx": 50,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.18119511008262634,
+    "actual_success": false
+  },
+  {
+    "state_idx": 50,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 70,
+    "predicted_dist_to_goal": 0.18193316459655762,
+    "actual_success": false
+  },
+  {
+    "state_idx": 51,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 23,
+    "predicted_dist_to_goal": 0.33551833033561707,
+    "actual_success": false
+  },
+  {
+    "state_idx": 51,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 23,
+    "predicted_dist_to_goal": 0.33578959107398987,
+    "actual_success": false
+  },
+  {
+    "state_idx": 51,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 23,
+    "predicted_dist_to_goal": 0.3421097695827484,
+    "actual_success": false
+  },
+  {
+    "state_idx": 52,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.562586784362793,
+    "actual_success": false
+  },
+  {
+    "state_idx": 52,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.5656449198722839,
+    "actual_success": false
+  },
+  {
+    "state_idx": 52,
+    "episode_id": "episode_000004",
+    "ep_dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.5661941766738892,
+    "actual_success": false
+  },
+  {
+    "state_idx": 53,
+    "episode_id": "episode_000005",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 297,
+    "predicted_dist_to_goal": 0.47787296772003174,
+    "actual_success": false
+  },
+  {
+    "state_idx": 53,
+    "episode_id": "episode_000005",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 297,
+    "predicted_dist_to_goal": 0.483243852853775,
+    "actual_success": false
+  },
+  {
+    "state_idx": 53,
+    "episode_id": "episode_000005",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 297,
+    "predicted_dist_to_goal": 0.48434779047966003,
+    "actual_success": false
+  },
+  {
+    "state_idx": 54,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.5495073199272156,
+    "actual_success": false
+  },
+  {
+    "state_idx": 54,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.5581461191177368,
+    "actual_success": false
+  },
+  {
+    "state_idx": 54,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.5622268319129944,
+    "actual_success": false
+  },
+  {
+    "state_idx": 55,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 83,
+    "predicted_dist_to_goal": 0.10605990141630173,
+    "actual_success": false
+  },
+  {
+    "state_idx": 55,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 83,
+    "predicted_dist_to_goal": 0.10631123185157776,
+    "actual_success": false
+  },
+  {
+    "state_idx": 55,
+    "episode_id": "episode_000008",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+    "offset": 15,
+    "used_t_f": 83,
+    "predicted_dist_to_goal": 0.11327669024467468,
+    "actual_success": false
+  },
+  {
+    "state_idx": 56,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.4509594142436981,
+    "actual_success": false
+  },
+  {
+    "state_idx": 56,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.4539858400821686,
+    "actual_success": false
+  },
+  {
+    "state_idx": 56,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.45618152618408203,
+    "actual_success": false
+  },
+  {
+    "state_idx": 57,
+    "episode_id": "episode_000002",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.3289891481399536,
+    "actual_success": false
+  },
+  {
+    "state_idx": 57,
+    "episode_id": "episode_000002",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.32916682958602905,
+    "actual_success": false
+  },
+  {
+    "state_idx": 57,
+    "episode_id": "episode_000002",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 0,
+    "predicted_dist_to_goal": 0.3295784890651703,
+    "actual_success": false
+  },
+  {
+    "state_idx": 58,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 220,
+    "predicted_dist_to_goal": 0.29543447494506836,
+    "actual_success": false
+  },
+  {
+    "state_idx": 58,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 220,
+    "predicted_dist_to_goal": 0.3045143783092499,
+    "actual_success": false
+  },
+  {
+    "state_idx": 58,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 220,
+    "predicted_dist_to_goal": 0.30453115701675415,
+    "actual_success": false
+  },
+  {
+    "state_idx": 59,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.10851152241230011,
+    "actual_success": false
+  },
+  {
+    "state_idx": 59,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.1151220053434372,
+    "actual_success": false
+  },
+  {
+    "state_idx": 59,
+    "episode_id": "episode_000006",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 100,
+    "predicted_dist_to_goal": 0.11820831894874573,
+    "actual_success": false
+  },
+  {
+    "state_idx": 60,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 160,
+    "predicted_dist_to_goal": 0.5237975120544434,
+    "actual_success": false
+  },
+  {
+    "state_idx": 60,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 160,
+    "predicted_dist_to_goal": 0.5243204832077026,
+    "actual_success": false
+  },
+  {
+    "state_idx": 60,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+    "offset": 15,
+    "used_t_f": 160,
+    "predicted_dist_to_goal": 0.524713397026062,
+    "actual_success": false
+  },
+  {
+    "state_idx": 61,
+    "episode_id": "episode_000001",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 108,
+    "predicted_dist_to_goal": 0.05859815329313278,
+    "actual_success": false
+  },
+  {
+    "state_idx": 61,
+    "episode_id": "episode_000001",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 108,
+    "predicted_dist_to_goal": 0.06491222232580185,
+    "actual_success": false
+  },
+  {
+    "state_idx": 61,
+    "episode_id": "episode_000001",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 108,
+    "predicted_dist_to_goal": 0.06569474190473557,
+    "actual_success": false
+  },
+  {
+    "state_idx": 62,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5088297128677368,
+    "actual_success": false
+  },
+  {
+    "state_idx": 62,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5101127028465271,
+    "actual_success": false
+  },
+  {
+    "state_idx": 62,
+    "episode_id": "episode_000009",
+    "ep_dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+    "offset": 15,
+    "used_t_f": 32,
+    "predicted_dist_to_goal": 0.5162598490715027,
+    "actual_success": false
+  },
+  {
+    "state_idx": 63,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.33721157908439636,
+    "actual_success": false
+  },
+  {
+    "state_idx": 63,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.3394079804420471,
+    "actual_success": false
+  },
+  {
+    "state_idx": 63,
+    "episode_id": "episode_000000",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.340798020362854,
+    "actual_success": false
+  },
+  {
+    "state_idx": 64,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 191,
+    "predicted_dist_to_goal": 0.40606218576431274,
+    "actual_success": false
+  },
+  {
+    "state_idx": 64,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 191,
+    "predicted_dist_to_goal": 0.4135324954986572,
+    "actual_success": false
+  },
+  {
+    "state_idx": 64,
+    "episode_id": "episode_000003",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 191,
+    "predicted_dist_to_goal": 0.4162035286426544,
+    "actual_success": false
+  },
+  {
+    "state_idx": 65,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.2847023606300354,
+    "actual_success": false
+  },
+  {
+    "state_idx": 65,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.28494012355804443,
+    "actual_success": false
+  },
+  {
+    "state_idx": 65,
+    "episode_id": "episode_000007",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 41,
+    "predicted_dist_to_goal": 0.28650933504104614,
+    "actual_success": false
+  },
+  {
+    "state_idx": 66,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.380126416683197,
+    "actual_success": false
+  },
+  {
+    "state_idx": 66,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.38501039147377014,
+    "actual_success": false
+  },
+  {
+    "state_idx": 66,
+    "episode_id": "episode_000011",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 44,
+    "predicted_dist_to_goal": 0.3883334696292877,
+    "actual_success": false
+  },
+  {
+    "state_idx": 67,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 78,
+    "predicted_dist_to_goal": 0.22452965378761292,
+    "actual_success": false
+  },
+  {
+    "state_idx": 67,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 78,
+    "predicted_dist_to_goal": 0.22505496442317963,
+    "actual_success": false
+  },
+  {
+    "state_idx": 67,
+    "episode_id": "episode_000016",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 78,
+    "predicted_dist_to_goal": 0.22796416282653809,
+    "actual_success": false
+  },
+  {
+    "state_idx": 68,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.2324875146150589,
+    "actual_success": false
+  },
+  {
+    "state_idx": 68,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.23308534920215607,
+    "actual_success": false
+  },
+  {
+    "state_idx": 68,
+    "episode_id": "episode_000023",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 67,
+    "predicted_dist_to_goal": 0.23338493704795837,
+    "actual_success": false
+  },
+  {
+    "state_idx": 69,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.47910454869270325,
+    "actual_success": false
+  },
+  {
+    "state_idx": 69,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.4792434275150299,
+    "actual_success": false
+  },
+  {
+    "state_idx": 69,
+    "episode_id": "episode_000024",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 36,
+    "predicted_dist_to_goal": 0.4807194769382477,
+    "actual_success": false
+  },
+  {
+    "state_idx": 70,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.2676622271537781,
+    "actual_success": false
+  },
+  {
+    "state_idx": 70,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.27066582441329956,
+    "actual_success": false
+  },
+  {
+    "state_idx": 70,
+    "episode_id": "episode_000029",
+    "ep_dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+    "offset": 15,
+    "used_t_f": 75,
+    "predicted_dist_to_goal": 0.27202367782592773,
+    "actual_success": false
+  }
+]

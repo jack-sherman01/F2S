@@ -981,6 +981,56 @@ skill-archiving claim: re-run the offset/coverage search (or try
 CEM-guided search) against the now-correct validator and see whether any
 candidate actually clears 70% for real.
 
+## Re-opened the search after the fix: CEM at offset=15 finds 0/213, and why that's informative
+
+Tried the one lever not yet combined with the frozen offset=15
+intervention point: CEM-guided search (`f2s/candidates/cem.py`), which
+`f2s/evolution/loop.py`'s production path already defaults to
+(`use_cem=True`) but which was only ever tried, pre-bugfix, at offset=0
+(0/40 real transfer there -- see the CEM section above). Ran
+`scripts/evaluate_candidate_ranking_cem_offset15.py`: same 71-state pool,
+offset=15, top-3 CEM candidates executed for real per state (213 real
+executions).
+
+**Result: 0/213 real successes.** Zero candidates even reached the
+Day-19 validation stage this time (versus random search's 3 successes,
+now known to score 50-70% on the corrected validator).
+
+**Why this is a real, informative negative result rather than "search
+got unlucky"**: compared CEM's predicted-distance-to-goal against random
+search's, on the exact same 71-state pool at the exact same offset:
+
+| | predicted dist-to-goal (world model) | real outcome |
+|---|---|---|
+| CEM's 10 best candidates | 0.059 - 0.113 (all *better* than every random-search success) | **0/10 succeeded** |
+| Random search's 3 real successes | 0.223 - 0.233 | 3/3 succeeded (for real) |
+
+CEM found candidates the world model rated as roughly **4x closer to
+the goal** than any of the candidates random search actually succeeded
+with -- and every one of them failed in the real simulator. This is the
+clearest demonstration yet of the scoring-formula problem diagnosed
+earlier (see "Went back to the proposal..." section, the Simpson's-
+paradox-style within-state vs. between-state correlation breakdown):
+CEM optimizes exactly the metric already shown to be an unreliable proxy
+within a single state, so pushing harder against that metric doesn't
+find better real candidates -- it finds candidates that are better at
+fooling the world model, which is a different thing. Random search's
+real successes were not the ones the world model liked best; CEM,
+by construction, only ever looks at the ones the world model likes best.
+
+**Implication**: guided search is not currently a fix for the coverage
+problem (2-3 real successes out of 71 states, all found by random
+sampling, none yet passing the corrected 70% validation threshold). The
+bottleneck remains what sections 3-7 already quantified: world-model
+accuracy over the execution horizon, particularly around contact, not
+search strategy. The one lever from the original diagnosis chain that
+has *not* been tried at offset=15 is sweeping the intervention offset
+per-state rather than using one fixed value for every state (section
+11's sweep already showed the best offset differs across trajectories).
+
+Data: `results/can/candidate_ranking_cem_offset15/` (records, skill_archive,
+validation_results, summary), `install_logs/day25_cem_offset15_search.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
