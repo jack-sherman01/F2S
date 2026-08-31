@@ -848,6 +848,51 @@ thing to grow (e.g. by sweeping the offset per-state rather than using
 one fixed value for every state, since section 11's sweep already showed
 the best offset is not obviously the same for every trajectory).
 
+## Filling the remaining Final Acceptance Criteria gaps: Failure Replay baseline
+
+Per the proposal's Day-22 rule (freeze the configuration, stop tuning,
+move to the final comparisons) and the user's explicit direction: stopped
+growing offset=15's coverage further and started filling the 4 completely
+untouched Final Acceptance Criteria items, starting with the one the
+proposal names but never defines -- item 10, "F2S is compared with SOE
+and Failure Replay."
+
+The proposal lists Failure Replay by name (Days 23-24, Figure 3, item 10)
+alongside Success-only and Full F2S but never specifies its mechanism.
+Documented interpretation (`scripts/build_failure_replay_dataset.py`):
+fine-tune the baseline policy on the original demos plus the *raw failed
+episode trajectories, replayed as-is* -- no failure-mode clustering, no
+candidate generation, no world-model ranking, no safety filter, no skill
+validation. This isolates "does merely exposing the policy to more of
+its own failure states help" from "does F2S's structured processing of
+those failures help," matching how the proposal uses the term
+contrastively throughout.
+
+Built a combined RoboMimic-schema hdf5 (the original 36 training demos +
+13 raw failed episodes from `results/can/f2s_final/seed_0/round_0/eval/episodes`)
+and fine-tuned the baseline checkpoint on it for 150 epochs with SOE's
+own, completely unmodified `train_single_gpu.py` -- no new training code,
+only new data.
+
+**Result**: 63.3% success (30 episodes) vs. **73.3%** for the
+un-fine-tuned baseline -- naive failure replay *hurt* performance by 10
+points. Real and informative: plain behavior cloning has no reward
+signal, so it cannot distinguish "this action led to failure" from "this
+action led to success" -- replaying raw failures just teaches the policy
+to imitate them a little more. This directly supports F2S's premise that
+failures need structured processing to be useful, not naive replay.
+
+| method | success rate | mean episode length |
+|---|---|---|
+| Fixed Policy (frozen baseline) | 73.3% | 183.4 steps |
+| SOE (own exploration, noise_scale=2.0) | 0.0% | 400.0 steps |
+| Failure Replay (naive fine-tune) | 63.3% | 211.1 steps |
+
+`scripts/run_method.py --method failure_replay` is now implemented
+(previously refused with `NotImplementedError` alongside `success_only`,
+which remains refused -- same missing retraining-loop dependency, but
+wasn't specifically requested).
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -891,9 +936,13 @@ intervention point.
   two tasks differ this much on robustness; worth investigating if
   continuing (task difference, or just these 3 particular candidates).
 - Policy-weight fine-tuning ("Policy Update" in the proposal's Figure 1)
-  is not implemented; the skill archive is used only at evaluation time.
-  `success_only`/`failure_replay` baselines are consequently refused
-  (`NotImplementedError`) rather than faked.
+  is not implemented as part of F2S's own evolution loop; the skill
+  archive is used only at evaluation time there. **Update:** `failure_replay`
+  (see "Filling the remaining Final Acceptance Criteria gaps" above) *does*
+  now fine-tune a policy, as a one-off baseline-comparison script outside
+  the evolution loop -- 63.3% vs. the 73.3% frozen baseline. `success_only`
+  remains refused (`NotImplementedError`) rather than faked; same missing
+  dependency, not yet specifically requested.
 - Only seed 0 has been run for any method; the proposal's final
   experiments require seeds {0,1,2}.
 - Ablations (Day 24), unseen-configuration evaluation (Day 25), and the
