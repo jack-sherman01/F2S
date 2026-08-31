@@ -250,7 +250,12 @@ def discover_and_archive_skills(
             seg = segments[i]
             meta = next(m for m in metas if m["episode_id"] == seg["episode_id"])
             _, arrays = load_episode(episode_dir, seg["episode_id"])
-            t_f = seg["failure_time"]
+            # intervention_time (failure_time backed off by the frozen
+            # DEFAULT_INTERVENTION_OFFSET, see f2s/failure/extractor.py) --
+            # not the raw detection point -- is where correction is
+            # actually attempted from; confirmed necessary and sufficient
+            # to produce validated skills on Can, see SOE/README_F2S.md.
+            t_f = seg["intervention_time"]
             obs_t = {k: arrays[f"obs_{k}"][t_f] for k in meta["obs_keys"]}
             obs_tensors = {k: torch.from_numpy(np.asarray(v)).float().unsqueeze(0).to(device) for k, v in obs_t.items()}
 

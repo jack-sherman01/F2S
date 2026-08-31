@@ -61,6 +61,8 @@ def main():
         save_json(os.path.join(segments_dir, f"{seg_id}.json"), dict(
             episode_id=segment["episode_id"],
             failure_time=segment["failure_time"],
+            intervention_time=segment["intervention_time"],
+            intervention_offset=segment["intervention_offset"],
             failure_type=segment["failure_type"],
             failure_stage=segment["failure_stage"],
             start_time=segment["start_time"],

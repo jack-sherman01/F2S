@@ -157,22 +157,56 @@ def extract_failure_segment(meta: Dict[str, Any], arrays: Dict[str, np.ndarray],
     return start_time, end_time, state_window, action_window, obs_window
 
 
-def process_episode(meta: Dict[str, Any], arrays: Dict[str, np.ndarray], Hf: int = 10) -> Dict[str, Any]:
+# Default correction intervention offset (steps before the detected
+# failure_time to actually start generating candidates from), frozen per
+# the Day-22 "freeze the final configuration" rule after the offset sweep
+# in SOE/README_F2S.md ("Tested the earlier-intervention hypothesis
+# directly" / "Scale-up confirmation"): 0/10/15/20/25/30 were tested on
+# 20 then 71 real Can failure states; 15 produced the project's first
+# validated, archived skills (2/2 at 100% Day-19 validation, reconfirmed
+# at 3.5x scale). Not re-tuned per state -- see that section for the
+# measured, still-narrow (~2.8% of 71 states) coverage this single fixed
+# value achieves, and why growing coverage (not re-tuning this number)
+# is the documented next step, deliberately not pursued further this
+# round per the Day-22 "stop tuning, move to the final comparisons" rule.
+DEFAULT_INTERVENTION_OFFSET = 15
+
+
+def process_episode(
+    meta: Dict[str, Any],
+    arrays: Dict[str, np.ndarray],
+    Hf: int = 10,
+    intervention_offset: int = DEFAULT_INTERVENTION_OFFSET,
+) -> Dict[str, Any]:
     """Full Day-8 pipeline for one episode: detect failure time/type,
     assign stage, extract the local segment. Returns None for successful
-    episodes (nothing to extract)."""
+    episodes (nothing to extract).
+
+    `failure_time` (returned) is the raw detection point (find_stall_time's
+    last-point-of-progress, or the collision/object_drop/pose_error time)
+    -- kept for failure-type record-keeping and characterization.
+    `intervention_time` is where correction is actually attempted:
+    max(0, failure_time - intervention_offset). Stage assignment and the
+    local segment/window used for failure-mode clustering are both taken
+    at intervention_time, since that's the actual state a generated
+    candidate starts from; failure_type/failure_time describe what
+    eventually went wrong, not necessarily the state being corrected from.
+    """
     failure_time, failure_type = detect_failure_time(meta, arrays)
     if failure_time is None:
         return None
     assert failure_type in FAILURE_LABELS
 
-    failure_stage = assign_failure_stage(meta, arrays, failure_time)
+    intervention_time = max(0, failure_time - intervention_offset)
+    failure_stage = assign_failure_stage(meta, arrays, intervention_time)
     start_time, end_time, state_window, action_window, obs_window = extract_failure_segment(
-        meta, arrays, failure_time, Hf=Hf
+        meta, arrays, intervention_time, Hf=Hf
     )
     return dict(
         episode_id=meta["episode_id"],
         failure_time=failure_time,
+        intervention_time=intervention_time,
+        intervention_offset=intervention_offset,
         failure_type=failure_type,
         failure_stage=failure_stage,
         start_time=start_time,
