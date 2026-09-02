@@ -1,0 +1,808 @@
+=== SKIP fixed_policy seed=0 (already has metrics.json) ===
+=== SKIP soe seed=0 (already has metrics.json) ===
+=== SKIP failure_replay seed=0 (already has metrics.json) ===
+=== f2s seed=0 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_eef_pos', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin', 'robot0_eef_vel_ang', 'object', 'robot0_eef_quat', 'robot0_joint_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 2/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 3/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 4/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 5/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 6/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 7/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 8/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 9/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 10/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 11/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 12/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 13/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 14/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 15/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 16/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 17/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 18/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 19/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 20/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 21/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 22/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 23/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 24/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 25/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 26/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 27/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 28/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 29/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 30/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== unguided_latent_repair seed=0 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_vel_ang', 'robot0_joint_vel', 'robot0_joint_pos_sin', 'robot0_eef_quat', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'object', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=26
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=32
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=38
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=27
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=114
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=43
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=23
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=26
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=31
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=38
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=62
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== fixed_policy seed=1 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'robot0_joint_pos_sin', 'object', 'robot0_eef_pos', 'robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=116
+[2/30] episode=episode_000001 success=True len=93
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=True len=98
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=100
+[10/30] episode=episode_000009 success=True len=89
+[11/30] episode=episode_000010 success=True len=113
+[12/30] episode=episode_000011 success=True len=98
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=101
+[15/30] episode=episode_000014 success=True len=117
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=True len=113
+[19/30] episode=episode_000018 success=True len=94
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=True len=104
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=99
+[24/30] episode=episode_000023 success=True len=122
+[25/30] episode=episode_000024 success=True len=91
+[26/30] episode=episode_000025 success=True len=108
+[27/30] episode=episode_000026 success=True len=103
+[28/30] episode=episode_000027 success=True len=112
+[29/30] episode=episode_000028 success=True len=121
+[30/30] episode=episode_000029 success=True len=105
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.4,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 133.36221957206726,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.4,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 133.36221957206726,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== soe seed=1 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos', 'robot0_eef_pos', 'object', 'robot0_joint_pos', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_gripper_qvel', 'robot0_joint_vel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=False len=400
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=False len=400
+[10/30] episode=episode_000009 success=False len=400
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=False len=400
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=False len=400
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=False len=400
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=False len=400
+[27/30] episode=episode_000026 success=False len=400
+[28/30] episode=episode_000027 success=False len=400
+[29/30] episode=episode_000028 success=False len=400
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 264.93072962760925,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 264.93072962760925,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+=== failure_replay seed=1 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['object', 'robot0_joint_vel', 'robot0_eef_pos', 'robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos', 'robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_gripper_qvel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=116
+[2/30] episode=episode_000001 success=True len=101
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=107
+[10/30] episode=episode_000009 success=True len=96
+[11/30] episode=episode_000010 success=True len=103
+[12/30] episode=episode_000011 success=True len=93
+[13/30] episode=episode_000012 success=True len=104
+[14/30] episode=episode_000013 success=True len=98
+[15/30] episode=episode_000014 success=True len=118
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=True len=112
+[19/30] episode=episode_000018 success=True len=95
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=True len=106
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=98
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=97
+[26/30] episode=episode_000025 success=True len=96
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=119
+[30/30] episode=episode_000029 success=True len=97
+{
+  "task": "Can",
+  "method": "failure_replay",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.6666666666666666,
+  "failure_rate": 0.33333333333333337,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 202.16666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 145.30379104614258,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/failure_replay/seed_0/round_0/logs/soe_can_lowdim_failure_replay/2026-08-30-18-32-47/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "failure_replay",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.6666666666666666,
+  "failure_rate": 0.33333333333333337,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 202.16666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 145.30379104614258,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/failure_replay/seed_0/round_0/logs/soe_can_lowdim_failure_replay/2026-08-30-18-32-47/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== f2s seed=1 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_joint_pos', 'robot0_gripper_qvel', 'object', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 2/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 3/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 4/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 5/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 6/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 7/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 8/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 9/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 10/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 11/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 12/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 13/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 14/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 15/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 16/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 17/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 18/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 19/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 20/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 21/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 22/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 23/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 24/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 25/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 26/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 27/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 28/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 29/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 30/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== unguided_latent_repair seed=1 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_eef_pos', 'robot0_eef_vel_lin', 'object', 'robot0_eef_vel_ang', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_joint_vel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=27
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=74
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=56
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=31
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=31
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=66
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=56
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=26
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=35
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=29
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=109
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=75
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== fixed_policy seed=2 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_quat', 'robot0_joint_pos', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_eef_pos', 'object', 'robot0_gripper_qvel', 'robot0_joint_vel', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=98
+[2/30] episode=episode_000001 success=True len=118
+[3/30] episode=episode_000002 success=True len=111
+[4/30] episode=episode_000003 success=True len=100
+[5/30] episode=episode_000004 success=True len=87
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=True len=86
+[9/30] episode=episode_000008 success=True len=88
+[10/30] episode=episode_000009 success=True len=97
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=97
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=True len=100
+[16/30] episode=episode_000015 success=True len=102
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=True len=103
+[19/30] episode=episode_000018 success=True len=93
+[20/30] episode=episode_000019 success=True len=118
+[21/30] episode=episode_000020 success=True len=109
+[22/30] episode=episode_000021 success=True len=121
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=True len=115
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=True len=109
+[27/30] episode=episode_000026 success=True len=123
+[28/30] episode=episode_000027 success=True len=111
+[29/30] episode=episode_000028 success=True len=117
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 140.64578819274902,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 140.64578819274902,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== soe seed=2 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_joint_vel', 'object', 'robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_joint_pos_sin', 'robot0_eef_quat', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=False len=400
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=False len=400
+[10/30] episode=episode_000009 success=False len=400
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=False len=400
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=False len=400
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=False len=400
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=False len=400
+[27/30] episode=episode_000026 success=False len=400
+[28/30] episode=episode_000027 success=False len=400
+[29/30] episode=episode_000028 success=False len=400
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 280.40670943260193,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 280.40670943260193,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+=== failure_replay seed=2 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_cos', 'robot0_eef_vel_lin', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_joint_vel', 'object', 'robot0_eef_pos', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=97
+[2/30] episode=episode_000001 success=True len=118
+[3/30] episode=episode_000002 success=True len=105
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=True len=134
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=85
+[10/30] episode=episode_000009 success=True len=93
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=True len=113
+[13/30] episode=episode_000012 success=True len=96
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=True len=104
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=True len=91
+[18/30] episode=episode_000017 success=True len=97
+[19/30] episode=episode_000018 success=True len=86
+[20/30] episode=episode_000019 success=True len=109
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=118
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=True len=115
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=True len=117
+[27/30] episode=episode_000026 success=True len=126
+[28/30] episode=episode_000027 success=True len=107
+[29/30] episode=episode_000028 success=True len=126
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "failure_replay",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.6666666666666666,
+  "failure_rate": 0.33333333333333337,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 204.66666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 146.1314468383789,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/failure_replay/seed_0/round_0/logs/soe_can_lowdim_failure_replay/2026-08-30-18-32-47/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "failure_replay",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.6666666666666666,
+  "failure_rate": 0.33333333333333337,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 204.66666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 146.1314468383789,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/failure_replay/seed_0/round_0/logs/soe_can_lowdim_failure_replay/2026-08-30-18-32-47/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== f2s seed=2 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_eef_pos', 'robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_joint_vel', 'robot0_gripper_qpos', 'object', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 2/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 3/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 4/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 5/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 6/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 7/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 8/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 9/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 10/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 11/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 12/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 13/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 14/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 15/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 16/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 17/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 18/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 19/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 20/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 21/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 22/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 23/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 24/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 25/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 26/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 27/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 28/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 29/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 30/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== unguided_latent_repair seed=2 ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_eef_pos', 'robot0_gripper_qpos', 'robot0_joint_pos', 'object', 'robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_eef_quat']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=26
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=26
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=31
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=49
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=62
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=38
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=33
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=25
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=27
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=23
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=76
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=32
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== ALL DONE ===

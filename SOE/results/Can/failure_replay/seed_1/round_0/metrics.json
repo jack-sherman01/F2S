@@ -1,0 +1,18 @@
+{
+  "task": "Can",
+  "method": "failure_replay",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.6666666666666666,
+  "failure_rate": 0.33333333333333337,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 202.16666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 145.30379104614258,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/failure_replay/seed_0/round_0/logs/soe_can_lowdim_failure_replay/2026-08-30-18-32-47/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}

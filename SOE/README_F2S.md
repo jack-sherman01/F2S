@@ -1235,6 +1235,68 @@ for now in favor of the three items above, which are unambiguous Final
 Acceptance Criteria / RQ requirements; noted here so it isn't mistaken
 for an oversight.
 
+## Day 23: three-seed final results -- F2S and Unguided Latent Repair both collapse to 0%, confirmed across seeds
+
+Ran all 5 methods (`success_only` remains the one documented exception,
+unimplemented) at seeds `{0, 1, 2}`, 30 in-distribution episodes each,
+identical checkpoint(s)/config/rollout budget per method across seeds
+(`scripts/run_method.py`, `install_logs/run_three_seed_final.sh`); seed_0
+for `fixed_policy`/`soe`/`failure_replay` reused already-existing runs
+(real execution outcomes don't change by re-running the same seed), every
+other cell is a fresh run.
+
+| method | seed 0 | seed 1 | seed 2 | mean ± std |
+|---|---|---|---|---|
+| Fixed Policy | 73.3% | 73.3% | 70.0% | **72.2% ± 1.6%** |
+| SOE | 0.0% | 0.0% | 0.0% | 0.0% ± 0.0% |
+| Failure Replay | 63.3% | 66.7% | 66.7% | **65.6% ± 1.6%** |
+| F2S | 0.0% | 0.0% | 0.0% | **0.0% ± 0.0%** |
+| Unguided Latent Repair | 0.0% | 0.0% | 0.0% | 0.0% ± 0.0% |
+
+Fixed Policy and Failure Replay are stable across seeds (std ~1.6 points,
+consistent with the single-seed numbers reported earlier in this log).
+**F2S is a clean, three-seed-confirmed 0% -- every one of the 90 F2S
+episodes (30 x 3 seeds) times out at 400 steps** (checked: `failure_type:
+"timeout"`, `episode_length: 400` in every episode's metadata across all
+three seeds' `results/Can/f2s/seed_*/round_0/episodes/`). This is the
+*in-distribution* version of the same collapse the Day-25 unseen-config
+eval found (1.0% success, 93% safety-violation rate there) -- and the
+same root cause applies here too: the archived skill's retrieval has no
+real applicability gating (see "Day 25: unseen-configuration evaluation"
+above for the full mechanism), so it fires on essentially every stall
+regardless of whether the current rollout resembles anything the skill
+was validated on, even *in-distribution*. This had not been measured
+before now -- `f2s` had never been run as a plain 30-episode
+in-distribution baseline prior to this three-seed sweep (only via 3-round
+evolution-loop smoke tests and the Day-25 unseen-config eval) -- so this
+is new information, not a restatement of the Day-25 finding.
+
+**Unguided Latent Repair also collapses to a clean 0%** across all three
+seeds, for a related but distinct reason: on-the-spot candidate
+generation triggers on the same stall detector, generating and playing
+back a fresh, unvalidated action-chunk correction on every stall (19-74
+repair attempts per episode observed in the logs) with no cross-episode
+memory. Unlike F2S's skill (which at least passed Day-19 validation once
+under the *fixed* protocol), these candidates are never validated against
+anything beyond the single world-model rollout that ranked them, so nothing here contradicts H1 (structured, validated repairs should beat
+unguided ones) -- if anything, Unguided Latent Repair failing exactly as
+hard as F2S suggests the shared machinery (stall-triggered open-loop
+action-chunk replacement, full stop, no closed-loop correction once
+playback starts) may itself be a bigger problem than which candidates get
+selected.
+
+**This is a real, three-seed-confirmed, informative negative result for
+the current implementation** -- not a fabricated number, and not
+something to paper over. It sharpens rather than contradicts the Day-25
+finding: the fix identified there (gate skill/candidate playback on a
+live applicability check immediately before replay, not just at
+discovery/generation time) is now confirmed necessary in-distribution
+too, not only under unseen configurations.
+
+Data: `results/Can/{fixed_policy,soe,failure_replay,f2s,unguided_latent_repair}/seed_{0,1,2}/round_0/`
+(metrics.json, config.yaml, git_commit.txt, full episode logs),
+`install_logs/three_seed_final_all.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -1272,10 +1334,17 @@ per-state offset-selection policy (not the current fixed default, and
 not exhaustively sweeping every state) is not implemented; (2) coverage
 is still narrow -- 5 of 71 pooled states (~7%) produced at least one real
 success across every offset tried so far (0/10/15/20/25/30), and only 2
-of those 5 clear the 70% archive threshold; (3) H3 (skill archive
-improves generalization) can now, for the first time, actually be tested
-with a real (correctly-validated) archive, once wired into the real
-evolution loop and evaluated via skill retrieval during rollouts.
+of those 5 clear the 70% archive threshold; (3) **H3 has now actually
+been tested** with the real, correctly-validated 2-skill archive, both
+under unseen configurations (Day 25) and in-distribution (three-seed
+final results, both sections above) -- **the result is negative as
+currently implemented**: F2S's policy-level success rate collapses to
+1.0% (unseen) / 0.0% (in-distribution, 3/3 seeds), far below Fixed
+Policy, because skill retrieval has no applicability gate before
+playback and fires on nearly every stall regardless of match quality.
+This doesn't refute H3 as a hypothesis -- it identifies exactly which
+missing piece (a live applicability check at playback time) needs to
+exist before H3 can be fairly tested again.
 - The Lift skill tested against Day 19's protocol was brittle (2/10,
   broke at >=1cm position offsets) -- a genuine contrast with the Can
   skills above, which passed at a full 100%. Not yet understood why the

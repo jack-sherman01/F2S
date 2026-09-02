@@ -1,0 +1,18 @@
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 140.64578819274902,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
