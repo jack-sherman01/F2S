@@ -172,6 +172,166 @@ def evaluate_with_skills(
     return metrics
 
 
+def rollout_with_unguided_repair(
+    policy,          # RolloutDP wrapper (simulation/rollout_utils.RolloutDP)
+    env,
+    horizon: int,
+    world_model,
+    device: str,
+    world_model_horizon: int = 5,
+    M: int = 16,
+    sigma_z: float = 0.5,
+    eta: float = 0.5,
+    use_cem: bool = False,
+):
+    """"Unguided Latent Repair" baseline (proposal_revised.tex Section
+    7.4 / RQ1/H1 baselines list): on a stall, generate a fresh corrective
+    candidate on the spot via the *same* latent-perturbation + world-model
+    -ranking machinery F2S itself uses (f2s.candidates.generator /
+    f2s.candidates.cem, f2s.candidates.scorer), safety-filter it, and play
+    it back -- but with no failure-pattern clustering (every stall is
+    treated identically, failure_mode_id=0 always) and no archive (the
+    candidate is generated fresh every time and discarded afterward, never
+    retrieved or reused across episodes/states). This isolates exactly the
+    value F2S's failure-pattern identification + accumulating archive adds
+    on top of "generate and rank a latent correction right now" -- the
+    other variable (candidate generation + world-model ranking machinery
+    itself) is held identical between the two methods."""
+    import robomimic.utils.obs_utils as ObsUtils
+    from robomimic.utils import tensor_utils as TensorUtils
+
+    from f2s.candidates.scorer import rank_candidate
+    from f2s.safety.filter import safety_filter
+
+    policy.start_episode()
+    obs = env.reset()
+    state_dict = env.get_state()
+    obs = env.reset_to(state_dict)
+
+    traj = dict(actions=[], rewards=[], dones=[], states=[], obs=[], next_obs=[])
+    progress_history = []
+    repair_playback_remaining = 0
+    repair_playback_chunk = None
+    repair_playback_t = 0
+    n_repairs_attempted = 0
+
+    total_reward = 0.0
+    success = False
+    step_i = 0
+    for step_i in range(horizon):
+        progress = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])[-1]
+        progress_history.append(progress)
+        stalled = (
+            len(progress_history) > STALL_WINDOW
+            and (progress_history[-1] - progress_history[-STALL_WINDOW]) < STALL_PROGRESS_EPS
+        )
+
+        if repair_playback_remaining == 0 and stalled:
+            obs_np = ObsUtils.unprocess_obs_dict(obs)
+            obs_tensors = {k: torch.from_numpy(np.asarray(v)).float().unsqueeze(0).to(device) for k, v in obs_np.items()}
+            x0 = build_world_model_state(obs_np)
+            dp_module = policy.policy
+            n_repairs_attempted += 1
+
+            if use_cem:
+                candidates = cem_search(
+                    dp_module, world_model, obs_tensors, x0, source_episode_id="unguided", failure_mode_id=0,
+                    device=device, population_size=M, n_iters=5, horizon_wm=world_model_horizon, seed=n_repairs_attempted,
+                )
+                ranked = [c for c in candidates if c["valid"]]
+                ranked.sort(key=lambda c: c["predicted_dist_to_goal"])
+            else:
+                candidates = generate_candidates(
+                    dp_module, obs_tensors, source_episode_id="unguided", failure_mode_id=0,
+                    M=M, sigma_z=sigma_z, eta=eta, seed=n_repairs_attempted,
+                )
+                ranked = []
+                for cand in candidates:
+                    if not cand["valid"]:
+                        continue
+                    rank_result = rank_candidate(world_model, x0, cand["action_chunk"], world_model_horizon, device)
+                    ranked.append(dict(**cand, **rank_result))
+                ranked.sort(key=lambda c: c["score"], reverse=True)
+
+            best = None
+            for cand in ranked:
+                is_safe, _ = safety_filter(cand["predicted_states"], cand["action_chunk"][:world_model_horizon])
+                if is_safe:
+                    best = cand
+                    break
+
+            if best is not None:
+                repair_playback_chunk = np.asarray(best["action_chunk"])
+                repair_playback_remaining = repair_playback_chunk.shape[0]
+                repair_playback_t = 0
+
+        if repair_playback_remaining > 0:
+            act = repair_playback_chunk[repair_playback_t]
+            repair_playback_t += 1
+            repair_playback_remaining -= 1
+            if repair_playback_remaining == 0:
+                policy.start_episode()
+        else:
+            act = policy(ob=obs)
+
+        next_obs, r, done, _ = env.step(act)
+        total_reward += r
+        success = bool(env.is_success()["task"])
+        done = done or success
+
+        traj["actions"].append(act)
+        traj["rewards"].append(r)
+        traj["dones"].append(done)
+        traj["states"].append(state_dict["states"])
+        traj["obs"].append(ObsUtils.unprocess_obs_dict(obs))
+        traj["next_obs"].append(ObsUtils.unprocess_obs_dict(next_obs))
+
+        if done or success:
+            break
+        obs = next_obs
+        state_dict = env.get_state()
+
+    stats = dict(Return=total_reward, Horizon=step_i + 1, Success_Rate=float(success), Repairs_Attempted=n_repairs_attempted)
+    traj["obs"] = TensorUtils.list_of_flat_dict_to_dict_of_list(traj["obs"])
+    traj["next_obs"] = TensorUtils.list_of_flat_dict_to_dict_of_list(traj["next_obs"])
+    for k in ["actions", "rewards", "dones", "states"]:
+        traj[k] = np.array(traj[k])
+    for k in ["obs", "next_obs"]:
+        for kp in traj[k]:
+            traj[k][kp] = np.array(traj[k][kp])
+    return stats, traj
+
+
+def evaluate_with_unguided_repair(
+    policy, env, num_episodes: int, output_dir: str, task: str, seed: int, round_id: int,
+    world_model, device: str, world_model_horizon: int = 5, horizon: int = 400,
+    method_name: str = "unguided_latent_repair", use_cem: bool = False,
+):
+    os.makedirs(output_dir, exist_ok=True)
+    logger = EpisodeLogger(output_dir=output_dir, task=task, seed=seed, round_id=round_id)
+    for i in range(num_episodes):
+        stats, traj = rollout_with_unguided_repair(
+            policy, env, horizon, world_model, device, world_model_horizon=world_model_horizon, use_cem=use_cem,
+        )
+        success = bool(stats["Success_Rate"])
+        ep_len = int(stats["Horizon"])
+        eid = logger.start_episode()
+        for t in range(ep_len):
+            obs_t = {k: traj["obs"][k][t] for k in traj["obs"]}
+            logger.add_step(obs_t, traj["states"][t], traj["actions"][t], float(traj["rewards"][t]), bool(traj["dones"][t]))
+        if success:
+            logger.finish_episode(True, "success", None, "none")
+        else:
+            logger.finish_episode(False, "timeout", ep_len - 1, "unknown")
+        print(f"[{method_name} eval {i + 1}/{num_episodes}] success={success} len={ep_len} "
+              f"repairs_attempted={stats['Repairs_Attempted']}")
+
+    metas = load_all_episode_metadata(os.path.join(output_dir, "episodes"))
+    metrics = compute_round_metrics(metas, task=task, method=method_name, seed=seed, round_id=round_id)
+    save_json(os.path.join(output_dir, "metrics.json"), metrics)
+    return metrics
+
+
 def discover_and_archive_skills(
     episode_dir: str,
     failure_dir: str,

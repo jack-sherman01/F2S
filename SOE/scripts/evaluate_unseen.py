@@ -17,6 +17,12 @@ Usage:
 contract as scripts/run_method.py); with no archive or an empty one, F2S
 degrades to the plain closed-loop policy (no skill ever retrieved), and
 skill_transfer_rate is reported as null rather than fabricated.
+
+--method unguided_latent_repair additionally takes --world_model_dir
+(same contract as scripts/run_method.py): on each stall it generates a
+fresh corrective candidate on the spot (same candidate-generation +
+world-model-ranking machinery as f2s) instead of retrieving from an
+archive -- see f2s.evolution.loop.rollout_with_unguided_repair.
 """
 import argparse
 import json
@@ -68,16 +74,25 @@ def apply_unseen_condition(env, category: str, unseen_cfg: dict):
 def rollout_unseen_episode(
     policy, env, horizon: int, category: str, unseen_cfg: dict,
     archive=None, failure_cluster_model=None, failure_cluster_norm=None,
+    world_model=None, device=None, world_model_horizon: int = 5, use_cem: bool = False,
 ):
     """Closed-loop policy rollout starting from an unseen initial
     configuration. Mirrors simulation/rollout_utils.rollout() /
-    f2s.evolution.loop.rollout_with_skills, except the initial env.reset()
-    is followed immediately by apply_unseen_condition() (which needs to
-    run before any env.reset_to, per the physical-parameter-perturbation
-    ordering constraint -- see execute_action_chunk's docstring), instead
-    of those functions' own unconditional in-distribution reset."""
+    f2s.evolution.loop.rollout_with_skills / rollout_with_unguided_repair,
+    except the initial env.reset() is followed immediately by
+    apply_unseen_condition() (which needs to run before any env.reset_to,
+    per the physical-parameter-perturbation ordering constraint -- see
+    execute_action_chunk's docstring), instead of those functions' own
+    unconditional in-distribution reset.
+
+    Exactly one of (archive, world_model) should be given: `archive` runs
+    the f2s skill-retrieval branch, `world_model` runs the
+    unguided_latent_repair on-the-spot-generation branch; neither gives
+    plain closed-loop rollout (fixed_policy/soe/failure_replay)."""
     import robomimic.utils.obs_utils as ObsUtils
     from robomimic.utils import tensor_utils as TensorUtils
+
+    from f2s.failure.features import compute_failure_feature_vector
 
     policy.start_episode()
     env.reset()
@@ -91,14 +106,13 @@ def rollout_unseen_episode(
     skill_playback_chunk = None
     skill_playback_t = 0
     skills_used = []
+    n_repairs_attempted = 0
 
     total_reward = 0.0
     success = False
     step_i = 0
     for step_i in range(horizon):
         if archive is not None and failure_cluster_model is not None:
-            from f2s.failure.features import compute_failure_feature_vector
-
             progress = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])[-1]
             progress_history.append(progress)
             stalled = (
@@ -117,6 +131,61 @@ def rollout_unseen_episode(
                     skill_playback_remaining = skill_playback_chunk.shape[0]
                     skill_playback_t = 0
                     skills_used.append(skill.skill_id)
+        elif world_model is not None:
+            import torch
+
+            from f2s.candidates.cem import cem_search
+            from f2s.candidates.generator import generate_candidates
+            from f2s.candidates.scorer import rank_candidate
+            from f2s.safety.filter import safety_filter
+            from f2s.world_model.state import build_world_model_state
+
+            progress = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])[-1]
+            progress_history.append(progress)
+            stalled = (
+                len(progress_history) > STALL_WINDOW
+                and (progress_history[-1] - progress_history[-STALL_WINDOW]) < STALL_PROGRESS_EPS
+            )
+            if skill_playback_remaining == 0 and stalled:
+                obs_np = ObsUtils.unprocess_obs_dict(obs)
+                obs_tensors = {k: torch.from_numpy(np.asarray(v)).float().unsqueeze(0).to(device)
+                               for k, v in obs_np.items()}
+                x0 = build_world_model_state(obs_np)
+                dp_module = policy.policy
+                n_repairs_attempted += 1
+
+                if use_cem:
+                    candidates = cem_search(
+                        dp_module, world_model, obs_tensors, x0, source_episode_id="unguided", failure_mode_id=0,
+                        device=device, population_size=16, n_iters=5, horizon_wm=world_model_horizon,
+                        seed=n_repairs_attempted,
+                    )
+                    ranked = [c for c in candidates if c["valid"]]
+                    ranked.sort(key=lambda c: c["predicted_dist_to_goal"])
+                else:
+                    candidates = generate_candidates(
+                        dp_module, obs_tensors, source_episode_id="unguided", failure_mode_id=0,
+                        M=16, sigma_z=0.5, eta=0.5, seed=n_repairs_attempted,
+                    )
+                    ranked = []
+                    for cand in candidates:
+                        if not cand["valid"]:
+                            continue
+                        rank_result = rank_candidate(world_model, x0, cand["action_chunk"], world_model_horizon, device)
+                        ranked.append(dict(**cand, **rank_result))
+                    ranked.sort(key=lambda c: c["score"], reverse=True)
+
+                best = None
+                for cand in ranked:
+                    is_safe, _ = safety_filter(cand["predicted_states"], cand["action_chunk"][:world_model_horizon])
+                    if is_safe:
+                        best = cand
+                        break
+                if best is not None:
+                    skill_playback_chunk = np.asarray(best["action_chunk"])
+                    skill_playback_remaining = skill_playback_chunk.shape[0]
+                    skill_playback_t = 0
+                    skills_used.append(f"unguided_repair_{n_repairs_attempted}")
 
         if skill_playback_remaining > 0:
             act = skill_playback_chunk[skill_playback_t]
@@ -197,7 +266,8 @@ def compute_safety_violation_rate(episodes_dir: str) -> "float | None":
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--method", required=True, choices=["fixed_policy", "soe", "failure_replay", "f2s"])
+    parser.add_argument("--method", required=True,
+                         choices=["fixed_policy", "soe", "failure_replay", "f2s", "unguided_latent_repair"])
     parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--config", required=True, help="SOE DP policy config json")
     parser.add_argument("--unseen_config", default="configs/can_unseen_test.yaml")
@@ -210,6 +280,9 @@ def main():
                               "defaults to results/<task>/<method>/seed_<seed>/round_0/episodes")
     parser.add_argument("--archive_path", default=None, help="for --method f2s")
     parser.add_argument("--cluster_model_path", default=None, help="for --method f2s")
+    parser.add_argument("--world_model_dir", default=None, help="for --method unguided_latent_repair")
+    parser.add_argument("--world_model_horizon", type=int, default=5, help="for --method unguided_latent_repair")
+    parser.add_argument("--use_cem", action="store_true", help="for --method unguided_latent_repair")
     args = parser.parse_args()
 
     with open(args.unseen_config, "r") as f:
@@ -252,6 +325,23 @@ def main():
             with open(args.cluster_model_path, "rb") as f:
                 cluster_model, cluster_norm = pickle.load(f)
 
+    world_model, device = None, None
+    if args.method == "unguided_latent_repair":
+        assert args.world_model_dir is not None, "--method unguided_latent_repair requires --world_model_dir"
+        import torch
+
+        from f2s.world_model.model import WorldModelEnsemble
+
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        with open(os.path.join(args.world_model_dir, "result.json"), "r") as f:
+            wm_result = json.load(f)
+        world_model = WorldModelEnsemble(
+            state_dim=wm_result["state_dim"], action_dim=wm_result["action_dim"],
+            hidden_dim=wm_result["hidden_dim"], ensemble_size=wm_result["ensemble_size"],
+        ).to(device)
+        world_model.load_state_dict(torch.load(os.path.join(args.world_model_dir, "best_model.pt"), map_location=device))
+        world_model.eval()
+
     schedule = unseen_cfg["category_schedule"]
     logger = EpisodeLogger(output_dir=args.output_dir, task=args.task, seed=args.seed, round_id=0)
     categories_used = []
@@ -264,6 +354,8 @@ def main():
         stats, traj = rollout_unseen_episode(
             policy, env, rollout_horizon, category, unseen_cfg,
             archive=archive, failure_cluster_model=cluster_model, failure_cluster_norm=cluster_norm,
+            world_model=world_model, device=device, world_model_horizon=args.world_model_horizon,
+            use_cem=args.use_cem,
         )
         success = bool(stats["Success_Rate"])
         ep_len = int(stats["Horizon"])
@@ -296,7 +388,12 @@ def main():
     metrics["failure_mode_coverage"] = compute_failure_mode_coverage(episodes_dir, reference_dir)
     metrics["safety_violation_rate"] = compute_safety_violation_rate(episodes_dir)
 
-    if args.method == "f2s":
+    if args.method in ("f2s", "unguided_latent_repair"):
+        # For f2s this is skill-transfer rate (retrieved skills that led to
+        # success); for unguided_latent_repair it's the analogous on-the-
+        # spot-repair success rate (freshly generated candidates that led
+        # to success) -- same computation, different meaning per method,
+        # reported under the same field for direct comparability.
         n_skill_episodes = sum(1 for v in skills_used_by_episode.values() if len(v) > 0)
         if n_skill_episodes > 0:
             success_by_eid = {m["episode_id"]: m["success"] for m in metas}

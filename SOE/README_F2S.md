@@ -2,9 +2,26 @@
 
 This file records the exact commands run to set up and reproduce SOE, and the
 concrete environment/version information, as required by the F2S proposal
-(`private/proposal.tex`, Days 1-3). It is updated incrementally as the
+(`private/proposal.tex`, Days 1-3; superseded 2026-09-01 by
+`private/proposal_revised.tex`). It is updated incrementally as the
 project proceeds; nothing here is invented — every value is filled in only
 after the corresponding command has actually been run.
+
+**Proposal revision, 2026-09-01**: `private/proposal_revised.tex` reframes
+F2S as an embodied RSI ("recursive self-improvement") loop built around
+explicit *counterfactual action intervention* at a factual failure state,
+renames "failure mode" to "failure pattern" throughout, and adds three
+concrete requirements this codebase now implements: a dense predicted-
+recovery-value scoring term (`f2s/candidates/scorer.py`'s
+`compute_predicted_recovery_value`, Section 9.4), a new "Unguided Latent
+Repair" baseline (`f2s.evolution.loop.rollout_with_unguided_repair` /
+`--method unguided_latent_repair` in `scripts/run_method.py` and
+`scripts/evaluate_unseen.py`), and a continual-improvement research
+question (RQ5/H5) evaluated once the next evolution-loop run has multiple
+rounds of data -- see "Aligning the codebase with proposal_revised.tex"
+below for exactly what changed and why. Everything above that section was
+written against the original proposal's terminology ("failure mode" etc.)
+and is kept as the historical record; it is not retroactively renamed.
 
 ## Machine / hardware notes (deviation from proposal defaults)
 
@@ -1157,6 +1174,66 @@ missing check.
 Data: `results/Can/{fixed_policy,soe,failure_replay,f2s}/seed_0/unseen/`
 (metrics.json, categories_used.json, skills_used_by_episode.json, full
 episode logs), `install_logs/day25_unseen_eval_all.log`.
+
+## Aligning the codebase with proposal_revised.tex
+
+Diffed `private/proposal.tex` against `private/proposal_revised.tex` line
+by line. Most of it is a conceptual reframing (SOE self-evolution loop ->
+"embodied RSI", explicit "counterfactual action intervention" language,
+"failure mode" -> "failure pattern") that describes what this codebase
+was already doing (`execute_action_chunk` already restores the exact
+simulator state and replaces only the future action chunk -- that *is*
+the counterfactual intervention the revision formalizes in prose) and
+needed no code change. Three things were genuinely new and are now
+implemented:
+
+1. **Predicted recovery value, `compute_predicted_recovery_value`**
+   (`f2s/candidates/scorer.py`, proposal_revised.tex Section 9.4): a
+   dense signal, `V_repair(k) = beta_e*(goal-error improvement) +
+   beta_p*(task-progress improvement) - beta_r*risk`, added as an extra
+   field on `rank_candidate`'s return dict (`predicted_recovery_value`)
+   alongside the existing, already-verified base score
+   (`score = predicted_success - predicted_risk`, which Day 16.2's own
+   "do not add extras until the base scorer works" instruction is
+   unchanged in the revision, so it stays the primary score). This
+   formalizes something the project had already reinvented ad hoc more
+   than once out of necessity -- CEM's fitness (`f2s/candidates/cem.py`)
+   and several offset-sweep scripts' `predicted_final_error` are both
+   the same "predicted distance improvement" idea under a different
+   name, born from the scoring-formula diagnosis earlier in this log
+   (binary `S_hat` is 0 for nearly every candidate on hard states, no
+   gradient to rank against).
+
+2. **"Unguided Latent Repair" baseline**
+   (`f2s.evolution.loop.rollout_with_unguided_repair` /
+   `evaluate_with_unguided_repair`, wired into `scripts/run_method.py`
+   and `scripts/evaluate_unseen.py` as `--method
+   unguided_latent_repair`): on a stall, generates a fresh corrective
+   candidate on the spot using the *exact same* candidate-generation +
+   world-model-ranking + safety-filter machinery F2S itself uses, but
+   with no failure-pattern clustering (every stall treated identically,
+   `failure_mode_id=0`) and no archive (nothing persists or is reused
+   across states/episodes). proposal_revised.tex's Final Acceptance
+   Criteria now explicitly requires F2S to be compared against SOE,
+   Failure Replay, *and* this -- previously only the first two were
+   implemented. Smoke-tested through both entry points (2 episodes each,
+   `/tmp/smoketest_unguided_repair*`) before being counted as real.
+
+3. **RQ5/H5 (continual improvement)**: not new code, a new required
+   *analysis* -- whether the archive grows with non-duplicate skills and
+   whether recurring failure patterns get cheaper to repair across
+   evolution rounds. Requires running the evolution loop for multiple
+   rounds with the corrected validator (see the bugfix sections above)
+   and comparing round-over-round; not yet run, tracked as open work
+   below rather than implemented against invented numbers.
+
+**Deliberately not implemented**: proposal_revised.tex Section 11.2 also
+describes an optional extension to retrieval -- "F2S may then generate
+small residual perturbations around [a retrieved skill] and re-rank them
+with the world model" (worded as "may", not a hard requirement). Skipped
+for now in favor of the three items above, which are unambiguous Final
+Acceptance Criteria / RQ requirements; noted here so it isn't mistaken
+for an oversight.
 
 ## What's real vs. what's still open, for anyone picking this up
 

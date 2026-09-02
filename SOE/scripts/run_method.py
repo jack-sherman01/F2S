@@ -32,6 +32,21 @@ simulation code):
                  separate, one-time step (train_single_gpu.py with
                  configs/soe_can_lowdim_failure_replay.json).
 
+  unguided_latent_repair
+                 Evaluate with the same online stall-detector as f2s, but
+                 on each stall generate a *fresh* corrective candidate on
+                 the spot (same generate_candidates/cem_search + world-
+                 model-ranking machinery F2S uses) and play it back --
+                 with no failure-pattern clustering (every stall treated
+                 identically) and no persistent archive (nothing is
+                 retrieved or reused across states/episodes); see
+                 f2s.evolution.loop.rollout_with_unguided_repair. Added
+                 per proposal_revised.tex's baseline list (RQ1/H1): isolates
+                 the value of F2S's failure-pattern identification +
+                 accumulating archive from the value of "generate-and-rank
+                 a correction right now," since both use identical
+                 candidate-generation/ranking code.
+
 Success-only (retrain on new *successful* rollouts only) is not
 implemented -- it needs the same policy-retraining loop as Failure
 Replay, but there was no specific reason to build it before Failure
@@ -61,7 +76,8 @@ UNIMPLEMENTED_METHODS = {
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--method", required=True, choices=["fixed_policy", "soe", "f2s", "success_only", "failure_replay"])
+    parser.add_argument("--method", required=True,
+                         choices=["fixed_policy", "soe", "f2s", "success_only", "failure_replay", "unguided_latent_repair"])
     parser.add_argument("--config", required=True, help="SOE DP policy config json")
     parser.add_argument("--task", default="Can")
     parser.add_argument("--seed", type=int, required=True)
@@ -71,6 +87,9 @@ def main():
     parser.add_argument("--noise_scale", type=float, default=2.0, help="for --method soe")
     parser.add_argument("--archive_path", default=None, help="for --method f2s: skill_archive.json from run_evolution.py")
     parser.add_argument("--cluster_model_path", default=None, help="for --method f2s: pickled sklearn cluster model + norm (see run_evolution.py)")
+    parser.add_argument("--world_model_dir", default=None, help="for --method unguided_latent_repair: dir with result.json + best_model.pt")
+    parser.add_argument("--world_model_horizon", type=int, default=5, help="for --method unguided_latent_repair")
+    parser.add_argument("--use_cem", action="store_true", help="for --method unguided_latent_repair: use CEM instead of random candidate generation")
     args = parser.parse_args()
 
     if args.method in UNIMPLEMENTED_METHODS:
@@ -135,6 +154,44 @@ def main():
             task=args.task, seed=args.seed, round_id=0, archive=archive,
             failure_cluster_model=cluster_model, failure_cluster_norm=cluster_norm,
             horizon=rollout_horizon, method_name="f2s",
+        )
+    elif args.method == "unguided_latent_repair":
+        assert args.world_model_dir is not None, "--method unguided_latent_repair requires --world_model_dir"
+        import torch
+        from easydict import EasyDict
+
+        from f2s.evolution.loop import evaluate_with_unguided_repair
+        from f2s.world_model.model import WorldModelEnsemble
+        from rollout_utils import dp_load
+
+        with open(args.config, "r") as f:
+            cfg = EasyDict(json.load(f))
+        run_args = SimpleNamespace(
+            agent=args.checkpoint, critic_agent=None, config=args.config, n_rollouts=args.num_episodes,
+            horizon=None, env=None, render=False, render_traj=False, video_dir=None, video_skip=1,
+            camera_names=["agentview"], dataset_path=None, dataset_obs=False, seed=args.seed, try_times=1,
+            inference_horizon=None, high_noise_eval=False, eta=None, num_inference_steps=None,
+            enable_exploration=False, tau1=None, tau2=None, noise_scale=None, enable_exploration_debug=False,
+            disable_styles=False, enable_action_noise=False, action_noise_scale=None, enable_cfg=False,
+            cfg_scale=0.5, cfg_agent=None, cfg_config=None, abs_action=False, return_intermediate=False,
+        )
+        policy, env, _, rollout_horizon = dp_load(run_args, cfg, enable_exploration_as_args=False)
+
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        with open(os.path.join(args.world_model_dir, "result.json"), "r") as f:
+            wm_result = json.load(f)
+        world_model = WorldModelEnsemble(
+            state_dim=wm_result["state_dim"], action_dim=wm_result["action_dim"],
+            hidden_dim=wm_result["hidden_dim"], ensemble_size=wm_result["ensemble_size"],
+        ).to(device)
+        world_model.load_state_dict(torch.load(os.path.join(args.world_model_dir, "best_model.pt"), map_location=device))
+        world_model.eval()
+
+        metrics = evaluate_with_unguided_repair(
+            policy, env, num_episodes=args.num_episodes, output_dir=args.output_dir,
+            task=args.task, seed=args.seed, round_id=0, world_model=world_model, device=device,
+            world_model_horizon=args.world_model_horizon, horizon=rollout_horizon,
+            method_name="unguided_latent_repair", use_cem=args.use_cem,
         )
     else:
         raise AssertionError("unreachable")
