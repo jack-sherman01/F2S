@@ -3,12 +3,12 @@
   "method": "f2s",
   "seed": 2,
   "round": 0,
-  "success_rate": 0.0,
-  "failure_rate": 1.0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
   "recovery_rate": 0.0,
   "collision_rate": 0.0,
   "object_drop_rate": 0.0,
-  "mean_episode_length": 400.0,
+  "mean_episode_length": 193.36666666666667,
   "rollout_count": 30,
   "training_time_seconds": null
 }

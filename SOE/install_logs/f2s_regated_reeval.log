@@ -1,0 +1,310 @@
+=== f2s three-seed in-distribution (gated) ===
+--- seed=0 ---
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_eef_pos', 'robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_joint_pos', 'robot0_joint_vel', 'robot0_eef_vel_lin', 'robot0_eef_vel_ang', 'object', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=False len=400 skills_used=[]
+[f2s eval 2/30] success=True len=107 skills_used=[]
+[f2s eval 3/30] success=True len=94 skills_used=[]
+[f2s eval 4/30] success=False len=400 skills_used=[]
+[f2s eval 5/30] success=True len=102 skills_used=[]
+[f2s eval 6/30] success=True len=127 skills_used=[]
+[f2s eval 7/30] success=True len=119 skills_used=[]
+[f2s eval 8/30] success=False len=400 skills_used=[]
+[f2s eval 9/30] success=True len=132 skills_used=[]
+[f2s eval 10/30] success=True len=105 skills_used=[]
+[f2s eval 11/30] success=True len=97 skills_used=[]
+[f2s eval 12/30] success=False len=400 skills_used=[]
+[f2s eval 13/30] success=True len=102 skills_used=[]
+[f2s eval 14/30] success=True len=111 skills_used=[]
+[f2s eval 15/30] success=True len=98 skills_used=[]
+[f2s eval 16/30] success=True len=100 skills_used=[]
+[f2s eval 17/30] success=False len=400 skills_used=[]
+[f2s eval 18/30] success=True len=91 skills_used=[]
+[f2s eval 19/30] success=True len=84 skills_used=[]
+[f2s eval 20/30] success=True len=98 skills_used=[]
+[f2s eval 21/30] success=True len=108 skills_used=[]
+[f2s eval 22/30] success=True len=100 skills_used=[]
+[f2s eval 23/30] success=True len=108 skills_used=[]
+[f2s eval 24/30] success=False len=400 skills_used=['episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill', 'episode_000040_offset10_perstate_skill']
+[f2s eval 25/30] success=True len=104 skills_used=[]
+[f2s eval 26/30] success=True len=100 skills_used=[]
+[f2s eval 27/30] success=True len=101 skills_used=[]
+[f2s eval 28/30] success=True len=105 skills_used=[]
+[f2s eval 29/30] success=True len=127 skills_used=[]
+[f2s eval 30/30] success=True len=376 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 173.2,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+--- seed=1 ---
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_pos', 'object', 'robot0_gripper_qvel', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=True len=116 skills_used=[]
+[f2s eval 2/30] success=True len=93 skills_used=[]
+[f2s eval 3/30] success=False len=400 skills_used=[]
+[f2s eval 4/30] success=False len=400 skills_used=[]
+[f2s eval 5/30] success=False len=400 skills_used=[]
+[f2s eval 6/30] success=True len=98 skills_used=[]
+[f2s eval 7/30] success=False len=400 skills_used=[]
+[f2s eval 8/30] success=True len=99 skills_used=['episode_000040_offset10_perstate_skill']
+[f2s eval 9/30] success=True len=95 skills_used=[]
+[f2s eval 10/30] success=False len=400 skills_used=[]
+[f2s eval 11/30] success=True len=113 skills_used=[]
+[f2s eval 12/30] success=True len=98 skills_used=[]
+[f2s eval 13/30] success=True len=102 skills_used=[]
+[f2s eval 14/30] success=True len=101 skills_used=[]
+[f2s eval 15/30] success=True len=117 skills_used=[]
+[f2s eval 16/30] success=False len=400 skills_used=[]
+[f2s eval 17/30] success=False len=400 skills_used=[]
+[f2s eval 18/30] success=True len=113 skills_used=[]
+[f2s eval 19/30] success=True len=94 skills_used=[]
+[f2s eval 20/30] success=False len=400 skills_used=[]
+[f2s eval 21/30] success=True len=104 skills_used=[]
+[f2s eval 22/30] success=True len=103 skills_used=[]
+[f2s eval 23/30] success=True len=99 skills_used=[]
+[f2s eval 24/30] success=True len=122 skills_used=[]
+[f2s eval 25/30] success=True len=91 skills_used=[]
+[f2s eval 26/30] success=True len=108 skills_used=[]
+[f2s eval 27/30] success=True len=103 skills_used=[]
+[f2s eval 28/30] success=True len=112 skills_used=[]
+[f2s eval 29/30] success=True len=121 skills_used=[]
+[f2s eval 30/30] success=True len=105 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.56666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+--- seed=2 ---
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'object', 'robot0_eef_pos', 'robot0_gripper_qvel', 'robot0_eef_quat']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s eval 1/30] success=True len=98 skills_used=[]
+[f2s eval 2/30] success=True len=118 skills_used=[]
+[f2s eval 3/30] success=True len=111 skills_used=[]
+[f2s eval 4/30] success=True len=100 skills_used=[]
+[f2s eval 5/30] success=True len=87 skills_used=[]
+[f2s eval 6/30] success=False len=400 skills_used=[]
+[f2s eval 7/30] success=False len=400 skills_used=[]
+[f2s eval 8/30] success=True len=86 skills_used=[]
+[f2s eval 9/30] success=True len=88 skills_used=[]
+[f2s eval 10/30] success=True len=97 skills_used=[]
+[f2s eval 11/30] success=False len=400 skills_used=[]
+[f2s eval 12/30] success=False len=400 skills_used=[]
+[f2s eval 13/30] success=True len=97 skills_used=[]
+[f2s eval 14/30] success=False len=400 skills_used=[]
+[f2s eval 15/30] success=True len=100 skills_used=[]
+[f2s eval 16/30] success=True len=101 skills_used=[]
+[f2s eval 17/30] success=False len=400 skills_used=[]
+[f2s eval 18/30] success=True len=103 skills_used=[]
+[f2s eval 19/30] success=True len=92 skills_used=[]
+[f2s eval 20/30] success=True len=118 skills_used=[]
+[f2s eval 21/30] success=True len=109 skills_used=[]
+[f2s eval 22/30] success=True len=121 skills_used=[]
+[f2s eval 23/30] success=False len=400 skills_used=[]
+[f2s eval 24/30] success=True len=115 skills_used=[]
+[f2s eval 25/30] success=False len=400 skills_used=[]
+[f2s eval 26/30] success=True len=109 skills_used=[]
+[f2s eval 27/30] success=True len=123 skills_used=[]
+[f2s eval 28/30] success=True len=111 skills_used=[]
+[f2s eval 29/30] success=True len=117 skills_used=[]
+[f2s eval 30/30] success=False len=400 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.36666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== f2s Day-25 unseen-config (gated) ===
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'object', 'robot0_joint_vel', 'robot0_eef_pos', 'robot0_eef_quat', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[f2s unseen 1/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 2/100] category=friction success=True len=99 skills_used=[]
+[f2s unseen 3/100] category=mass success=True len=102 skills_used=[]
+[f2s unseen 4/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 5/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 6/100] category=friction success=True len=111 skills_used=[]
+[f2s unseen 7/100] category=mass success=True len=97 skills_used=[]
+[f2s unseen 8/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 9/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 10/100] category=friction success=True len=106 skills_used=[]
+[f2s unseen 11/100] category=mass success=True len=100 skills_used=[]
+[f2s unseen 12/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 13/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 14/100] category=friction success=True len=106 skills_used=[]
+[f2s unseen 15/100] category=mass success=True len=130 skills_used=[]
+[f2s unseen 16/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 17/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 18/100] category=friction success=True len=99 skills_used=[]
+[f2s unseen 19/100] category=mass success=True len=99 skills_used=[]
+[f2s unseen 20/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 21/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 22/100] category=friction success=True len=113 skills_used=[]
+[f2s unseen 23/100] category=mass success=True len=89 skills_used=[]
+[f2s unseen 24/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 25/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 26/100] category=friction success=True len=119 skills_used=[]
+[f2s unseen 27/100] category=mass success=True len=110 skills_used=[]
+[f2s unseen 28/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 29/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 30/100] category=friction success=True len=102 skills_used=[]
+[f2s unseen 31/100] category=mass success=True len=96 skills_used=[]
+[f2s unseen 32/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 33/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 34/100] category=friction success=True len=109 skills_used=[]
+[f2s unseen 35/100] category=mass success=False len=400 skills_used=[]
+[f2s unseen 36/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 37/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 38/100] category=friction success=True len=120 skills_used=[]
+[f2s unseen 39/100] category=mass success=True len=106 skills_used=[]
+[f2s unseen 40/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 41/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 42/100] category=friction success=True len=103 skills_used=[]
+[f2s unseen 43/100] category=mass success=False len=400 skills_used=[]
+[f2s unseen 44/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 45/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 46/100] category=friction success=True len=102 skills_used=[]
+[f2s unseen 47/100] category=mass success=True len=90 skills_used=[]
+[f2s unseen 48/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 49/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 50/100] category=friction success=True len=118 skills_used=[]
+[f2s unseen 51/100] category=mass success=True len=113 skills_used=[]
+[f2s unseen 52/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 53/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 54/100] category=friction success=True len=84 skills_used=[]
+[f2s unseen 55/100] category=mass success=False len=400 skills_used=[]
+[f2s unseen 56/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 57/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 58/100] category=friction success=True len=104 skills_used=[]
+[f2s unseen 59/100] category=mass success=True len=108 skills_used=[]
+[f2s unseen 60/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 61/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 62/100] category=friction success=True len=113 skills_used=[]
+[f2s unseen 63/100] category=mass success=True len=104 skills_used=[]
+[f2s unseen 64/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 65/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 66/100] category=friction success=True len=113 skills_used=[]
+[f2s unseen 67/100] category=mass success=True len=133 skills_used=[]
+[f2s unseen 68/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 69/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 70/100] category=friction success=True len=94 skills_used=[]
+[f2s unseen 71/100] category=mass success=True len=121 skills_used=[]
+[f2s unseen 72/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 73/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 74/100] category=friction success=True len=96 skills_used=[]
+[f2s unseen 75/100] category=mass success=True len=107 skills_used=[]
+[f2s unseen 76/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 77/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 78/100] category=friction success=True len=112 skills_used=[]
+[f2s unseen 79/100] category=mass success=True len=101 skills_used=[]
+[f2s unseen 80/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 81/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 82/100] category=friction success=True len=99 skills_used=[]
+[f2s unseen 83/100] category=mass success=True len=106 skills_used=[]
+[f2s unseen 84/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 85/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 86/100] category=friction success=False len=400 skills_used=[]
+[f2s unseen 87/100] category=mass success=True len=121 skills_used=[]
+[f2s unseen 88/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 89/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 90/100] category=friction success=True len=94 skills_used=[]
+[f2s unseen 91/100] category=mass success=True len=98 skills_used=[]
+[f2s unseen 92/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 93/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 94/100] category=friction success=True len=121 skills_used=[]
+[f2s unseen 95/100] category=mass success=True len=103 skills_used=[]
+[f2s unseen 96/100] category=combined success=False len=400 skills_used=[]
+[f2s unseen 97/100] category=position success=False len=400 skills_used=[]
+[f2s unseen 98/100] category=friction success=False len=400 skills_used=[]
+[f2s unseen 99/100] category=mass success=True len=105 skills_used=[]
+[f2s unseen 100/100] category=combined success=False len=400 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.45,
+  "failure_rate": 0.55,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 267.76,
+  "rollout_count": 100,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 649.0539166927338,
+  "checkpoint": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/policy_epoch_500_seed_0.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "unseen_config": "configs/can_unseen_test.yaml",
+  "category_counts": {
+    "position": 25,
+    "friction": 25,
+    "combined": 25,
+    "mass": 25
+  },
+  "failure_mode_coverage": 1.0,
+  "safety_violation_rate": 0.09,
+  "skill_transfer_rate": null,
+  "skill_episodes": 0
+}
+=== ALL DONE ===

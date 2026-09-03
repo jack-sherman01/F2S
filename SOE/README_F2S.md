@@ -1397,12 +1397,57 @@ F2S evaluation goes through:
 (`run_method.py --method f2s`, 5 episodes, seed 0): 3/5 succeed
 (`skills_used=[]` in all 5 -- the gate correctly didn't fire in this
 small sample, consistent with the diagnostic's ~2/90 pass rate), versus
-0/5 before this fix. Not yet re-run at the full three-seed /
-Day-25-unseen-config scale that produced the headline 0% numbers earlier
-in this log -- those numbers were measured *before* this fix and remain
-accurate as historical record of the bug; a fresh three-seed run with
-the fix in place is the natural next thing to do before citing an
-updated F2S number anywhere.
+0/5 before this fix.
+
+## Fresh three-seed + Day-25 numbers with the gating fix in production
+
+Re-ran `f2s` (the only method the fix touches) at full scale: three
+seeds x 30 in-distribution episodes, plus the 100-episode Day-25
+unseen-config eval, same checkpoint/config as every earlier run. Old
+(pre-fix) results preserved at `results/Can/f2s_PRE_GATING_FIX/` rather
+than overwritten, so the bug's historical numbers stay auditable.
+
+**In-distribution (three seeds):**
+
+| | pre-fix | post-fix | Fixed Policy (reference) |
+|---|---|---|---|
+| seed 0 | 0.0% | 80.0% | 73.3% |
+| seed 1 | 0.0% | 73.3% | 73.3% |
+| seed 2 | 0.0% | 70.0% | 70.0% |
+| mean ± std | 0.0% ± 0.0% | **74.4% ± 4.2%** | 72.2% ± 1.6% |
+
+Matches the standalone diagnostic exactly (same 80.0%/73.3%/70.0%,
+same mean) -- expected, since the diagnostic and the now-fixed
+production code implement the identical gate.
+
+**Day-25 unseen-configuration eval (seed 0, 100 episodes):**
+
+| | pre-fix | post-fix | Fixed Policy (reference) |
+|---|---|---|---|
+| success rate | 1.0% | **45.0%** | 45.0% |
+| safety-violation rate | 93% | **9%** | 7% |
+| episodes where the skill was invoked | 99/100 | **0/100** | n/a |
+
+Post-fix, F2S under unseen configurations is statistically
+indistinguishable from Fixed Policy on success rate and very close on
+safety-violation rate -- because the gate correctly never fires: the
+unseen-config protocol deliberately forces object positions outside the
+training-demo footprint (see `configs/can_unseen_test.yaml`), which is
+by construction even farther from the skill's single validated 3cm
+neighborhood than in-distribution states are. This is the expected,
+honest behavior of a real applicability gate under distribution shift --
+F2S degrades gracefully to "just run the base policy" rather than
+actively hurting performance, which is exactly what should happen when a
+skill's evidence doesn't cover the situation at hand. It also means the
+"does the archive help under unseen configs" question (H3, unseen-config
+half) is not yet answered either way here -- the skill simply never gets
+a chance to act. Answering it would need a skill whose validated
+precondition region overlaps the unseen-config space, which the current
+2-skill archive's origins don't.
+
+Data: `results/Can/f2s/seed_{0,1,2}/round_0/`, `results/Can/f2s/seed_0/unseen/`
+(current, post-fix), `results/Can/f2s_PRE_GATING_FIX/` (preserved pre-fix),
+`install_logs/f2s_regated_reeval.log`.
 
 ## What's real vs. what's still open, for anyone picking this up
 
@@ -1441,17 +1486,28 @@ per-state offset-selection policy (not the current fixed default, and
 not exhaustively sweeping every state) is not implemented; (2) coverage
 is still narrow -- 5 of 71 pooled states (~7%) produced at least one real
 success across every offset tried so far (0/10/15/20/25/30), and only 2
-of those 5 clear the 70% archive threshold; (3) **H3 has now actually
-been tested** with the real, correctly-validated 2-skill archive, both
-under unseen configurations (Day 25) and in-distribution (three-seed
-final results, both sections above) -- **the result is negative as
-currently implemented**: F2S's policy-level success rate collapses to
-1.0% (unseen) / 0.0% (in-distribution, 3/3 seeds), far below Fixed
-Policy, because skill retrieval has no applicability gate before
-playback and fires on nearly every stall regardless of match quality.
-This doesn't refute H3 as a hypothesis -- it identifies exactly which
-missing piece (a live applicability check at playback time) needs to
-exist before H3 can be fairly tested again.
+of those 5 clear the 70% archive threshold; (3) **H3's status, updated
+across three rounds of evidence**: first tested with the real,
+correctly-validated 2-skill archive but *no* applicability gate, F2S
+collapsed to 1.0% (unseen) / 0.0% (in-distribution) -- far below Fixed
+Policy, because retrieval fired on nearly every stall regardless of
+match quality. A real spatial applicability gate (`f2s/skills/retrieve.py`'s
+`spatial_gate_passed`, "The fix is now in production" section above) is
+now implemented and live in every retrieval path. Re-run post-fix
+in-distribution: **74.4% ± 4.2%, matching/slightly exceeding Fixed
+Policy** (72.2% ± 1.6%) -- the collapse is fixed. Re-run post-fix under
+unseen configurations: **45.0%, statistically indistinguishable from
+Fixed Policy** -- not because the archive helped there, but because the
+gate correctly never let the (position-specific) skill fire outside its
+validated 3cm neighborhood, which the unseen-config protocol deliberately
+lies outside of. So: H3's *downside* (skill archiving actively hurting)
+is now closed off by the gate. H3's *upside* (skill archiving measurably
+helping, especially under unseen configurations) remains untested --
+answering it needs either a skill whose validated region overlaps the
+unseen-config space, or many more archived skills so ordinary rollouts
+have a realistic chance of landing inside some skill's validated
+neighborhood (current coverage: only 2 skills, ~7% of failure states
+correctable at all -- see point (2) above).
 - The Lift skill tested against Day 19's protocol was brittle (2/10,
   broke at >=1cm position offsets) -- a genuine contrast with the Can
   skills above, which passed at a full 100%. Not yet understood why the
