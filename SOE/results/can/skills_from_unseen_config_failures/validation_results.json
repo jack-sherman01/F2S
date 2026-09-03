@@ -1,0 +1,288 @@
+[
+  {
+    "episode_id": "episode_000047",
+    "offset": 15,
+    "object_xy": [
+      0.08221725203633523,
+      0.04298309275142512
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.1,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.1,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 20,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.1,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 25,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.1,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  },
+  {
+    "episode_id": "episode_000059",
+    "offset": 30,
+    "object_xy": [
+      0.10960274786532545,
+      0.1263901175352749
+    ],
+    "validation_success_rate": 0.0,
+    "archived": false,
+    "rejection_reason": "validation_success_rate_below_threshold"
+  }
+]

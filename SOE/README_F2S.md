@@ -1449,6 +1449,52 @@ Data: `results/Can/f2s/seed_{0,1,2}/round_0/`, `results/Can/f2s/seed_0/unseen/`
 (current, post-fix), `results/Can/f2s_PRE_GATING_FIX/` (preserved pre-fix),
 `install_logs/f2s_regated_reeval.log`.
 
+## Tried to close H3's upside gap directly: source skills from the unseen-config region itself
+
+Rather than hoping broader in-distribution coverage would eventually
+overlap the Day-25 unseen-config space, went straight at it: the
+Day-25 `fixed_policy` unseen eval already produced 55 real failures
+(`results/Can/fixed_policy/seed_0/unseen/episodes`), and 50 of them have
+an intervention-time object position genuinely outside
+`can_unseen_test.yaml`'s seen footprint -- i.e. these states are already
+*inside* the unseen-config region. Ran the identical offset-sweep method
+as section 17 (`scripts/discover_skills_from_unseen_config_failures.py`;
+same random `generate_candidates`, same 6 offsets, same *ordinary*
+small-3cm-neighborhood Day-19 validation -- no change to the validation
+protocol itself, since these states are already unseen by construction)
+on this pool. If anything cleared the threshold, its validated
+neighborhood would sit inside the unseen-config space and the existing
+spatial gate would have a real chance to fire during a Day-25 rollout,
+with zero changes to the gate.
+
+**Result: 26 real successes out of 4,800 executions, 0 archived.**
+Validation scores: mean 1.5%, median 0%, max 10% -- nothing came close to
+the 70% threshold. Only 2 of the 50 states produced any real success at
+all (`episode_000047` once, `episode_000059` 25 times -- one unusually
+"easy" position dominates, similar to `episode_000008` in section 17).
+
+This is a clean, informative negative result, and a sharper one than
+"coverage is narrow": in-distribution, states that produced a real
+success validated in the 50-100% range (2 of 5 cleared 70%); here,
+candidates that succeed at all almost never survive even the same small
+perturbation that in-distribution candidates routinely do. That's not a
+coverage problem (a wider pool wouldn't fix a 1.5%-mean validation
+score) -- it points at the policy and world model themselves being
+qualitatively less reliable in this region, consistent with everything
+this log has already found about distribution shift (Day-25's overall
+success-rate drop, the Section 3-7 world-model-accuracy diagnosis). So:
+**H3's upside under unseen configurations remains untested, but not for
+lack of trying the direct approach** -- the bottleneck here isn't which
+states get searched, it's that the underlying components don't produce
+locally-robust corrections in this region in the first place. Improving
+that would need better world-model accuracy or policy quality
+out-of-distribution, not a smarter skill-discovery search.
+
+Data: `results/can/skills_from_unseen_config_failures/` (records.json --
+4800 execution records, validation_results.json -- all 26 real
+successes' Day-19 scores, summary.json),
+`install_logs/discover_skills_from_unseen_config_failures.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE

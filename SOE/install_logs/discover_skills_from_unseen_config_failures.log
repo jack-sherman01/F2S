@@ -1,0 +1,126 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_joint_vel', 'robot0_eef_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'object', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 50 unseen-config failure states (of 55 total failures) with intervention-time position outside the seen footprint.
+Sweeping offsets [0, 10, 15, 20, 25, 30] per state (4800 candidate executions budgeted).
+  [10/50] processed, 0 real successes so far, 0 archived
+  [20/50] processed, 0 real successes so far, 0 archived
+
+[state 24/50, offset=15] real success: episode_000047 at unseen position [0.08221725 0.04298309]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 1/10 = 10.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 1/10 = 10.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=20] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 1/10 = 10.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=25] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 1/10 = 10.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+[state 30/50, offset=30] real success: episode_000059 at unseen position [0.10960275 0.12639012]; running Day-19 validation...
+  Day-19 validation: 0/10 = 0.0%
+  Archive decision: REJECTED (validation_success_rate_below_threshold)
+  [30/50] processed, 26 real successes so far, 0 archived
+  [40/50] processed, 26 real successes so far, 0 archived
+  [50/50] processed, 26 real successes so far, 0 archived
+
+======================================================================
+FINAL: 26 real successes out of 4800 candidates executed across offsets [0, 10, 15, 20, 25, 30]; 0 skills archived, validated regions inside the unseen-config space
+======================================================================

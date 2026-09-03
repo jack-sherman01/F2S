@@ -1,0 +1,109 @@
+{
+  "skills": [],
+  "rejected": [
+    {
+      "candidate_id": "episode_000047_offset15_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset20_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset25_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    },
+    {
+      "candidate_id": "episode_000059_offset30_unseenregion_skill",
+      "reason": "validation_success_rate_below_threshold"
+    }
+  ]
+}
