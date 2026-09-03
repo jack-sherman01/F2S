@@ -74,7 +74,12 @@
         "goal_error_range": [
           0.0,
           0.0
-        ]
+        ],
+        "object_xy": [
+          0.21621729,
+          0.29207194
+        ],
+        "position_tolerance": 0.03
       },
       "effect": {
         "final_object_error": null,
@@ -346,7 +351,12 @@
         "goal_error_range": [
           0.0,
           0.0
-        ]
+        ],
+        "object_xy": [
+          0.17561927,
+          0.2146325
+        ],
+        "position_tolerance": 0.03
       },
       "effect": {
         "final_object_error": null,

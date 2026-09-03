@@ -67,7 +67,8 @@ ALL_EPISODE_DIRS = [
 NEW_OFFSETS = [10, 20, 25, 30]  # 0 and 15 already fully executed elsewhere
 
 
-def validate_and_maybe_archive(env, cand, initial_state_dict, archive, episode_id, offset, output_dir, validation_results):
+def validate_and_maybe_archive(env, cand, initial_state_dict, archive, episode_id, offset, output_dir,
+                                validation_results, object_xy=None):
     configs = build_validation_configs()
     n_valid = 0
     for cfg_kind in configs:
@@ -84,10 +85,20 @@ def validate_and_maybe_archive(env, cand, initial_state_dict, archive, episode_i
     skill_success_rate = n_valid / len(configs)
     print(f"  Day-19 validation: {n_valid}/{len(configs)} = {skill_success_rate:.1%}")
 
+    precondition = dict(failure_mode_id=0, task_stage="unknown", object_error_range=(0.0, 0.0), goal_error_range=(0.0, 0.0))
+    if object_xy is not None:
+        # Spatial applicability gate (f2s/skills/retrieve.py's spatial_gate_passed):
+        # the intervention state's own object (x, y), the same state Day-19
+        # validation perturbed around -- see that function's docstring and
+        # SOE/README_F2S.md's "Controlled diagnostic" section for why this
+        # was added after the fact and what it fixed.
+        precondition["object_xy"] = [float(object_xy[0]), float(object_xy[1])]
+        precondition["position_tolerance"] = 0.03
+
     skill = Skill(
         skill_id=f"{episode_id}_offset{offset}_perstate_skill", failure_mode_id=0,
         latent_delta=cand["latent_delta"],
-        precondition=dict(failure_mode_id=0, task_stage="unknown", object_error_range=(0.0, 0.0), goal_error_range=(0.0, 0.0)),
+        precondition=precondition,
         effect=dict(final_object_error=None, final_goal_error=None, task_progress_change=None, recovery_success=True),
         success_rate=skill_success_rate, recovery_rate=skill_success_rate, transfer_rate=skill_success_rate,
         risk_score=0.0, source_candidate_ids=[cand["candidate_id"]], action_chunk=cand["action_chunk"],
@@ -187,7 +198,7 @@ def main():
                 print(f"\n[state {state_idx + 1}/{len(segments)}, offset={offset}] real success: "
                       f"{seg['episode_id']}; running Day-19 validation...")
                 validate_and_maybe_archive(env, cand, initial_state_dict, archive, seg["episode_id"], offset,
-                                            output_dir, validation_results)
+                                            output_dir, validation_results, object_xy=obs_t["object"][0:2])
 
         if (state_idx + 1) % 10 == 0 or state_idx == len(segments) - 1:
             print(f"  [{state_idx + 1}/{len(segments)}] processed, {n_real_success} real successes so far, "

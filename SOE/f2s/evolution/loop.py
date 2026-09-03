@@ -86,7 +86,8 @@ def rollout_with_skills(
     success = False
     step_i = 0
     for step_i in range(horizon):
-        progress = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])[-1]  # task_progress_final
+        obs_np = ObsUtils.unprocess_obs_dict(obs)
+        progress = compute_failure_feature_vector([obs_np])[-1]  # task_progress_final
         progress_history.append(progress)
         stalled = (
             len(progress_history) > STALL_WINDOW
@@ -94,12 +95,14 @@ def rollout_with_skills(
         )
 
         if skill_playback_remaining == 0 and stalled and failure_cluster_model is not None:
-            feat = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])
+            feat = compute_failure_feature_vector([obs_np])
             mu, sigma = failure_cluster_norm
             feat_std = standardize(feat, mu, sigma)
             cluster_id = int(failure_cluster_model.predict(feat_std.reshape(1, -1))[0])
             object_error = float(feat[0])
-            skill = retrieve(archive, failure_mode_id=cluster_id, current_object_error=object_error)
+            current_object_xy = np.asarray(obs_np["object"])[0:2]
+            skill = retrieve(archive, failure_mode_id=cluster_id, current_object_error=object_error,
+                              current_object_xy=current_object_xy)
             if skill is not None and skill.action_chunk is not None:
                 skill_playback_chunk = np.asarray(skill.action_chunk)
                 skill_playback_remaining = skill_playback_chunk.shape[0]
@@ -124,7 +127,7 @@ def rollout_with_skills(
         traj["rewards"].append(r)
         traj["dones"].append(done)
         traj["states"].append(state_dict["states"])
-        traj["obs"].append(ObsUtils.unprocess_obs_dict(obs))
+        traj["obs"].append(obs_np)
         traj["next_obs"].append(ObsUtils.unprocess_obs_dict(next_obs))
 
         if done or success:
@@ -526,6 +529,13 @@ def discover_and_archive_skills(
                         failure_mode_id=cluster_id, task_stage=seg["failure_stage"],
                         object_error_range=(float(object_errors[i]) * 0.5, float(object_errors[i]) * 1.5),
                         goal_error_range=(0.0, float(object_errors.max())),
+                        # Spatial applicability gate (f2s/skills/retrieve.py's
+                        # spatial_gate_passed) -- the intervention state's own
+                        # object (x, y), the same state Day-19 validation
+                        # perturbed around, so retrieval only fires within the
+                        # neighborhood this skill actually has evidence for.
+                        object_xy=[float(obs_t["object"][0]), float(obs_t["object"][1])],
+                        position_tolerance=0.03,
                     ),
                     effect=dict(
                         final_object_error=float(cand["predicted_states"][-1, 17] if cand["predicted_states"].shape[-1] > 17 else -1),

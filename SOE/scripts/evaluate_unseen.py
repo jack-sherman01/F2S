@@ -120,12 +120,15 @@ def rollout_unseen_episode(
                 and (progress_history[-1] - progress_history[-STALL_WINDOW]) < STALL_PROGRESS_EPS
             )
             if skill_playback_remaining == 0 and stalled:
-                feat = compute_failure_feature_vector([ObsUtils.unprocess_obs_dict(obs)])
+                obs_np = ObsUtils.unprocess_obs_dict(obs)
+                feat = compute_failure_feature_vector([obs_np])
                 mu, sigma = failure_cluster_norm
                 feat_std = standardize(feat, mu, sigma)
                 cluster_id = int(failure_cluster_model.predict(feat_std.reshape(1, -1))[0])
                 object_error = float(feat[0])
-                skill = retrieve(archive, failure_mode_id=cluster_id, current_object_error=object_error)
+                current_object_xy = np.asarray(obs_np["object"])[0:2]
+                skill = retrieve(archive, failure_mode_id=cluster_id, current_object_error=object_error,
+                                  current_object_xy=current_object_xy)
                 if skill is not None and skill.action_chunk is not None:
                     skill_playback_chunk = np.asarray(skill.action_chunk)
                     skill_playback_remaining = skill_playback_chunk.shape[0]

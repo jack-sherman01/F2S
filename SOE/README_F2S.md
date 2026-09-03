@@ -1361,6 +1361,49 @@ Data: `results/can/skill_precondition_gate_diagnostic/seed_{0,1,2}/`
 (metrics.json, gate_used_by_episode.json, full episode logs), `summary.json`,
 `install_logs/skill_precondition_gate_diagnostic.log`.
 
+## The fix is now in production, not just a diagnostic script
+
+The diagnostic above used its own standalone rollout loop
+(`scripts/diagnose_skill_precondition_gate.py`) to isolate the question
+cleanly. The real fix is now wired into the actual code every other
+F2S evaluation goes through:
+
+- **`f2s/skills/retrieve.py`**: `retrieve()` gained a hard
+  `spatial_gate_passed` check (new `current_object_xy` parameter) --
+  a skill is only a retrieval candidate if the current object (x, y) is
+  within `precondition["position_tolerance"]` (default 0.03m, matching
+  Day-19) of `precondition["object_xy"]`. Skills with no recorded
+  `object_xy` (e.g. `scripts/selftest_skill_archive.py`'s synthetic test
+  skills) skip the gate for backward compatibility.
+- **`f2s/evolution/loop.py`**: `rollout_with_skills` (used by
+  `run_method.py --method f2s`, the evolution loop, and indirectly
+  `scripts/evaluate_unseen.py`) now passes the current object position
+  into `retrieve()`. `discover_and_archive_skills` now records
+  `object_xy`/`position_tolerance` in every newly-archived skill's
+  precondition, so this is fixed going forward, not just patched
+  retroactively.
+- **`scripts/evaluate_unseen.py`**: same wiring for the Day-25 harness.
+- **`results/can/candidate_ranking_per_state_offset_sweep/skill_archive.json`**
+  (the archive every `f2s` run in this project actually loads): patched
+  in place with the real `object_xy` for both existing skills, recovered
+  from the exact episode/timestep each was discovered from
+  (`episode_000040` at t=89, `episode_000008` at t=73 -- see
+  `private/technical_contributions_log.md` section 21 for how). Also
+  patched `scripts/evaluate_candidate_ranking_per_state_offset_sweep.py`
+  (the script that produced this archive) so a future re-run would
+  record this data itself rather than needing another retroactive patch.
+
+**Smoke-tested against the real production path**
+(`run_method.py --method f2s`, 5 episodes, seed 0): 3/5 succeed
+(`skills_used=[]` in all 5 -- the gate correctly didn't fire in this
+small sample, consistent with the diagnostic's ~2/90 pass rate), versus
+0/5 before this fix. Not yet re-run at the full three-seed /
+Day-25-unseen-config scale that produced the headline 0% numbers earlier
+in this log -- those numbers were measured *before* this fix and remain
+accurate as historical record of the bug; a fresh three-seed run with
+the fix in place is the natural next thing to do before citing an
+updated F2S number anywhere.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
