@@ -1,0 +1,181 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'object', 'robot0_joint_pos_cos', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[gated seed=0 1/30] success=False len=400 stalls=330 gate_passed=0 skills_used=[]
+[gated seed=0 2/30] success=True len=107 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=0 3/30] success=True len=94 stalls=32 gate_passed=0 skills_used=[]
+[gated seed=0 4/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=0 5/30] success=True len=102 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=0 6/30] success=True len=127 stalls=48 gate_passed=0 skills_used=[]
+[gated seed=0 7/30] success=True len=119 stalls=48 gate_passed=0 skills_used=[]
+[gated seed=0 8/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=0 9/30] success=True len=132 stalls=45 gate_passed=0 skills_used=[]
+[gated seed=0 10/30] success=True len=105 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=0 11/30] success=True len=97 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=0 12/30] success=False len=400 stalls=377 gate_passed=0 skills_used=[]
+[gated seed=0 13/30] success=True len=102 stalls=33 gate_passed=0 skills_used=[]
+[gated seed=0 14/30] success=True len=111 stalls=32 gate_passed=0 skills_used=[]
+[gated seed=0 15/30] success=True len=98 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=0 16/30] success=True len=100 stalls=34 gate_passed=0 skills_used=[]
+[gated seed=0 17/30] success=False len=400 stalls=326 gate_passed=0 skills_used=[]
+[gated seed=0 18/30] success=True len=91 stalls=26 gate_passed=0 skills_used=[]
+[gated seed=0 19/30] success=True len=84 stalls=19 gate_passed=0 skills_used=[]
+[gated seed=0 20/30] success=True len=98 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=0 21/30] success=True len=108 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=0 22/30] success=True len=100 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=0 23/30] success=True len=108 stalls=33 gate_passed=0 skills_used=[]
+[gated seed=0 24/30] success=False len=400 stalls=45 gate_passed=15 skills_used=[{'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02390728969900634, 'step': 101}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023959807202543308, 'step': 121}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023970730736073913, 'step': 141}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02391402404749639, 'step': 161}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02394649895823704, 'step': 181}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02394917225089116, 'step': 201}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02395683459630073, 'step': 221}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023951462206886195, 'step': 241}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023928142821288065, 'step': 261}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023945494421377483, 'step': 281}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023953071433645907, 'step': 301}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023940262923401054, 'step': 321}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023943823476467837, 'step': 341}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.023932955804358266, 'step': 361}, {'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.02396752778735324, 'step': 381}]
+[gated seed=0 25/30] success=True len=104 stalls=30 gate_passed=0 skills_used=[]
+[gated seed=0 26/30] success=True len=100 stalls=32 gate_passed=0 skills_used=[]
+[gated seed=0 27/30] success=True len=101 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=0 28/30] success=True len=105 stalls=46 gate_passed=0 skills_used=[]
+[gated seed=0 29/30] success=True len=127 stalls=51 gate_passed=0 skills_used=[]
+[gated seed=0 30/30] success=True len=376 stalls=300 gate_passed=0 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s_gated",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 173.2,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "total_stalls": 2974,
+  "total_gate_blocked": 2959,
+  "total_gate_passed_invocations": 15,
+  "gate_tolerance_m": 0.03,
+  "n_episodes_with_gate_pass": 1,
+  "n_episodes_with_gate_pass_and_success": 0
+}
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'object', 'robot0_joint_pos_cos', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[gated seed=1 1/30] success=True len=116 stalls=41 gate_passed=0 skills_used=[]
+[gated seed=1 2/30] success=True len=93 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=1 3/30] success=False len=400 stalls=364 gate_passed=0 skills_used=[]
+[gated seed=1 4/30] success=False len=400 stalls=353 gate_passed=0 skills_used=[]
+[gated seed=1 5/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=1 6/30] success=True len=98 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=1 7/30] success=False len=400 stalls=326 gate_passed=0 skills_used=[]
+[gated seed=1 8/30] success=True len=99 stalls=28 gate_passed=1 skills_used=[{'skill_id': 'episode_000040_offset10_perstate_skill', 'dist': 0.01673724480770482, 'step': 83}]
+[gated seed=1 9/30] success=True len=95 stalls=27 gate_passed=0 skills_used=[]
+[gated seed=1 10/30] success=False len=400 stalls=319 gate_passed=0 skills_used=[]
+[gated seed=1 11/30] success=True len=113 stalls=39 gate_passed=0 skills_used=[]
+[gated seed=1 12/30] success=True len=98 stalls=27 gate_passed=0 skills_used=[]
+[gated seed=1 13/30] success=True len=102 stalls=30 gate_passed=0 skills_used=[]
+[gated seed=1 14/30] success=True len=101 stalls=33 gate_passed=0 skills_used=[]
+[gated seed=1 15/30] success=True len=117 stalls=39 gate_passed=0 skills_used=[]
+[gated seed=1 16/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=1 17/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=1 18/30] success=True len=113 stalls=34 gate_passed=0 skills_used=[]
+[gated seed=1 19/30] success=True len=94 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=1 20/30] success=False len=400 stalls=375 gate_passed=0 skills_used=[]
+[gated seed=1 21/30] success=True len=104 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=1 22/30] success=True len=103 stalls=40 gate_passed=0 skills_used=[]
+[gated seed=1 23/30] success=True len=99 stalls=33 gate_passed=0 skills_used=[]
+[gated seed=1 24/30] success=True len=122 stalls=48 gate_passed=0 skills_used=[]
+[gated seed=1 25/30] success=True len=91 stalls=25 gate_passed=0 skills_used=[]
+[gated seed=1 26/30] success=True len=108 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=1 27/30] success=True len=103 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=1 28/30] success=True len=112 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=1 29/30] success=True len=121 stalls=45 gate_passed=0 skills_used=[]
+[gated seed=1 30/30] success=True len=105 stalls=38 gate_passed=0 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s_gated",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.7333333333333333,
+  "failure_rate": 0.2666666666666667,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 183.56666666666666,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "total_stalls": 3661,
+  "total_gate_blocked": 3660,
+  "total_gate_passed_invocations": 1,
+  "gate_tolerance_m": 0.03,
+  "n_episodes_with_gate_pass": 1,
+  "n_episodes_with_gate_pass_and_success": 1
+}
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'object', 'robot0_joint_pos_cos', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[gated seed=2 1/30] success=True len=98 stalls=32 gate_passed=0 skills_used=[]
+[gated seed=2 2/30] success=True len=118 stalls=41 gate_passed=0 skills_used=[]
+[gated seed=2 3/30] success=True len=111 stalls=36 gate_passed=0 skills_used=[]
+[gated seed=2 4/30] success=True len=100 stalls=25 gate_passed=0 skills_used=[]
+[gated seed=2 5/30] success=True len=87 stalls=29 gate_passed=0 skills_used=[]
+[gated seed=2 6/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 7/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 8/30] success=True len=86 stalls=30 gate_passed=0 skills_used=[]
+[gated seed=2 9/30] success=True len=88 stalls=30 gate_passed=0 skills_used=[]
+[gated seed=2 10/30] success=True len=97 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=2 11/30] success=False len=400 stalls=327 gate_passed=0 skills_used=[]
+[gated seed=2 12/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 13/30] success=True len=97 stalls=33 gate_passed=0 skills_used=[]
+[gated seed=2 14/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 15/30] success=True len=100 stalls=46 gate_passed=0 skills_used=[]
+[gated seed=2 16/30] success=True len=102 stalls=41 gate_passed=0 skills_used=[]
+[gated seed=2 17/30] success=False len=400 stalls=376 gate_passed=0 skills_used=[]
+[gated seed=2 18/30] success=True len=103 stalls=39 gate_passed=0 skills_used=[]
+[gated seed=2 19/30] success=True len=93 stalls=32 gate_passed=0 skills_used=[]
+[gated seed=2 20/30] success=True len=118 stalls=38 gate_passed=0 skills_used=[]
+[gated seed=2 21/30] success=True len=109 stalls=39 gate_passed=0 skills_used=[]
+[gated seed=2 22/30] success=True len=121 stalls=45 gate_passed=0 skills_used=[]
+[gated seed=2 23/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 24/30] success=True len=115 stalls=37 gate_passed=0 skills_used=[]
+[gated seed=2 25/30] success=False len=400 stalls=380 gate_passed=0 skills_used=[]
+[gated seed=2 26/30] success=True len=109 stalls=35 gate_passed=0 skills_used=[]
+[gated seed=2 27/30] success=True len=123 stalls=52 gate_passed=0 skills_used=[]
+[gated seed=2 28/30] success=True len=111 stalls=39 gate_passed=0 skills_used=[]
+[gated seed=2 29/30] success=True len=117 stalls=48 gate_passed=0 skills_used=[]
+[gated seed=2 30/30] success=False len=400 stalls=299 gate_passed=0 skills_used=[]
+{
+  "task": "Can",
+  "method": "f2s_gated",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "total_stalls": 4064,
+  "total_gate_blocked": 4064,
+  "total_gate_passed_invocations": 0,
+  "gate_tolerance_m": 0.03,
+  "n_episodes_with_gate_pass": 0,
+  "n_episodes_with_gate_pass_and_success": 0
+}

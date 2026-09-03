@@ -1,0 +1,122 @@
+{
+  "episode_000000": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000001": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000002": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000003": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000004": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000005": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000006": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000007": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000008": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000009": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000010": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000011": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000012": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000013": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000014": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000015": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000016": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000017": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000018": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000019": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000020": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000021": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000022": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000023": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000024": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000025": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000026": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000027": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000028": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000029": {
+    "success": false,
+    "skills_used": []
+  }
+}

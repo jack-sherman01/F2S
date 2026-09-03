@@ -1,0 +1,20 @@
+{
+  "task": "Can",
+  "method": "f2s_gated",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.43333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "total_stalls": 4064,
+  "total_gate_blocked": 4064,
+  "total_gate_passed_invocations": 0,
+  "gate_tolerance_m": 0.03,
+  "n_episodes_with_gate_pass": 0,
+  "n_episodes_with_gate_pass_and_success": 0
+}

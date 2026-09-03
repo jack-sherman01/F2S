@@ -1297,6 +1297,70 @@ Data: `results/Can/{fixed_policy,soe,failure_replay,f2s,unguided_latent_repair}/
 (metrics.json, config.yaml, git_commit.txt, full episode logs),
 `install_logs/three_seed_final_all.log`.
 
+## Controlled diagnostic: is the 0% a gating problem or a skill-quality problem?
+
+Direct follow-up question after the three-seed collapse: is F2S's 0%
+caused by the skill being applied in states it was never meant for
+(gating), or would it still fail even when genuinely applicable (the
+skill itself is weak)? The two were confounded -- unconditional
+retrieval never once succeeded (0/99 invocations in the Day-25 eval),
+but that alone can't separate "used in the wrong place" from "not
+actually useful."
+
+Added a *real* precondition gate (`scripts/diagnose_skill_precondition_gate.py`)
+-- not the k=1 always-match placeholder used everywhere else -- that only
+allows retrieval when the current object (x, y) position is within
+**3cm** of the skill's own real origin state (recovered from the episode
+data the skill was discovered from: `episode_000040`'s state at t=89,
+`episode_000008`'s state at t=73). 3cm is not an arbitrarily strict
+threshold -- it is *exactly* the neighborhood Day-19 validation itself
+tested (`perturb_object_position_near`'s `max_offset=0.03`), so this gate
+is precisely as generous as the actual evidence for the skill supports,
+no stricter. Same in-distribution setup as the three-seed run (same
+checkpoint, 30 episodes x seeds {0,1,2}), directly comparable to
+`results/Can/f2s/seed_*/round_0/metrics.json`.
+
+| | gated (this diagnostic) | ungated (three-seed f2s) | Fixed Policy (reference) |
+|---|---|---|---|
+| seed 0 | 80.0% | 0.0% | 73.3% |
+| seed 1 | 73.3% | 0.0% | 73.3% |
+| seed 2 | 70.0% | 0.0% | 70.0% |
+| mean ± std | **74.4% ± 4.2%** | 0.0% ± 0.0% | 72.2% ± 1.6% |
+
+**Blocking retrieval outside the validated neighborhood alone takes F2S
+from a clean 0% to matching (even slightly exceeding) the plain baseline
+-- this is strong, large-sample evidence that the collapse was
+overwhelmingly a gating problem**: across 90 episodes there were 10,699
+stall-triggered retrieval attempts, and the gate correctly blocked
+10,683 of them (99.85%) as outside the skill's validated neighborhood.
+
+**On whether the skill is *also* somewhat weak**: the gate only actually
+passed in **2 of 90 episodes** (one 15-step-apart cluster of 15
+invocations in seed 0's `episode_000023`, all ~2.4cm from the origin,
+episode failed; one single invocation in seed 1's `episode_000007` at
+1.67cm, episode succeeded). That's the entire real-world sample size for
+"does the skill help when genuinely applicable": **1 success out of 2
+real opportunities.** This is consistent with the skill's own Day-19
+scores (100% and 80%) not being wildly wrong, but n=2 is nowhere near
+enough to confirm or rule out that the skill is *also* somewhat
+unreliable beyond the exact conditions Day-19 tested -- getting a
+confident answer would need many more genuine-match opportunities (e.g.
+deliberately resetting many episodes to start near the skill's own
+origin state, the way Day-19 validation itself does, but at much higher
+n than the current 10).
+
+**Bottom line**: the gating problem is confirmed with strong evidence
+(large n, clean before/after). The skill-quality question remains
+genuinely open -- not because the evidence points either way, but
+because the gate is so rarely satisfied during ordinary rollouts (the
+same narrow-coverage issue from section 12.1/17: only ~7% of pooled
+failure states are correctable at all) that there isn't yet enough data
+to answer it confidently.
+
+Data: `results/can/skill_precondition_gate_diagnostic/seed_{0,1,2}/`
+(metrics.json, gate_used_by_episode.json, full episode logs), `summary.json`,
+`install_logs/skill_precondition_gate_diagnostic.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE

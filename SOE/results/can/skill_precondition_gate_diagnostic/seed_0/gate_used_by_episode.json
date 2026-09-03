@@ -1,0 +1,198 @@
+{
+  "episode_000000": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000001": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000002": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000003": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000004": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000005": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000006": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000007": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000008": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000009": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000010": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000011": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000012": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000013": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000014": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000015": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000016": {
+    "success": false,
+    "skills_used": []
+  },
+  "episode_000017": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000018": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000019": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000020": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000021": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000022": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000023": {
+    "success": false,
+    "skills_used": [
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02390728969900634,
+        "step": 101
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023959807202543308,
+        "step": 121
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023970730736073913,
+        "step": 141
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02391402404749639,
+        "step": 161
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02394649895823704,
+        "step": 181
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02394917225089116,
+        "step": 201
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02395683459630073,
+        "step": 221
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023951462206886195,
+        "step": 241
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023928142821288065,
+        "step": 261
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023945494421377483,
+        "step": 281
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023953071433645907,
+        "step": 301
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023940262923401054,
+        "step": 321
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023943823476467837,
+        "step": 341
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.023932955804358266,
+        "step": 361
+      },
+      {
+        "skill_id": "episode_000040_offset10_perstate_skill",
+        "dist": 0.02396752778735324,
+        "step": 381
+      }
+    ]
+  },
+  "episode_000024": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000025": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000026": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000027": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000028": {
+    "success": true,
+    "skills_used": []
+  },
+  "episode_000029": {
+    "success": true,
+    "skills_used": []
+  }
+}
