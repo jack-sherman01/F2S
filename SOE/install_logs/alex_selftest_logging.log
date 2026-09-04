@@ -1,0 +1,7 @@
+Replay check passed: all 5 episodes reloaded with consistent shapes.
+Metrics check passed: success_rate=0.600 failure_rate=0.400 recovery_rate=0.333 mean_len=66.0 collision_rate=0.200 object_drop_rate=0.200
+compute_round_metrics output: {'task': 'Can', 'method': 'selftest', 'seed': 0, 'round': 0, 'success_rate': 0.6, 'failure_rate': 0.4, 'recovery_rate': 0.3333333333333333, 'collision_rate': 0.2, 'object_drop_rate': 0.2, 'mean_episode_length': 66.0, 'rollout_count': 5, 'training_time_seconds': None}
+Budget-based metrics check passed: {'rollouts_to_50_percent': 1, 'rollouts_to_70_percent': 4, 'rollouts_to_90_percent': None}
+ensure_fresh_dir correctly refused to reuse a non-empty directory.
+
+ALL CHECKS PASSED

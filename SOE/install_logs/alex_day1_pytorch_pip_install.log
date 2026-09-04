@@ -1,0 +1,35 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu117
+Collecting torch==1.13.0
+  Downloading https://download-r2.pytorch.org/whl/cu117/torch-1.13.0%2Bcu117-cp38-cp38-linux_x86_64.whl (1806.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 GB 54.6 MB/s eta 0:00:00
+Collecting torchvision==0.14.0
+  Downloading https://download-r2.pytorch.org/whl/cu117/torchvision-0.14.0%2Bcu117-cp38-cp38-linux_x86_64.whl (24.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.3/24.3 MB 88.2 MB/s eta 0:00:00
+Collecting typing-extensions (from torch==1.13.0)
+  Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting numpy (from torchvision==0.14.0)
+  Downloading numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.6 kB)
+Collecting requests (from torchvision==0.14.0)
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.14.0)
+  Downloading pillow-10.4.0-cp38-cp38-manylinux_2_28_x86_64.whl.metadata (9.2 kB)
+Collecting charset_normalizer<4,>=2 (from requests->torchvision==0.14.0)
+  Downloading charset_normalizer-3.5.1-cp37-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (45 kB)
+Collecting idna<4,>=2.5 (from requests->torchvision==0.14.0)
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->torchvision==0.14.0)
+  Downloading urllib3-2.2.3-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests->torchvision==0.14.0)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Downloading pillow-10.4.0-cp38-cp38-manylinux_2_28_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 63.1 MB/s eta 0:00:00
+Downloading numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.3/17.3 MB 130.2 MB/s eta 0:00:00
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading charset_normalizer-3.5.1-cp37-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (253 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+Installing collected packages: urllib3, typing-extensions, pillow, numpy, idna, charset_normalizer, certifi, torch, requests, torchvision
+Successfully installed certifi-2026.7.22 charset_normalizer-3.5.1 idna-3.15 numpy-1.24.4 pillow-10.4.0 requests-2.32.4 torch-1.13.0+cu117 torchvision-0.14.0+cu117 typing-extensions-4.13.2 urllib3-2.2.3

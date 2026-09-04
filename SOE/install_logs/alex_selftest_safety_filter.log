@@ -1,0 +1,1 @@
+Day 17 acceptance test PASSED: all 5 hand-constructed trajectories were classified correctly (1 safe accepted, 4 unsafe rejected each for its specific reason).

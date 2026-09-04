@@ -1642,3 +1642,228 @@ correctable at all -- see point (2) above).
 - `soe` (0% success, by design of the mechanism at noise_scale=2.0) has
   not been tried at the README's lower recommended noise scales, which
   would likely change that number substantially.
+
+## Machine migration (2026-09-04): fresh setup on the NHR@FAU "Alex" GPU cluster
+
+The project moved from the original `/data/heng/F2S` machine (2x RTX A5000)
+to the NHR@FAU **Alex** Slurm cluster (login node `alex1.nhr.fau.de`,
+AlmaLinux 9.8; GPU partitions `a40` (A40, sm_86), `a100` (A100, sm_80),
+`rtxpro6k` (RTX PRO 6000, Blackwell sm_120 -- **not usable**, the pinned
+`torch 1.13.0+cu117` wheel predates that architecture); **no GPU on the
+login nodes**). The repository was cloned fresh to
+`/anvme/workspace/b306dd11-f2s/F2S` (hpc-workspace `f2s`; check its expiry
+with `ws_list f2s`, extend with `ws_extend f2s 30`). This section is the
+Day-1-style record of that setup; everything below was actually run.
+
+### What did and did not survive the move
+
+Everything git-tracked is here (code, configs, `results/**` metrics /
+configs / logs / figures / `skill_archive.json` /
+`single_mode_cluster_model.pkl`, `install_logs/`). Everything gitignored
+is **gone** and must be regenerated on this machine before any experiment
+above can be re-run:
+
+- the Day-3 baseline policy checkpoint
+  (`results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-08-29-22-22-54/ckpt/*.ckpt`)
+  and the Failure Replay / Lift checkpoints (`*.ckpt` is gitignored);
+- every world-model `best_model.pt` (e.g. `results/can/world_model_h20diag/`);
+- every raw `episodes/` directory, i.e. the 71-state pooled Can failure
+  set the offset sweeps and skill discovery ran on;
+- the RoboMimic hdf5 datasets (re-downloaded below) and the
+  `dependencies/` clones (re-cloned below).
+
+A retrained baseline will **not** be bit-identical to the original
+(different GPU, non-deterministic CUDA kernels), so numbers downstream of
+it are expected to reproduce statistically, not exactly.
+
+### Storage constraint (deviation from the old `env.sh`)
+
+On 2026-09-04 this user's `$HOME` (`/home/hpc`, 100 GB soft quota) and
+`$WORK` (`/home/atuin`, where `~/.condarc` points conda's `envs_dirs` /
+`pkgs_dirs`) were **both over quota** (`conda create` died with
+`[Errno 122] Disk quota exceeded` on atuin). The whole environment therefore
+lives inside the `f2s` workspace on `/anvme` (no block quota for this
+user, 10M-file quota): conda env, conda package cache, pip cache, torch
+and HuggingFace caches, `TMPDIR`. `env.sh` was rewritten to set all of
+these (old file kept at `install_logs/env.sh.old_machine_data_heng`), and
+every command below starts with:
+
+```bash
+source /anvme/workspace/b306dd11-f2s/F2S/SOE/env.sh
+```
+
+Conda itself is the site-provided miniforge
+(`/apps/python/3.12-miniforge/etc/profile.d/conda.sh`; the
+`/apps/python/3.12-conda/...` path in `~/.bashrc` no longer exists on this
+cluster).
+
+### Day 1.1-1.2 equivalent: environment (commands actually executed)
+
+```bash
+# conda env, in the workspace instead of the (full) ~/.condarc location
+export CONDA_PKGS_DIRS=/anvme/workspace/b306dd11-f2s/conda/pkgs
+conda create -p /anvme/workspace/b306dd11-f2s/conda/envs/f2s python=3.8 pip setuptools wheel -y
+conda activate /anvme/workspace/b306dd11-f2s/conda/envs/f2s
+
+# same pinned torch path as the original machine (see Day 1.2 above)
+python -m pip install torch==1.13.0 torchvision==0.14.0 \
+    --extra-index-url https://download.pytorch.org/whl/cu117
+
+# the full frozen snapshot of the original env, minus its two "-e git+"
+# lines (pytorch3d / robomimic, installed from the pinned clones below)
+grep -v "^-e git+" requirements_f2s.txt > /tmp/requirements_f2s_nogit.txt
+python -m pip install "cmake<4"           # see egl_probe note below
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
+python -m pip install -r /tmp/requirements_f2s_nogit.txt \
+    --extra-index-url https://download.pytorch.org/whl/cu117
+
+mkdir -p dependencies && cd dependencies
+git clone https://github.com/facebookresearch/pytorch3d.git && (cd pytorch3d && git checkout e73a7e7bfc580d1f9225ad9ff7d2c753c320aabd)
+git clone https://github.com/ARISE-Initiative/robomimic.git && (cd robomimic && git checkout 9273f9cce85809b4f49cb02c6b4d4eeb2fe95abb)
+python -m pip install -e robomimic --no-deps          # deps already pinned above
+(cd pytorch3d && MAX_JOBS=16 python -m pip install -e . --no-build-isolation)   # CPU build, see below
+cd ..
+python dependencies/robomimic/robomimic/scripts/setup_macros.py
+python $F2S_ENV/lib/python3.8/site-packages/robosuite/scripts/setup_macros.py
+
+# datasets (same downloader/command as Day 1; Lift too, for the Lift pressure test)
+(cd simulation && python download_datasets.py --tasks can lift --dataset_types ph \
+    --hdf5_types low_dim --download_dir $SOE_ROOT/simulation/datasets)
+```
+
+Logs: `install_logs/alex_day1_{conda_create,pytorch_pip_install,cmake_install,requirements_install,robomimic_install,pytorch3d_install,download_can_lift_lowdim}.log`.
+
+Two things needed a workaround, both recorded rather than hidden:
+
+- **`egl_probe==1.0.2` (a robomimic dependency) does not build with CMake 4**
+  (`Compatibility with CMake < 3.5 has been removed`, its `CMakeLists.txt`
+  declares an ancient minimum). The cluster has no system cmake; `pip
+  install cmake` gave 4.4.3, which failed; pinning `cmake<4` (3.31.10)
+  plus `CMAKE_POLICY_VERSION_MINIMUM=3.5` built it. egl_probe is only used
+  for image-observation GPU probing, which the low-dim experiments never
+  touch, but it is installed so the pinned snapshot is complete.
+- **pytorch3d was built CPU-only** (no `FORCE_CUDA`, no CUDA 11.7 toolkit
+  installed into the env this time). SOE uses pytorch3d exclusively for
+  `pytorch3d.transforms` rotation conversions
+  (`src/utils/transformation.py`, `src/utils/rotation_utils.py`,
+  `simulation/rotation_transformer.py`), which is pure Python on top of
+  torch; nothing in SOE or F2S calls a pytorch3d CUDA kernel. Same pinned
+  commit (`e73a7e7`), same reported version (0.7.9). If a CUDA op is ever
+  needed, rebuild on a GPU node with the Day-1.2 recipe above.
+
+Also: `MUJOCO_GL` defaults to `disable` in the new `env.sh` (robosuite
+1.4.1 otherwise imports a GLFW context at import time; no experiment here
+creates a renderer -- `evaluate_policy.py` passes `render=False`).
+Set `MUJOCO_GL=egl` on a GPU node if offscreen video is ever needed.
+
+<!-- ALEX_VERSIONS_START -->
+Recorded versions on Alex (verified by importing each package):
+
+- Python 3.8.20 (conda-forge, via miniforge 26.3.1 / libmamba)
+- torch 1.13.0+cu117, torchvision 0.14.0+cu117 (`torch.version.cuda` 11.7)
+- pytorch3d 0.7.9 @ e73a7e7 (CPU-only build, `_C` importable)
+- robomimic 0.3.1 @ 9273f9c (editable), robosuite 1.4.1, mujoco 3.2.3
+- scikit-learn 1.3.2, diffusers 0.27.2, numpy 1.24.4 (all from `requirements_f2s.txt`)
+- GPU: NVIDIA A40 or A100 via Slurm (`--partition=a40,a100 --gres=gpu:1`); login node has none
+<!-- ALEX_VERSIONS_END -->
+
+### Config path change
+
+`configs/soe_can_lowdim_{baseline,dev,failure_replay}.json` and
+`configs/soe_lift_lowdim_baseline.json` carried absolute
+`/data/heng/F2S/...` paths for `log_dir`, the dataset `path` and (failure
+replay) `resume_ckpt`. These were rewritten to
+`/anvme/workspace/b306dd11-f2s/F2S/...` with a literal `sed` of the prefix
+and nothing else. They stay absolute because `simulation/rollout_utils.py`
+reads `cfg.dataset.params.path` at **evaluation** time (for env metadata)
+from whichever cwd the calling script uses (`SOE/` for `scripts/*.py`,
+`SOE/simulation` for `run.py`), so a relative path would break one or the
+other. The `results/**/config.yaml` copies of old runs still show the old
+prefix -- they are historical records and were left alone.
+
+### Acceptance tests run on the login node (CPU, no simulator GPU needed)
+
+- `scripts/selftest_logging.py` -- ALL CHECKS PASSED (`install_logs/alex_selftest_logging.log`)
+- `scripts/selftest_safety_filter.py` -- Day 17 acceptance test PASSED, 5/5 (`install_logs/alex_selftest_safety_filter.log`)
+- `scripts/selftest_skill_archive.py` -- Day 20 acceptance test PASSED (`install_logs/alex_selftest_skill_archive.log`)
+- headless `PickPlaceCan` built from the Can dataset's env metadata via
+  robomimic's `create_env_from_metadata(render=False, render_offscreen=False)`:
+  reset + 50 zero-action steps in 8.2 s, `objects=['Milk','Bread','Cereal','Can']`,
+  `object_id=3` (the exact fact the "Critical bug" section above depends on).
+
+### GPU jobs (Slurm)
+
+Job scripts are in `slurm/` (new directory; `#SBATCH --export=NONE` +
+`unset SLURM_EXPORT_ENV` per the NHR@FAU docs, then `source env.sh`):
+
+- `slurm/smoketest.sbatch` -- the Day-1.3 acceptance test on this cluster:
+  torch sees the GPU -> 2-epoch training on 36 demos
+  (`configs/soe_can_lowdim_dev.json`) -> 2 rollouts through SOE's own
+  `run.py` -> 2 episodes through `scripts/run_method.py --method
+  fixed_policy` -> `scripts/selftest_validator_perturbations.py`.
+  Output: `install_logs/alex_smoketest_<jobid>.log`, artifacts under
+  `results/can/soe/seed_0/round_0/smoketest_alex_<jobid>/`.
+- `slurm/train_can_baseline.sbatch` -- the Day-3 baseline retrain (500
+  epochs, `configs/soe_can_lowdim_baseline.json`, unmodified
+  `train_single_gpu.py`) followed by a 30-episode seed-0 Fixed Policy eval
+  into `results/Can/fixed_policy_alex_retrain/seed_0/round_0/` for
+  comparison with the recorded 73.3%. Submitted with
+  `--dependency=afterok:<smoketest job>` so it only runs if the smoke test
+  passes. Output: `install_logs/alex_train_can_baseline_<jobid>.log`.
+
+Every downstream artifact (world models, failure pools, offset sweeps,
+skill discovery, the three-seed table) has to be regenerated from that
+new checkpoint; the exact commands are the ones recorded in the
+corresponding sections above and in `install_logs/run_*.sh` (replace the
+`/data/heng/F2S` checkpoint paths with the new timestamped dir).
+
+### Corrections to the "What's real vs. what's still open" list above
+
+The last five bullets of that section predate later work and are stale;
+the sections in between are authoritative:
+- "Only seed 0 has been run for any method" -- superseded: all five
+  methods were run at seeds {0,1,2} ("Day 23: three-seed final results").
+- "Ablations (Day 24), unseen-configuration evaluation (Day 25) ... have not
+  been run yet" -- superseded: both are done ("Day 24: ablations", "Day 25:
+  unseen-configuration evaluation" + the post-gating-fix re-run). Only the
+  Day-28 clean-directory reproduction remains, and this migration is
+  effectively its first half (environment + acceptance tests from a clean
+  clone); the second half (one full round from the retrained baseline) is
+  pending on the jobs above.
+- `success_only` baseline and SOE at lower noise scales: still open, as stated.
+
+### Alex Day-1.3 acceptance test: PASSED (Slurm job 4148553, A40, 1 min 59 s)
+
+`install_logs/alex_smoketest_4148553.log`, artifacts in
+`results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/2026-09-04-22-42-07/`
+and `results/can/soe/seed_0/round_0/smoketest_alex_4148553/`:
+
+1. torch 1.13.0+cu117 sees the NVIDIA A40 (capability 8.6, driver
+   610.57.04), matmul on `cuda:0` ok. ✅
+2. 2-epoch training on 36 demos: loss **1.070094 -> 1.000066** -- the
+   same two numbers as the original machine's Day-1 run (`1.070 -> 1.000`),
+   i.e. the seeded data pipeline + model init reproduce exactly. ✅
+3. SOE's own `run.py`, 2 rollouts x (plain + exploration): 4 episodes,
+   `actions (400, 7)`, `states (400, 71)` -- identical shapes to the Day-1
+   record. ✅
+4. F2S harness `run_method.py --method fixed_policy`, 2 episodes, 0/2
+   success at 400 steps (expected for a 2-epoch policy), `metrics.json`,
+   `config.yaml`, `git_commit.txt`, per-episode logs written. ✅
+5. `scripts/selftest_validator_perturbations.py` -- **not run
+   successfully yet**, for a reason unrelated to the environment: the
+   smoke test only has the 2-epoch *dev* checkpoint, whose config
+   (`soe_can_lowdim_dev.json`, `down_dims: [128, 256]`) builds a smaller
+   DP than the `soe_can_lowdim_baseline.json` that this self-test
+   hard-codes (`size mismatch ... [256,256,5] vs [512,512,5]`). Re-run it
+   once the baseline job below has produced its checkpoint:
+   `F2S_TEST_CKPT=<baseline ckpt> python scripts/selftest_validator_perturbations.py`.
+
+### Alex Day-3 baseline retrain: Slurm job 4148554 (A40, started 2026-09-04 22:44)
+
+`slurm/train_can_baseline.sbatch`, log `install_logs/alex_train_can_baseline_4148554.log`,
+training dir `results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/`.
+Observed speed ~5.7 s/epoch on the A40 (500 epochs ~ 50 min), followed by
+the 30-episode seed-0 Fixed Policy eval into
+`results/Can/fixed_policy_alex_retrain/seed_0/round_0/`. Result to be
+recorded here when the job finishes (original-machine reference: 73.3%,
+72.2% +/- 1.6% over three seeds).
