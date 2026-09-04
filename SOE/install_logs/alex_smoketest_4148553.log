@@ -1,0 +1,292 @@
+### Starting TaskPrologue of job 4148553 on a0429 at Fri Sep  4 10:41:53 PM CEST 2026
+Running on cores 16-31 with governor performance
+Fri Sep  4 22:41:53 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:01:00.0 Off |                  Off |
+|  0%   38C    P0             55W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== Fri Sep  4 10:41:54 PM CEST 2026 | node a0429.nhr.fau.de | job 4148553 | partition a40 ===
+name, driver_version, memory.total [MiB]
+NVIDIA A40, 610.57.04, 49140 MiB
+torch 1.13.0+cu117 | GPU NVIDIA A40 | capability (8, 6) | matmul ok
+=== Day 1.3 (a): 2-epoch training, configs/soe_can_lowdim_dev.json ===
+There was a problem when trying to write in your cache folder (/home/atuin/b306dd/b306dd11/hf/hub). Please, ensure the directory exists and can be written to.
+  0%|          | 0/65 [00:00<?, ?it/s]  2%|▏         | 1/65 [00:04<04:53,  4.59s/it]  6%|▌         | 4/65 [00:04<00:54,  1.11it/s] 12%|█▏        | 8/65 [00:04<00:21,  2.68it/s] 18%|█▊        | 12/65 [00:04<00:11,  4.67it/s] 23%|██▎       | 15/65 [00:05<00:07,  6.47it/s] 28%|██▊       | 18/65 [00:05<00:05,  8.65it/s] 34%|███▍      | 22/65 [00:05<00:03, 11.92it/s] 40%|████      | 26/65 [00:05<00:02, 15.19it/s] 46%|████▌     | 30/65 [00:05<00:01, 18.26it/s] 52%|█████▏    | 34/65 [00:05<00:01, 21.00it/s] 58%|█████▊    | 38/65 [00:05<00:01, 23.20it/s] 65%|██████▍   | 42/65 [00:05<00:00, 25.03it/s] 71%|███████   | 46/65 [00:06<00:00, 26.47it/s] 77%|███████▋  | 50/65 [00:06<00:00, 27.36it/s] 83%|████████▎ | 54/65 [00:06<00:00, 28.29it/s] 89%|████████▉ | 58/65 [00:06<00:00, 28.81it/s] 95%|█████████▌| 62/65 [00:06<00:00, 29.62it/s]100%|██████████| 65/65 [00:06<00:00,  9.65it/s]
+  0%|          | 0/65 [00:00<?, ?it/s]  2%|▏         | 1/65 [00:00<00:17,  3.57it/s]  6%|▌         | 4/65 [00:00<00:05, 11.54it/s] 12%|█▏        | 8/65 [00:00<00:02, 19.03it/s] 18%|█▊        | 12/65 [00:00<00:02, 23.20it/s] 25%|██▍       | 16/65 [00:00<00:01, 25.81it/s] 29%|██▉       | 19/65 [00:00<00:01, 26.69it/s] 35%|███▌      | 23/65 [00:01<00:01, 28.05it/s] 42%|████▏     | 27/65 [00:01<00:01, 29.07it/s] 48%|████▊     | 31/65 [00:01<00:01, 29.69it/s] 54%|█████▍    | 35/65 [00:01<00:01, 29.92it/s] 60%|██████    | 39/65 [00:01<00:00, 30.44it/s] 66%|██████▌   | 43/65 [00:01<00:00, 30.75it/s] 72%|███████▏  | 47/65 [00:01<00:00, 30.68it/s] 78%|███████▊  | 51/65 [00:01<00:00, 30.86it/s] 85%|████████▍ | 55/65 [00:02<00:00, 30.91it/s] 91%|█████████ | 59/65 [00:02<00:00, 30.92it/s] 97%|█████████▋| 63/65 [00:02<00:00, 31.04it/s]100%|██████████| 65/65 [00:02<00:00, 26.83it/s]
+{'seed': 0, 'log_dir': '/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev', 'dataset': {'name': 'robomimic', 'params': {'path': '/anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/datasets/can/ph/low_dim_v141.hdf5', 'train_filter_key': '20_percent_train', 'num_obs': 1, 'num_action': 20, 'success_only': False, 'output_keys': ['actions'], 'normalize_actions': False, 'predict_delta_pos': False}}, 'batch_size': 64, 'num_workers': 4, 'num_iters_per_epoch': None, 'policy': {'name': 'DP', 'params': {'num_action': 20, 'action_dim': 7, 'obs_shape_meta': {'object': {'shape': [14], 'type': 'low_dim'}, 'robot0_eef_pos': {'shape': [3], 'type': 'low_dim'}, 'robot0_eef_quat': {'shape': [4], 'type': 'low_dim'}, 'robot0_eef_vel_ang': {'shape': [3], 'type': 'low_dim'}, 'robot0_eef_vel_lin': {'shape': [3], 'type': 'low_dim'}, 'robot0_gripper_qpos': {'shape': [2], 'type': 'low_dim'}, 'robot0_gripper_qvel': {'shape': [2], 'type': 'low_dim'}, 'robot0_joint_pos': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_pos_cos': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_pos_sin': {'shape': [7], 'type': 'low_dim'}, 'robot0_joint_vel': {'shape': [7], 'type': 'low_dim'}}, 'resize_shape': None, 'crop_shape': None, 'random_crop': False, 'use_group_norm': True, 'resnet_out_features': 64, 'num_inference_steps': 20, 'diffusion_step_embed_dim': 128, 'down_dims': [128, 256], 'kernel_size': 5, 'n_groups': 8, 'cond_predict_scale': True, 'noise_scheduler_type': 'ddim'}}, 'resume_ckpt': None, 'resume_epoch': -1, 'optimizer': {'name': 'AdamW', 'params': {'lr': 0.0001, 'weight_decay': 1e-06}}, 'lr_scheduler': {'name': 'cosine_with_warmup'}, 'num_epochs': 2, 'save_epochs': 1}
+train log dir: results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/2026-09-04-22-42-07/
+Epoch 0
+Train loss: 1.070094 loss: 1.070094 
+Epoch 1
+Train loss: 1.000066 loss: 1.000066 
+total 93
+drwxrwxr-x 2 b306dd11 b306dd     4096 Sep  4 22:42 .
+drwxrwxr-x 3 b306dd11 b306dd     4096 Sep  4 22:42 ..
+-rw-rw-r-- 1 b306dd11 b306dd    20973 Sep  4 22:42 loss_seed_0.png
+-rw-rw-r-- 1 b306dd11 b306dd 17238309 Sep  4 22:42 policy_epoch_1_seed_0.ckpt
+-rw-rw-r-- 1 b306dd11 b306dd 17238309 Sep  4 22:42 policy_epoch_2_seed_0.ckpt
+-rw-rw-r-- 1 b306dd11 b306dd 17237269 Sep  4 22:42 policy_last.ckpt
+=== Day 1.3 (b): 2 rollouts via SOE's run.py ===
+There was a problem when trying to write in your cache folder (/home/atuin/b306dd/b306dd11/hf/hub). Please, ensure the directory exists and can be written to.
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_vel_lin', 'robot0_gripper_qvel', 'object', 'robot0_gripper_qpos', 'robot0_joint_pos_cos', 'robot0_eef_pos', 'robot0_joint_pos_sin', 'robot0_joint_vel', 'robot0_eef_quat', 'robot0_joint_pos', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Rollout 0
+Success_Rate 0.0
+Rollout 1
+Success_Rate 0.0
+Exploration attempt 0 for demo 0
+Success_Rate 0.0
+Exploration attempt 0 for demo 1
+Success_Rate 0.0
+Average Rollout Stats
+{
+    "Return": 0.0,
+    "Horizon": 400.0,
+    "Success_Rate": 0.0,
+    "Num_Success": 0.0
+}
+Wrote dataset trajectories to ../results/can/soe/seed_0/round_0/smoketest_alex_4148553/rollouts.hdf5
+rollouts.hdf5: 4 episodes | actions (400, 7) | states (400, 71)
+=== F2S harness: run_method.py --method fixed_policy, 2 episodes ===
+There was a problem when trying to write in your cache folder (/home/atuin/b306dd/b306dd11/hf/hub). Please, ensure the directory exists and can be written to.
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'robot0_gripper_qvel', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'robot0_gripper_qpos', 'object', 'robot0_eef_quat', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/2] episode=episode_000000 success=False len=400
+[2/2] episode=episode_000001 success=False len=400
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 2,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 21.411110639572144,
+  "checkpoint": "results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/2026-09-04-22-42-07/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_dev.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 2,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 21.411110639572144,
+  "checkpoint": "results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/2026-09-04-22-42-07/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_dev.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 2,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 21.411110639572144,
+  "checkpoint": "results/can/soe/seed_0/round_0/logs/soe_can_lowdim_dev/2026-09-04-22-42-07/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_dev.json",
+  "enable_exploration": false
+}=== simulator-backed F2S self-tests (non-fatal) ===
+There was a problem when trying to write in your cache folder (/home/atuin/b306dd/b306dd11/hf/hub). Please, ensure the directory exists and can be written to.
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_joint_pos', 'robot0_joint_pos_cos', 'object', 'robot0_joint_pos_sin', 'robot0_eef_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+Traceback (most recent call last):
+  File "scripts/selftest_validator_perturbations.py", line 86, in <module>
+    main()
+  File "scripts/selftest_validator_perturbations.py", line 48, in main
+    policy, env, _, _ = dp_load(args, cfg, enable_exploration_as_args=False)
+  File "/anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/rollout_utils.py", line 561, in dp_load
+    policy.load_state_dict(torch.load(args.agent, map_location = device), strict = False)
+  File "/anvme/workspace/b306dd11-f2s/conda/envs/f2s/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1667, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for DP:
+	size mismatch for action_decoder.model.mid_modules.0.blocks.0.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.0.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.0.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.0.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.1.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.1.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.1.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.blocks.1.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.0.cond_encoder.1.weight: copying a param with shape torch.Size([512, 187]) from checkpoint, the shape in current model is torch.Size([1024, 315]).
+	size mismatch for action_decoder.model.mid_modules.0.cond_encoder.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.0.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.0.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.0.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.0.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.1.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.1.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.1.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.blocks.1.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.mid_modules.1.cond_encoder.1.weight: copying a param with shape torch.Size([512, 187]) from checkpoint, the shape in current model is torch.Size([1024, 315]).
+	size mismatch for action_decoder.model.mid_modules.1.cond_encoder.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for action_decoder.model.diffusion_step_encoder.1.weight: copying a param with shape torch.Size([512, 128]) from checkpoint, the shape in current model is torch.Size([1024, 256]).
+	size mismatch for action_decoder.model.diffusion_step_encoder.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for action_decoder.model.diffusion_step_encoder.3.weight: copying a param with shape torch.Size([128, 512]) from checkpoint, the shape in current model is torch.Size([256, 1024]).
+	size mismatch for action_decoder.model.diffusion_step_encoder.3.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.0.block.0.weight: copying a param with shape torch.Size([128, 512, 5]) from checkpoint, the shape in current model is torch.Size([256, 1024, 5]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.0.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.0.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.0.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.1.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.1.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.1.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.blocks.1.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.0.cond_encoder.1.weight: copying a param with shape torch.Size([256, 187]) from checkpoint, the shape in current model is torch.Size([512, 315]).
+	size mismatch for action_decoder.model.up_modules.0.0.cond_encoder.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.up_modules.0.0.residual_conv.weight: copying a param with shape torch.Size([128, 512, 1]) from checkpoint, the shape in current model is torch.Size([256, 1024, 1]).
+	size mismatch for action_decoder.model.up_modules.0.0.residual_conv.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.0.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.0.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.0.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.0.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.1.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.1.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.1.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.blocks.1.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.up_modules.0.1.cond_encoder.1.weight: copying a param with shape torch.Size([256, 187]) from checkpoint, the shape in current model is torch.Size([512, 315]).
+	size mismatch for action_decoder.model.up_modules.0.1.cond_encoder.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.up_modules.0.2.conv.weight: copying a param with shape torch.Size([128, 128, 4]) from checkpoint, the shape in current model is torch.Size([256, 256, 4]).
+	size mismatch for action_decoder.model.up_modules.0.2.conv.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.0.block.0.weight: copying a param with shape torch.Size([128, 7, 5]) from checkpoint, the shape in current model is torch.Size([256, 7, 5]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.0.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.0.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.0.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.1.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.1.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.1.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.blocks.1.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.0.cond_encoder.1.weight: copying a param with shape torch.Size([256, 187]) from checkpoint, the shape in current model is torch.Size([512, 315]).
+	size mismatch for action_decoder.model.down_modules.0.0.cond_encoder.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.0.0.residual_conv.weight: copying a param with shape torch.Size([128, 7, 1]) from checkpoint, the shape in current model is torch.Size([256, 7, 1]).
+	size mismatch for action_decoder.model.down_modules.0.0.residual_conv.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.0.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.0.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.0.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.0.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.1.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.1.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.1.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.blocks.1.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.0.1.cond_encoder.1.weight: copying a param with shape torch.Size([256, 187]) from checkpoint, the shape in current model is torch.Size([512, 315]).
+	size mismatch for action_decoder.model.down_modules.0.1.cond_encoder.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.0.2.conv.weight: copying a param with shape torch.Size([128, 128, 3]) from checkpoint, the shape in current model is torch.Size([256, 256, 3]).
+	size mismatch for action_decoder.model.down_modules.0.2.conv.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.0.block.0.weight: copying a param with shape torch.Size([256, 128, 5]) from checkpoint, the shape in current model is torch.Size([512, 256, 5]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.0.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.0.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.0.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.1.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.1.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.1.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.blocks.1.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.0.cond_encoder.1.weight: copying a param with shape torch.Size([512, 187]) from checkpoint, the shape in current model is torch.Size([1024, 315]).
+	size mismatch for action_decoder.model.down_modules.1.0.cond_encoder.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for action_decoder.model.down_modules.1.0.residual_conv.weight: copying a param with shape torch.Size([256, 128, 1]) from checkpoint, the shape in current model is torch.Size([512, 256, 1]).
+	size mismatch for action_decoder.model.down_modules.1.0.residual_conv.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.0.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.0.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.0.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.0.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.1.block.0.weight: copying a param with shape torch.Size([256, 256, 5]) from checkpoint, the shape in current model is torch.Size([512, 512, 5]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.1.block.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.1.block.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.blocks.1.block.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for action_decoder.model.down_modules.1.1.cond_encoder.1.weight: copying a param with shape torch.Size([512, 187]) from checkpoint, the shape in current model is torch.Size([1024, 315]).
+	size mismatch for action_decoder.model.down_modules.1.1.cond_encoder.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for action_decoder.model.final_conv.0.block.0.weight: copying a param with shape torch.Size([128, 128, 5]) from checkpoint, the shape in current model is torch.Size([256, 256, 5]).
+	size mismatch for action_decoder.model.final_conv.0.block.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.final_conv.0.block.1.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.final_conv.0.block.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for action_decoder.model.final_conv.1.weight: copying a param with shape torch.Size([7, 128, 1]) from checkpoint, the shape in current model is torch.Size([7, 256, 1]).
+selftest_validator_perturbations: FAILED (non-fatal, see above)
+=== SMOKETEST PASSED Fri Sep  4 10:43:49 PM CEST 2026 ===
+=== JOB_STATISTICS ===
+=== current date     : Fri Sep  4 22:43:49 CEST 2026
+= Job-ID             : 4148553 on alex
+= Job-Name           : f2s_smoketest
+= Job-Command        : /anvme/workspace/b306dd11-f2s/F2S/SOE/slurm/smoketest.sbatch
+= Initial workdir    : /anvme/workspace/b306dd11-f2s/F2S/SOE
+= Queue/Partition    : a40
+= Slurm account      : b306dd with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:01:59
+= Total RAM usage    : 5.5 GiB of assigned  GiB (%)
+= Node list          : a0429
+= Subm/Elig/Start/End: 2026-09-04T22:41:48 / 2026-09-04T22:41:48 / 2026-09-04T22:41:49 / 2026-09-04T22:43:48
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+!!! /home/hpc             106.2G   104.9G   209.7G  -29008days     118K     500K   1,000K        N/A !!!
+    /home/vault           168.0G  1048.6G  2097.2G        N/A   3,763      200K     400K        N/A    
+    /home/atuin           937.2G     0.0K     0.0K        N/A     246K                          N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+    /anvme               4304.4G     0.0K     0.0K        N/A   1,220K   9,985K  11,985K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:01:00.0, 329974, 1 %, 0 %, 742 MiB, 6030 ms
+NVIDIA A40, 00000000:01:00.0, 330032, 4 %, 0 %, 990 MiB, 19827 ms
+NVIDIA A40, 00000000:01:00.0, 330767, 4 %, 0 %, 1042 MiB, 47574 ms
+NVIDIA A40, 00000000:01:00.0, 331366, 4 %, 0 %, 1042 MiB, 25696 ms
+NVIDIA A40, 00000000:01:00.0, 331955, 0 %, 0 %, 466 MiB, 2444 ms

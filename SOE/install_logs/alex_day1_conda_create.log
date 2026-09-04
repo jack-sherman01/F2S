@@ -1,0 +1,1270 @@
+Retrieving notices: - done
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): | / - \ | / - \ | / - \ | / - done
+Solving environment: | / done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 26.3.1
+    latest version: 26.7.1
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+
+
+## Package Plan ##
+
+  environment location: /anvme/workspace/b306dd11-f2s/conda/envs/f2s
+
+  added / updated specs:
+    - pip
+    - python=3.8
+    - setuptools
+    - wheel
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    bzip2-1.0.8                |      hda65f42_10         252 KB  conda-forge
+    ca-certificates-2026.7.22  |       hbd8a1cb_0         129 KB  conda-forge
+    icu-78.3                   |  py310h44b86e0_2        13.8 MB  conda-forge
+    ld_impl_linux-64-2.46.1    |default_hbd61a6d_102         728 KB  conda-forge
+    libffi-3.7.0               |       h81df57d_1          66 KB  conda-forge
+    libgcc-16.2.0              |       ha9f2e26_4         1.0 MB  conda-forge
+    libgomp-16.2.0             |       he0feb66_4         625 KB  conda-forge
+    liblzma-5.8.3              |       hb03c661_1         110 KB  conda-forge
+    liblzma-devel-5.8.3        |       hb03c661_1         480 KB  conda-forge
+    libsqlite-3.53.4           |       h13e7031_1         952 KB  conda-forge
+    libstdcxx-16.2.0           |       h934c35e_4         6.3 MB  conda-forge
+    libuuid-2.42.3             |       hcfc3c73_0          39 KB  conda-forge
+    libxcrypt-4.4.38           |       h280c20c_0         100 KB  conda-forge
+    libzlib-1.3.2              |       h25fd6f3_3          62 KB  conda-forge
+    ncurses-6.6                |       hdb14827_1         890 KB  conda-forge
+    openssl-3.6.4              |       h781a0a9_0         3.1 MB  conda-forge
+    pip-24.3.1                 |     pyh8b19718_0         1.2 MB  conda-forge
+    python-3.8.20              |h4a871b0_2_cpython        21.1 MB  conda-forge
+    readline-8.3               |       hd6e31c0_1         341 KB  conda-forge
+    setuptools-75.3.0          |     pyhd8ed1ab_0         761 KB  conda-forge
+    tk-8.6.13                  | noxft_h1df4ec4_4         3.4 MB  conda-forge
+    wheel-0.45.1               |     pyhd8ed1ab_0          62 KB  conda-forge
+    xz-5.8.3                   |       ha02ee65_1          23 KB  conda-forge
+    xz-gpl-tools-5.8.3         |       ha02ee65_1          39 KB  conda-forge
+    xz-tools-5.8.3             |       hb03c661_1          94 KB  conda-forge
+    zstd-1.5.7                 |       hb78ec9c_7         587 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        56.1 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  icu                conda-forge/linux-64::icu-78.3-py310h44b86e0_2 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_102 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h81df57d_1 
+  libgcc             conda-forge/linux-64::libgcc-16.2.0-ha9f2e26_4 
+  libgomp            conda-forge/linux-64::libgomp-16.2.0-he0feb66_4 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  liblzma-devel      conda-forge/linux-64::liblzma-devel-5.8.3-hb03c661_1 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hb9d3cd8_1 
+  libsqlite          conda-forge/linux-64::libsqlite-3.53.4-h13e7031_1 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.2.0-h934c35e_4 
+  libuuid            conda-forge/linux-64::libuuid-2.42.3-hcfc3c73_0 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.38-h280c20c_0 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openssl            conda-forge/linux-64::openssl-3.6.4-h781a0a9_0 
+  pip                conda-forge/noarch::pip-24.3.1-pyh8b19718_0 
+  python             conda-forge/linux-64::python-3.8.20-h4a871b0_2_cpython 
+  readline           conda-forge/linux-64::readline-8.3-hd6e31c0_1 
+  setuptools         conda-forge/noarch::setuptools-75.3.0-pyhd8ed1ab_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h1df4ec4_4 
+  wheel              conda-forge/noarch::wheel-0.45.1-pyhd8ed1ab_0 
+  xz                 conda-forge/linux-64::xz-5.8.3-ha02ee65_1 
+  xz-gpl-tools       conda-forge/linux-64::xz-gpl-tools-5.8.3-ha02ee65_1 
+  xz-tools           conda-forge/linux-64::xz-tools-5.8.3-hb03c661_1 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+
+Downloading and Extracting Packages: ...working...python-3.8.20        | 21.1 MB   |            |   0% 
+icu-78.3             | 13.8 MB   |            |   0% [A
+
+libstdcxx-16.2.0     | 6.3 MB    |            |   0% [A[A
+
+
+tk-8.6.13            | 3.4 MB    |            |   0% [A[A[A
+
+
+
+openssl-3.6.4        | 3.1 MB    |            |   0% [A[A[A[A
+
+
+
+
+pip-24.3.1           | 1.2 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+setuptools-75.3.0    | 761 KB    |            |   0% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-devel-5.8.3  | 480 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+readline-8.3         | 341 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-5.8.3        | 110 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxcrypt-4.4.38     | 100 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.8.20        | 21.1 MB   | 2          |   3% 
+icu-78.3             | 13.8 MB   | 4          |   4% [A
+
+libstdcxx-16.2.0     | 6.3 MB    | #1         |  12% [A[A
+
+
+tk-8.6.13            | 3.4 MB    | #          |  11% [A[A[A
+
+
+
+openssl-3.6.4        | 3.1 MB    | #1         |  12% [A[A[A[A
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A
+
+
+
+
+pip-24.3.1           | 1.2 MB    | 1          |   1% [A[A[A[A[A
+
+
+tk-8.6.13            | 3.4 MB    | ########## | 100% [A[A[Apython-3.8.20        | 21.1 MB   | ###6       |  36% 
+icu-78.3             | 13.8 MB   | #####6     |  57% [A
+
+
+
+
+pip-24.3.1           | 1.2 MB    | ########## | 100% [A[A[A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | 1          |   2% [A[A[A[A[A[A
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | 1          |   2% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | 1          |   2% [A[A[A[A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+setuptools-75.3.0    | 761 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+setuptools-75.3.0    | 761 KB    | ########## | 100% [A[A[A[A[A[A[A[A[Apython-3.8.20        | 21.1 MB   | #######5   |  76% 
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+readline-8.3         | 341 KB    | 4          |   5% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-devel-5.8.3  | 480 KB    | 3          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########## | 100% [A
+icu-78.3             | 13.8 MB   | ########## | 100% [A
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+readline-8.3         | 341 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-devel-5.8.3  | 480 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | 6          |   6% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | #2         |  12% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-5.8.3        | 110 KB    | #4         |  14% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxcrypt-4.4.38     | 100 KB    | #6         |  16% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-5.8.3        | 110 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxcrypt-4.4.38     | 100 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.8.20        | 21.1 MB   | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+pip-24.3.1           | 1.2 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+pip-24.3.1           | 1.2 MB    | ########## | 100% [A[A[A[A[A
+
+
+tk-8.6.13            | 3.4 MB    | ########## | 100% [A[A[A
+
+
+tk-8.6.13            | 3.4 MB    | ########## | 100% [A[A[A
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########## | 100% [A
+
+
+
+
+
+
+
+
+setuptools-75.3.0    | 761 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+setuptools-75.3.0    | 761 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+readline-8.3         | 341 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+readline-8.3         | 341 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-5.8.3        | 110 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-5.8.3        | 110 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxcrypt-4.4.38     | 100 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxcrypt-4.4.38     | 100 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-devel-5.8.3  | 480 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+liblzma-devel-5.8.3  | 480 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A[Apython-3.8.20        | 21.1 MB   | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A done
+Preparing transaction: \ | / done
+Verifying transaction: \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+#
+# To activate this environment, use
+#
+#     $ conda activate /anvme/workspace/b306dd11-f2s/conda/envs/f2s
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+

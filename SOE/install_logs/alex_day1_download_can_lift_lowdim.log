@@ -1,0 +1,21 @@
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /anvme/workspace/b306dd11-f2s/F2S/SOE/dependencies/robomimic/robomimic/scripts/setup_macros.py
+)
+
+Downloading dataset:
+    task: lift
+    dataset type: ph
+    hdf5 type: low_dim
+    download path: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/datasets/lift/ph
+low_dim_v141.hdf5: 0.00B [00:00, ?B/s]low_dim_v141.hdf5:   0%|          | 8.19k/21.7M [00:00<28:42, 12.6kB/s]low_dim_v141.hdf5:   0%|          | 16.4k/21.7M [00:00<15:46, 22.9kB/s]low_dim_v141.hdf5:   0%|          | 49.2k/21.7M [00:00<04:55, 73.3kB/s]low_dim_v141.hdf5:   0%|          | 106k/21.7M [00:01<02:18, 156kB/s]  low_dim_v141.hdf5:   1%|          | 221k/21.7M [00:01<01:06, 322kB/s]low_dim_v141.hdf5:   2%|▏         | 451k/21.7M [00:01<00:32, 657kB/s]low_dim_v141.hdf5:   4%|▍         | 918k/21.7M [00:01<00:15, 1.35MB/s]low_dim_v141.hdf5:   8%|▊         | 1.84M/21.7M [00:01<00:07, 2.71MB/s]low_dim_v141.hdf5:  17%|█▋        | 3.69M/21.7M [00:01<00:03, 5.46MB/s]low_dim_v141.hdf5:  34%|███▍      | 7.41M/21.7M [00:02<00:01, 11.0MB/s]low_dim_v141.hdf5:  47%|████▋     | 10.2M/21.7M [00:02<00:00, 13.1MB/s]low_dim_v141.hdf5:  60%|██████    | 13.0M/21.7M [00:02<00:00, 14.7MB/s]low_dim_v141.hdf5:  73%|███████▎  | 15.8M/21.7M [00:02<00:00, 15.7MB/s]low_dim_v141.hdf5:  74%|███████▍  | 16.1M/21.7M [00:02<00:00, 11.6MB/s]low_dim_v141.hdf5:  87%|████████▋ | 18.9M/21.7M [00:02<00:00, 13.4MB/s]low_dim_v141.hdf5:  97%|█████████▋| 21.0M/21.7M [00:02<00:00, 13.1MB/s]low_dim_v141.hdf5:  99%|█████████▉| 21.5M/21.7M [00:03<00:00, 10.5MB/s]low_dim_v141.hdf5: 21.7MB [00:03, 6.95MB/s]                            
+
+
+Downloading dataset:
+    task: can
+    dataset type: ph
+    hdf5 type: low_dim
+    download path: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/datasets/can/ph
+low_dim_v141.hdf5: 0.00B [00:00, ?B/s]low_dim_v141.hdf5:   0%|          | 8.19k/48.3M [00:00<47:07, 17.1kB/s]low_dim_v141.hdf5:   0%|          | 16.4k/48.3M [00:00<28:11, 28.5kB/s]low_dim_v141.hdf5:   0%|          | 49.2k/48.3M [00:00<09:22, 85.8kB/s]low_dim_v141.hdf5:   0%|          | 106k/48.3M [00:00<04:37, 174kB/s]  low_dim_v141.hdf5:   0%|          | 221k/48.3M [00:01<02:18, 348kB/s]low_dim_v141.hdf5:   1%|          | 451k/48.3M [00:01<01:08, 694kB/s]low_dim_v141.hdf5:   2%|▏         | 918k/48.3M [00:01<00:33, 1.40MB/s]low_dim_v141.hdf5:   4%|▍         | 1.84M/48.3M [00:01<00:16, 2.79MB/s]low_dim_v141.hdf5:   8%|▊         | 3.69M/48.3M [00:01<00:08, 5.57MB/s]low_dim_v141.hdf5:  15%|█▌        | 7.36M/48.3M [00:01<00:03, 10.9MB/s]low_dim_v141.hdf5:  22%|██▏       | 10.7M/48.3M [00:02<00:02, 14.0MB/s]low_dim_v141.hdf5:  31%|███       | 14.8M/48.3M [00:02<00:01, 17.6MB/s]low_dim_v141.hdf5:  37%|███▋      | 17.7M/48.3M [00:02<00:01, 17.9MB/s]low_dim_v141.hdf5:  43%|████▎     | 20.6M/48.3M [00:02<00:01, 18.2MB/s]low_dim_v141.hdf5:  49%|████▉     | 23.9M/48.3M [00:02<00:01, 18.9MB/s]low_dim_v141.hdf5:  57%|█████▋    | 27.6M/48.3M [00:02<00:01, 16.5MB/s]low_dim_v141.hdf5:  61%|██████▏   | 29.7M/48.3M [00:03<00:01, 11.2MB/s]low_dim_v141.hdf5:  65%|██████▌   | 31.4M/48.3M [00:03<00:01, 11.0MB/s]low_dim_v141.hdf5:  66%|██████▌   | 31.8M/48.3M [00:03<00:02, 8.14MB/s]low_dim_v141.hdf5:  70%|███████   | 33.9M/48.3M [00:04<00:02, 6.91MB/s]low_dim_v141.hdf5:  75%|███████▍  | 36.0M/48.3M [00:04<00:01, 6.27MB/s]low_dim_v141.hdf5:  79%|███████▉  | 38.1M/48.3M [00:04<00:01, 5.90MB/s]low_dim_v141.hdf5:  83%|████████▎ | 40.2M/48.3M [00:05<00:01, 5.64MB/s]low_dim_v141.hdf5:  88%|████████▊ | 42.3M/48.3M [00:05<00:01, 5.51MB/s]low_dim_v141.hdf5:  92%|█████████▏| 44.4M/48.3M [00:06<00:00, 5.42MB/s]low_dim_v141.hdf5:  96%|█████████▌| 46.5M/48.3M [00:06<00:00, 5.36MB/s]low_dim_v141.hdf5: 48.3MB [00:06, 7.35MB/s]                            
+

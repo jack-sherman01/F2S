@@ -1,10 +1,10 @@
 {
     "seed": 0,
-    "log_dir": "/data/heng/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline",
+    "log_dir": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline",
     "dataset": {
         "name": "robomimic",
         "params": {
-            "path": "/data/heng/F2S/SOE/simulation/datasets/can/ph/low_dim_v141.hdf5",
+            "path": "/anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/datasets/can/ph/low_dim_v141.hdf5",
             "train_filter_key": "20_percent_train",
             "num_obs": 1,
             "num_action": 20,

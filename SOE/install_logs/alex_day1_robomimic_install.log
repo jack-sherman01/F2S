@@ -1,0 +1,7 @@
+Obtaining file:///anvme/workspace/b306dd11-f2s/F2S/SOE/dependencies/robomimic
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Installing collected packages: robomimic
+  DEPRECATION: Legacy editable install of robomimic==0.3.0 from file:///anvme/workspace/b306dd11-f2s/F2S/SOE/dependencies/robomimic (setup.py develop) is deprecated. pip 25.0 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for robomimic
+Successfully installed robomimic

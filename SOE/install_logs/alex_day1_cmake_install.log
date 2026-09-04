@@ -1,0 +1,10 @@
+Collecting cmake<4
+  Downloading cmake-3.31.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.3 kB)
+Downloading cmake-3.31.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.8/27.8 MB 78.9 MB/s eta 0:00:00
+Installing collected packages: cmake
+  Attempting uninstall: cmake
+    Found existing installation: cmake 4.4.3
+    Uninstalling cmake-4.4.3:
+      Successfully uninstalled cmake-4.4.3
+Successfully installed cmake-3.31.10
