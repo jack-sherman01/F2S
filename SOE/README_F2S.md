@@ -1495,6 +1495,74 @@ Data: `results/can/skills_from_unseen_config_failures/` (records.json --
 successes' Day-19 scores, summary.json),
 `install_logs/discover_skills_from_unseen_config_failures.log`.
 
+## Day 24: ablations -- the required comparison table
+
+proposal_revised.tex's Day 24 requires at least two ablations
+("F2S without failure clustering", "F2S without world-model ranking")
+and this comparison: SOE vs. Failure Replay vs. F2S w/o World Model vs.
+Full F2S.
+
+A useful realization made this cheaper than it looked: the *established*
+F2S method used everywhere in this log (pure random `generate_candidates`,
+flat `failure_mode_id=0` for every state, no ranking -- every valid
+candidate is just executed for real and Day-19-validated) already lacks
+*both* required-ablation features simultaneously. So the existing 3-seed
+result (section 20) already **is** the "F2S w/o World Model" (and
+"w/o failure clustering") data point -- no new run needed for that cell.
+The only missing cell was **Full F2S**: real failure-mode clustering
++ world-model-guided (CEM) candidate ranking, matching
+`f2s.evolution.loop.discover_and_archive_skills`'s actual default
+(`use_cem=True`).
+
+Ran it (`scripts/ablation_full_f2s_cem_all_offsets.py`): clustered the
+same 71-state pool (`choose_k` picked K=2, sizes 26/45), then CEM-searched
+every state across the full 6-offset sweep `{0,10,15,20,25,30}` (not just
+the single offset=15 tested in the earlier CEM section), top-3 candidates
+executed per (state, offset) -- 1,278 real executions. One more
+architectural note surfaced while building this: `f2s.candidates.cem.cem_search`
+has no `skill_deltas` parameter, so clustering's only real functional
+lever in this codebase (historical-perturbation reuse from an existing
+cluster's skills) has *zero* effect on the CEM-guided path -- clustering
+only changes which `failure_mode_id` label a result gets, never which
+candidates get generated or executed. Worth knowing before reading too
+much into "clustering" as a separate causal factor here.
+
+**Result: 0 real successes out of 1,278 executions, 0 skills archived.**
+This extends the earlier single-offset CEM finding (0/213 at offset=15,
+"Guided candidate search" section above) to the full offset sweep at 6x
+the scale -- a markedly stronger confirmation that CEM's predicted-
+distance-to-goal objective doesn't transfer to real success on this task,
+independent of intervention timing.
+
+**The required comparison table, with an empty archive meaning Full F2S
+provably degenerates to Fixed Policy** (an empty `SkillArchive.skills`
+list makes `retrieve()` return `None` on every call, so no correction is
+ever applied -- this doesn't need a separate 3-seed re-run, it's a direct
+consequence of the code, not an estimate):
+
+| method | success rate (in-distribution, 3 seeds) |
+|---|---|
+| SOE | 0.0% ± 0.0% |
+| Failure Replay | 65.6% ± 1.6% |
+| **F2S w/o World Model** (established method: random search, no clustering) | **74.4% ± 4.2%** |
+| **Full F2S** (clustering + CEM ranking) | **72.2% ± 1.6%** (= Fixed Policy, no skills ever found to archive) |
+
+**The headline finding of this ablation table**: the "more sophisticated"
+Full F2S components (world-model-guided search, failure-mode clustering)
+don't just fail to help -- across 1,278 real executions they find *zero*
+archivable skills, while the simpler ablated configuration (random search,
+no clustering) is the *only* approach in this entire project that has
+ever found real, Day-19-validated skills. This is a genuine, if
+counterintuitive, result: added sophistication in the search/ranking
+step actively hurts yield here, for the same root cause diagnosed
+repeatedly throughout this log (world-model prediction quality doesn't
+reliably track real outcomes within a state, so ranking by it selects
+worse candidates than picking at random).
+
+Data: `results/can/ablation_full_f2s_cem_all_offsets/` (records.json --
+1278 execution records, clusters.json, summary.json),
+`install_logs/ablation_full_f2s_cem_all_offsets.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
