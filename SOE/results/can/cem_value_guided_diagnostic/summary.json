@@ -1,0 +1,14 @@
+{
+  "cem_world_model": {
+    "variant": "cem_world_model",
+    "n_states": 71,
+    "n_success": 0,
+    "success_rate": 0.0
+  },
+  "cem_value_guided": {
+    "variant": "cem_value_guided",
+    "n_states": 71,
+    "n_success": 2,
+    "success_rate": 0.028169014084507043
+  }
+}

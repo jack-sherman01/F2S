@@ -1721,6 +1721,59 @@ Code: `f2s/value/{model,dataset,train}.py`, `scripts/build_value_function_datase
 `results/can/closed_loop_repair_diagnostic/`,
 `results/can/closed_loop_repair_value_guided_diagnostic/`.
 
+## Closing the loop on candidate generation: does directed search (CEM) help once V is the fitness?
+
+The value-function experiment above changed only *scoring* while candidates stayed
+random perturbations. The remaining untested variable was candidate *generation*
+itself: does directing the latent-space search (CEM, already implemented and
+previously tried with the world model's own fitness -- see "Guided candidate search
+(CEM)" above, 0/1278 across the full offset sweep) do any better once its fitness
+signal is the value function instead of raw world-model distance-to-goal?
+
+`f2s/candidates/cem.py` gained `cem_search_value_guided`: identical CEM mechanism
+(iterative mean/std refinement over Delta z, population 64, 5 iterations) to the
+existing `cem_search`, with the one change being fitness = `1 - V(predicted_final_state)`
+instead of predicted distance-to-goal. Both variants tested single-shot open-loop
+(execute the single best candidate's full 20-step chunk once -- no replanning), same
+71 states, same offset=15, directly comparable to the random-generation baselines
+already established above.
+
+**Full four-way comparison** (same 71 states, same offset=15, single-shot open-loop,
+top-1 candidate executed):
+
+| Candidate generation | Scoring signal | Real successes |
+|-----------------------|-----------------|-----------------|
+| Random perturbation (baseline) | World-model score | 3/71 (4.2%) |
+| Random perturbation | Value function | 2/71 (2.8%) |
+| CEM (directed search) | World-model fitness | **0/71 (0.0%)** |
+| CEM (directed search) | Value-function fitness | 2/71 (2.8%) |
+
+CEM directed by the world-model's own signal is confirmed (again, at this exact
+offset/pool) to be actively worse than doing nothing directed at all. CEM directed by
+V does no worse than random-plus-V-scoring, but also **no better** -- it lands on
+exactly the same 2/71 as simply generating 16 random candidates and picking the one V
+likes best, despite spending far more compute (population 64 x 5 iterations vs. 16
+one-shot samples) to search the neighborhood. That is itself informative: if V's
+landscape around a failure state had exploitable local structure, an iterative search
+climbing it should end up somewhere better than one random draw's best-of-16 -- it
+doesn't. This is consistent with the value function contributing little beyond a
+coarse, state-level signal (see the causal discussion above) rather than a landscape
+with real local gradient structure in the region CEM explores.
+
+**Where this leaves the correction mechanism, honestly**: three independent angles have
+now been tried on top of plain random-candidate generation -- swapping the scoring
+signal (world model vs. V), making correction closed-loop instead of open-loop, and
+directing candidate generation itself (CEM) under either scoring signal -- and none of
+them beats the original plain-random + world-model baseline (3/71). The ceiling on
+this specific correction mechanism (perturb a failure's latent, execute one corrective
+chunk) appears to sit at roughly 3-4 states out of 71 (~4-6%) regardless of how the
+perturbation is chosen or scored, at least at this offset and with M/population sizes
+in the range tried here.
+
+Code: `f2s/candidates/cem.py` (`cem_search_value_guided`),
+`scripts/diagnose_cem_value_guided.py`. Data:
+`results/can/cem_value_guided_diagnostic/`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE

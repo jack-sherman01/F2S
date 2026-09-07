@@ -1,0 +1,39 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_gripper_qvel', 'robot0_joint_vel', 'object', 'robot0_joint_pos', 'robot0_joint_pos_sin', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 71 real failure segments (must be 71, matching prior runs).
+
+===== k_exec = 20 (value-guided) =====
+  [20/71] processed, 1 real successes so far
+  [40/71] processed, 2 real successes so far
+  [60/71] processed, 2 real successes so far
+  [71/71] processed, 2 real successes so far
+k_exec=20: 2/71 states recovered (2.8%)
+
+===== k_exec = 10 (value-guided) =====
+  [20/71] processed, 1 real successes so far
+  [40/71] processed, 2 real successes so far
+  [60/71] processed, 3 real successes so far
+  [71/71] processed, 3 real successes so far
+k_exec=10: 3/71 states recovered (4.2%)
+
+===== k_exec = 5 (value-guided) =====
+  [20/71] processed, 0 real successes so far
+  [40/71] processed, 0 real successes so far
+  [60/71] processed, 1 real successes so far
+  [71/71] processed, 1 real successes so far
+k_exec=5: 1/71 states recovered (1.4%)
+
+======================================================================
+k_exec=20: 2/71 states recovered (2.8%)
+k_exec=10: 3/71 states recovered (4.2%)
+k_exec= 5: 1/71 states recovered (1.4%)
+======================================================================
