@@ -1563,6 +1563,51 @@ Data: `results/can/ablation_full_f2s_cem_all_offsets/` (records.json --
 1278 execution records, clusters.json, summary.json),
 `install_logs/ablation_full_f2s_cem_all_offsets.log`.
 
+## Day 26 prerequisite: a real 3-round evolution loop with the fixed pipeline
+
+Day 26's Figures 1/4/6 (success rate / failure coverage / archive size,
+each vs. evolution round) need real multi-round data -- the only prior
+evolution-loop runs (`results/can/f2s_final/`, `f2s_dev/`) predate every
+fix in this log (the validator bug, the retrieval spatial gate) and use
+the old buggy `_active_object_and_body_id`, so they're not valid sources
+for a current-pipeline figure. Ran a fresh 3-round loop
+(`scripts/run_evolution.py`, `configs/f2s_final.yaml`'s real settings:
+50 episodes/round, K up to 4 clusters, CEM discovery -- the actual
+unmodified production defaults, same code this whole log has been
+building) on top of the fixed pipeline: 13.4 minutes wall time total.
+
+| round | success rate | mean ep. length | failures found | clusters | candidates (CEM) | real executions | skills added | archive size | world model val MSE (vs. constant) |
+|---|---|---|---|---|---|---|---|---|---|
+| 0 | 74.0% | 181.6 | 13 | 4 | 4160 | 26 | 0 | 0 | 0.0037 vs 0.113 (30x) |
+| 1 | 72.0% | 191.5 | 14 | 2 | 1920 | 12 | 0 | 0 | 0.00014 vs 0.021 (150x) |
+| 2 | 68.0% | 204.3 | 16 | 4 | 4480 | 28 | 0 | 0 | 0.0013 vs 0.049 (37x) |
+
+**Archive size stays at 0 across all 3 rounds** -- CEM-based discovery
+(the production default) doesn't find a single archivable skill in any
+round, consistent with and now reproduced *within the real evolution
+loop* (not just the standalone offset-sweep ablation above) at 66 total
+real discovery executions across 3 rounds. With an empty archive,
+`retrieve()` always returns `None`, so **every round is, by construction,
+a plain frozen-policy rollout under a new random episode draw** -- the
+74.0% -> 72.0% -> 68.0% drift is just 50-episode sampling noise, not a
+real learning or degradation trend, and Figures 1/4/6 are therefore flat
+lines at "no skills, no coverage, no growth" within noise. The world
+model itself is fine at every round (30-150x the constant baseline,
+consistent with sections 3-4) -- the bottleneck is specifically CEM's
+candidate selection, exactly as diagnosed in the Day-24 ablation.
+
+This is the honest per-round curve for proposal_revised.tex's Day 27
+interpretation rule ("if the world model does not improve ranking,
+report the negative result explicitly") -- there is no growth curve to
+show for Full F2S as currently configured; the real growth (2 skills)
+happened via the offset-sweep method (section 17), which is not what
+`run_evolution.py` runs by default.
+
+Data: `results/can/f2s_evolution_postfix/seed_0/` (`evolution_summary.json`
+with full per-round detail, `round_{0,1,2}/` with eval episodes, failure
+segments, cluster assignments, world-model checkpoints),
+`install_logs/f2s_evolution_postfix_seed0.log`.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
