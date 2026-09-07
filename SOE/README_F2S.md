@@ -1774,6 +1774,62 @@ Code: `f2s/candidates/cem.py` (`cem_search_value_guided`),
 `scripts/diagnose_cem_value_guided.py`. Data:
 `results/can/cem_value_guided_diagnostic/`.
 
+## The capstone finding: recovery success is predicted by how close the failure already was to done, not by which correction is chosen
+
+Sections above tried three independent levers on top of plain random candidate
+generation -- scoring signal (world model vs. a trained value function), making
+correction closed-loop, and directing generation itself (CEM under either signal) --
+and none moved the real success rate above the ~4-6% (3-4/71) set by the simplest
+baseline. Before concluding the correction *mechanism* has a hard ceiling, checked a
+more basic possibility: maybe which failure states are recoverable is set almost
+entirely by the starting state itself, not by anything the candidate machinery does.
+
+This didn't need a new experiment -- `results/can/candidate_ranking_per_state_offset_sweep/records.json`
+already contains 284 (state, offset) combinations with all M=16 candidates really
+executed at each (4544 real rollouts, 15 real successes). `scripts/analyze_recoverability_predictor.py`
+computes each failure state's `goal_error` (object-to-goal distance) and `task_progress`
+(the world-model state's own progress feature) *before any candidate is generated*, and
+checks how well those two pre-existing features alone predict whether any of the 16 real
+candidates from that state succeeded.
+
+**Result**: an almost perfect separator. **AUC = 0.956** using just `task_progress` (or
+`-goal_error`) to predict "did this state produce >=1 real success" (Spearman
+correlation with success rate: 0.245, p=3e-05, n=284). The 4 states that ever produced a
+real success average `goal_error=0.267, task_progress=0.733` *before* correction;
+the 277 zero-success combinations average `goal_error=0.482, task_progress=0.518` --
+essentially non-overlapping. The single most extreme case, `episode_000008` at
+offset=20, hit 7/16 (43.75%) -- over 100x the overall 0.33% candidate-level base rate --
+and it also has the closest-to-goal, highest-task-progress starting state in the entire
+284-combination sweep.
+
+**This one finding closes the causal loop on every negative result above**: whether a
+stall is recoverable is set almost entirely by how far along the task already was when
+the stall happened, not by which corrective action is chosen -- which is exactly why
+swapping the scoring signal, closing the loop, or directing the search all failed to
+help: every one of those levers only changes *how a candidate is chosen given a failure
+state*, and if the outcome is overwhelmingly determined by the state itself, no amount
+of sophistication in that layer can raise the ceiling. It also gives the earlier
+"Simpson's paradox" (pooled correlation strong, within-state correlation weak -- see
+"Guided candidate search (CEM)" above) a precise mechanism: `goal_error`/`task_progress`
+vary a lot *across* states and predict outcome well there, but all 16 candidates *within*
+one state start from the identical `goal_error`/`task_progress` -- so within a state
+there is no signal left in that dimension for a scorer or a search to climb, only noise.
+
+**Where this leaves the mechanism, precisely**: not "the candidate scorer/search needs
+to be smarter," but "this correction mechanism is best understood as recovering
+near-misses, not performing general error recovery" -- only ~7 of 284 tested
+(state, offset) combinations (corresponding to 4 of 71 real failure states) fell in the
+narrow "already almost done" region where any of this machinery has ever produced a real
+success. Raising the ceiling would need either a fundamentally more capable recovery
+mechanism (longer-horizon planning/dynamics, not candidate filtering) or an honest
+narrowing of the claimed scope to near-miss recovery specifically.
+
+Code: `scripts/analyze_recoverability_predictor.py`. Data:
+`results/can/recoverability_predictor_analysis/result.json` (all 284 rows, fully
+traceable to the real executions already logged in
+`results/can/candidate_ranking_per_state_offset_sweep/records.json` -- no new
+simulation).
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
