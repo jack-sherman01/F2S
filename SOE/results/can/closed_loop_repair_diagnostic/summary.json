@@ -1,0 +1,20 @@
+{
+  "20": {
+    "k_exec": 20,
+    "n_states": 71,
+    "n_success": 3,
+    "success_rate": 0.04225352112676056
+  },
+  "10": {
+    "k_exec": 10,
+    "n_states": 71,
+    "n_success": 4,
+    "success_rate": 0.056338028169014086
+  },
+  "5": {
+    "k_exec": 5,
+    "n_states": 71,
+    "n_success": 1,
+    "success_rate": 0.014084507042253521
+  }
+}

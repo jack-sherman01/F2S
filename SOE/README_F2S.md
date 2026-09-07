@@ -1563,6 +1563,273 @@ Data: `results/can/ablation_full_f2s_cem_all_offsets/` (records.json --
 1278 execution records, clusters.json, summary.json),
 `install_logs/ablation_full_f2s_cem_all_offsets.log`.
 
+## Day 26 prerequisite: a real 3-round evolution loop with the fixed pipeline
+
+Day 26's Figures 1/4/6 (success rate / failure coverage / archive size,
+each vs. evolution round) need real multi-round data -- the only prior
+evolution-loop runs (`results/can/f2s_final/`, `f2s_dev/`) predate every
+fix in this log (the validator bug, the retrieval spatial gate) and use
+the old buggy `_active_object_and_body_id`, so they're not valid sources
+for a current-pipeline figure. Ran a fresh 3-round loop
+(`scripts/run_evolution.py`, `configs/f2s_final.yaml`'s real settings:
+50 episodes/round, K up to 4 clusters, CEM discovery -- the actual
+unmodified production defaults, same code this whole log has been
+building) on top of the fixed pipeline: 13.4 minutes wall time total.
+
+| round | success rate | mean ep. length | failures found | clusters | candidates (CEM) | real executions | skills added | archive size | world model val MSE (vs. constant) |
+|---|---|---|---|---|---|---|---|---|---|
+| 0 | 74.0% | 181.6 | 13 | 4 | 4160 | 26 | 0 | 0 | 0.0037 vs 0.113 (30x) |
+| 1 | 72.0% | 191.5 | 14 | 2 | 1920 | 12 | 0 | 0 | 0.00014 vs 0.021 (150x) |
+| 2 | 68.0% | 204.3 | 16 | 4 | 4480 | 28 | 0 | 0 | 0.0013 vs 0.049 (37x) |
+
+**Archive size stays at 0 across all 3 rounds** -- CEM-based discovery
+(the production default) doesn't find a single archivable skill in any
+round, consistent with and now reproduced *within the real evolution
+loop* (not just the standalone offset-sweep ablation above) at 66 total
+real discovery executions across 3 rounds. With an empty archive,
+`retrieve()` always returns `None`, so **every round is, by construction,
+a plain frozen-policy rollout under a new random episode draw** -- the
+74.0% -> 72.0% -> 68.0% drift is just 50-episode sampling noise, not a
+real learning or degradation trend, and Figures 1/4/6 are therefore flat
+lines at "no skills, no coverage, no growth" within noise. The world
+model itself is fine at every round (30-150x the constant baseline,
+consistent with sections 3-4) -- the bottleneck is specifically CEM's
+candidate selection, exactly as diagnosed in the Day-24 ablation.
+
+This is the honest per-round curve for proposal_revised.tex's Day 27
+interpretation rule ("if the world model does not improve ranking,
+report the negative result explicitly") -- there is no growth curve to
+show for Full F2S as currently configured; the real growth (2 skills)
+happened via the offset-sweep method (section 17), which is not what
+`run_evolution.py` runs by default.
+
+Data: `results/can/f2s_evolution_postfix/seed_0/` (`evolution_summary.json`
+with full per-round detail, `round_{0,1,2}/` with eval episodes, failure
+segments, cluster assignments, world-model checkpoints),
+`install_logs/f2s_evolution_postfix_seed0.log`.
+
+## Day 26: figures and tables
+
+Built a single results dashboard covering everything Day 26 asks for that
+has real, traceable data (main comparison, seen-vs-unseen transfer, the
+gating-fix before/after, the world-model ranking scatter with real
+candidate points, the ablation table, the 3-round evolution curves, and
+the skill-archive table). Every number and every scatter point traces to
+a specific file under `results/` -- listed in the dashboard's own footer.
+
+**View it: `SOE/results/figures/html/f2s_final_results.html`** (open
+directly in a browser -- standalone, no server needed).
+
+Not populated, honestly: Figure 2 (success vs. rollout budget) -- no
+rollout-budget sweep was ever run, so there is nothing real to plot; per
+the proposal's own rule ("do not report a number that cannot be traced
+back to a saved result file"), it's omitted rather than faked.
+
+Unguided Latent Repair's unseen-config eval (never run before -- it was
+added after the original Day-25 batch) completed after first publish:
+**0.0% success, 100% safety-violation rate** -- the worst safety number
+of any method tested, worse even than SOE's 61%, consistent with
+generating and playing back an unvalidated corrective action chunk on
+essentially every stall (`skill_episodes: 100` -- it fires in every
+single episode). The dashboard's seen-vs-unseen chart now includes this
+row (`results/Can/unguided_latent_repair/seed_0/unseen/metrics.json`).
+
+## Stepping back: is open-loop chunk correction the actual ceiling, and does a learned value function raise it?
+
+After the gating fix, the honest post-fix numbers (74.4% in-distribution, essentially
+tying Fixed Policy; 45.0% unseen, statistically indistinguishable from Fixed Policy)
+meant the skill-archiving mechanism, once no longer actively harmful, was still not
+adding any measurable benefit. That's a different and more serious question than "is
+there a bug" -- it's "does this mechanism have any ceiling worth having." Every F2S
+correction to this point has been **open-loop**: generate M candidates, score each with
+a 5-step world-model rollout, pick one, then execute all 20 of its steps blind before
+looking at the real state again. Two things make that specifically weak: (1) the
+scoring signal itself has the within-state ranking problem diagnosed earlier (pooled
+correlation 0.95-0.98, within-state 0.09-0.30 -- see "Guided candidate search (CEM)"
+above), and (2) even a perfect 5-step rollout says nothing about steps 6-20, which are
+then executed with zero feedback.
+
+Discussed three options for making correction genuinely closed-loop; the requirement
+that came back explicitly was **not** "replan more often with freshly resampled
+candidates" (that's still open-loop, just at shorter intervals) but a real feedback
+controller/value function providing continuous step-by-step guidance. Built exactly
+that, as two variants sharing one closed-loop skeleton so the comparison is apples-to-
+apples:
+
+**The closed-loop skeleton** (`scripts/diagnose_closed_loop_repair*.py`): from a real
+failure state, generate M=16 candidates, score them, execute only the winning
+candidate's first `k_exec` steps against the real simulator, then re-observe the real
+resulting state and repeat -- for `k_exec` in {20 (control, reduces to single-shot
+open-loop), 10, 5} -- until success or a 20-step budget is exhausted.
+
+**Variant A -- world-model score, still inside the closed loop** (control): the same
+5-step rollout score as always, just re-evaluated more often. Result: k_exec=20 3/71
+(4.2%), k_exec=10 4/71 (5.6%), k_exec=5 1/71 (1.4%) -- non-monotonic, no stable benefit
+from replanning more often with the same signal.
+
+**Variant B -- a genuinely learned value function providing the guidance signal**: new
+`f2s/value/{model,dataset,train}.py`. `V(s)` = probability the episode eventually
+succeeds, trained with **outcome supervision** (every timestep of a successful real
+episode labeled 1.0, every timestep of a failed one labeled 0.0) -- not a world-model
+prediction target, a real-outcome target. Training data pooled from **all 39 Can
+episode directories across the whole project** (`ALL_CAN_EPISODE_DIRS`), split
+per-episode independently per source directory before pooling (same leakage discipline
+as the world model, see "Data leakage fix" section) -- 358,375 train states, 90,064 val
+states. Trained via `BCEWithLogitsLoss` + AdamW, 50 epochs: **96.7% val accuracy,
+val loss 0.0723 vs. a constant-base-rate baseline of 0.4181** -- V is measurably
+learning something real (`results/can/value_function/result.json`). Scoring: still roll
+each candidate 5 steps with the world model, but instead of using the world model's own
+raw score, feed the *predicted final state* into V and use its success probability --
+model-based value expansion: locally-trusted short-horizon dynamics composed with a
+value function trained directly on whether real episodes actually succeeded.
+
+**Result**: k_exec=20 2/71 (2.8%), k_exec=10 3/71 (4.2%), k_exec=5 1/71 (1.4%).
+
+**Full honest comparison** (same 71 states, same offset=15, same closed-loop skeleton,
+only the scoring signal changes):
+
+| k_exec | World-model score | Value-guided |
+|--------|-------------------|--------------|
+| 20     | 3/71 (4.2%)       | 2/71 (2.8%)  |
+| 10     | 4/71 (5.6%)       | 3/71 (4.2%)  |
+| 5      | 1/71 (1.4%)       | 1/71 (1.4%)  |
+
+The value function never wins: tied once, worse twice. At n=71 any single cell's gap
+(e.g. 4 vs. 3) is within sampling noise on its own, but the fact that it is *never*
+better across three independent conditions is itself an informative negative result --
+a signal genuinely orthogonal to the world model's rollout would be expected to help at
+least sometimes.
+
+**Most likely structural reason** (not just "small n"): V was trained and validated on
+real logged states, but at decision time it scores a world-model-*predicted* final
+state, which inherits exactly the within-state prediction noise diagnosed earlier --
+V's 96.7% accuracy was never measured on that distribution. More fundamentally, V's
+accuracy is plausibly dominated by coarse, cross-state signal (task phase, whether the
+object is grasped -- the kind of variance that dominates the label distribution), the
+same failure mode already diagnosed for the world-model score itself: strong pooled
+correlation does not imply strong within-state discrimination, and within-state
+discrimination between similar candidates from the *same* starting state is exactly
+what candidate ranking needs. Swapping which model does the scoring (world model or V)
+does not fix this if the candidates being scored are themselves undifferentiated random
+perturbations with no informative direction baked in -- the bottleneck may not be the
+scoring signal at all, but candidate generation itself.
+
+Code: `f2s/value/{model,dataset,train}.py`, `scripts/build_value_function_dataset.py`,
+`scripts/train_value_function.py`, `scripts/diagnose_closed_loop_repair.py`,
+`scripts/diagnose_closed_loop_repair_value_guided.py`. Data:
+`results/can/value_function_dataset/`, `results/can/value_function/`,
+`results/can/closed_loop_repair_diagnostic/`,
+`results/can/closed_loop_repair_value_guided_diagnostic/`.
+
+## Closing the loop on candidate generation: does directed search (CEM) help once V is the fitness?
+
+The value-function experiment above changed only *scoring* while candidates stayed
+random perturbations. The remaining untested variable was candidate *generation*
+itself: does directing the latent-space search (CEM, already implemented and
+previously tried with the world model's own fitness -- see "Guided candidate search
+(CEM)" above, 0/1278 across the full offset sweep) do any better once its fitness
+signal is the value function instead of raw world-model distance-to-goal?
+
+`f2s/candidates/cem.py` gained `cem_search_value_guided`: identical CEM mechanism
+(iterative mean/std refinement over Delta z, population 64, 5 iterations) to the
+existing `cem_search`, with the one change being fitness = `1 - V(predicted_final_state)`
+instead of predicted distance-to-goal. Both variants tested single-shot open-loop
+(execute the single best candidate's full 20-step chunk once -- no replanning), same
+71 states, same offset=15, directly comparable to the random-generation baselines
+already established above.
+
+**Full four-way comparison** (same 71 states, same offset=15, single-shot open-loop,
+top-1 candidate executed):
+
+| Candidate generation | Scoring signal | Real successes |
+|-----------------------|-----------------|-----------------|
+| Random perturbation (baseline) | World-model score | 3/71 (4.2%) |
+| Random perturbation | Value function | 2/71 (2.8%) |
+| CEM (directed search) | World-model fitness | **0/71 (0.0%)** |
+| CEM (directed search) | Value-function fitness | 2/71 (2.8%) |
+
+CEM directed by the world-model's own signal is confirmed (again, at this exact
+offset/pool) to be actively worse than doing nothing directed at all. CEM directed by
+V does no worse than random-plus-V-scoring, but also **no better** -- it lands on
+exactly the same 2/71 as simply generating 16 random candidates and picking the one V
+likes best, despite spending far more compute (population 64 x 5 iterations vs. 16
+one-shot samples) to search the neighborhood. That is itself informative: if V's
+landscape around a failure state had exploitable local structure, an iterative search
+climbing it should end up somewhere better than one random draw's best-of-16 -- it
+doesn't. This is consistent with the value function contributing little beyond a
+coarse, state-level signal (see the causal discussion above) rather than a landscape
+with real local gradient structure in the region CEM explores.
+
+**Where this leaves the correction mechanism, honestly**: three independent angles have
+now been tried on top of plain random-candidate generation -- swapping the scoring
+signal (world model vs. V), making correction closed-loop instead of open-loop, and
+directing candidate generation itself (CEM) under either scoring signal -- and none of
+them beats the original plain-random + world-model baseline (3/71). The ceiling on
+this specific correction mechanism (perturb a failure's latent, execute one corrective
+chunk) appears to sit at roughly 3-4 states out of 71 (~4-6%) regardless of how the
+perturbation is chosen or scored, at least at this offset and with M/population sizes
+in the range tried here.
+
+Code: `f2s/candidates/cem.py` (`cem_search_value_guided`),
+`scripts/diagnose_cem_value_guided.py`. Data:
+`results/can/cem_value_guided_diagnostic/`.
+
+## The capstone finding: recovery success is predicted by how close the failure already was to done, not by which correction is chosen
+
+Sections above tried three independent levers on top of plain random candidate
+generation -- scoring signal (world model vs. a trained value function), making
+correction closed-loop, and directing generation itself (CEM under either signal) --
+and none moved the real success rate above the ~4-6% (3-4/71) set by the simplest
+baseline. Before concluding the correction *mechanism* has a hard ceiling, checked a
+more basic possibility: maybe which failure states are recoverable is set almost
+entirely by the starting state itself, not by anything the candidate machinery does.
+
+This didn't need a new experiment -- `results/can/candidate_ranking_per_state_offset_sweep/records.json`
+already contains 284 (state, offset) combinations with all M=16 candidates really
+executed at each (4544 real rollouts, 15 real successes). `scripts/analyze_recoverability_predictor.py`
+computes each failure state's `goal_error` (object-to-goal distance) and `task_progress`
+(the world-model state's own progress feature) *before any candidate is generated*, and
+checks how well those two pre-existing features alone predict whether any of the 16 real
+candidates from that state succeeded.
+
+**Result**: an almost perfect separator. **AUC = 0.956** using just `task_progress` (or
+`-goal_error`) to predict "did this state produce >=1 real success" (Spearman
+correlation with success rate: 0.245, p=3e-05, n=284). The 4 states that ever produced a
+real success average `goal_error=0.267, task_progress=0.733` *before* correction;
+the 277 zero-success combinations average `goal_error=0.482, task_progress=0.518` --
+essentially non-overlapping. The single most extreme case, `episode_000008` at
+offset=20, hit 7/16 (43.75%) -- over 100x the overall 0.33% candidate-level base rate --
+and it also has the closest-to-goal, highest-task-progress starting state in the entire
+284-combination sweep.
+
+**This one finding closes the causal loop on every negative result above**: whether a
+stall is recoverable is set almost entirely by how far along the task already was when
+the stall happened, not by which corrective action is chosen -- which is exactly why
+swapping the scoring signal, closing the loop, or directing the search all failed to
+help: every one of those levers only changes *how a candidate is chosen given a failure
+state*, and if the outcome is overwhelmingly determined by the state itself, no amount
+of sophistication in that layer can raise the ceiling. It also gives the earlier
+"Simpson's paradox" (pooled correlation strong, within-state correlation weak -- see
+"Guided candidate search (CEM)" above) a precise mechanism: `goal_error`/`task_progress`
+vary a lot *across* states and predict outcome well there, but all 16 candidates *within*
+one state start from the identical `goal_error`/`task_progress` -- so within a state
+there is no signal left in that dimension for a scorer or a search to climb, only noise.
+
+**Where this leaves the mechanism, precisely**: not "the candidate scorer/search needs
+to be smarter," but "this correction mechanism is best understood as recovering
+near-misses, not performing general error recovery" -- only ~7 of 284 tested
+(state, offset) combinations (corresponding to 4 of 71 real failure states) fell in the
+narrow "already almost done" region where any of this machinery has ever produced a real
+success. Raising the ceiling would need either a fundamentally more capable recovery
+mechanism (longer-horizon planning/dynamics, not candidate filtering) or an honest
+narrowing of the claimed scope to near-miss recovery specifically.
+
+Code: `scripts/analyze_recoverability_predictor.py`. Data:
+`results/can/recoverability_predictor_analysis/result.json` (all 284 rows, fully
+traceable to the real executions already logged in
+`results/can/candidate_ranking_per_state_offset_sweep/records.json` -- no new
+simulation).
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
@@ -1642,6 +1909,18 @@ correctable at all -- see point (2) above).
 - `soe` (0% success, by design of the mechanism at noise_scale=2.0) has
   not been tried at the README's lower recommended noise scales, which
   would likely change that number substantially.
+- **Closed-loop correction with a learned value function, tested and found
+  not to help** (see "Stepping back" section above): a genuinely-learned
+  V(s), trained on real outcome labels to 96.7% held-out accuracy, was
+  used to guide receding-horizon closed-loop repair and never beat the
+  plain world-model score at any replanning granularity (k_exec in
+  {20,10,5}: 2/71, 3/71, 1/71 vs. 3/71, 4/71, 1/71) -- a clean, honest
+  negative result, most likely because both scoring signals are being
+  asked to rank candidates that are themselves undifferentiated random
+  perturbations. If this line is picked up again, the more promising next
+  lever is probably candidate *generation* (e.g. using V's gradient to
+  bias sampling, or a proper Q(s,a) instead of V(s)) rather than another
+  candidate-*scoring* function.
 
 ## Machine migration (2026-09-04): fresh setup on the NHR@FAU "Alex" GPU cluster
 

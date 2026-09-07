@@ -1,0 +1,362 @@
+{
+  "n_dirs_listed": 39,
+  "n_dirs_found": 39,
+  "n_dirs_missing": 0,
+  "n_train_states": 358375,
+  "n_val_states": 90064,
+  "train_positive_rate": 0.1528426855802536,
+  "val_positive_rate": 0.14727304875850677,
+  "per_dir": [
+    {
+      "dir": "results/can/f2s_dev_cem/seed_2/round_0/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 1398,
+      "n_val_states": 498
+    },
+    {
+      "dir": "results/can/f2s_dev_cem/seed_2/round_1/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 2025,
+      "n_val_states": 493
+    },
+    {
+      "dir": "results/can/f2s_dev_cem/seed_2/round_2/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 1420,
+      "n_val_states": 228
+    },
+    {
+      "dir": "results/can/f2s_dev/seed_0/round_0/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 1459,
+      "n_val_states": 527
+    },
+    {
+      "dir": "results/can/f2s_dev/seed_0/round_1/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 1412,
+      "n_val_states": 191
+    },
+    {
+      "dir": "results/can/f2s_dev/seed_0/round_2/eval/episodes",
+      "found": true,
+      "n_episodes": 10,
+      "n_train_episodes": 8,
+      "n_val_episodes": 2,
+      "n_train_states": 1102,
+      "n_val_states": 487
+    },
+    {
+      "dir": "results/can/f2s_evolution_postfix/seed_0/round_0/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7173,
+      "n_val_states": 1906
+    },
+    {
+      "dir": "results/can/f2s_evolution_postfix/seed_0/round_1/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7627,
+      "n_val_states": 1949
+    },
+    {
+      "dir": "results/can/f2s_evolution_postfix/seed_0/round_2/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7665,
+      "n_val_states": 2548
+    },
+    {
+      "dir": "results/can/f2s_final/seed_0/round_0/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7170,
+      "n_val_states": 1907
+    },
+    {
+      "dir": "results/can/f2s_final/seed_0/round_1/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7820,
+      "n_val_states": 2532
+    },
+    {
+      "dir": "results/can/f2s_final/seed_0/round_2/eval/episodes",
+      "found": true,
+      "n_episodes": 50,
+      "n_train_episodes": 40,
+      "n_val_episodes": 10,
+      "n_train_states": 7773,
+      "n_val_states": 2214
+    },
+    {
+      "dir": "results/Can/f2s_PRE_GATING_FIX/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/f2s_PRE_GATING_FIX/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 31614,
+      "n_val_states": 8000
+    },
+    {
+      "dir": "results/Can/f2s_PRE_GATING_FIX/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/f2s_PRE_GATING_FIX/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/f2s/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 3994,
+      "n_val_states": 1202
+    },
+    {
+      "dir": "results/Can/f2s/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 21387,
+      "n_val_states": 5389
+    },
+    {
+      "dir": "results/Can/f2s/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4278,
+      "n_val_states": 1229
+    },
+    {
+      "dir": "results/Can/f2s/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 5175,
+      "n_val_states": 626
+    },
+    {
+      "dir": "results/Can/failure_replay/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 5126,
+      "n_val_states": 1206
+    },
+    {
+      "dir": "results/Can/failure_replay/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 24012,
+      "n_val_states": 5380
+    },
+    {
+      "dir": "results/Can/failure_replay/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4846,
+      "n_val_states": 1219
+    },
+    {
+      "dir": "results/Can/failure_replay/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4912,
+      "n_val_states": 1228
+    },
+    {
+      "dir": "results/Can/fixed_policy/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4302,
+      "n_val_states": 1201
+    },
+    {
+      "dir": "results/Can/fixed_policy/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 21388,
+      "n_val_states": 5390
+    },
+    {
+      "dir": "results/Can/fixed_policy/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4273,
+      "n_val_states": 1229
+    },
+    {
+      "dir": "results/Can/fixed_policy/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 5176,
+      "n_val_states": 627
+    },
+    {
+      "dir": "results/can/skill_precondition_gate_diagnostic/seed_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 3994,
+      "n_val_states": 1202
+    },
+    {
+      "dir": "results/can/skill_precondition_gate_diagnostic/seed_1/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 4278,
+      "n_val_states": 1229
+    },
+    {
+      "dir": "results/can/skill_precondition_gate_diagnostic/seed_2/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 5176,
+      "n_val_states": 627
+    },
+    {
+      "dir": "results/Can/soe/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/soe/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 32000,
+      "n_val_states": 8000
+    },
+    {
+      "dir": "results/Can/soe/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/soe/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/unguided_latent_repair/seed_0/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/unguided_latent_repair/seed_0/unseen/episodes",
+      "found": true,
+      "n_episodes": 100,
+      "n_train_episodes": 80,
+      "n_val_episodes": 20,
+      "n_train_states": 32000,
+      "n_val_states": 8000
+    },
+    {
+      "dir": "results/Can/unguided_latent_repair/seed_1/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    },
+    {
+      "dir": "results/Can/unguided_latent_repair/seed_2/round_0/episodes",
+      "found": true,
+      "n_episodes": 30,
+      "n_train_episodes": 24,
+      "n_val_episodes": 6,
+      "n_train_states": 9600,
+      "n_val_states": 2400
+    }
+  ]
+}

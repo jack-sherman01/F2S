@@ -1,0 +1,12 @@
+{
+  "state_dim": 26,
+  "hidden_dim": 256,
+  "epochs": 50,
+  "n_train": 358375,
+  "n_val": 90064,
+  "train_base_rate": 0.1528426855802536,
+  "best_val_loss": 0.07233279943466187,
+  "constant_base_rate_val_loss": 0.41807064414024353,
+  "beats_base_rate_baseline": true,
+  "training_time_seconds": 208.459308385849
+}

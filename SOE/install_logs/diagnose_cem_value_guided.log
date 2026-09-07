@@ -1,0 +1,33 @@
+diffusion policy source root: /data/heng/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'object', 'robot0_eef_quat', 'robot0_gripper_qpos', 'robot0_eef_vel_lin', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_joint_pos_sin']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+Pooled 71 real failure segments (must be 71, matching prior runs).
+
+===== cem_world_model (single-shot open-loop, top-1) =====
+  [20/71] processed, 0 real successes so far
+  [40/71] processed, 0 real successes so far
+  [60/71] processed, 0 real successes so far
+  [71/71] processed, 0 real successes so far
+cem_world_model: 0/71 states recovered (0.0%)
+
+===== cem_value_guided (single-shot open-loop, top-1) =====
+  [20/71] processed, 1 real successes so far
+  [40/71] processed, 1 real successes so far
+  [60/71] processed, 1 real successes so far
+  [71/71] processed, 2 real successes so far
+cem_value_guided: 2/71 states recovered (2.8%)
+
+======================================================================
+cem_world_model: 0/71 states recovered (0.0%)
+cem_value_guided: 2/71 states recovered (2.8%)
+(reference, already established) random generation + world-model top-1: 3/71 (4.2%)
+(reference, already established) random generation + value-guided top-1: 2/71 (2.8%)
+======================================================================

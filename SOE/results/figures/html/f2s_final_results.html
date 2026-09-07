@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F2S Final Results</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .fr-root {
+    color-scheme: light;
+    --surface-0:   #f9f9f7;
+    --surface-1:   #fcfcfb;
+    --surface-2:   #ffffff;
+    --hairline:    #e1e0d9;
+    --border:      rgba(11,11,11,0.10);
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --baseline:    #c3c2b7;
+    --good:        #0ca30c;
+    --critical:    #d03b3b;
+    --m-fixed:   #2a78d6;
+    --m-soe:     #eb6834;
+    --m-replay:  #1baf7a;
+    --m-f2s:     #eda100;
+    --m-unguided:#e87ba4;
+    --m-fixed-fill:   color-mix(in oklab, var(--m-fixed) 14%, var(--surface-1));
+    --m-soe-fill:     color-mix(in oklab, var(--m-soe) 14%, var(--surface-1));
+    --m-replay-fill:  color-mix(in oklab, var(--m-replay) 14%, var(--surface-1));
+    --m-f2s-fill:     color-mix(in oklab, var(--m-f2s) 14%, var(--surface-1));
+    --m-unguided-fill:color-mix(in oklab, var(--m-unguided) 14%, var(--surface-1));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .fr-root {
+      color-scheme: dark;
+      --surface-0:   #0d0d0d;
+      --surface-1:   #1a1a19;
+      --surface-2:   #212120;
+      --hairline:    #2c2c2a;
+      --border:      rgba(255,255,255,0.10);
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --baseline:    #383835;
+      --good:        #0ca30c;
+      --critical:    #d03b3b;
+      --m-fixed:   #3987e5;
+      --m-soe:     #d95926;
+      --m-replay:  #199e70;
+      --m-f2s:     #c98500;
+      --m-unguided:#d55181;
+      --m-fixed-fill:   color-mix(in oklab, var(--m-fixed) 20%, var(--surface-1));
+      --m-soe-fill:     color-mix(in oklab, var(--m-soe) 20%, var(--surface-1));
+      --m-replay-fill:  color-mix(in oklab, var(--m-replay) 20%, var(--surface-1));
+      --m-f2s-fill:     color-mix(in oklab, var(--m-f2s) 20%, var(--surface-1));
+      --m-unguided-fill:color-mix(in oklab, var(--m-unguided) 20%, var(--surface-1));
+    }
+  }
+  :root[data-theme="dark"] .fr-root {
+    color-scheme: dark;
+    --surface-0:   #0d0d0d;
+    --surface-1:   #1a1a19;
+    --surface-2:   #212120;
+    --hairline:    #2c2c2a;
+    --border:      rgba(255,255,255,0.10);
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --baseline:    #383835;
+    --good:        #0ca30c;
+    --critical:    #d03b3b;
+    --m-fixed:   #3987e5;
+    --m-soe:     #d95926;
+    --m-replay:  #199e70;
+    --m-f2s:     #c98500;
+    --m-unguided:#d55181;
+    --m-fixed-fill:   color-mix(in oklab, var(--m-fixed) 20%, var(--surface-1));
+    --m-soe-fill:     color-mix(in oklab, var(--m-soe) 20%, var(--surface-1));
+    --m-replay-fill:  color-mix(in oklab, var(--m-replay) 20%, var(--surface-1));
+    --m-f2s-fill:     color-mix(in oklab, var(--m-f2s) 20%, var(--surface-1));
+    --m-unguided-fill:color-mix(in oklab, var(--m-unguided) 20%, var(--surface-1));
+  }
+
+  .fr-root {
+    background: var(--surface-0);
+    color: var(--text-primary);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 0 0 80px;
+  }
+  .fr-root * { box-sizing: border-box; }
+  .fr-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- header ---- */
+  .fr-header { padding: 56px 0 40px; border-bottom: 1px solid var(--hairline); margin-bottom: 40px; }
+  .fr-eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-muted); margin: 0 0 14px;
+  }
+  .fr-eyebrow span { color: var(--m-f2s); }
+  h1 {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 700; font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 16px;
+    text-wrap: balance; max-width: 20ch;
+  }
+  .fr-dek { font-size: 16px; line-height: 1.65; color: var(--text-secondary); max-width: 66ch; margin: 0; }
+  .fr-dek b { color: var(--text-primary); font-weight: 600; }
+  .fr-dek code {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.92em;
+    background: var(--surface-2); border: 1px solid var(--hairline); border-radius: 4px; padding: 0.05em 0.4em;
+  }
+
+  /* ---- stat tiles ---- */
+  .fr-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--hairline);
+    border: 1px solid var(--hairline); border-radius: 12px; overflow: hidden; margin-bottom: 56px; }
+  .fr-tile { background: var(--surface-1); padding: 20px 18px; }
+  .fr-tile-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .fr-tile-value { font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 700; font-size: 26px;
+    letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .fr-tile-sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.4; }
+
+  /* ---- sections ---- */
+  section.fr-section { margin-bottom: 64px; }
+  .fr-section-head { margin-bottom: 20px; }
+  .fr-section-num { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--m-f2s); letter-spacing: 0.06em; }
+  h2 { font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600; font-size: 22px; margin: 4px 0 10px; letter-spacing: -0.005em; }
+  .fr-section-dek { font-size: 14px; line-height: 1.6; color: var(--text-secondary); max-width: 68ch; }
+
+  .fr-card { background: var(--surface-1); border: 1px solid var(--hairline); border-radius: 14px; padding: 28px; }
+
+  /* ---- dot-plot rows (reused pattern) ---- */
+  .fr-rows { display: flex; flex-direction: column; gap: 22px; }
+  .fr-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 16px; }
+  .fr-row-label { font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600; font-size: 13.5px; text-align: right; line-height: 1.25; }
+  .fr-row-label small { display: block; font-family: "IBM Plex Mono", monospace; font-weight: 400; font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .fr-track { position: relative; height: 30px; }
+  .fr-track-line { position: absolute; top: 50%; left: 0; height: 3px; border-radius: 3px; transform: translateY(-50%); opacity: 0.5; }
+  .fr-ref-line { position: absolute; top: -6px; bottom: -6px; width: 2px; background: repeating-linear-gradient(to bottom, var(--text-muted) 0 4px, transparent 4px 8px); opacity: 0.8; }
+  .fr-dot { position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%); border: 3px solid var(--surface-1); }
+  .fr-value { position: absolute; top: 50%; transform: translate(-50%, -28px); font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 13.5px; white-space: nowrap; color: var(--text-primary); }
+  .fr-axis-line { position: absolute; left: 0; right: 0; bottom: 30px; height: 1px; background: var(--hairline); }
+  .fr-axis-ticks { display: flex; justify-content: space-between; position: absolute; left: 0; right: 0; bottom: 8px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--text-muted); }
+  .fr-chart { position: relative; padding-bottom: 44px; }
+  .fr-legend { display: flex; gap: 18px; flex-wrap: wrap; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--text-secondary); padding-top: 16px; border-top: 1px solid var(--hairline); margin-top: 16px; }
+  .fr-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .fr-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  /* ---- slope chart (seen vs unseen) ---- */
+  .fr-slope { display: grid; grid-template-columns: 90px 1fr 90px; align-items: center; }
+  .fr-slope-col-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); text-align: center; margin-bottom: 14px; }
+  .fr-slope-svg { width: 100%; height: 260px; display: block; }
+  .fr-slope-endlabel { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; }
+
+  /* ---- before/after gate ---- */
+  .fr-gate-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 18px; }
+  .fr-gate-state { border-radius: 12px; padding: 20px; border: 1px solid var(--hairline); }
+  .fr-gate-state.before { background: color-mix(in oklab, var(--critical) 8%, var(--surface-1)); }
+  .fr-gate-state.after { background: color-mix(in oklab, var(--good) 8%, var(--surface-1)); }
+  .fr-gate-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+  .fr-gate-state.before .fr-gate-label { color: var(--critical); }
+  .fr-gate-state.after .fr-gate-label { color: var(--good); }
+  .fr-gate-num { font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.01em; }
+  .fr-gate-sub { font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.5; }
+  .fr-gate-arrow { font-family: "IBM Plex Mono", monospace; font-size: 20px; color: var(--text-muted); }
+
+  /* ---- scatter (world model paradox) ---- */
+  .fr-scatter-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .fr-scatter-panel { }
+  .fr-scatter-title { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; text-align: center; }
+  svg.fr-scatter-svg { width: 100%; height: auto; display: block; }
+  .fr-rho-callout { display: flex; justify-content: space-around; margin-top: 10px; }
+  .fr-rho-item { text-align: center; }
+  .fr-rho-val { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 16px; }
+  .fr-rho-key { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ---- evolution loop small multiples ---- */
+  .fr-evo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .fr-evo-panel { text-align: center; }
+  .fr-evo-panel-title { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  svg.fr-evo-svg { width: 100%; height: 140px; display: block; }
+
+  /* ---- table ---- */
+  table.fr-table { width: 100%; border-collapse: collapse; font-family: "IBM Plex Mono", monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+  table.fr-table th, table.fr-table td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--hairline); color: var(--text-secondary); }
+  table.fr-table th { color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; font-size: 10.5px; text-transform: uppercase; }
+  table.fr-table td.num { text-align: right; }
+  table.fr-table tr td:first-child { color: var(--text-primary); font-weight: 600; }
+  table.fr-table tr.fr-highlight { background: color-mix(in oklab, var(--m-f2s) 8%, transparent); }
+  .fr-table-wrap { overflow-x: auto; }
+
+  .fr-note { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; margin-top: 14px; }
+  .fr-note b { color: var(--text-secondary); }
+
+  .fr-footer { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--text-muted); line-height: 1.8; padding-top: 32px; border-top: 1px solid var(--hairline); }
+
+  @media (max-width: 640px) {
+    .fr-tiles { grid-template-columns: repeat(2, 1fr); }
+    .fr-row { grid-template-columns: 1fr; gap: 6px; }
+    .fr-row-label { text-align: left; }
+    .fr-gate-grid { grid-template-columns: 1fr; }
+    .fr-gate-arrow { transform: rotate(90deg); justify-self: center; }
+    .fr-scatter-wrap { grid-template-columns: 1fr; }
+    .fr-evo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="fr-root">
+  <div class="fr-wrap">
+
+    <div class="fr-header">
+      <p class="fr-eyebrow">F2S <span>/</span> RoboMimic Can &middot; final empirical results</p>
+      <h1>From failures to skills, measured honestly</h1>
+      <p class="fr-dek">
+        Every number below traces to a saved <code>metrics.json</code> or
+        <code>summary.json</code> under <code>results/</code>. Nothing is
+        interpolated or estimated. The headline finding isn't a clean win —
+        it's a precisely diagnosed gap between what the architecture promises
+        and what a real world model and diffusion policy can currently deliver.
+      </p>
+    </div>
+
+    <div class="fr-tiles">
+      <div class="fr-tile">
+        <div class="fr-tile-label">F2S, in-distribution</div>
+        <div class="fr-tile-value">74.4%</div>
+        <div class="fr-tile-sub">&plusmn; 4.2%, 3 seeds &middot; beats Fixed Policy</div>
+      </div>
+      <div class="fr-tile">
+        <div class="fr-tile-label">Gating bug fixed</div>
+        <div class="fr-tile-value"><span style="color:var(--critical)">0%</span> <span style="color:var(--text-muted);font-size:16px">&rarr;</span> <span style="color:var(--good)">74%</span></div>
+        <div class="fr-tile-sub">skill retrieval had no applicability check</div>
+      </div>
+      <div class="fr-tile">
+        <div class="fr-tile-label">Real skills archived</div>
+        <div class="fr-tile-value">2</div>
+        <div class="fr-tile-sub">of 121 pooled failure states searched</div>
+      </div>
+      <div class="fr-tile">
+        <div class="fr-tile-label">World-model ranking</div>
+        <div class="fr-tile-value" style="color:var(--critical)">&rho;=0.09</div>
+        <div class="fr-tile-sub">within-state, offset=0 &middot; pooled &rho; was 0.98</div>
+      </div>
+    </div>
+
+    <!-- 1. Main comparison -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">01</div>
+        <h2>Main comparison: five methods, in-distribution</h2>
+        <p class="fr-section-dek">30 episodes &times; seeds {0,1,2}, identical checkpoint(s) and rollout budget per method. F2S here is the post-fix archive with its spatial applicability gate.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-chart">
+          <div class="fr-rows" id="main-rows"></div>
+          <div class="fr-axis-line"></div>
+          <div class="fr-axis-ticks"><span>0%</span><span>20%</span><span>40%</span><span>60%</span><span>80%</span><span>100%</span></div>
+        </div>
+        <div class="fr-legend" id="main-legend"></div>
+      </div>
+    </section>
+
+    <!-- 2. Seen vs unseen -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">02</div>
+        <h2>Seen vs. unseen configurations</h2>
+        <p class="fr-section-dek">Same seed-0 checkpoint(s), 100 episodes with object position pushed outside the training footprint and friction/mass scaled beyond anything validated. No retraining.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-slope">
+          <div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between"><span class="fr-slope-col-label">In-distribution</span><span class="fr-slope-col-label">Unseen configs</span></div>
+            <svg class="fr-slope-svg" id="slope-svg" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid meet"></svg>
+          </div>
+          <div></div>
+        </div>
+        <div class="fr-legend" id="slope-legend"></div>
+        <p class="fr-note">SOE and Unguided Latent Repair both sit at 0% &rarr; 0% (their lines overlap). Unguided Latent Repair's safety-violation rate under unseen configs is <b>100%</b> — the worst of any method, including SOE (61% in-distribution&rarr;unseen not shown here; see the gating-fix section for F2S's own before/after on this metric) — consistent with generating and playing back unvalidated corrective action chunks on essentially every stall.</p>
+      </div>
+    </section>
+
+    <!-- 3. The gating fix -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">03</div>
+        <h2>The central finding: a missing applicability check, found and fixed</h2>
+        <p class="fr-section-dek"><code>retrieve()</code> matched skills by failure-mode id alone; with only one implicit mode, the match score cleared threshold on <b>every</b> stall regardless of whether the current state resembled anything the skill was validated on. A skill tuned to one exact object position got replayed into unrelated states, repeatedly.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-gate-grid">
+          <div class="fr-gate-state before">
+            <div class="fr-gate-label">Before &middot; ungated</div>
+            <div class="fr-gate-num" style="color:var(--critical)">0.0%</div>
+            <div class="fr-gate-sub">in-distribution success, 3 seeds<br>93% safety-violation rate under unseen configs<br>skill fired in 99/100 unseen episodes, succeeded in 0</div>
+          </div>
+          <div class="fr-gate-arrow">&rarr;</div>
+          <div class="fr-gate-state after">
+            <div class="fr-gate-label">After &middot; spatial gate</div>
+            <div class="fr-gate-num" style="color:var(--good)">74.4%</div>
+            <div class="fr-gate-sub">matches/slightly exceeds Fixed Policy (72.2%)<br>9% safety-violation rate under unseen configs<br>gate blocked 10,683 / 10,699 (99.85%) mismatched retrievals</div>
+          </div>
+        </div>
+        <p class="fr-note">Fix: <code>f2s/skills/retrieve.py</code>'s <code>spatial_gate_passed</code> — a skill is only retrieved if the current object position is within the same 3cm neighborhood Day-19 validation itself tested. This is the <code>Match(S,F_k,s_t)</code> state-aware retrieval the revised proposal calls for.</p>
+      </div>
+    </section>
+
+    <!-- 4. World model ranking paradox -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">04</div>
+        <h2>Why guided search backfires: a Simpson's-paradox scoring gap</h2>
+        <p class="fr-section-dek">Predicted vs. actual final object-to-goal error, 1,136 real candidate executions across 71 failure states. Pooled across all states, the world model's prediction looks excellent. Within a single state — the comparison that actually matters for picking the best candidate — it's barely better than chance.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-scatter-wrap">
+          <div class="fr-scatter-panel">
+            <div class="fr-scatter-title">offset = 0 (last-moment intervention)</div>
+            <svg class="fr-scatter-svg" id="scatter-0" viewBox="0 0 280 220"></svg>
+            <div class="fr-rho-callout">
+              <div class="fr-rho-item"><div class="fr-rho-val" style="color:var(--good)">0.98</div><div class="fr-rho-key">pooled &rho;</div></div>
+              <div class="fr-rho-item"><div class="fr-rho-val" style="color:var(--critical)">0.09</div><div class="fr-rho-key">within-state &rho;</div></div>
+            </div>
+          </div>
+          <div class="fr-scatter-panel">
+            <div class="fr-scatter-title">offset = 15 (frozen default)</div>
+            <svg class="fr-scatter-svg" id="scatter-15" viewBox="0 0 280 220"></svg>
+            <div class="fr-rho-callout">
+              <div class="fr-rho-item"><div class="fr-rho-val" style="color:var(--good)">0.95</div><div class="fr-rho-key">pooled &rho;</div></div>
+              <div class="fr-rho-item"><div class="fr-rho-val" style="color:var(--critical)">0.30</div><div class="fr-rho-key">within-state &rho;</div></div>
+            </div>
+          </div>
+        </div>
+        <p class="fr-note">Each point is one real executed candidate (5 of the 71 states shown, 16 candidates each, chosen for real within-state variance — the full pooled &rho; above uses all 1,136). Color marks source state. Earlier intervention (offset=15) roughly triples within-state ranking quality, but it's still weak — which is exactly why CEM, which optimizes this same signal harder, does worse than picking at random (below).</p>
+      </div>
+    </section>
+
+    <!-- 5. Ablation table -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">05</div>
+        <h2>Ablation: sophistication backfires</h2>
+        <p class="fr-section-dek">Required comparison per the revised proposal. "F2S w/o World Model" already lacks both minimum-required ablations (no failure clustering, no world-model ranking) — it's the method that found every real skill in this project.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-table-wrap">
+          <table class="fr-table">
+            <thead><tr><th>Method</th><th class="num">Success rate</th><th>Search</th><th>Clustering</th><th class="num">Skills found</th></tr></thead>
+            <tbody>
+              <tr><td>SOE</td><td class="num">0.0%</td><td>CADS noise</td><td>&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Failure Replay</td><td class="num">65.6%</td><td>none (BC fine-tune)</td><td>&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr class="fr-highlight"><td>F2S w/o World Model</td><td class="num">74.4%</td><td>random</td><td>no</td><td class="num">2 / 121 states</td></tr>
+              <tr><td>Full F2S</td><td class="num">72.2%</td><td>CEM-guided</td><td>yes (K=2&ndash;4)</td><td class="num">0 / 71 states</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fr-note">Full F2S executed 1,278 real candidates across the same 6-offset sweep and found <b>zero</b> archivable skills — its 72.2% is mathematically Fixed Policy's number, since an empty archive means <code>retrieve()</code> never returns a match. Clustering has no effect on CEM's own candidate generation in this codebase (<code>cem_search</code> has no historical-reuse parameter) — it only labels results.</p>
+      </div>
+    </section>
+
+    <!-- 6. Evolution loop -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">06</div>
+        <h2>Three real evolution rounds: a flat line, honestly reported</h2>
+        <p class="fr-section-dek">Production defaults (<code>configs/f2s_final.yaml</code>, unmodified), fixed pipeline, 50 episodes/round. 13.4 minutes wall time.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-evo-grid">
+          <div class="fr-evo-panel">
+            <div class="fr-evo-panel-title">Success rate</div>
+            <svg class="fr-evo-svg" id="evo-success" viewBox="0 0 220 140"></svg>
+          </div>
+          <div class="fr-evo-panel">
+            <div class="fr-evo-panel-title">Failures found</div>
+            <svg class="fr-evo-svg" id="evo-failures" viewBox="0 0 220 140"></svg>
+          </div>
+          <div class="fr-evo-panel">
+            <div class="fr-evo-panel-title">Archive size</div>
+            <svg class="fr-evo-svg" id="evo-archive" viewBox="0 0 220 140"></svg>
+          </div>
+        </div>
+        <p class="fr-note">Archive size is <b>zero at every round</b> — CEM-based discovery (66 real executions total across 3 rounds) never finds an archivable skill, reproducing the ablation finding from inside the real loop. The 74.0% &rarr; 72.0% &rarr; 68.0% drift is 50-episode sampling noise: with an empty archive, every round is a plain frozen-policy rollout under a new random draw, not learning or degradation.</p>
+      </div>
+    </section>
+
+    <!-- 7. Skill archive table -->
+    <section class="fr-section">
+      <div class="fr-section-head">
+        <div class="fr-section-num">07</div>
+        <h2>The two skills that actually exist</h2>
+        <p class="fr-section-dek">Found by sweeping the intervention offset per state (not the frozen default) with pure random search — the only method in this project that has produced a real, Day-19-validated local recovery behavior.</p>
+      </div>
+      <div class="fr-card">
+        <div class="fr-table-wrap">
+          <table class="fr-table">
+            <thead><tr><th>Skill</th><th class="num">Offset</th><th class="num">Day-19 score</th><th>Validated neighborhood (object x,y)</th></tr></thead>
+            <tbody>
+              <tr><td>episode_000040</td><td class="num">10</td><td class="num" style="color:var(--good)">100%</td><td>(0.216, 0.292) &plusmn; 3cm</td></tr>
+              <tr><td>episode_000008</td><td class="num">25</td><td class="num" style="color:var(--good)">80%</td><td>(0.176, 0.215) &plusmn; 3cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fr-note">Neither uses the frozen default offset of 15 — confirming the best intervention timing differs per state. A dedicated attempt to find a third skill whose neighborhood overlaps the unseen-config region (50 states, 4,800 executions) found 26 real successes but 0 that cleared validation (mean score 1.5% vs. 50&ndash;100% in-distribution) — the bottleneck there is model/policy fidelity out-of-distribution, not search coverage.</p>
+      </div>
+    </section>
+
+    <div class="fr-footer">
+      Sources (all under <code>SOE/results/</code> unless noted): main comparison &amp;
+      seen/unseen — <code>Can/{fixed_policy,soe,failure_replay,f2s,unguided_latent_repair}/seed_{0,1,2}/{round_0,unseen}/metrics.json</code>.
+      Gating fix — <code>can/skill_precondition_gate_diagnostic/</code>,
+      <code>Can/f2s_PRE_GATING_FIX/</code> vs current <code>Can/f2s/</code>.
+      World-model scatter — <code>can/candidate_ranking_full_scale/records_offset{0,15}.json</code>.
+      Ablation — <code>can/ablation_full_f2s_cem_all_offsets/summary.json</code>.
+      Evolution loop — <code>can/f2s_evolution_postfix/seed_0/evolution_summary.json</code>.
+      Skill archive — <code>can/candidate_ranking_per_state_offset_sweep/skill_archive.json</code>.
+      Unseen-region search — <code>can/skills_from_unseen_config_failures/summary.json</code>.
+      Full narrative: <code>SOE/README_F2S.md</code>, <code>private/technical_contributions_log.md</code>.
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var mainRows = [
+    { key: 'fixed',   label: 'Fixed\nPolicy',    color: 'var(--m-fixed)',    value: 72.2, std: 1.6 },
+    { key: 'soe',     label: 'SOE',               color: 'var(--m-soe)',      value: 0.0,  std: 0.0 },
+    { key: 'replay',  label: 'Failure\nReplay',   color: 'var(--m-replay)',   value: 65.6, std: 1.6 },
+    { key: 'f2s',     label: 'F2S',               color: 'var(--m-f2s)',      value: 74.4, std: 4.2 },
+    { key: 'unguided',label: 'Unguided\nLatent Repair', color: 'var(--m-unguided)', value: 0.0, std: 0.0 }
+  ];
+  var root = document.getElementById('main-rows');
+  mainRows.forEach(function (r) {
+    var row = document.createElement('div'); row.className = 'fr-row';
+    var label = document.createElement('div'); label.className = 'fr-row-label';
+    label.innerHTML = r.label.split('\n').join('<br>') + '<small>&plusmn; ' + r.std.toFixed(1) + '%</small>';
+    row.appendChild(label);
+    var track = document.createElement('div'); track.className = 'fr-track';
+    var line = document.createElement('div'); line.className = 'fr-track-line';
+    line.style.width = r.value + '%'; line.style.background = r.color;
+    track.appendChild(line);
+    var dot = document.createElement('div'); dot.className = 'fr-dot';
+    dot.style.left = r.value + '%'; dot.style.background = r.color;
+    track.appendChild(dot);
+    var val = document.createElement('div'); val.className = 'fr-value';
+    val.style.left = r.value + '%';
+    val.textContent = r.value.toFixed(1) + '%';
+    track.appendChild(val);
+    row.appendChild(track);
+    root.appendChild(row);
+  });
+  document.getElementById('main-legend').innerHTML = mainRows.map(function(r){
+    return '<span><i style="background:'+r.color+'"></i>'+r.label.replace('\n',' ')+'</span>';
+  }).join('');
+
+  // Seen vs unseen slope chart
+  var slopeData = [
+    { key:'fixed', label:'Fixed Policy', color:'var(--m-fixed)', seen:73.3, unseen:45.0 },
+    { key:'soe', label:'SOE', color:'var(--m-soe)', seen:0.0, unseen:0.0 },
+    { key:'replay', label:'Failure Replay', color:'var(--m-replay)', seen:63.3, unseen:36.0 },
+    { key:'f2s', label:'F2S', color:'var(--m-f2s)', seen:80.0, unseen:45.0 },
+    { key:'unguided', label:'Unguided Latent Repair', color:'var(--m-unguided)', seen:0.0, unseen:0.0 }
+  ];
+  var svgNS = 'http://www.w3.org/2000/svg';
+  function makeSvg(tag, attrs) {
+    var el = document.createElementNS(svgNS, tag);
+    for (var k in attrs) el.setAttribute(k, attrs[k]);
+    return el;
+  }
+  var slopeSvg = document.getElementById('slope-svg');
+  var W = 640, H = 260, padTop = 20, padBottom = 30, leftX = 60, rightX = W - 60;
+  function yFor(v) { return H - padBottom - (v/100) * (H - padTop - padBottom); }
+  // axis ticks
+  [0,20,40,60,80,100].forEach(function(t){
+    var y = yFor(t);
+    slopeSvg.appendChild(makeSvg('line', {x1:leftX, x2:rightX, y1:y, y2:y, stroke:'var(--hairline)', 'stroke-width':1}));
+    var txt = makeSvg('text', {x:leftX-10, y:y+4, 'text-anchor':'end', 'font-family':'IBM Plex Mono, monospace', 'font-size':10, fill:'var(--text-muted)'});
+    txt.textContent = t + '%';
+    slopeSvg.appendChild(txt);
+  });
+  slopeData.forEach(function(d){
+    var y1 = yFor(d.seen), y2 = yFor(d.unseen);
+    var col = getComputedStyleColor(d.color);
+    slopeSvg.appendChild(makeSvg('line', {x1:leftX, x2:rightX, y1:y1, y2:y2, stroke:d.color, 'stroke-width':2.5, opacity:0.85}));
+    [ [leftX,y1,d.seen], [rightX,y2,d.unseen] ].forEach(function(p){
+      slopeSvg.appendChild(makeSvg('circle', {cx:p[0], cy:p[1], r:5, fill:d.color, stroke:'var(--surface-1)', 'stroke-width':2}));
+    });
+    var lbl = makeSvg('text', {x:leftX-14, y:y1+4, 'text-anchor':'end', 'font-family':'IBM Plex Mono, monospace', 'font-size':11, 'font-weight':600, fill:'var(--text-primary)'});
+    lbl.textContent = d.label + ' ' + d.seen.toFixed(0) + '%';
+    slopeSvg.appendChild(lbl);
+    var lbl2 = makeSvg('text', {x:rightX+14, y:y2+4, 'text-anchor':'start', 'font-family':'IBM Plex Mono, monospace', 'font-size':11, 'font-weight':600, fill:'var(--text-primary)'});
+    lbl2.textContent = d.unseen.toFixed(0) + '%';
+    slopeSvg.appendChild(lbl2);
+  });
+  function getComputedStyleColor(v){ return v; }
+  document.getElementById('slope-legend').innerHTML = slopeData.map(function(d){
+    return '<span><i style="background:'+d.color+'"></i>'+d.label+'</span>';
+  }).join('');
+
+  // World model scatter plots -- REAL candidate-execution data (5 states
+  // each, subsampled from results/can/candidate_ranking_full_scale/records_offset{0,15}.json
+  // for legibility; every point is a real executed candidate, not simulated).
+  var SCATTER_0 = [{"state": 1, "pred": 0.4735, "actual": 0.5338}, {"state": 1, "pred": 0.4709, "actual": 0.5338}, {"state": 1, "pred": 0.4952, "actual": 0.5338}, {"state": 1, "pred": 0.5238, "actual": 0.5341}, {"state": 1, "pred": 0.5167, "actual": 0.5338}, {"state": 1, "pred": 0.549, "actual": 0.5522}, {"state": 1, "pred": 0.5233, "actual": 0.5794}, {"state": 1, "pred": 0.5249, "actual": 0.5338}, {"state": 1, "pred": 0.4762, "actual": 0.5338}, {"state": 1, "pred": 0.4854, "actual": 0.5338}, {"state": 1, "pred": 0.4786, "actual": 0.5338}, {"state": 1, "pred": 0.4831, "actual": 0.5338}, {"state": 1, "pred": 0.4826, "actual": 0.4944}, {"state": 1, "pred": 0.4784, "actual": 0.4932}, {"state": 1, "pred": 0.4853, "actual": 0.5338}, {"state": 1, "pred": 0.48, "actual": 0.5339}, {"state": 6, "pred": 0.5806, "actual": 0.5827}, {"state": 6, "pred": 0.5948, "actual": 0.5824}, {"state": 6, "pred": 0.6098, "actual": 0.5827}, {"state": 6, "pred": 0.6019, "actual": 0.5826}, {"state": 6, "pred": 0.6172, "actual": 0.5826}, {"state": 6, "pred": 0.6, "actual": 0.5788}, {"state": 6, "pred": 0.5724, "actual": 0.5826}, {"state": 6, "pred": 0.6018, "actual": 0.6201}, {"state": 6, "pred": 0.517, "actual": 0.5826}, {"state": 6, "pred": 0.5219, "actual": 0.5826}, {"state": 6, "pred": 0.5175, "actual": 0.5826}, {"state": 6, "pred": 0.5175, "actual": 0.5827}, {"state": 6, "pred": 0.5243, "actual": 0.5827}, {"state": 6, "pred": 0.5139, "actual": 0.5826}, {"state": 6, "pred": 0.5225, "actual": 0.5826}, {"state": 6, "pred": 0.5154, "actual": 0.5827}, {"state": 7, "pred": 0.1319, "actual": 0.1492}, {"state": 7, "pred": 0.1438, "actual": 0.1492}, {"state": 7, "pred": 0.1577, "actual": 0.1492}, {"state": 7, "pred": 0.1396, "actual": 0.1492}, {"state": 7, "pred": 0.1178, "actual": 0.1492}, {"state": 7, "pred": 0.1703, "actual": 0.1492}, {"state": 7, "pred": 0.1637, "actual": 0.1492}, {"state": 7, "pred": 0.151, "actual": 0.1492}, {"state": 7, "pred": 0.1187, "actual": 0.1492}, {"state": 7, "pred": 0.1481, "actual": 0.1492}, {"state": 7, "pred": 0.1137, "actual": 0.1489}, {"state": 7, "pred": 0.1442, "actual": 0.1492}, {"state": 7, "pred": 0.1131, "actual": 0.1258}, {"state": 7, "pred": 0.1405, "actual": 0.1492}, {"state": 7, "pred": 0.1172, "actual": 0.1492}, {"state": 7, "pred": 0.1364, "actual": 0.1492}, {"state": 8, "pred": 0.4192, "actual": 0.4361}, {"state": 8, "pred": 0.4092, "actual": 0.4361}, {"state": 8, "pred": 0.4122, "actual": 0.4318}, {"state": 8, "pred": 0.4433, "actual": 0.4358}, {"state": 8, "pred": 0.4128, "actual": 0.4361}, {"state": 8, "pred": 0.4221, "actual": 0.4464}, {"state": 8, "pred": 0.4033, "actual": 0.4361}, {"state": 8, "pred": 0.4014, "actual": 0.4361}, {"state": 8, "pred": 0.4108, "actual": 0.4361}, {"state": 8, "pred": 0.4126, "actual": 0.4361}, {"state": 8, "pred": 0.4068, "actual": 0.4361}, {"state": 8, "pred": 0.4107, "actual": 0.4361}, {"state": 8, "pred": 0.4097, "actual": 0.4361}, {"state": 8, "pred": 0.4216, "actual": 0.4361}, {"state": 8, "pred": 0.4206, "actual": 0.4361}, {"state": 8, "pred": 0.4064, "actual": 0.4361}, {"state": 10, "pred": 0.4309, "actual": 0.4393}, {"state": 10, "pred": 0.416, "actual": 0.4561}, {"state": 10, "pred": 0.4713, "actual": 0.4561}, {"state": 10, "pred": 0.4578, "actual": 0.4561}, {"state": 10, "pred": 0.4211, "actual": 0.4327}, {"state": 10, "pred": 0.437, "actual": 0.4561}, {"state": 10, "pred": 0.4464, "actual": 0.4561}, {"state": 10, "pred": 0.4244, "actual": 0.4561}, {"state": 10, "pred": 0.4358, "actual": 0.418}, {"state": 10, "pred": 0.4468, "actual": 0.4561}, {"state": 10, "pred": 0.4403, "actual": 0.4561}, {"state": 10, "pred": 0.443, "actual": 0.4512}, {"state": 10, "pred": 0.4414, "actual": 0.4561}, {"state": 10, "pred": 0.4637, "actual": 0.4564}, {"state": 10, "pred": 0.4567, "actual": 0.4563}, {"state": 10, "pred": 0.4417, "actual": 0.4519}];
+  var SCATTER_15 = [{"state": 0, "pred": 0.4233, "actual": 0.213}, {"state": 0, "pred": 0.4236, "actual": 0.213}, {"state": 0, "pred": 0.4119, "actual": 0.221}, {"state": 0, "pred": 0.4603, "actual": 0.3502}, {"state": 0, "pred": 0.4732, "actual": 0.373}, {"state": 0, "pred": 0.4149, "actual": 0.2326}, {"state": 0, "pred": 0.4138, "actual": 0.1851}, {"state": 0, "pred": 0.4928, "actual": 0.3513}, {"state": 0, "pred": 0.407, "actual": 0.1954}, {"state": 0, "pred": 0.4148, "actual": 0.1867}, {"state": 0, "pred": 0.4106, "actual": 0.2195}, {"state": 0, "pred": 0.4074, "actual": 0.2055}, {"state": 0, "pred": 0.4125, "actual": 0.2159}, {"state": 0, "pred": 0.4104, "actual": 0.1987}, {"state": 0, "pred": 0.4152, "actual": 0.2208}, {"state": 0, "pred": 0.4072, "actual": 0.1832}, {"state": 1, "pred": 0.477, "actual": 0.5337}, {"state": 1, "pred": 0.4873, "actual": 0.4683}, {"state": 1, "pred": 0.5239, "actual": 0.4685}, {"state": 1, "pred": 0.5132, "actual": 0.4709}, {"state": 1, "pred": 0.5468, "actual": 0.477}, {"state": 1, "pred": 0.5358, "actual": 0.5444}, {"state": 1, "pred": 0.5274, "actual": 0.5565}, {"state": 1, "pred": 0.5346, "actual": 0.5336}, {"state": 1, "pred": 0.526, "actual": 0.5339}, {"state": 1, "pred": 0.5421, "actual": 0.5138}, {"state": 1, "pred": 0.5328, "actual": 0.4894}, {"state": 1, "pred": 0.5393, "actual": 0.461}, {"state": 1, "pred": 0.5343, "actual": 0.5141}, {"state": 1, "pred": 0.5344, "actual": 0.5177}, {"state": 1, "pred": 0.5413, "actual": 0.5304}, {"state": 1, "pred": 0.5333, "actual": 0.5211}, {"state": 2, "pred": 0.3943, "actual": 0.3836}, {"state": 2, "pred": 0.3646, "actual": 0.4376}, {"state": 2, "pred": 0.3848, "actual": 0.3836}, {"state": 2, "pred": 0.3514, "actual": 0.3836}, {"state": 2, "pred": 0.3843, "actual": 0.3836}, {"state": 2, "pred": 0.3443, "actual": 0.3836}, {"state": 2, "pred": 0.3612, "actual": 0.3836}, {"state": 2, "pred": 0.348, "actual": 0.3836}, {"state": 2, "pred": 0.3681, "actual": 0.3836}, {"state": 2, "pred": 0.3682, "actual": 0.3836}, {"state": 2, "pred": 0.3666, "actual": 0.3836}, {"state": 2, "pred": 0.365, "actual": 0.3836}, {"state": 2, "pred": 0.3718, "actual": 0.3836}, {"state": 2, "pred": 0.3638, "actual": 0.3836}, {"state": 2, "pred": 0.3673, "actual": 0.3836}, {"state": 2, "pred": 0.37, "actual": 0.3836}, {"state": 3, "pred": 0.5414, "actual": 0.5034}, {"state": 3, "pred": 0.5118, "actual": 0.5042}, {"state": 3, "pred": 0.4654, "actual": 0.4556}, {"state": 3, "pred": 0.4526, "actual": 0.5033}, {"state": 3, "pred": 0.4688, "actual": 0.498}, {"state": 3, "pred": 0.4615, "actual": 0.4476}, {"state": 3, "pred": 0.504, "actual": 0.5053}, {"state": 3, "pred": 0.4959, "actual": 0.467}, {"state": 3, "pred": 0.4844, "actual": 0.5034}, {"state": 3, "pred": 0.5002, "actual": 0.5039}, {"state": 3, "pred": 0.4889, "actual": 0.4701}, {"state": 3, "pred": 0.4929, "actual": 0.4461}, {"state": 3, "pred": 0.4894, "actual": 0.4488}, {"state": 3, "pred": 0.4994, "actual": 0.4455}, {"state": 3, "pred": 0.4983, "actual": 0.5051}, {"state": 3, "pred": 0.4881, "actual": 0.4453}, {"state": 4, "pred": 0.2944, "actual": 0.2099}, {"state": 4, "pred": 0.2768, "actual": 0.1998}, {"state": 4, "pred": 0.3015, "actual": 0.2086}, {"state": 4, "pred": 0.2956, "actual": 0.2077}, {"state": 4, "pred": 0.2682, "actual": 0.2092}, {"state": 4, "pred": 0.283, "actual": 0.2043}, {"state": 4, "pred": 0.262, "actual": 0.1914}, {"state": 4, "pred": 0.2791, "actual": 0.2013}, {"state": 4, "pred": 0.2736, "actual": 0.2053}, {"state": 4, "pred": 0.2807, "actual": 0.2013}, {"state": 4, "pred": 0.2706, "actual": 0.2076}, {"state": 4, "pred": 0.2797, "actual": 0.2053}, {"state": 4, "pred": 0.2755, "actual": 0.2066}, {"state": 4, "pred": 0.279, "actual": 0.2063}, {"state": 4, "pred": 0.2883, "actual": 0.2022}, {"state": 4, "pred": 0.2806, "actual": 0.2058}];
+  function buildScatter(svgId, data) {
+    var svg = document.getElementById(svgId);
+    var w = 280, h = 220, pad = 32;
+    var colors = ['var(--m-fixed)','var(--m-soe)','var(--m-replay)','var(--m-f2s)','var(--m-unguided)'];
+    var states = [];
+    data.forEach(function(d){ if (states.indexOf(d.state) === -1) states.push(d.state); });
+    var allVals = data.reduce(function(a,d){ return a.concat([d.pred, d.actual]); }, []);
+    var lo = Math.min.apply(null, allVals), hi = Math.max.apply(null, allVals);
+    var span = (hi - lo) || 1;
+    function sx(v) { return pad + ((v - lo) / span) * (w - pad - 10); }
+    function sy(v) { return (h - pad) - ((v - lo) / span) * (h - pad - 8); }
+    svg.appendChild(makeSvg('line', {x1:pad, x2:w-8, y1:h-pad, y2:h-pad, stroke:'var(--hairline)', 'stroke-width':1}));
+    svg.appendChild(makeSvg('line', {x1:pad, x2:pad, y1:8, y2:h-pad, stroke:'var(--hairline)', 'stroke-width':1}));
+    var xl = makeSvg('text', {x:(w+pad)/2, y:h-6, 'text-anchor':'middle', 'font-family':'IBM Plex Mono, monospace', 'font-size':9, fill:'var(--text-muted)'});
+    xl.textContent = 'predicted error (m)'; svg.appendChild(xl);
+    var yl = makeSvg('text', {x:10, y:(h)/2, 'text-anchor':'middle', 'font-family':'IBM Plex Mono, monospace', 'font-size':9, fill:'var(--text-muted)', transform:'rotate(-90 10 '+(h/2)+')'});
+    yl.textContent = 'actual error (m)'; svg.appendChild(yl);
+    data.forEach(function(d){
+      var col = colors[states.indexOf(d.state) % colors.length];
+      svg.appendChild(makeSvg('circle', {cx:sx(d.pred), cy:sy(d.actual), r:2.8, fill:col, opacity:0.8}));
+    });
+  }
+  buildScatter('scatter-0', SCATTER_0);
+  buildScatter('scatter-15', SCATTER_15);
+
+  // Evolution loop small multiples
+  function buildBars(svgId, values, color, fmt) {
+    var svg = document.getElementById(svgId);
+    var w = 220, h = 140, padB = 26, padT = 18, barW = 34, gap = 30;
+    var maxV = Math.max.apply(null, values.map(function(v){return v.v;})) || 1;
+    var startX = (w - (3*barW + 2*gap)) / 2;
+    values.forEach(function(item, i) {
+      var x = startX + i*(barW+gap);
+      var barH = maxV === 0 ? 2 : Math.max(2, (item.v/maxV) * (h-padB-padT));
+      var y = h - padB - barH;
+      svg.appendChild(makeSvg('rect', {x:x, y:y, width:barW, height:barH, rx:4, fill:color, opacity: 0.55 + i*0.15}));
+      var lbl = makeSvg('text', {x:x+barW/2, y:y-6, 'text-anchor':'middle', 'font-family':'IBM Plex Mono, monospace', 'font-size':11, 'font-weight':600, fill:'var(--text-primary)'});
+      lbl.textContent = fmt(item.v);
+      svg.appendChild(lbl);
+      var rlbl = makeSvg('text', {x:x+barW/2, y:h-8, 'text-anchor':'middle', 'font-family':'IBM Plex Mono, monospace', 'font-size':10, fill:'var(--text-muted)'});
+      rlbl.textContent = 'R' + i;
+      svg.appendChild(rlbl);
+    });
+    svg.appendChild(makeSvg('line', {x1:8, x2:w-8, y1:h-padB, y2:h-padB, stroke:'var(--hairline)', 'stroke-width':1}));
+  }
+  buildBars('evo-success', [{v:74.0},{v:72.0},{v:68.0}], 'var(--m-f2s)', function(v){return v.toFixed(0)+'%';});
+  buildBars('evo-failures', [{v:13},{v:14},{v:16}], 'var(--m-fixed)', function(v){return v.toFixed(0);});
+  buildBars('evo-archive', [{v:0},{v:0},{v:0}], 'var(--critical)', function(v){return v.toFixed(0);});
+})();
+</script>
+
+</body>
+</html>
