@@ -1608,6 +1608,26 @@ with full per-round detail, `round_{0,1,2}/` with eval episodes, failure
 segments, cluster assignments, world-model checkpoints),
 `install_logs/f2s_evolution_postfix_seed0.log`.
 
+## Day 26: figures and tables
+
+Built a single results dashboard covering everything Day 26 asks for that
+has real, traceable data (main comparison, seen-vs-unseen transfer, the
+gating-fix before/after, the world-model ranking scatter with real
+candidate points, the ablation table, the 3-round evolution curves, and
+the skill-archive table). Every number and every scatter point traces to
+a specific file under `results/` -- listed in the dashboard's own footer.
+
+**View it: `SOE/results/figures/html/f2s_final_results.html`** (open
+directly in a browser -- standalone, no server needed).
+
+Not populated, honestly: Figure 2 (success vs. rollout budget) -- no
+rollout-budget sweep was ever run, so there is nothing real to plot; per
+the proposal's own rule ("do not report a number that cannot be traced
+back to a saved result file"), it's omitted rather than faked.
+Unguided Latent Repair's row in the seen-vs-unseen chart was still
+pending its 100-episode unseen-config run at first publish and will be
+added as a follow-up update once that completes.
+
 ## What's real vs. what's still open, for anyone picking this up
 
 **Done and verified against the real simulator, not stubbed:** full SOE
