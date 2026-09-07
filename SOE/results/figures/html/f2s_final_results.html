@@ -283,7 +283,7 @@
           <div></div>
         </div>
         <div class="fr-legend" id="slope-legend"></div>
-        <p class="fr-note"><b>Unguided Latent Repair's unseen-config run was still in progress at publish time</b> — its line will be added once that 100-episode evaluation completes.</p>
+        <p class="fr-note">SOE and Unguided Latent Repair both sit at 0% &rarr; 0% (their lines overlap). Unguided Latent Repair's safety-violation rate under unseen configs is <b>100%</b> — the worst of any method, including SOE (61% in-distribution&rarr;unseen not shown here; see the gating-fix section for F2S's own before/after on this metric) — consistent with generating and playing back unvalidated corrective action chunks on essentially every stall.</p>
       </div>
     </section>
 
@@ -466,7 +466,8 @@
     { key:'fixed', label:'Fixed Policy', color:'var(--m-fixed)', seen:73.3, unseen:45.0 },
     { key:'soe', label:'SOE', color:'var(--m-soe)', seen:0.0, unseen:0.0 },
     { key:'replay', label:'Failure Replay', color:'var(--m-replay)', seen:63.3, unseen:36.0 },
-    { key:'f2s', label:'F2S', color:'var(--m-f2s)', seen:80.0, unseen:45.0 }
+    { key:'f2s', label:'F2S', color:'var(--m-f2s)', seen:80.0, unseen:45.0 },
+    { key:'unguided', label:'Unguided Latent Repair', color:'var(--m-unguided)', seen:0.0, unseen:0.0 }
   ];
   var svgNS = 'http://www.w3.org/2000/svg';
   function makeSvg(tag, attrs) {

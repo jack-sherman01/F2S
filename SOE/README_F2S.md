@@ -1624,9 +1624,15 @@ Not populated, honestly: Figure 2 (success vs. rollout budget) -- no
 rollout-budget sweep was ever run, so there is nothing real to plot; per
 the proposal's own rule ("do not report a number that cannot be traced
 back to a saved result file"), it's omitted rather than faked.
-Unguided Latent Repair's row in the seen-vs-unseen chart was still
-pending its 100-episode unseen-config run at first publish and will be
-added as a follow-up update once that completes.
+
+Unguided Latent Repair's unseen-config eval (never run before -- it was
+added after the original Day-25 batch) completed after first publish:
+**0.0% success, 100% safety-violation rate** -- the worst safety number
+of any method tested, worse even than SOE's 61%, consistent with
+generating and playing back an unvalidated corrective action chunk on
+essentially every stall (`skill_episodes: 100` -- it fires in every
+single episode). The dashboard's seen-vs-unseen chart now includes this
+row (`results/Can/unguided_latent_repair/seed_0/unseen/metrics.json`).
 
 ## What's real vs. what's still open, for anyone picking this up
 
