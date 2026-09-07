@@ -1,0 +1,507 @@
+{
+  "summary": {
+    "k_exec": 20,
+    "n_states": 71,
+    "n_success": 2,
+    "success_rate": 0.028169014084507043
+  },
+  "per_state": [
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000007",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000011",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000016",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000023",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000024",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000029",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000033",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000043",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000047",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000048",
+      "success": true,
+      "total_steps": 12,
+      "iterations": 1
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000049",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000008",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000010",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000013",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000015",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000024",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000025",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 20,
+      "episode_id": "episode_000028",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 21,
+      "episode_id": "episode_000029",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 22,
+      "episode_id": "episode_000030",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 23,
+      "episode_id": "episode_000037",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 24,
+      "episode_id": "episode_000039",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 25,
+      "episode_id": "episode_000040",
+      "success": true,
+      "total_steps": 9,
+      "iterations": 1
+    },
+    {
+      "state_idx": 26,
+      "episode_id": "episode_000042",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 27,
+      "episode_id": "episode_000044",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 28,
+      "episode_id": "episode_000046",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 29,
+      "episode_id": "episode_000047",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 30,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 31,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 32,
+      "episode_id": "episode_000010",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 33,
+      "episode_id": "episode_000013",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 34,
+      "episode_id": "episode_000018",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 35,
+      "episode_id": "episode_000021",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 36,
+      "episode_id": "episode_000023",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 37,
+      "episode_id": "episode_000025",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 38,
+      "episode_id": "episode_000026",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 39,
+      "episode_id": "episode_000030",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 40,
+      "episode_id": "episode_000031",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 41,
+      "episode_id": "episode_000032",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 42,
+      "episode_id": "episode_000033",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 43,
+      "episode_id": "episode_000039",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 44,
+      "episode_id": "episode_000041",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 45,
+      "episode_id": "episode_000043",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 46,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 47,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 48,
+      "episode_id": "episode_000007",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 49,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 50,
+      "episode_id": "episode_000004",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 51,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 52,
+      "episode_id": "episode_000004",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 53,
+      "episode_id": "episode_000005",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 54,
+      "episode_id": "episode_000006",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 55,
+      "episode_id": "episode_000008",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 56,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 57,
+      "episode_id": "episode_000002",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 58,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 59,
+      "episode_id": "episode_000006",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 60,
+      "episode_id": "episode_000009",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 61,
+      "episode_id": "episode_000001",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 62,
+      "episode_id": "episode_000009",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 63,
+      "episode_id": "episode_000000",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 64,
+      "episode_id": "episode_000003",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 65,
+      "episode_id": "episode_000007",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 66,
+      "episode_id": "episode_000011",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 67,
+      "episode_id": "episode_000016",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 68,
+      "episode_id": "episode_000023",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 69,
+      "episode_id": "episode_000024",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    },
+    {
+      "state_idx": 70,
+      "episode_id": "episode_000029",
+      "success": false,
+      "total_steps": 20,
+      "iterations": 1
+    }
+  ]
+}
