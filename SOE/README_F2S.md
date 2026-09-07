@@ -1862,8 +1862,23 @@ and `results/can/soe/seed_0/round_0/smoketest_alex_4148553/`:
 
 `slurm/train_can_baseline.sbatch`, log `install_logs/alex_train_can_baseline_4148554.log`,
 training dir `results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/`.
-Observed speed ~5.7 s/epoch on the A40 (500 epochs ~ 50 min), followed by
-the 30-episode seed-0 Fixed Policy eval into
-`results/Can/fixed_policy_alex_retrain/seed_0/round_0/`. Result to be
-recorded here when the job finishes (original-machine reference: 73.3%,
-72.2% +/- 1.6% over three seeds).
+**Job COMPLETED (exit 0, 22 min 29 s total).** Training took 1179 s for
+500 epochs (~2.4 s/epoch on the A40 once warmed up), final train loss
+**0.009564** (original machine: 0.0095). The 30-episode seed-0 Fixed
+Policy eval (`results/Can/fixed_policy_alex_retrain/seed_0/round_0/metrics.json`,
+148.6 s wall time):
+
+| | Alex retrain (this job) | original machine (Day 3 / 23) |
+|---|---|---|
+| success rate, seed 0, 30 episodes | **73.3%** (22/30) | 73.3% (22/30) |
+| mean episode length | 183.1 steps | 183.4 steps |
+| three-seed reference | not yet run | 72.2% +/- 1.6% |
+
+Identical success rate and near-identical episode length: the baseline is
+reproduced on this cluster, which completes the second half of the Day-28
+reproduction test at the checkpoint level. The new checkpoint is
+`results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt`
+(gitignored, lives only in the workspace) -- use it as `CKPT_BASE` when
+re-running `install_logs/run_*.sh`. Still to do before the F2S numbers can
+be regenerated here: retrain the world model, rebuild the pooled failure
+set, and re-run the offset-sweep skill discovery from this checkpoint.
