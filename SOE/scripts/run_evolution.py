@@ -36,6 +36,16 @@ def main():
     parser.add_argument("--output_dir", required=True)
     parser.add_argument("--policy_config", required=True, help="SOE DP policy config json (e.g. configs/soe_can_lowdim_baseline.json)")
     parser.add_argument("--policy_ckpt", required=True, help="trained SOE baseline checkpoint to start from")
+    # Candidate generation path for skill discovery. discover_and_archive_skills
+    # has always taken this as a parameter but never exposed it here, so results
+    # produced before CEM became its default (use_cem=False -- e.g. the original
+    # results/can/f2s_dev/ and results/can/f2s_final/ runs, which generated 96-160
+    # candidates per round rather than CEM's population_size * iters) could not be
+    # regenerated from the CLI. The default below is unchanged from the callee's.
+    parser.add_argument("--use_cem", dest="use_cem", action="store_true", default=True,
+                        help="CEM-guided candidate search during skill discovery (default)")
+    parser.add_argument("--no_use_cem", dest="use_cem", action="store_false",
+                        help="plain random latent perturbation instead of CEM")
     args = parser.parse_args()
 
     with open(args.config, "r") as f:
@@ -107,6 +117,7 @@ def main():
             M=cfg["num_candidates_per_failure_mode"], world_model_horizon=cfg["world_model_horizon"],
             candidates_executed_per_mode=cfg["num_executed_candidates_per_failure_mode"],
             skill_validation_episodes=cfg["skill_validation_episodes"],
+            use_cem=args.use_cem,
         )
         print("skill discovery:", discovery_result)
 

@@ -71,9 +71,19 @@ def main():
             seg = process_episode(meta, arrays, Hf=10)
             if seg is not None:
                 segments.append((ep_dir, seg, meta, arrays))
-    assert len(segments) == 71, f"expected 71 pooled states, got {len(segments)}"
-
     records = json.load(open(RECORDS_PATH))
+    # The sweep's records index into `segments` by position, so the pool rebuilt
+    # here must cover every state_idx the records reference. This replaces a
+    # hardcoded `== 71` -- the original machine's pooled-state count, which is a
+    # function of that run's policy success rate (fewer failures -> fewer pooled
+    # states) and therefore changes whenever the pool is regenerated -- with the
+    # invariant the indexing actually depends on. The original 71-state pool
+    # still satisfies it.
+    max_state_idx = max(r["state_idx"] for r in records)
+    assert len(segments) > max_state_idx, (
+        f"pooled {len(segments)} states but records reference state_idx up to {max_state_idx}; "
+        "segments and records were not built from the same episode pool"
+    )
     from collections import defaultdict
     succ_count = defaultdict(int)
     attempt_count = defaultdict(int)
