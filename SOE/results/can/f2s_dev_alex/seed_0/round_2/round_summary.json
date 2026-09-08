@@ -1,0 +1,35 @@
+{
+  "round": 2,
+  "git_commit": "c3973e4c19e30083067a86756757ab4f8a404ac4",
+  "eval_metrics": {
+    "task": "Can",
+    "method": "F2S",
+    "seed": 0,
+    "round": 2,
+    "success_rate": 0.9,
+    "failure_rate": 0.09999999999999998,
+    "recovery_rate": 0.0,
+    "collision_rate": 0.0,
+    "object_drop_rate": 0.0,
+    "mean_episode_length": 135.6,
+    "rollout_count": 10,
+    "training_time_seconds": null
+  },
+  "discovery": {
+    "status": "too_few_failures",
+    "n_segments": 1,
+    "n_skills_added": 0
+  },
+  "world_model_result": {
+    "state_dim": 26,
+    "action_dim": 7,
+    "hidden_dim": 256,
+    "ensemble_size": 1,
+    "epochs": 50,
+    "best_val_mse": 0.0002696808078326285,
+    "constant_state_val_mse": 0.023732639849185944,
+    "beats_constant_baseline": true,
+    "training_time_seconds": 2.461616277694702
+  },
+  "archive_size": 0
+}

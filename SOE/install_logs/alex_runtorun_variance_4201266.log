@@ -1,0 +1,548 @@
+### Starting TaskPrologue of job 4201266 on a0801 at Tue Sep  8 04:46:00 PM CEST 2026
+Running on cores 96-111 with governor schedutil
+Tue Sep  8 16:46:00 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:CC:00.0 Off |                    0 |
+| N/A   32C    P0             55W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== Tue Sep  8 04:46:01 PM CEST 2026 | node a0801 | job 4201266 | NVIDIA A100-SXM4-40GB ===
+
+=== repeat 1/5, identical config: fixed_policy seed 0, 30 episodes (16:46:01) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_eef_quat', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'robot0_joint_pos', 'object', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'robot0_gripper_qpos', 'robot0_eef_pos', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 191.2867510318756,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 191.2867510318756,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 191.2867510318756,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== repeat 2/5, identical config: fixed_policy seed 0, 30 episodes (16:49:33) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_pos', 'robot0_eef_quat', 'robot0_joint_pos', 'robot0_joint_pos_sin', 'robot0_gripper_qpos', 'robot0_eef_vel_lin', 'robot0_gripper_qvel', 'robot0_joint_vel', 'object', 'robot0_eef_vel_ang', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.18474006652832,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.18474006652832,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.18474006652832,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== repeat 3/5, identical config: fixed_policy seed 0, 30 episodes (16:52:50) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_eef_pos', 'robot0_gripper_qpos', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_joint_vel', 'robot0_eef_vel_lin', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'object']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.64371538162231,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.64371538162231,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.64371538162231,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== repeat 4/5, identical config: fixed_policy seed 0, 30 episodes (16:56:06) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_sin', 'object', 'robot0_gripper_qvel', 'robot0_joint_pos', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'robot0_eef_quat', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.9662573337555,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.9662573337555,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 186.9662573337555,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== repeat 5/5, identical config: fixed_policy seed 0, 30 episodes (16:59:21) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos', 'robot0_gripper_qpos', 'robot0_joint_pos', 'robot0_joint_vel', 'object', 'robot0_eef_vel_lin', 'robot0_eef_pos', 'robot0_eef_vel_ang', 'robot0_eef_quat']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=105
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.69353580474854,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.69353580474854,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.86666666666667,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 187.69353580474854,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== run-to-run spread, same checkpoint / same seed / same 30 initial states ===
+  retrain   73.3%  (22/30)  mean_len=183.1
+  main1     83.3%  (25/30)  mean_len=162.8
+  rep1      83.3%  (25/30)  mean_len=162.9
+  rep2      83.3%  (25/30)  mean_len=162.9
+  rep3      83.3%  (25/30)  mean_len=162.9
+  rep4      83.3%  (25/30)  mean_len=162.9
+  rep5      83.3%  (25/30)  mean_len=162.9
+
+  n=7  mean=81.9%  std=3.8 points  range=[73.3, 83.3]
+  reference: the three-SEED std reported in the paper is 1.6-1.9 points;
+             the F2S vs Fixed Policy gap it is compared against is 2.2 points.
+=== DONE Tue Sep  8 05:02:37 PM CEST 2026 ===
+=== JOB_STATISTICS ===
+=== current date     : Tue Sep  8 17:02:37 CEST 2026
+= Job-ID             : 4201266 on alex
+= Job-Name           : f2s_variance
+= Job-Command        : /anvme/workspace/b306dd11-f2s/F2S/SOE/slurm/repro_runtoRun_variance.sbatch
+= Initial workdir    : /anvme/workspace/b306dd11-f2s/F2S/SOE
+= Queue/Partition    : a100
+= Slurm account      : b306dd with QOS=normal
+= Requested resources:  for 04:00:00
+= Elapsed runtime    : 00:18:30
+= Total RAM usage    : 5.4 GiB of assigned  GiB (%)
+= Node list          : a0801
+= Subm/Elig/Start/End: 2026-09-08T15:02:37 / 2026-09-08T15:02:37 / 2026-09-08T16:44:07 / 2026-09-08T17:02:37
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              85.1G   104.9G   209.7G        N/A     114K     500K   1,000K        N/A    
+    /home/atuin           937.2G     0.0K     0.0K        N/A     246K                          N/A    
+    /home/vault           168.0G  1048.6G  2097.2G        N/A   3,763      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+    /anvme                  6.0T     0.0K     0.0K        N/A   1,228K   9,985K  11,985K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:CC:00.0, 210981, 4 %, 0 %, 1850 MiB, 205168 ms
+NVIDIA A100-SXM4-40GB, 00000000:CC:00.0, 212894, 5 %, 0 %, 1850 MiB, 194829 ms
+NVIDIA A100-SXM4-40GB, 00000000:CC:00.0, 215132, 5 %, 0 %, 1850 MiB, 193683 ms
+NVIDIA A100-SXM4-40GB, 00000000:CC:00.0, 217067, 5 %, 0 %, 1850 MiB, 193227 ms
+NVIDIA A100-SXM4-40GB, 00000000:CC:00.0, 219079, 5 %, 0 %, 1850 MiB, 193956 ms

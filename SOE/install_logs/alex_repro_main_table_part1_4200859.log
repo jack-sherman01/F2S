@@ -1,0 +1,850 @@
+### Starting TaskPrologue of job 4200859 on a0801 at Tue Sep  8 01:39:08 PM CEST 2026
+Running on cores 0-15 with governor schedutil
+Tue Sep  8 13:39:08 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   43C    P0             58W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== Tue Sep  8 01:39:09 PM CEST 2026 | node a0801 | job 4200859 | NVIDIA A100-SXM4-40GB ===
+
+=== fixed_policy seed=0 (13:39:09) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_gripper_qpos', 'robot0_eef_quat', 'robot0_eef_pos', 'object', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin', 'robot0_gripper_qvel', 'robot0_eef_vel_ang']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=True len=107
+[3/30] episode=episode_000002 success=True len=94
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=True len=102
+[6/30] episode=episode_000005 success=True len=127
+[7/30] episode=episode_000006 success=True len=119
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=True len=132
+[10/30] episode=episode_000009 success=True len=105
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=102
+[14/30] episode=episode_000013 success=True len=111
+[15/30] episode=episode_000014 success=True len=98
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=True len=101
+[18/30] episode=episode_000017 success=True len=92
+[19/30] episode=episode_000018 success=True len=78
+[20/30] episode=episode_000019 success=True len=99
+[21/30] episode=episode_000020 success=True len=103
+[22/30] episode=episode_000021 success=True len=103
+[23/30] episode=episode_000022 success=True len=103
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=True len=104
+[26/30] episode=episode_000025 success=True len=100
+[27/30] episode=episode_000026 success=True len=101
+[28/30] episode=episode_000027 success=True len=104
+[29/30] episode=episode_000028 success=True len=127
+[30/30] episode=episode_000029 success=True len=376
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.83333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 194.22825860977173,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.83333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 194.22825860977173,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.8333333333333334,
+  "failure_rate": 0.16666666666666663,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 162.83333333333334,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 194.22825860977173,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== soe seed=0 (13:42:44) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_joint_pos_cos', 'robot0_eef_quat', 'robot0_eef_pos', 'robot0_gripper_qvel', 'robot0_joint_vel', 'robot0_eef_vel_lin', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'object']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=False len=400
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=False len=400
+[10/30] episode=episode_000009 success=False len=400
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=False len=400
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=False len=400
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=False len=400
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=False len=400
+[27/30] episode=episode_000026 success=False len=400
+[28/30] episode=episode_000027 success=False len=400
+[29/30] episode=episode_000028 success=False len=400
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 426.177862405777,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 426.177862405777,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 426.177862405777,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+=== unguided_latent_repair seed=0 (13:49:58) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qpos', 'robot0_joint_vel', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos', 'robot0_joint_pos', 'robot0_eef_quat', 'robot0_joint_pos_sin', 'object', 'robot0_gripper_qvel']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=27
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=52
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=23
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=32
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=76
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=34
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=19
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 0,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== fixed_policy seed=1 (14:27:19) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos_cos', 'robot0_gripper_qpos', 'object', 'robot0_joint_vel', 'robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_sin', 'robot0_joint_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=116
+[2/30] episode=episode_000001 success=True len=93
+[3/30] episode=episode_000002 success=True len=119
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=True len=98
+[7/30] episode=episode_000006 success=True len=110
+[8/30] episode=episode_000007 success=True len=86
+[9/30] episode=episode_000008 success=True len=99
+[10/30] episode=episode_000009 success=True len=95
+[11/30] episode=episode_000010 success=True len=97
+[12/30] episode=episode_000011 success=True len=92
+[13/30] episode=episode_000012 success=True len=99
+[14/30] episode=episode_000013 success=True len=98
+[15/30] episode=episode_000014 success=True len=117
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=True len=111
+[21/30] episode=episode_000020 success=True len=105
+[22/30] episode=episode_000021 success=True len=102
+[23/30] episode=episode_000022 success=True len=106
+[24/30] episode=episode_000023 success=True len=128
+[25/30] episode=episode_000024 success=True len=94
+[26/30] episode=episode_000025 success=True len=101
+[27/30] episode=episode_000026 success=True len=100
+[28/30] episode=episode_000027 success=True len=111
+[29/30] episode=episode_000028 success=True len=120
+[30/30] episode=episode_000029 success=True len=109
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 163.53333333333333,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 185.8710081577301,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 163.53333333333333,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 185.8710081577301,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.8,
+  "failure_rate": 0.19999999999999996,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 163.53333333333333,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 185.8710081577301,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== soe seed=1 (14:30:33) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_eef_pos', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'robot0_eef_vel_ang', 'robot0_joint_pos', 'robot0_eef_quat', 'object']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=False len=400
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=False len=400
+[10/30] episode=episode_000009 success=False len=400
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=False len=400
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=False len=400
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=False len=400
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=False len=400
+[27/30] episode=episode_000026 success=False len=400
+[28/30] episode=episode_000027 success=False len=400
+[29/30] episode=episode_000028 success=False len=400
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 424.5127582550049,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 424.5127582550049,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 424.5127582550049,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+=== unguided_latent_repair seed=1 (14:37:45) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_joint_pos_cos', 'object', 'robot0_gripper_qpos', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_gripper_qvel', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_eef_pos', 'robot0_eef_quat']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=32
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=53
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=25
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=38
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=54
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=25
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=24
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=23
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=19
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 1,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== fixed_policy seed=2 (15:14:33) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_vel', 'robot0_gripper_qvel', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_eef_vel_lin', 'robot0_eef_pos', 'robot0_eef_quat', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'object', 'robot0_gripper_qpos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=True len=98
+[2/30] episode=episode_000001 success=True len=118
+[3/30] episode=episode_000002 success=True len=111
+[4/30] episode=episode_000003 success=True len=100
+[5/30] episode=episode_000004 success=True len=87
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=True len=86
+[9/30] episode=episode_000008 success=True len=94
+[10/30] episode=episode_000009 success=True len=97
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=True len=97
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=True len=100
+[16/30] episode=episode_000015 success=True len=100
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=True len=103
+[19/30] episode=episode_000018 success=True len=89
+[20/30] episode=episode_000019 success=True len=109
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=True len=122
+[23/30] episode=episode_000022 success=True len=111
+[24/30] episode=episode_000023 success=True len=117
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=True len=108
+[27/30] episode=episode_000026 success=True len=120
+[28/30] episode=episode_000027 success=True len=115
+[29/30] episode=episode_000028 success=True len=123
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.5,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 218.51978087425232,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.5,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 218.51978087425232,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+{
+  "task": "Can",
+  "method": "fixed_policy",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.7,
+  "failure_rate": 0.30000000000000004,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 193.5,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 218.51978087425232,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": false
+}
+=== soe seed=2 (15:18:20) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['object', 'robot0_joint_vel', 'robot0_eef_quat', 'robot0_gripper_qvel', 'robot0_joint_pos_sin', 'robot0_joint_pos', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_eef_pos', 'robot0_eef_vel_lin', 'robot0_joint_pos_cos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[1/30] episode=episode_000000 success=False len=400
+[2/30] episode=episode_000001 success=False len=400
+[3/30] episode=episode_000002 success=False len=400
+[4/30] episode=episode_000003 success=False len=400
+[5/30] episode=episode_000004 success=False len=400
+[6/30] episode=episode_000005 success=False len=400
+[7/30] episode=episode_000006 success=False len=400
+[8/30] episode=episode_000007 success=False len=400
+[9/30] episode=episode_000008 success=False len=400
+[10/30] episode=episode_000009 success=False len=400
+[11/30] episode=episode_000010 success=False len=400
+[12/30] episode=episode_000011 success=False len=400
+[13/30] episode=episode_000012 success=False len=400
+[14/30] episode=episode_000013 success=False len=400
+[15/30] episode=episode_000014 success=False len=400
+[16/30] episode=episode_000015 success=False len=400
+[17/30] episode=episode_000016 success=False len=400
+[18/30] episode=episode_000017 success=False len=400
+[19/30] episode=episode_000018 success=False len=400
+[20/30] episode=episode_000019 success=False len=400
+[21/30] episode=episode_000020 success=False len=400
+[22/30] episode=episode_000021 success=False len=400
+[23/30] episode=episode_000022 success=False len=400
+[24/30] episode=episode_000023 success=False len=400
+[25/30] episode=episode_000024 success=False len=400
+[26/30] episode=episode_000025 success=False len=400
+[27/30] episode=episode_000026 success=False len=400
+[28/30] episode=episode_000027 success=False len=400
+[29/30] episode=episode_000028 success=False len=400
+[30/30] episode=episode_000029 success=False len=400
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 427.40964913368225,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 427.40964913368225,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+{
+  "task": "Can",
+  "method": "soe",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null,
+  "eval_wall_time_seconds": 427.40964913368225,
+  "checkpoint": "/anvme/workspace/b306dd11-f2s/F2S/SOE/results/can/soe/seed_0/round_0/logs/soe_can_lowdim_baseline/2026-09-04-22-44-00/ckpt/policy_last.ckpt",
+  "config": "configs/soe_can_lowdim_baseline.json",
+  "enable_exploration": true
+}
+=== unguided_latent_repair seed=2 (15:25:35) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_joint_pos_cos', 'robot0_eef_vel_lin', 'robot0_gripper_qvel', 'robot0_joint_vel', 'robot0_gripper_qpos', 'robot0_eef_vel_ang', 'robot0_eef_pos', 'robot0_eef_quat', 'object', 'robot0_joint_pos_sin', 'robot0_joint_pos']
+resnet out features dim: 64
+obs_feature_dim: 59
+horizon:  20
+inference_horizon:  20
+Created environment with name PickPlaceCan
+Action size is 7
+[unguided_latent_repair eval 1/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 2/30] success=False len=400 repairs_attempted=46
+[unguided_latent_repair eval 3/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 4/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 5/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 6/30] success=False len=400 repairs_attempted=22
+[unguided_latent_repair eval 7/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 8/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 9/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 10/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 11/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 12/30] success=False len=400 repairs_attempted=38
+[unguided_latent_repair eval 13/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 14/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 15/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 16/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 17/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 18/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 19/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 20/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 21/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 22/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 23/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 24/30] success=False len=400 repairs_attempted=23
+[unguided_latent_repair eval 25/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 26/30] success=False len=400 repairs_attempted=19
+[unguided_latent_repair eval 27/30] success=False len=400 repairs_attempted=20
+[unguided_latent_repair eval 28/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 29/30] success=False len=400 repairs_attempted=21
+[unguided_latent_repair eval 30/30] success=False len=400 repairs_attempted=19
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+{
+  "task": "Can",
+  "method": "unguided_latent_repair",
+  "seed": 2,
+  "round": 0,
+  "success_rate": 0.0,
+  "failure_rate": 1.0,
+  "recovery_rate": 0.0,
+  "collision_rate": 0.0,
+  "object_drop_rate": 0.0,
+  "mean_episode_length": 400.0,
+  "rollout_count": 30,
+  "training_time_seconds": null
+}
+=== SUMMARY (Alex) vs original machine ===
+fixed_policy               Alex=[0.8333333333333334, 0.8, 0.7]  original=[0.7333, 0.7333, 0.7]
+soe                        Alex=[0.0, 0.0, 0.0]  original=[0.0, 0.0, 0.0]
+unguided_latent_repair     Alex=[0.0, 0.0, 0.0]  original=[0.0, 0.0, 0.0]
+=== DONE Tue Sep  8 03:59:09 PM CEST 2026 ===
+=== JOB_STATISTICS ===
+=== current date     : Tue Sep  8 15:59:09 CEST 2026
+= Job-ID             : 4200859 on alex
+= Job-Name           : f2s_repro_main1
+= Job-Command        : /anvme/workspace/b306dd11-f2s/F2S/SOE/slurm/repro_main_table_part1.sbatch
+= Initial workdir    : /anvme/workspace/b306dd11-f2s/F2S/SOE
+= Queue/Partition    : a100
+= Slurm account      : b306dd with QOS=normal
+= Requested resources:  for 08:00:00
+= Elapsed runtime    : 02:21:11
+= Total RAM usage    : 5.6 GiB of assigned  GiB (%)
+= Node list          : a0801
+= Subm/Elig/Start/End: 2026-09-08T13:35:19 / 2026-09-08T13:35:19 / 2026-09-08T13:37:58 / 2026-09-08T15:59:09
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              85.5G   104.9G   209.7G        N/A     114K     500K   1,000K        N/A    
+    /home/atuin           937.2G     0.0K     0.0K        N/A     246K                          N/A    
+    /home/vault           168.0G  1048.6G  2097.2G        N/A   3,763      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+    /anvme                  6.0T     0.0K     0.0K        N/A   1,227K   9,985K  11,985K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 166526, 5 %, 0 %, 1850 MiB, 208223 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 168649, 5 %, 0 %, 1850 MiB, 432299 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 171267, 19 %, 0 %, 1850 MiB, 2239113 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 178669, 6 %, 0 %, 1850 MiB, 191913 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 180600, 5 %, 0 %, 1850 MiB, 430547 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 183293, 19 %, 0 %, 1850 MiB, 2205755 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 190770, 5 %, 0 %, 1850 MiB, 224563 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 192977, 5 %, 0 %, 1850 MiB, 433444 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 195652, 19 %, 0 %, 1850 MiB, 2012523 ms

@@ -1,0 +1,123 @@
+{
+  "rounds": [
+    {
+      "round": 0,
+      "git_commit": "c3973e4c19e30083067a86756757ab4f8a404ac4",
+      "eval_metrics": {
+        "task": "Can",
+        "method": "F2S",
+        "seed": 0,
+        "round": 0,
+        "success_rate": 0.74,
+        "failure_rate": 0.26,
+        "recovery_rate": 0.0,
+        "collision_rate": 0.0,
+        "object_drop_rate": 0.0,
+        "mean_episode_length": 181.36,
+        "rollout_count": 50,
+        "training_time_seconds": null
+      },
+      "discovery": {
+        "status": "ok",
+        "n_segments": 13,
+        "chosen_k": 2,
+        "n_candidates_generated": 3200,
+        "n_safety_rejected": 0,
+        "n_executed": 20,
+        "n_skills_added": 0
+      },
+      "world_model_result": {
+        "state_dim": 26,
+        "action_dim": 7,
+        "hidden_dim": 256,
+        "ensemble_size": 1,
+        "epochs": 50,
+        "best_val_mse": 0.000287099537672475,
+        "constant_state_val_mse": 0.020247740671038628,
+        "beats_constant_baseline": true,
+        "training_time_seconds": 5.096907615661621
+      },
+      "archive_size": 0
+    },
+    {
+      "round": 1,
+      "git_commit": "c3973e4c19e30083067a86756757ab4f8a404ac4",
+      "eval_metrics": {
+        "task": "Can",
+        "method": "F2S",
+        "seed": 0,
+        "round": 1,
+        "success_rate": 0.76,
+        "failure_rate": 0.24,
+        "recovery_rate": 0.0,
+        "collision_rate": 0.0,
+        "object_drop_rate": 0.0,
+        "mean_episode_length": 179.32,
+        "rollout_count": 50,
+        "training_time_seconds": null
+      },
+      "discovery": {
+        "status": "ok",
+        "n_segments": 12,
+        "chosen_k": 2,
+        "n_candidates_generated": 2560,
+        "n_safety_rejected": 2,
+        "n_executed": 16,
+        "n_skills_added": 0
+      },
+      "world_model_result": {
+        "state_dim": 26,
+        "action_dim": 7,
+        "hidden_dim": 256,
+        "ensemble_size": 1,
+        "epochs": 50,
+        "best_val_mse": 0.0001045111202984117,
+        "constant_state_val_mse": 0.018992874771356583,
+        "beats_constant_baseline": true,
+        "training_time_seconds": 8.743197917938232
+      },
+      "archive_size": 0
+    },
+    {
+      "round": 2,
+      "git_commit": "c3973e4c19e30083067a86756757ab4f8a404ac4",
+      "eval_metrics": {
+        "task": "Can",
+        "method": "F2S",
+        "seed": 0,
+        "round": 2,
+        "success_rate": 0.66,
+        "failure_rate": 0.33999999999999997,
+        "recovery_rate": 0.0,
+        "collision_rate": 0.0,
+        "object_drop_rate": 0.0,
+        "mean_episode_length": 208.7,
+        "rollout_count": 50,
+        "training_time_seconds": null
+      },
+      "discovery": {
+        "status": "ok",
+        "n_segments": 17,
+        "chosen_k": 4,
+        "n_candidates_generated": 4800,
+        "n_safety_rejected": 6,
+        "n_executed": 30,
+        "n_skills_added": 0
+      },
+      "world_model_result": {
+        "state_dim": 26,
+        "action_dim": 7,
+        "hidden_dim": 256,
+        "ensemble_size": 1,
+        "epochs": 50,
+        "best_val_mse": 9.291579044656828e-05,
+        "constant_state_val_mse": 0.01892917789518833,
+        "beats_constant_baseline": true,
+        "training_time_seconds": 14.211852312088013
+      },
+      "archive_size": 0
+    }
+  ],
+  "total_wall_time_seconds": 857.3639690876007,
+  "final_archive_size": 0
+}

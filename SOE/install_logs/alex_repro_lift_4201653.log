@@ -1,0 +1,354 @@
+### Starting TaskPrologue of job 4201653 on a0805 at Tue Sep  8 06:00:14 PM CEST 2026
+Running on cores 0-15 with governor schedutil
+Tue Sep  8 18:00:14 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:0E:00.0 Off |                    0 |
+| N/A   37C    P0             58W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== Tue Sep  8 06:00:15 PM CEST 2026 | node a0805 | job 4201653 | NVIDIA A100-SXM4-40GB ===
+
+=== [1/5] Lift baseline (reusing the checkpoint trained by job 4201269) ===
+  F2S_SKIP_LIFT_TRAIN set -- skipping the 300-epoch retrain
+Lift checkpoint: /anvme/workspace/b306dd11-f2s/F2S/SOE/results/lift/soe/seed_0/round_0/logs/soe_lift_lowdim_baseline/2026-09-08-17-28-19/ckpt/policy_last.ckpt
+Epoch 299
+Train loss: 0.028367 loss: 0.028367 
+
+=== [2/5] diagnose_lift_full_pipeline (18:00:15) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_quat', 'robot0_eef_vel_lin', 'robot0_gripper_qvel', 'object', 'robot0_eef_pos', 'robot0_gripper_qpos', 'robot0_joint_vel', 'robot0_joint_pos_cos', 'robot0_joint_pos_sin', 'robot0_eef_vel_ang', 'robot0_joint_pos']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+[eval 1/30] success=True len=43
+[eval 2/30] success=True len=120
+[eval 3/30] success=True len=35
+[eval 4/30] success=True len=125
+[eval 5/30] success=True len=34
+[eval 6/30] success=True len=36
+[eval 7/30] success=False len=400
+[eval 8/30] success=True len=50
+[eval 9/30] success=True len=44
+[eval 10/30] success=True len=72
+[eval 11/30] success=True len=45
+[eval 12/30] success=True len=51
+[eval 13/30] success=True len=51
+[eval 14/30] success=True len=51
+[eval 15/30] success=True len=37
+[eval 16/30] success=True len=108
+[eval 17/30] success=True len=47
+[eval 18/30] success=True len=37
+[eval 19/30] success=True len=42
+[eval 20/30] success=True len=45
+[eval 21/30] success=True len=40
+[eval 22/30] success=True len=121
+[eval 23/30] success=True len=103
+[eval 24/30] success=True len=37
+[eval 25/30] success=True len=42
+[eval 26/30] success=True len=60
+[eval 27/30] success=True len=38
+[eval 28/30] success=True len=41
+[eval 29/30] success=True len=44
+[eval 30/30] success=True len=181
+
+Baseline Lift policy: 29/30 = 96.7% success
+epoch 0: train_mse=0.002817 val_mse=0.001001
+epoch 1: train_mse=0.000964 val_mse=0.000860
+epoch 2: train_mse=0.000879 val_mse=0.000766
+epoch 3: train_mse=0.000770 val_mse=0.000715
+epoch 4: train_mse=0.000723 val_mse=0.000678
+epoch 5: train_mse=0.000710 val_mse=0.000654
+epoch 6: train_mse=0.000687 val_mse=0.000637
+epoch 7: train_mse=0.000656 val_mse=0.000618
+epoch 8: train_mse=0.000624 val_mse=0.000596
+epoch 9: train_mse=0.000601 val_mse=0.000572
+epoch 10: train_mse=0.000568 val_mse=0.000550
+epoch 11: train_mse=0.000555 val_mse=0.000526
+epoch 12: train_mse=0.000499 val_mse=0.000501
+epoch 13: train_mse=0.000462 val_mse=0.000486
+epoch 14: train_mse=0.000424 val_mse=0.000467
+epoch 15: train_mse=0.000385 val_mse=0.000448
+epoch 16: train_mse=0.000354 val_mse=0.000457
+epoch 17: train_mse=0.000319 val_mse=0.000442
+epoch 18: train_mse=0.000293 val_mse=0.000406
+epoch 19: train_mse=0.000270 val_mse=0.000372
+epoch 20: train_mse=0.000248 val_mse=0.000355
+epoch 21: train_mse=0.000227 val_mse=0.000344
+epoch 22: train_mse=0.000222 val_mse=0.000330
+epoch 23: train_mse=0.000204 val_mse=0.000316
+epoch 24: train_mse=0.000200 val_mse=0.000319
+epoch 25: train_mse=0.000187 val_mse=0.000314
+epoch 26: train_mse=0.000184 val_mse=0.000336
+epoch 27: train_mse=0.000177 val_mse=0.000303
+epoch 28: train_mse=0.000185 val_mse=0.000323
+epoch 29: train_mse=0.000171 val_mse=0.000316
+epoch 30: train_mse=0.000165 val_mse=0.000336
+epoch 31: train_mse=0.000162 val_mse=0.000319
+epoch 32: train_mse=0.000163 val_mse=0.000325
+epoch 33: train_mse=0.000157 val_mse=0.000342
+epoch 34: train_mse=0.000155 val_mse=0.000337
+epoch 35: train_mse=0.000153 val_mse=0.000332
+epoch 36: train_mse=0.000150 val_mse=0.000331
+epoch 37: train_mse=0.000145 val_mse=0.000337
+epoch 38: train_mse=0.000151 val_mse=0.000359
+epoch 39: train_mse=0.000148 val_mse=0.000319
+epoch 40: train_mse=0.000147 val_mse=0.000351
+epoch 41: train_mse=0.000145 val_mse=0.000327
+epoch 42: train_mse=0.000149 val_mse=0.000348
+epoch 43: train_mse=0.000146 val_mse=0.000357
+epoch 44: train_mse=0.000136 val_mse=0.000352
+epoch 45: train_mse=0.000144 val_mse=0.000363
+epoch 46: train_mse=0.000138 val_mse=0.000371
+epoch 47: train_mse=0.000135 val_mse=0.000362
+epoch 48: train_mse=0.000141 val_mse=0.000374
+epoch 49: train_mse=0.000140 val_mse=0.000361
+
+World model: val_mse=0.000303, constant_baseline=0.018652, beats_constant=True
+
+1 failure episodes available; testing 1 with CEM (population=64, iters=5, executing top 8 each).
+  episode=episode_000006 t_f=0 cube_z_at_tf=0.8311 (success needs > 0.8400): best predicted_height=0.8893
+    -> 0/8 executed CEM candidates succeeded
+
+TOTAL: 0/8 CEM candidates succeeded (0.0%) across 1 Lift failure states.
+
+=== [3/5] diagnose_lift_skill_archiving (18:02:14) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_eef_quat', 'robot0_eef_vel_ang', 'robot0_gripper_qpos', 'robot0_eef_pos', 'robot0_joint_pos', 'robot0_gripper_qvel', 'robot0_joint_pos_cos', 'object', 'robot0_eef_vel_lin', 'robot0_joint_vel', 'robot0_joint_pos_sin']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+Target failure state: episode_000005 t_f=35 cube_z=0.8327
+
+Executing top 8 candidates directly to find a successful one to validate...
+  candidate 0: predicted_height=0.9177 -> actual_success=False
+  candidate 1: predicted_height=0.9118 -> actual_success=False
+  candidate 2: predicted_height=0.9054 -> actual_success=False
+  candidate 3: predicted_height=0.9048 -> actual_success=False
+  candidate 4: predicted_height=0.9030 -> actual_success=False
+  candidate 5: predicted_height=0.9026 -> actual_success=False
+  candidate 6: predicted_height=0.9008 -> actual_success=False
+  candidate 7: predicted_height=0.8996 -> actual_success=True
+
+Running Day-19 validation (10 configs) on the successful candidate...
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  object_position: fail
+  friction: SUCCESS
+  mass: fail
+
+Validation success rate: 1/10 = 10.0%
+
+Archive decision: REJECTED (validation_success_rate_below_threshold)
+Saved: results/lift/world_model_diag/skill_archive.json
+
+=== [4/5] diagnose_lift_robust_cem (18:02:41) ===
+diffusion policy source root: /anvme/workspace/b306dd11-f2s/F2S/SOE/simulation/../src
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: low_dim with keys: ['robot0_gripper_qvel', 'robot0_joint_pos_sin', 'robot0_eef_vel_lin', 'robot0_gripper_qpos', 'robot0_eef_pos', 'robot0_joint_pos_cos', 'robot0_joint_vel', 'robot0_eef_vel_ang', 'robot0_joint_pos', 'robot0_eef_quat', 'object']
+resnet out features dim: 64
+obs_feature_dim: 55
+horizon:  20
+inference_horizon:  20
+Created environment with name Lift
+Action size is 7
+Target failure state: episode_000005 t_f=35 cube_z=0.8327
+
+Running neighborhood-robust CEM (jitter=1cm, 4 neighbors + exact state)...
+
+Executing top 8 robust-CEM candidates directly (from the exact failure state)...
+  candidate 0: mean_nb_height=0.9176 min_nb_height=0.9175 -> actual_success=False
+  candidate 1: mean_nb_height=0.9118 min_nb_height=0.9117 -> actual_success=False
+  candidate 2: mean_nb_height=0.9054 min_nb_height=0.9054 -> actual_success=False
+  candidate 3: mean_nb_height=0.9048 min_nb_height=0.9047 -> actual_success=False
+  candidate 4: mean_nb_height=0.9029 min_nb_height=0.9028 -> actual_success=True
+  candidate 5: mean_nb_height=0.9026 min_nb_height=0.9025 -> actual_success=False
+  candidate 6: mean_nb_height=0.9008 min_nb_height=0.9006 -> actual_success=True
+  candidate 7: mean_nb_height=0.8995 min_nb_height=0.8995 -> actual_success=True
+Direct (exact-state) success: 3/8
+
+Tolerance sweep for the robust-CEM-selected candidate (same protocol as the single-point diagnostic):
+  offset<= 0.5cm: 1/10 succeeded
+  offset<= 1.0cm: 0/10 succeeded
+  offset<= 2.0cm: 0/10 succeeded
+  offset<= 3.0cm: 0/10 succeeded
+
+Full Day-19 validation (10 configs) for comparison with the single-point result (2/10)...
+Day-19 validation: 0/10 = 0.0%
+Archive decision: REJECTED (validation_success_rate_below_threshold)
+
+=== [5/5] diagnose_lift_ensemble_uncertainty (18:03:56) ===
+epoch 0: train_mse=0.002301 val_mse=0.000739
+epoch 1: train_mse=0.000955 val_mse=0.000718
+epoch 2: train_mse=0.000860 val_mse=0.000677
+epoch 3: train_mse=0.000761 val_mse=0.000653
+epoch 4: train_mse=0.000702 val_mse=0.000633
+epoch 5: train_mse=0.000699 val_mse=0.000616
+epoch 6: train_mse=0.000646 val_mse=0.000598
+epoch 7: train_mse=0.000641 val_mse=0.000576
+epoch 8: train_mse=0.000597 val_mse=0.000555
+epoch 9: train_mse=0.000562 val_mse=0.000535
+epoch 10: train_mse=0.000540 val_mse=0.000516
+epoch 11: train_mse=0.000500 val_mse=0.000493
+epoch 12: train_mse=0.000487 val_mse=0.000473
+epoch 13: train_mse=0.000438 val_mse=0.000459
+epoch 14: train_mse=0.000415 val_mse=0.000442
+epoch 15: train_mse=0.000387 val_mse=0.000423
+epoch 16: train_mse=0.000359 val_mse=0.000408
+epoch 17: train_mse=0.000330 val_mse=0.000394
+epoch 18: train_mse=0.000306 val_mse=0.000380
+epoch 19: train_mse=0.000293 val_mse=0.000362
+epoch 20: train_mse=0.000270 val_mse=0.000350
+epoch 21: train_mse=0.000252 val_mse=0.000331
+epoch 22: train_mse=0.000234 val_mse=0.000316
+epoch 23: train_mse=0.000216 val_mse=0.000309
+epoch 24: train_mse=0.000214 val_mse=0.000301
+epoch 25: train_mse=0.000203 val_mse=0.000291
+epoch 26: train_mse=0.000196 val_mse=0.000292
+epoch 27: train_mse=0.000181 val_mse=0.000276
+epoch 28: train_mse=0.000181 val_mse=0.000303
+epoch 29: train_mse=0.000176 val_mse=0.000281
+epoch 30: train_mse=0.000173 val_mse=0.000311
+epoch 31: train_mse=0.000171 val_mse=0.000281
+epoch 32: train_mse=0.000165 val_mse=0.000281
+epoch 33: train_mse=0.000158 val_mse=0.000283
+epoch 34: train_mse=0.000157 val_mse=0.000294
+epoch 35: train_mse=0.000155 val_mse=0.000308
+epoch 36: train_mse=0.000159 val_mse=0.000291
+epoch 37: train_mse=0.000151 val_mse=0.000308
+epoch 38: train_mse=0.000150 val_mse=0.000289
+epoch 39: train_mse=0.000144 val_mse=0.000295
+epoch 40: train_mse=0.000143 val_mse=0.000294
+epoch 41: train_mse=0.000145 val_mse=0.000292
+epoch 42: train_mse=0.000144 val_mse=0.000291
+epoch 43: train_mse=0.000143 val_mse=0.000283
+epoch 44: train_mse=0.000138 val_mse=0.000293
+epoch 45: train_mse=0.000141 val_mse=0.000273
+epoch 46: train_mse=0.000144 val_mse=0.000294
+epoch 47: train_mse=0.000145 val_mse=0.000287
+epoch 48: train_mse=0.000142 val_mse=0.000278
+epoch 49: train_mse=0.000141 val_mse=0.000290
+Ensemble (E=3) world model: val_mse=0.000273, beats_constant=True
+
+Target: episode_000005 t_f=35, probing with the policy's own 5-step action chunk from that state.
+offset(cm)  mean_final_height  ensemble_var(x)  known_real_success_rate
+       0.0             0.8335       0.00195424                     None
+       0.5             0.8335       0.00195417                     2/10
+       1.0             0.8336       0.00194780                     0/10
+       2.0             0.8336       0.00194987                     0/10
+       3.0             0.8336       0.00194776                     0/10
+
+Ensemble variance ratio (1cm vs exact state): 1.00x
+Ensemble disagreement does NOT grow substantially near the boundary -- three instances of the same small-MLP architecture share the same smoothness bias, so this signal would not have caught the brittleness found earlier.
+
+=== copying sandbox results back as *_alex ===
+  -> results/lift/world_model_diag_alex
+  -> results/lift/world_model_ensemble_diag_alex
+
+=== Alex vs original machine ===
+--- world_model_diag/diagnostic_summary.json
+    baseline_success_rate              orig=0.8666666666666667  Alex=0.9666666666666667   <-- differs
+    n_failure_states_tested            orig=             4  Alex=             1   <-- differs
+    total_candidates_executed          orig=            32  Alex=             8   <-- differs
+    total_candidates_succeeded         orig=             7  Alex=             0   <-- differs
+--- world_model_diag/skill_validation_summary.json
+    archived                           orig=         False  Alex=         False
+    rejection_reason                   orig=validation_success_rate_below_threshold  Alex=validation_success_rate_below_threshold
+    skill_success_rate                 orig=           0.2  Alex=           0.1   <-- differs
+    t_f                                orig=           112  Alex=            35   <-- differs
+    target_episode_id                  orig=episode_000005  Alex=episode_000005
+--- world_model_diag/robust_cem_summary.json
+    archived                           orig=         False  Alex=         False
+    day19_validation_success_rate      orig=           0.2  Alex=           0.0   <-- differs
+    direct_success_count               orig=             6  Alex=             3   <-- differs
+    found_candidate                    orig=          True  Alex=          True
+    rejection_reason                   orig=validation_success_rate_below_threshold  Alex=validation_success_rate_below_threshold
+    target_episode_id                  orig=episode_000005  Alex=episode_000005
+--- world_model_ensemble_diag/uncertainty_vs_offset.json
+    horizon_wm                         orig=             5  Alex=             5
+    t_f                                orig=           112  Alex=            35   <-- differs
+    target_episode_id                  orig=episode_000005  Alex=episode_000005
+    variance_ratio_1cm_vs_exact        orig=1.0011474531459976  Alex=0.9967055341379185   <-- differs
+--- world_model_diag/result.json
+    action_dim                         orig=             7  Alex=             7
+    beats_constant_baseline            orig=          True  Alex=          True
+    best_val_mse                       orig=0.00011318448378005996  Alex=0.0003031028900295496   <-- differs
+    constant_state_val_mse             orig=0.020340511575341225  Alex=0.01865237019956112   <-- differs
+    ensemble_size                      orig=             1  Alex=             1
+    epochs                             orig=            50  Alex=            50
+    hidden_dim                         orig=           256  Alex=           256
+    state_dim                          orig=            26  Alex=            26
+    training_time_seconds              orig=2.6468160152435303  Alex=1.8371164798736572   <-- differs
+--- world_model_ensemble_diag/result.json
+    action_dim                         orig=             7  Alex=             7
+    beats_constant_baseline            orig=          True  Alex=          True
+    best_val_mse                       orig=0.00010795520938700065  Alex=0.0002734631416387856   <-- differs
+    constant_state_val_mse             orig=0.020340511575341225  Alex=0.01865237019956112   <-- differs
+    ensemble_size                      orig=             3  Alex=             3
+    epochs                             orig=            50  Alex=            50
+    hidden_dim                         orig=           256  Alex=           256
+    state_dim                          orig=            26  Alex=            26
+    training_time_seconds              orig=6.620836973190308  Alex=4.693724155426025   <-- differs
+=== DONE Tue Sep  8 06:04:05 PM CEST 2026 ===
+=== JOB_STATISTICS ===
+=== current date     : Tue Sep  8 18:04:05 CEST 2026
+= Job-ID             : 4201653 on alex
+= Job-Name           : f2s_repro_lift
+= Job-Command        : /anvme/workspace/b306dd11-f2s/F2S/SOE/slurm/repro_lift.sbatch
+= Initial workdir    : /anvme/workspace/b306dd11-f2s/F2S/SOE
+= Queue/Partition    : a100
+= Slurm account      : b306dd with QOS=normal
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:03:56
+= Total RAM usage    : 5.5 GiB of assigned  GiB (%)
+= Node list          : a0805
+= Subm/Elig/Start/End: 2026-09-08T17:59:28 / 2026-09-08T17:59:28 / 2026-09-08T18:00:09 / 2026-09-08T18:04:05
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc              86.0G   104.9G   209.7G        N/A     114K     500K   1,000K        N/A    
+    /home/atuin           937.2G     0.0K     0.0K        N/A     246K                          N/A    
+    /home/vault           168.0G  1048.6G  2097.2G        N/A   3,763      200K     400K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+    /anvme                  6.0T     0.0K     0.0K        N/A   1,229K   9,985K  11,985K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 226635, 5 %, 0 %, 2392 MiB, 109791 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 229081, 2 %, 0 %, 2384 MiB, 22991 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 229958, 0 %, 0 %, 2384 MiB, 71641 ms
+NVIDIA A100-SXM4-40GB, 00000000:0E:00.0, 233636, 11 %, 0 %, 914 MiB, 7327 ms

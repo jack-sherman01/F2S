@@ -1,0 +1,16 @@
+{
+  "horizons_mse": {
+    "1": 0.0027396713849157095,
+    "2": 0.005557423923164606,
+    "3": 0.008996253833174706,
+    "5": 0.015891078859567642,
+    "8": 0.026265688240528107,
+    "12": 0.04132053256034851,
+    "16": 0.059040091931819916,
+    "20": 0.0803493857383728
+  },
+  "num_windows": 1702,
+  "max_horizon_evaluated": 20,
+  "single_step_val_mse_from_training": 0.00011100475967396051,
+  "note": "5-step MSE diverges relative to 1-step (>3x); per proposal Day 13.2, consider setting the main experimental horizon H_WM=3 instead of 5."
+}

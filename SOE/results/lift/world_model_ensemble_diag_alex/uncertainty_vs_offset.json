@@ -1,0 +1,33 @@
+{
+  "target_episode_id": "episode_000005",
+  "t_f": 35,
+  "horizon_wm": 5,
+  "results": {
+    "0.0": {
+      "mean_final_height": 0.8334845304489136,
+      "std_final_height_across_probes": 0.0,
+      "mean_ensemble_variance": 0.0019542393274605274
+    },
+    "0.5": {
+      "mean_final_height": 0.8334706574678421,
+      "std_final_height_across_probes": 4.661333552315875e-05,
+      "mean_ensemble_variance": 0.001954165840288624
+    },
+    "1.0": {
+      "mean_final_height": 0.8335751220583916,
+      "std_final_height_across_probes": 6.835460973066086e-05,
+      "mean_ensemble_variance": 0.0019478011527098715
+    },
+    "2.0": {
+      "mean_final_height": 0.8335967287421227,
+      "std_final_height_across_probes": 0.00010651080653617829,
+      "mean_ensemble_variance": 0.0019498672190820798
+    },
+    "3.0": {
+      "mean_final_height": 0.8335712254047394,
+      "std_final_height_across_probes": 0.00036563477775563354,
+      "mean_ensemble_variance": 0.001947760465554893
+    }
+  },
+  "variance_ratio_1cm_vs_exact": 0.9967055341379185
+}

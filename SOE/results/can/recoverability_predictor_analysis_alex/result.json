@@ -1,0 +1,2269 @@
+{
+  "n_combos": 224,
+  "n_combos_with_any_success": 6,
+  "n_combos_zero_success": 218,
+  "spearman_goal_error_vs_success_rate": {
+    "statistic": -0.26691310060287743,
+    "pvalue": 5.208063662479328e-05
+  },
+  "spearman_task_progress_vs_success_rate": {
+    "statistic": 0.26691310060287743,
+    "pvalue": 5.208063662479328e-05
+  },
+  "point_biserial_goal_error_vs_any_success": {
+    "statistic": -0.2889453889033472,
+    "pvalue": 1.1105828338825493e-05
+  },
+  "point_biserial_task_progress_vs_any_success": {
+    "statistic": 0.2889453848990273,
+    "pvalue": 1.1105831591784039e-05
+  },
+  "auc_neg_goal_error_predicts_any_success": 0.9770642201834862,
+  "auc_task_progress_predicts_any_success": 0.9770642201834862,
+  "goal_error_mean_success_combos": 0.27604757249355316,
+  "goal_error_mean_zero_success_combos": 0.5051029416809388,
+  "task_progress_mean_success_combos": 0.7239524225393931,
+  "task_progress_mean_zero_success_combos": 0.4948970583874151,
+  "rows": [
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000000",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3743041157722473,
+      "task_progress": 0.6256958842277527
+    },
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000000",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.47826695442199707,
+      "task_progress": 0.5217330455780029
+    },
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000000",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5372344851493835,
+      "task_progress": 0.46276548504829407
+    },
+    {
+      "state_idx": 0,
+      "episode_id": "episode_000000",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5912117958068848,
+      "task_progress": 0.40878820419311523
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000003",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5285261869430542,
+      "task_progress": 0.4714738428592682
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000003",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5328104496002197,
+      "task_progress": 0.46718958020210266
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000003",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5302127003669739,
+      "task_progress": 0.4697873294353485
+    },
+    {
+      "state_idx": 1,
+      "episode_id": "episode_000003",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.531144380569458,
+      "task_progress": 0.46885567903518677
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000007",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836784064769745,
+      "task_progress": 0.6163215637207031
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000007",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.383657306432724,
+      "task_progress": 0.6163426637649536
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000007",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836451470851898,
+      "task_progress": 0.6163548827171326
+    },
+    {
+      "state_idx": 2,
+      "episode_id": "episode_000007",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836236894130707,
+      "task_progress": 0.6163763403892517
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000011",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5029847621917725,
+      "task_progress": 0.49701520800590515
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000011",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5020166635513306,
+      "task_progress": 0.49798333644866943
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000011",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.501643717288971,
+      "task_progress": 0.49835625290870667
+    },
+    {
+      "state_idx": 3,
+      "episode_id": "episode_000011",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5012701749801636,
+      "task_progress": 0.4987298250198364
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000023",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.26568856835365295,
+      "task_progress": 0.7343114018440247
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000023",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.28390440344810486,
+      "task_progress": 0.7160955667495728
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000023",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3037208318710327,
+      "task_progress": 0.6962792277336121
+    },
+    {
+      "state_idx": 4,
+      "episode_id": "episode_000023",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3313792943954468,
+      "task_progress": 0.6686207056045532
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000047",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.44621598720550537,
+      "task_progress": 0.5537840127944946
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000047",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.44372040033340454,
+      "task_progress": 0.5562795996665955
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000047",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.44905683398246765,
+      "task_progress": 0.55094313621521
+    },
+    {
+      "state_idx": 5,
+      "episode_id": "episode_000047",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4496043920516968,
+      "task_progress": 0.5503956079483032
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000049",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.2760674059391022,
+      "task_progress": 0.7239325642585754
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000049",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 1,
+      "success_rate": 0.0625,
+      "goal_error": 0.3031199872493744,
+      "task_progress": 0.6968799829483032
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000049",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3027198016643524,
+      "task_progress": 0.6972801685333252
+    },
+    {
+      "state_idx": 6,
+      "episode_id": "episode_000049",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.31882166862487793,
+      "task_progress": 0.6811783313751221
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000006",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6933180689811707,
+      "task_progress": 0.30668196082115173
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000006",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6933180689811707,
+      "task_progress": 0.30668196082115173
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000006",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6933180689811707,
+      "task_progress": 0.30668196082115173
+    },
+    {
+      "state_idx": 7,
+      "episode_id": "episode_000006",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6933180689811707,
+      "task_progress": 0.30668196082115173
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000019",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.48728805780410767,
+      "task_progress": 0.5127119421958923
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000019",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.48728805780410767,
+      "task_progress": 0.5127119421958923
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000019",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.48728805780410767,
+      "task_progress": 0.5127119421958923
+    },
+    {
+      "state_idx": 8,
+      "episode_id": "episode_000019",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.48728805780410767,
+      "task_progress": 0.5127119421958923
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000020",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6623373627662659,
+      "task_progress": 0.3376626670360565
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000020",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6586483716964722,
+      "task_progress": 0.34135162830352783
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000020",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6586216688156128,
+      "task_progress": 0.3413783311843872
+    },
+    {
+      "state_idx": 9,
+      "episode_id": "episode_000020",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6586238741874695,
+      "task_progress": 0.34137609601020813
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000023",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.686586320400238,
+      "task_progress": 0.3134135901927948
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000023",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6865332126617432,
+      "task_progress": 0.31346678733825684
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000023",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6865659952163696,
+      "task_progress": 0.313433974981308
+    },
+    {
+      "state_idx": 10,
+      "episode_id": "episode_000023",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6865365505218506,
+      "task_progress": 0.3134634792804718
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000026",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.39633575081825256,
+      "task_progress": 0.603664219379425
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000026",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4860718250274658,
+      "task_progress": 0.5139281749725342
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000026",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5274155139923096,
+      "task_progress": 0.4725845158100128
+    },
+    {
+      "state_idx": 11,
+      "episode_id": "episode_000026",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5281742811203003,
+      "task_progress": 0.4718257188796997
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000027",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.45545634627342224,
+      "task_progress": 0.5445436239242554
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000027",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.45719367265701294,
+      "task_progress": 0.5428063273429871
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000027",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4571974575519562,
+      "task_progress": 0.5428025126457214
+    },
+    {
+      "state_idx": 12,
+      "episode_id": "episode_000027",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.457210510969162,
+      "task_progress": 0.5427895188331604
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000028",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5184069275856018,
+      "task_progress": 0.4815930724143982
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000028",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.510743260383606,
+      "task_progress": 0.48925673961639404
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000028",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5078970193862915,
+      "task_progress": 0.4921029806137085
+    },
+    {
+      "state_idx": 13,
+      "episode_id": "episode_000028",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5076336860656738,
+      "task_progress": 0.49236631393432617
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000035",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.37713822722435,
+      "task_progress": 0.6228617429733276
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000035",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3829370439052582,
+      "task_progress": 0.6170629858970642
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000035",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.38635316491127014,
+      "task_progress": 0.6136468052864075
+    },
+    {
+      "state_idx": 14,
+      "episode_id": "episode_000035",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.37902069091796875,
+      "task_progress": 0.6209793090820312
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000037",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.43249812722206116,
+      "task_progress": 0.5675018429756165
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000037",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.43249762058258057,
+      "task_progress": 0.5675023794174194
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000037",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4325120747089386,
+      "task_progress": 0.5674879550933838
+    },
+    {
+      "state_idx": 15,
+      "episode_id": "episode_000037",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.432463139295578,
+      "task_progress": 0.5675368309020996
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000044",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6120041608810425,
+      "task_progress": 0.3879958689212799
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000044",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6128608584403992,
+      "task_progress": 0.3871391713619232
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000044",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6129025816917419,
+      "task_progress": 0.38709741830825806
+    },
+    {
+      "state_idx": 16,
+      "episode_id": "episode_000044",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6129088997840881,
+      "task_progress": 0.38709110021591187
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000045",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.43157538771629333,
+      "task_progress": 0.5684245824813843
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000045",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4287984073162079,
+      "task_progress": 0.5712015628814697
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000045",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.42875608801841736,
+      "task_progress": 0.571243941783905
+    },
+    {
+      "state_idx": 17,
+      "episode_id": "episode_000045",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.42873650789260864,
+      "task_progress": 0.5712634921073914
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000047",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6979967355728149,
+      "task_progress": 0.30200323462486267
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000047",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6937029361724854,
+      "task_progress": 0.3062970042228699
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000047",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.693713903427124,
+      "task_progress": 0.3062860667705536
+    },
+    {
+      "state_idx": 18,
+      "episode_id": "episode_000047",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6937119960784912,
+      "task_progress": 0.3062879741191864
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000002",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5444104671478271,
+      "task_progress": 0.45558956265449524
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000002",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5443817973136902,
+      "task_progress": 0.4556182026863098
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000002",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5443745851516724,
+      "task_progress": 0.45562535524368286
+    },
+    {
+      "state_idx": 19,
+      "episode_id": "episode_000002",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5444286465644836,
+      "task_progress": 0.45557132363319397
+    },
+    {
+      "state_idx": 20,
+      "episode_id": "episode_000005",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4011664092540741,
+      "task_progress": 0.5988336205482483
+    },
+    {
+      "state_idx": 20,
+      "episode_id": "episode_000005",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3999955654144287,
+      "task_progress": 0.6000044345855713
+    },
+    {
+      "state_idx": 20,
+      "episode_id": "episode_000005",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.40005433559417725,
+      "task_progress": 0.5999456644058228
+    },
+    {
+      "state_idx": 20,
+      "episode_id": "episode_000005",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3999887704849243,
+      "task_progress": 0.6000112295150757
+    },
+    {
+      "state_idx": 21,
+      "episode_id": "episode_000012",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5068576335906982,
+      "task_progress": 0.49314239621162415
+    },
+    {
+      "state_idx": 21,
+      "episode_id": "episode_000012",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5068503618240356,
+      "task_progress": 0.49314969778060913
+    },
+    {
+      "state_idx": 21,
+      "episode_id": "episode_000012",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5068269968032837,
+      "task_progress": 0.4931730329990387
+    },
+    {
+      "state_idx": 21,
+      "episode_id": "episode_000012",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5068323612213135,
+      "task_progress": 0.4931676387786865
+    },
+    {
+      "state_idx": 22,
+      "episode_id": "episode_000015",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7109562158584595,
+      "task_progress": 0.2890438139438629
+    },
+    {
+      "state_idx": 22,
+      "episode_id": "episode_000015",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7065416574478149,
+      "task_progress": 0.29345837235450745
+    },
+    {
+      "state_idx": 22,
+      "episode_id": "episode_000015",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7056945562362671,
+      "task_progress": 0.2943054735660553
+    },
+    {
+      "state_idx": 22,
+      "episode_id": "episode_000015",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7056925296783447,
+      "task_progress": 0.29430750012397766
+    },
+    {
+      "state_idx": 23,
+      "episode_id": "episode_000020",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.664030909538269,
+      "task_progress": 0.33596912026405334
+    },
+    {
+      "state_idx": 23,
+      "episode_id": "episode_000020",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6639921069145203,
+      "task_progress": 0.33600789308547974
+    },
+    {
+      "state_idx": 23,
+      "episode_id": "episode_000020",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6640408039093018,
+      "task_progress": 0.33595919609069824
+    },
+    {
+      "state_idx": 23,
+      "episode_id": "episode_000020",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.664046585559845,
+      "task_progress": 0.3359534442424774
+    },
+    {
+      "state_idx": 24,
+      "episode_id": "episode_000022",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.33995020389556885,
+      "task_progress": 0.6600498557090759
+    },
+    {
+      "state_idx": 24,
+      "episode_id": "episode_000022",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.441306471824646,
+      "task_progress": 0.558693528175354
+    },
+    {
+      "state_idx": 24,
+      "episode_id": "episode_000022",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5031965970993042,
+      "task_progress": 0.4968034327030182
+    },
+    {
+      "state_idx": 24,
+      "episode_id": "episode_000022",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5608770847320557,
+      "task_progress": 0.4391229748725891
+    },
+    {
+      "state_idx": 25,
+      "episode_id": "episode_000023",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6980457305908203,
+      "task_progress": 0.3019542098045349
+    },
+    {
+      "state_idx": 25,
+      "episode_id": "episode_000023",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6913149952888489,
+      "task_progress": 0.3086850047111511
+    },
+    {
+      "state_idx": 25,
+      "episode_id": "episode_000023",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6912403106689453,
+      "task_progress": 0.3087596893310547
+    },
+    {
+      "state_idx": 25,
+      "episode_id": "episode_000023",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6912604570388794,
+      "task_progress": 0.3087395131587982
+    },
+    {
+      "state_idx": 26,
+      "episode_id": "episode_000025",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7001449465751648,
+      "task_progress": 0.2998550832271576
+    },
+    {
+      "state_idx": 26,
+      "episode_id": "episode_000025",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.699682354927063,
+      "task_progress": 0.3003176152706146
+    },
+    {
+      "state_idx": 26,
+      "episode_id": "episode_000025",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6996747255325317,
+      "task_progress": 0.30032527446746826
+    },
+    {
+      "state_idx": 26,
+      "episode_id": "episode_000025",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6997014284133911,
+      "task_progress": 0.3002985715866089
+    },
+    {
+      "state_idx": 27,
+      "episode_id": "episode_000026",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.33217257261276245,
+      "task_progress": 0.6678274273872375
+    },
+    {
+      "state_idx": 27,
+      "episode_id": "episode_000026",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3922184109687805,
+      "task_progress": 0.6077815890312195
+    },
+    {
+      "state_idx": 27,
+      "episode_id": "episode_000026",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4316304624080658,
+      "task_progress": 0.5683695077896118
+    },
+    {
+      "state_idx": 27,
+      "episode_id": "episode_000026",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.48777511715888977,
+      "task_progress": 0.5122248530387878
+    },
+    {
+      "state_idx": 28,
+      "episode_id": "episode_000027",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5151277780532837,
+      "task_progress": 0.4848722219467163
+    },
+    {
+      "state_idx": 28,
+      "episode_id": "episode_000027",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5157715082168579,
+      "task_progress": 0.4842284619808197
+    },
+    {
+      "state_idx": 28,
+      "episode_id": "episode_000027",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5157347917556763,
+      "task_progress": 0.48426520824432373
+    },
+    {
+      "state_idx": 28,
+      "episode_id": "episode_000027",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5157228112220764,
+      "task_progress": 0.48427724838256836
+    },
+    {
+      "state_idx": 29,
+      "episode_id": "episode_000028",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4611286520957947,
+      "task_progress": 0.5388713479042053
+    },
+    {
+      "state_idx": 29,
+      "episode_id": "episode_000028",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.46247971057891846,
+      "task_progress": 0.5375202894210815
+    },
+    {
+      "state_idx": 29,
+      "episode_id": "episode_000028",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.46346819400787354,
+      "task_progress": 0.5365318059921265
+    },
+    {
+      "state_idx": 29,
+      "episode_id": "episode_000028",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.46542853116989136,
+      "task_progress": 0.5345714688301086
+    },
+    {
+      "state_idx": 30,
+      "episode_id": "episode_000030",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.1685875505208969,
+      "task_progress": 0.8314124345779419
+    },
+    {
+      "state_idx": 30,
+      "episode_id": "episode_000030",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.363713800907135,
+      "task_progress": 0.6362861394882202
+    },
+    {
+      "state_idx": 30,
+      "episode_id": "episode_000030",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3761478066444397,
+      "task_progress": 0.6238521933555603
+    },
+    {
+      "state_idx": 30,
+      "episode_id": "episode_000030",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.40604880452156067,
+      "task_progress": 0.5939511656761169
+    },
+    {
+      "state_idx": 31,
+      "episode_id": "episode_000032",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3876345753669739,
+      "task_progress": 0.6123654246330261
+    },
+    {
+      "state_idx": 31,
+      "episode_id": "episode_000032",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3876078426837921,
+      "task_progress": 0.6123921275138855
+    },
+    {
+      "state_idx": 31,
+      "episode_id": "episode_000032",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.38770678639411926,
+      "task_progress": 0.6122931838035583
+    },
+    {
+      "state_idx": 31,
+      "episode_id": "episode_000032",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.38760271668434143,
+      "task_progress": 0.6123972535133362
+    },
+    {
+      "state_idx": 32,
+      "episode_id": "episode_000034",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.634884238243103,
+      "task_progress": 0.3651157319545746
+    },
+    {
+      "state_idx": 32,
+      "episode_id": "episode_000034",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6357257962226868,
+      "task_progress": 0.3642742335796356
+    },
+    {
+      "state_idx": 32,
+      "episode_id": "episode_000034",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6356656551361084,
+      "task_progress": 0.3643343448638916
+    },
+    {
+      "state_idx": 32,
+      "episode_id": "episode_000034",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6357311010360718,
+      "task_progress": 0.36426886916160583
+    },
+    {
+      "state_idx": 33,
+      "episode_id": "episode_000035",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6206532120704651,
+      "task_progress": 0.3793468177318573
+    },
+    {
+      "state_idx": 33,
+      "episode_id": "episode_000035",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6206532120704651,
+      "task_progress": 0.3793468177318573
+    },
+    {
+      "state_idx": 33,
+      "episode_id": "episode_000035",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6206532120704651,
+      "task_progress": 0.3793468177318573
+    },
+    {
+      "state_idx": 33,
+      "episode_id": "episode_000035",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6206532120704651,
+      "task_progress": 0.3793468177318573
+    },
+    {
+      "state_idx": 34,
+      "episode_id": "episode_000041",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5880187749862671,
+      "task_progress": 0.4119812250137329
+    },
+    {
+      "state_idx": 34,
+      "episode_id": "episode_000041",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6440784335136414,
+      "task_progress": 0.35592153668403625
+    },
+    {
+      "state_idx": 34,
+      "episode_id": "episode_000041",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6407009363174438,
+      "task_progress": 0.35929906368255615
+    },
+    {
+      "state_idx": 34,
+      "episode_id": "episode_000041",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6376148462295532,
+      "task_progress": 0.36238518357276917
+    },
+    {
+      "state_idx": 35,
+      "episode_id": "episode_000043",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4450438916683197,
+      "task_progress": 0.5549560785293579
+    },
+    {
+      "state_idx": 35,
+      "episode_id": "episode_000043",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4560549259185791,
+      "task_progress": 0.5439450740814209
+    },
+    {
+      "state_idx": 35,
+      "episode_id": "episode_000043",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4613434374332428,
+      "task_progress": 0.5386565923690796
+    },
+    {
+      "state_idx": 35,
+      "episode_id": "episode_000043",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.46171990036964417,
+      "task_progress": 0.5382801294326782
+    },
+    {
+      "state_idx": 36,
+      "episode_id": "episode_000045",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7031148076057434,
+      "task_progress": 0.2968851923942566
+    },
+    {
+      "state_idx": 36,
+      "episode_id": "episode_000045",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7023332715034485,
+      "task_progress": 0.2976667582988739
+    },
+    {
+      "state_idx": 36,
+      "episode_id": "episode_000045",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7022956013679504,
+      "task_progress": 0.29770439863204956
+    },
+    {
+      "state_idx": 36,
+      "episode_id": "episode_000045",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.7023593783378601,
+      "task_progress": 0.2976406216621399
+    },
+    {
+      "state_idx": 37,
+      "episode_id": "episode_000000",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.37429723143577576,
+      "task_progress": 0.6257027983665466
+    },
+    {
+      "state_idx": 37,
+      "episode_id": "episode_000000",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.47826308012008667,
+      "task_progress": 0.5217369198799133
+    },
+    {
+      "state_idx": 37,
+      "episode_id": "episode_000000",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5372310876846313,
+      "task_progress": 0.46276888251304626
+    },
+    {
+      "state_idx": 37,
+      "episode_id": "episode_000000",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5912076830863953,
+      "task_progress": 0.40879231691360474
+    },
+    {
+      "state_idx": 38,
+      "episode_id": "episode_000003",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5289150476455688,
+      "task_progress": 0.47108495235443115
+    },
+    {
+      "state_idx": 38,
+      "episode_id": "episode_000003",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5327275395393372,
+      "task_progress": 0.46727243065834045
+    },
+    {
+      "state_idx": 38,
+      "episode_id": "episode_000003",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5302452445030212,
+      "task_progress": 0.46975475549697876
+    },
+    {
+      "state_idx": 38,
+      "episode_id": "episode_000003",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.531163215637207,
+      "task_progress": 0.4688367545604706
+    },
+    {
+      "state_idx": 39,
+      "episode_id": "episode_000007",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836784064769745,
+      "task_progress": 0.6163215637207031
+    },
+    {
+      "state_idx": 39,
+      "episode_id": "episode_000007",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.383657306432724,
+      "task_progress": 0.6163426637649536
+    },
+    {
+      "state_idx": 39,
+      "episode_id": "episode_000007",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836451470851898,
+      "task_progress": 0.6163548827171326
+    },
+    {
+      "state_idx": 39,
+      "episode_id": "episode_000007",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836236894130707,
+      "task_progress": 0.6163763403892517
+    },
+    {
+      "state_idx": 40,
+      "episode_id": "episode_000003",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5019482374191284,
+      "task_progress": 0.49805179238319397
+    },
+    {
+      "state_idx": 40,
+      "episode_id": "episode_000003",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5024123191833496,
+      "task_progress": 0.497587651014328
+    },
+    {
+      "state_idx": 40,
+      "episode_id": "episode_000003",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4957404136657715,
+      "task_progress": 0.5042595863342285
+    },
+    {
+      "state_idx": 40,
+      "episode_id": "episode_000003",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4874957799911499,
+      "task_progress": 0.5125042200088501
+    },
+    {
+      "state_idx": 41,
+      "episode_id": "episode_000004",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 1,
+      "success_rate": 0.0625,
+      "goal_error": 0.28238174319267273,
+      "task_progress": 0.7176182270050049
+    },
+    {
+      "state_idx": 41,
+      "episode_id": "episode_000004",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 1,
+      "success_rate": 0.0625,
+      "goal_error": 0.29327213764190674,
+      "task_progress": 0.7067278623580933
+    },
+    {
+      "state_idx": 41,
+      "episode_id": "episode_000004",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.30028432607650757,
+      "task_progress": 0.6997156739234924
+    },
+    {
+      "state_idx": 41,
+      "episode_id": "episode_000004",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3350129723548889,
+      "task_progress": 0.6649870276451111
+    },
+    {
+      "state_idx": 42,
+      "episode_id": "episode_000008",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.44135940074920654,
+      "task_progress": 0.5586405992507935
+    },
+    {
+      "state_idx": 42,
+      "episode_id": "episode_000008",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4386950731277466,
+      "task_progress": 0.5613049268722534
+    },
+    {
+      "state_idx": 42,
+      "episode_id": "episode_000008",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.43892666697502136,
+      "task_progress": 0.561073362827301
+    },
+    {
+      "state_idx": 42,
+      "episode_id": "episode_000008",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4389474093914032,
+      "task_progress": 0.5610526204109192
+    },
+    {
+      "state_idx": 43,
+      "episode_id": "episode_000005",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3834734261035919,
+      "task_progress": 0.6165265440940857
+    },
+    {
+      "state_idx": 43,
+      "episode_id": "episode_000005",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.45986995100975037,
+      "task_progress": 0.5401300191879272
+    },
+    {
+      "state_idx": 43,
+      "episode_id": "episode_000005",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5042347311973572,
+      "task_progress": 0.4957652986049652
+    },
+    {
+      "state_idx": 43,
+      "episode_id": "episode_000005",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5523987412452698,
+      "task_progress": 0.44760122895240784
+    },
+    {
+      "state_idx": 44,
+      "episode_id": "episode_000006",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6778343915939331,
+      "task_progress": 0.3221655786037445
+    },
+    {
+      "state_idx": 44,
+      "episode_id": "episode_000006",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6747711896896362,
+      "task_progress": 0.32522884011268616
+    },
+    {
+      "state_idx": 44,
+      "episode_id": "episode_000006",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6747785806655884,
+      "task_progress": 0.325221449136734
+    },
+    {
+      "state_idx": 44,
+      "episode_id": "episode_000006",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6747591495513916,
+      "task_progress": 0.3252408504486084
+    },
+    {
+      "state_idx": 45,
+      "episode_id": "episode_000008",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.17799058556556702,
+      "task_progress": 0.8220094442367554
+    },
+    {
+      "state_idx": 45,
+      "episode_id": "episode_000008",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.2540314495563507,
+      "task_progress": 0.7459685802459717
+    },
+    {
+      "state_idx": 45,
+      "episode_id": "episode_000008",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 3,
+      "success_rate": 0.1875,
+      "goal_error": 0.2491680383682251,
+      "task_progress": 0.7508319020271301
+    },
+    {
+      "state_idx": 45,
+      "episode_id": "episode_000008",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 2,
+      "success_rate": 0.125,
+      "goal_error": 0.26264065504074097,
+      "task_progress": 0.7373594045639038
+    },
+    {
+      "state_idx": 46,
+      "episode_id": "episode_000001",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5860990285873413,
+      "task_progress": 0.4139009416103363
+    },
+    {
+      "state_idx": 46,
+      "episode_id": "episode_000001",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.586015522480011,
+      "task_progress": 0.4139844477176666
+    },
+    {
+      "state_idx": 46,
+      "episode_id": "episode_000001",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5860210657119751,
+      "task_progress": 0.4139789640903473
+    },
+    {
+      "state_idx": 46,
+      "episode_id": "episode_000001",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5860543251037598,
+      "task_progress": 0.41394561529159546
+    },
+    {
+      "state_idx": 47,
+      "episode_id": "episode_000003",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4447995722293854,
+      "task_progress": 0.555200457572937
+    },
+    {
+      "state_idx": 47,
+      "episode_id": "episode_000003",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.44482749700546265,
+      "task_progress": 0.5551725029945374
+    },
+    {
+      "state_idx": 47,
+      "episode_id": "episode_000003",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4448114335536957,
+      "task_progress": 0.5551885366439819
+    },
+    {
+      "state_idx": 47,
+      "episode_id": "episode_000003",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4448266923427582,
+      "task_progress": 0.5551733374595642
+    },
+    {
+      "state_idx": 48,
+      "episode_id": "episode_000004",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4236612915992737,
+      "task_progress": 0.5763387084007263
+    },
+    {
+      "state_idx": 48,
+      "episode_id": "episode_000004",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.42486995458602905,
+      "task_progress": 0.575130045413971
+    },
+    {
+      "state_idx": 48,
+      "episode_id": "episode_000004",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.42488163709640503,
+      "task_progress": 0.575118362903595
+    },
+    {
+      "state_idx": 48,
+      "episode_id": "episode_000004",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.4249021112918854,
+      "task_progress": 0.575097918510437
+    },
+    {
+      "state_idx": 49,
+      "episode_id": "episode_000006",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.36969512701034546,
+      "task_progress": 0.6303048729896545
+    },
+    {
+      "state_idx": 49,
+      "episode_id": "episode_000006",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.37290748953819275,
+      "task_progress": 0.6270924806594849
+    },
+    {
+      "state_idx": 49,
+      "episode_id": "episode_000006",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3729293942451477,
+      "task_progress": 0.6270706057548523
+    },
+    {
+      "state_idx": 49,
+      "episode_id": "episode_000006",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3729656934738159,
+      "task_progress": 0.6270343065261841
+    },
+    {
+      "state_idx": 50,
+      "episode_id": "episode_000007",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6866621971130371,
+      "task_progress": 0.3133378028869629
+    },
+    {
+      "state_idx": 50,
+      "episode_id": "episode_000007",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6808249950408936,
+      "task_progress": 0.31917497515678406
+    },
+    {
+      "state_idx": 50,
+      "episode_id": "episode_000007",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6806939840316772,
+      "task_progress": 0.31930601596832275
+    },
+    {
+      "state_idx": 50,
+      "episode_id": "episode_000007",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.6806996464729309,
+      "task_progress": 0.3193003237247467
+    },
+    {
+      "state_idx": 51,
+      "episode_id": "episode_000000",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3683159053325653,
+      "task_progress": 0.6316841244697571
+    },
+    {
+      "state_idx": 51,
+      "episode_id": "episode_000000",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.466673344373703,
+      "task_progress": 0.5333266854286194
+    },
+    {
+      "state_idx": 51,
+      "episode_id": "episode_000000",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5257893800735474,
+      "task_progress": 0.4742106795310974
+    },
+    {
+      "state_idx": 51,
+      "episode_id": "episode_000000",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5807860493659973,
+      "task_progress": 0.4192138910293579
+    },
+    {
+      "state_idx": 52,
+      "episode_id": "episode_000003",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5295076966285706,
+      "task_progress": 0.47049233317375183
+    },
+    {
+      "state_idx": 52,
+      "episode_id": "episode_000003",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5320907831192017,
+      "task_progress": 0.46790918707847595
+    },
+    {
+      "state_idx": 52,
+      "episode_id": "episode_000003",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.530193567276001,
+      "task_progress": 0.469806432723999
+    },
+    {
+      "state_idx": 52,
+      "episode_id": "episode_000003",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.5310340523719788,
+      "task_progress": 0.46896594762802124
+    },
+    {
+      "state_idx": 53,
+      "episode_id": "episode_000007",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836784064769745,
+      "task_progress": 0.6163215637207031
+    },
+    {
+      "state_idx": 53,
+      "episode_id": "episode_000007",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.383657306432724,
+      "task_progress": 0.6163426637649536
+    },
+    {
+      "state_idx": 53,
+      "episode_id": "episode_000007",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836451470851898,
+      "task_progress": 0.6163548827171326
+    },
+    {
+      "state_idx": 53,
+      "episode_id": "episode_000007",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3836236894130707,
+      "task_progress": 0.6163763403892517
+    },
+    {
+      "state_idx": 54,
+      "episode_id": "episode_000011",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.39127829670906067,
+      "task_progress": 0.6087217330932617
+    },
+    {
+      "state_idx": 54,
+      "episode_id": "episode_000011",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.39105939865112305,
+      "task_progress": 0.608940601348877
+    },
+    {
+      "state_idx": 54,
+      "episode_id": "episode_000011",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3908591866493225,
+      "task_progress": 0.6091408133506775
+    },
+    {
+      "state_idx": 54,
+      "episode_id": "episode_000011",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3910485506057739,
+      "task_progress": 0.6089514493942261
+    },
+    {
+      "state_idx": 55,
+      "episode_id": "episode_000023",
+      "offset": 10,
+      "n_attempts": 16,
+      "n_success": 1,
+      "success_rate": 0.0625,
+      "goal_error": 0.26570287346839905,
+      "task_progress": 0.7342971563339233
+    },
+    {
+      "state_idx": 55,
+      "episode_id": "episode_000023",
+      "offset": 20,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.28391456604003906,
+      "task_progress": 0.7160854339599609
+    },
+    {
+      "state_idx": 55,
+      "episode_id": "episode_000023",
+      "offset": 25,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3037308156490326,
+      "task_progress": 0.696269154548645
+    },
+    {
+      "state_idx": 55,
+      "episode_id": "episode_000023",
+      "offset": 30,
+      "n_attempts": 16,
+      "n_success": 0,
+      "success_rate": 0.0,
+      "goal_error": 0.3313889503479004,
+      "task_progress": 0.6686110496520996
+    }
+  ]
+}
